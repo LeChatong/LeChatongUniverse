@@ -1,1 +1,1 @@
-web: gunicorn lechatonguniverse.wsgi
+web: gunicorn OnlyMe.wsgi
