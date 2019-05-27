@@ -1,0 +1,44 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block META_OG %}{% endblock %}
+{% block intitule_page %} {{ search }}{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="col-lg-12" style="margin-top: 20px;">
+            <table>
+                {% for movie in RESULT_AFTER_SEARCH %}
+                    <tr>
+                        <div class="row">
+                            <div class="col-lg-3">
+                                {% if movie.4 == None %}
+                                    <a target="_blank" href="{% static 'not_image_disponible.svg.png' %}">
+                                        <img class="card-img-top" width="500" height="200" src="{% static 'not_image_disponible.svg.png' %}" alt="{{ movie.1 }}">
+                                    </a>
+                                {% else %}
+                                    <a target="_blank" href="https://image.tmdb.org/t/p/w500{{ movie.3 }}">
+                                        <img class="card-img-top" width="500" height="200" src="https://image.tmdb.org/t/p/w500{{ movie.3 }}" alt="{{ movie.1 }}">
+                                    </a>
+                                {% endif %}
+
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="row">
+                                    <div class="col-lg-11">
+                                        <h3 class="text-justify"><a class="text-dark" href="{% url 'details_movie' movie.0 %}">{{ movie.1 }}</a></h3>
+                                    </div>
+                                    <div class="col-lg-1">
+                                        <span class="text-right"><h1>{{ movie.6 }}</h1></span>
+                                    </div>
+                                </div>
+
+                                <div><p style="text-align: justify;">{{ movie.2|truncatechars:250 }}</p></div>
+                            </div>
+                        </div>
+                    </tr>
+                    <hr/>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+      <!-- /.row -->
+{% endblock %}

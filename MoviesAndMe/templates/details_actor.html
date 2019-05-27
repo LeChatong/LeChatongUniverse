@@ -1,0 +1,81 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block META_OG %}{% endblock %}
+{% block intitule_page %}{{ name }}{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="card mt-4">
+                        {% if profile_path != None %}
+                            <img width="100" height="110" class="card-img-top img-fluid" src="https://image.tmdb.org/t/p/w1280{{ profile_path }}" alt="{{ name }}">
+                        {% else %}
+                            <img width="100" height="110" class="card-img-top" src="{% static 'not_image_disponible.svg.png' %}" alt="{{ name }}">
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="mt-4">
+                        <div class="h2">
+                            {% if homepage != None %}
+                                <a href="{{ homepage }}" target="_blank" title="{{ name }}">{{ name }}</a>
+                            {% else %}
+                                {{ name }}
+                            {% endif %}
+
+                        </div>
+                        <p>
+
+                            <div>
+                                Né(e) le : {% if birthday != None %}{{ birthday }}{% else %}{{ 'Non Précisé' }}{% endif %}
+                            </div>
+                            <div>
+                                Lieu de Naissance : {% if place_of_birth != None %}{{ place_of_birth }}{% else %}{{ 'Non Précisé' }}{% endif %}
+                            </div>
+                            {% if deathday != None %}
+                                <div> Décédé(e) le : {{ deathday }}</div>
+                            {% endif %}
+                        </p>
+                        <div class="text-justify">
+                            <b>Biographie</b>
+                            <p>
+                                {{ biography }}
+                            </p>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <hr/>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="h2"><b>Films Majeurs</b></div>
+                    <table class="table">
+                        {% for movie in LIST_MOVIES_ACTOR %}
+                            <tr>
+                                <td>
+                                    <img width="100" height="150" src="https://image.tmdb.org/t/p/w1280{{ movie.2 }}">
+                                </td>
+                                <td>
+                                    <a class="h4" href="{% url 'details_movie' movie.0 %}">{{ movie.1 }}</a> -
+                                    <span><b>{{ movie.3 }}</b></span>
+                                    <div><sup>{{ movie.5 }}</sup></div>
+                                    <div>{{ movie.4|truncatechars_html:250 }}</div>
+                                </td>
+                            </tr>
+
+                        {% endfor %}
+                    </table>
+                    <hr/>
+                    <a class="card-text" href="{% url 'movies_on_actor' id %}">
+                        <div>
+                            <p class="text-center"> Voir Plus</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

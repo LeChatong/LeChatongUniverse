@@ -1,0 +1,147 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block META_OG %}
+    <meta property="og:title" content="{{ title }}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{% url 'details_movie' id %}">
+    <meta property="og:image" content="https://image.tmdb.org/t/p/w1280{{ backdrop_path }}">
+    <meta property="og:image:width" content="800">
+    <meta property="og:image:height" content="300">
+    <meta property="og:description" content="{{ overview|truncatechars:250 }}">
+    <meta property="fb:app_id" content="{{ '285736978971421' }}">
+{% endblock %}
+{% block intitule_page %} {{ title }}{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="col-lg-12" style="margin-top: 20px;">
+            <div class="card mt-4">
+                {% if backdrop_path != None %}
+                    <img width="800" height="300" class="card-img-top img-fluid" src="https://image.tmdb.org/t/p/w1280{{ backdrop_path }}" alt="{{ title }}">
+                {% else %}
+                    <img width="800" height="300" class="card-img-top" src="{% static 'not_image_disponible.svg.png' %}" alt="{{ title }}">
+                {% endif %}
+
+                <div class="card-body">
+                <h3 class="card-title">
+                    <div class="row">
+                        <div class="col-lg-10">
+                            {% if homepage != None %}
+                                <a class="text-dark" href="{{ homepage }}" target="_blank">{{ title }}</a>
+                            {% else %}
+                                <a href="#">{{ title }}</a>
+                            {% endif %}
+                        </div>
+                        <div class="col-lg-2">
+                            <a class="twitter-share-button" data-size="large" href="https://twitter.com/intent/tweet">
+                                @LeChatong
+                            </a>
+                            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                        </div>
+
+                    </div>
+                </h3>
+
+                <p>
+                    {% for genre in genres %}
+                        <a href="#">{{ genre.name }}</a>,
+                    {% endfor %}
+                </p>
+                <p class="card-text text-justify">{{ overview }}</p>
+                <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
+                4.0 stars
+              </div>
+            </div>
+            <!-- /.card -->
+            <div class="card card-outline-secondary my-4">
+                <div class="card-header">
+                    Acteurs
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        {% for actor in list_actor %}
+                            <div class="col-lg-2 text-center">
+                                {% if actor.2 == None %}
+                                    <a href="{% url 'details_actor' actor.0 %}" title="{{ actor.1 }}">
+                                        <img width="75" height="75" alt="{{ actor.3 }}" class="rounded-circle" src="{% static 'not_image_disponible.svg.png' %}">
+                                    </a>
+                                {% else %}
+                                    <a href="{% url 'details_actor' actor.0 %}" title="{{ actor.1 }}">
+                                        <img width="75" height="75" alt="{{ actor.3 }}" class="rounded-circle" src="https://image.tmdb.org/t/p/w300{{ actor.2 }}">
+                                    </a>
+                                {% endif %}
+                                <div>
+                                    <sub><a href="{% url 'details_actor' actor.0 %}" title="{{ actor.3 }}">{{ actor.1 }}</a></sub>
+                                </div>
+                            </div>
+                        {% endfor %}
+                        <div class="col-lg-2 text-center">
+                            <a href="#">
+                                <img width="75" height="75" alt="#" class="rounded-circle" src="{% static 'not_image_disponible.svg.png' %}">
+                            </a>
+                            <div>
+                                <sub><a href="{% url 'actors_on_movie' id %}">Voir Plus</a></sub>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="card card-outline-secondary my-4">
+              <div class="card-header">
+                Sociétés de Production
+              </div>
+              <div class="card-body">
+                <div class="row">
+                    {% for company in production_companies %}
+                        <div class="col-lg-2 text-center">
+                            {% if company.logo_path == None %}
+                                <a href="#">
+                                    <img width="75" height="75" alt="{{ company.name }}" class="rounded-circle" src="{% static 'not_image_disponible.svg.png' %}">
+                                </a>
+                            {% else %}
+                                <a href="#">
+                                    <img width="75" height="75" alt="{{ company.name }}" class="rounded-circle" src="https://image.tmdb.org/t/p/w200{{ company.logo_path }}">
+                                </a>
+                            {% endif %}
+                            <div>
+                                <sub><a href="#">{{ company.name }}, {{ company.origin_country }}</a></sub>
+                            </div>
+
+                        </div>
+                    {% endfor %}
+                </div>
+
+              </div>
+            </div>
+            <div class="card card-outline-secondary my-4">
+                <div class="card-header">
+                    Films Similaires
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        {% for similar_movie in LIST_SIMILAR_MOVIES %}
+                            <div class="col-lg-2 col-md-3 mb-1">
+                                <div class="card h-50">
+                                  <a href="{% url 'details_movie' similar_movie.0 %}">
+                                      {% if similar_movie.2 != None %}
+                                        <img width="75" height="100" class="card-img-top" src="https://image.tmdb.org/t/p/w500{{ similar_movie.2 }}" alt="{{ similar_movie.1 }}">
+                                    {% else %}
+                                        <img width="75" height="100" class="card-img-top" src="{% static 'not_image_disponible.svg.png' %}" alt="{{ similar_movie.1 }}">
+                                    {% endif %}
+
+                                  </a>
+                                    <p class="card-title">
+                                      <a href="{% url 'details_movie' similar_movie.0 %}">{{ similar_movie.1 }}</a>
+                                    </p>
+                                </div>
+                          </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <!-- /.card -->
+
+
+        </div>
+    </div>
+{% endblock %}
