@@ -4,6 +4,7 @@ from twython import Twython, TwythonError
 
 # Create your views here.
 
+
 def home(request):
     response_genre = requests.get('https://api.themoviedb.org/3/genre/movie/list?api_key=f972c58efb26ab0a5e82cda1f7352586&language=fr-FR')
     list_genre = response_genre.json()
@@ -120,7 +121,7 @@ def details_movie(request, id):
     list_similar_movies = response_similar_movie.json()
     L_SIMILAR_MOVIES = list_similar_movies['results']
 
-    for i in (0,1,2,3,4):
+    for i in (0,1,2,3,4,5):
         LIST_SIMILAR_MOVIES.append(
             [
                 L_SIMILAR_MOVIES[i]['id'],

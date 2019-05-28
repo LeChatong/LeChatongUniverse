@@ -1,14 +1,15 @@
 {% extends 'index.html' %}
 {% load static %}
 {% block META_OG %}
-    <meta property="og:title" content="{{ title }}">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="{% url 'details_movie' id %}">
-    <meta property="og:image" content="https://image.tmdb.org/t/p/w1280{{ backdrop_path }}">
-    <meta property="og:image:width" content="800">
-    <meta property="og:image:height" content="300">
-    <meta property="og:description" content="{{ overview|truncatechars:250 }}">
-    <meta property="fb:app_id" content="{{ '285736978971421' }}">
+    <meta name="og:title" content="{{ title }}">
+    <meta name="og:type" content="website">
+    <meta name="og:url" content="{% url 'details_movie' id %}">
+    <meta name="og:image" content="https://image.tmdb.org/t/p/w1280{{ backdrop_path }}">
+    <meta name="og:image:width" content="800">
+    <meta name="og:image:height" content="300">
+    <meta name="og:description" content="{{ overview|truncatechars:250 }}">
+    <meta name="fb:app_id" content="{{ '285736978971421' }}">
+    <meta name="twitter:card" content="summary">
 {% endblock %}
 {% block intitule_page %} {{ title }}{% endblock %}
 {% block content %}
@@ -24,18 +25,25 @@
                 <div class="card-body">
                 <h3 class="card-title">
                     <div class="row">
-                        <div class="col-lg-10">
+                        <div class="col-lg-8">
                             {% if homepage != None %}
                                 <a class="text-dark" href="{{ homepage }}" target="_blank">{{ title }}</a>
                             {% else %}
                                 <a href="#">{{ title }}</a>
                             {% endif %}
                         </div>
-                        <div class="col-lg-2">
+                        <div class="col-lg-1">
                             <a class="twitter-share-button" data-size="large" href="https://twitter.com/intent/tweet">
                                 @LeChatong
                             </a>
                             <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                        </div>
+                        <div class="col-lg-1">
+                            <div class="fb-share-button" data-href="{% url 'details_movie' id %}" data-layout="button" data-size="large">
+                                <a target="_blank" href="{% url 'details_movie' id %}" class="fb-xfbml-parse-ignore">Partager</a>
+                            </div>
+                            <div id="fb-root"></div>
+                            <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v3.3"></script>
                         </div>
 
                     </div>
@@ -121,16 +129,16 @@
                     <div class="row">
                         {% for similar_movie in LIST_SIMILAR_MOVIES %}
                             <div class="col-lg-2 col-md-3 mb-1">
-                                <div class="card h-50">
+                                <div class="card h-auto">
                                   <a href="{% url 'details_movie' similar_movie.0 %}">
                                       {% if similar_movie.2 != None %}
-                                        <img width="75" height="100" class="card-img-top" src="https://image.tmdb.org/t/p/w500{{ similar_movie.2 }}" alt="{{ similar_movie.1 }}">
+                                        <img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{ similar_movie.2 }}" alt="{{ similar_movie.1 }}">
                                     {% else %}
-                                        <img width="75" height="100" class="card-img-top" src="{% static 'not_image_disponible.svg.png' %}" alt="{{ similar_movie.1 }}">
+                                        <img class="card-img-top" src="{% static 'not_image_disponible.svg.png' %}" alt="{{ similar_movie.1 }}">
                                     {% endif %}
 
                                   </a>
-                                    <p class="card-title">
+                                    <p class="card-title text-center">
                                       <a href="{% url 'details_movie' similar_movie.0 %}">{{ similar_movie.1 }}</a>
                                     </p>
                                 </div>
