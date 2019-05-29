@@ -28,13 +28,13 @@
                         <p>
 
                             <div>
-                                Né(e) le : {% if birthday != None %}{{ birthday }}{% else %}{{ 'Non Précisé' }}{% endif %}
+                                Né(e) le : {% if birthday != None %}{{ birthday|date:'d M Y' }}{% else %}{{ 'Non Précisé' }}{% endif %}
                             </div>
                             <div>
                                 Lieu de Naissance : {% if place_of_birth != None %}{{ place_of_birth }}{% else %}{{ 'Non Précisé' }}{% endif %}
                             </div>
                             {% if deathday != None %}
-                                <div> Décédé(e) le : {{ deathday }}</div>
+                                <div> Décédé(e) le : {{ deathday|date:'d M Y' }}</div>
                             {% endif %}
                         </p>
                         <div class="text-justify">
@@ -59,9 +59,9 @@
                                     <img width="100" height="150" src="https://image.tmdb.org/t/p/w1280{{ movie.2 }}">
                                 </td>
                                 <td>
-                                    <a class="h4" href="{% url 'details_movie' movie.0 %}">{{ movie.1 }}</a> -
-                                    <span><b>{{ movie.3 }}</b></span>
-                                    <div><sup>{{ movie.5 }}</sup></div>
+                                    <a class="h4" href="{% url 'details_movie' movie.0 %}">{{ movie.1 }}</a>
+                                    <div><sup><b>{{ movie.3 }}</b></sup></div>
+                                    <div><sup>{{ movie.5|date:'d M Y' }}</sup></div>
                                     <div>{{ movie.4|truncatechars_html:250 }}</div>
                                 </td>
                             </tr>

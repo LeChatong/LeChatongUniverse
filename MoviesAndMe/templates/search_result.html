@@ -6,34 +6,103 @@
     <div class="row">
         <div class="col-lg-12" style="margin-top: 20px;">
             <table>
-                {% for movie in RESULT_AFTER_SEARCH %}
+                {% for elt in RESULT_AFTER_SEARCH %}
                     <tr>
-                        <div class="row">
-                            <div class="col-lg-3">
-                                {% if movie.4 == None %}
-                                    <a target="_blank" href="{% static 'not_image_disponible.svg.png' %}">
-                                        <img class="card-img-top" width="500" height="200" src="{% static 'not_image_disponible.svg.png' %}" alt="{{ movie.1 }}">
-                                    </a>
-                                {% else %}
-                                    <a target="_blank" href="https://image.tmdb.org/t/p/w500{{ movie.3 }}">
-                                        <img class="card-img-top" width="500" height="200" src="https://image.tmdb.org/t/p/w500{{ movie.3 }}" alt="{{ movie.1 }}">
-                                    </a>
-                                {% endif %}
+                        {% if elt.0 == 'movie' %}
+                            <div class="row">
+                                <div class="col-lg-3">
 
-                            </div>
-                            <div class="col-lg-9">
-                                <div class="row">
-                                    <div class="col-lg-11">
-                                        <h3 class="text-justify"><a class="text-dark" href="{% url 'details_movie' movie.0 %}">{{ movie.1 }}</a></h3>
-                                    </div>
-                                    <div class="col-lg-1">
-                                        <span class="text-right"><h1>{{ movie.6 }}</h1></span>
-                                    </div>
+                                    {% if elt.3 == None %}
+                                        <a target="_blank" href="{% static 'not_image_disponible.svg.png' %}">
+                                            <img class="card-img-top" width="500" height="200" src="{% static 'not_image_disponible.svg.png' %}" alt="{{ elt.2 }}">
+                                        </a>
+                                    {% else %}
+                                        <a target="_blank" href="https://image.tmdb.org/t/p/w500{{ elt.3 }}">
+                                            <img class="card-img-top" width="500" height="200" src="https://image.tmdb.org/t/p/w500{{ elt.3 }}" alt="{{ elt.2 }}">
+                                        </a>
+                                    {% endif %}
+
                                 </div>
+                                <div class="col-lg-9">
+                                    <div class="row">
+                                        <div class="col-lg-11">
+                                            <h3 class="text-justify">
+                                                <a class="text-dark" href="{% url 'details_movie' elt.1 %}">{{ elt.2 }}</a>
+                                            </h3>
+                                            <span><sup class="text-info">{{ elt.0 }}</sup></span>
+                                        </div>
+                                        <div class="col-lg-1">
+                                            <span class="text-right"><h1>{{ elt.6 }}</h1></span>
+                                        </div>
+                                    </div>
 
-                                <div><p style="text-align: justify;">{{ movie.2|truncatechars:250 }}</p></div>
+                                    <div><p style="text-align: justify;">{{ elt.4|truncatechars:250 }}</p></div>
+                                </div>
                             </div>
-                        </div>
+                        {% elif elt.0 == 'tv' %}
+                            <div class="row">
+                                <div class="col-lg-3">
+
+                                    {% if elt.3 == None %}
+                                        <a target="_blank" href="{% static 'not_image_disponible.svg.png' %}">
+                                            <img class="card-img-top" width="500" height="200" src="{% static 'not_image_disponible.svg.png' %}" alt="{{ elt.2 }}">
+                                        </a>
+                                    {% else %}
+                                        <a target="_blank" href="https://image.tmdb.org/t/p/w500{{ elt.3 }}">
+                                            <img class="card-img-top" width="500" height="200" src="https://image.tmdb.org/t/p/w500{{ elt.3 }}" alt="{{ elt.2 }}">
+                                        </a>
+                                    {% endif %}
+
+                                </div>
+                                <div class="col-lg-9">
+                                    <div class="row">
+                                        <div class="col-lg-11">
+                                            <h3 class="text-justify">
+                                                <a class="text-dark" href="#">{{ elt.2 }}</a>
+                                            </h3>
+                                            <span><sup class="text-warning">{{ elt.0 }}</sup></span>
+                                        </div>
+                                        <div class="col-lg-1">
+                                            <span class="text-right"><h1>{{ elt.6 }}</h1></span>
+                                        </div>
+                                    </div>
+
+                                    <div><p style="text-align: justify;">{{ elt.4|truncatechars:250 }}</p></div>
+                                </div>
+                            </div>
+                        {% elif elt.0 == 'person' %}
+                            <div class="row">
+                                <div class="col-lg-3">
+
+                                    {% if elt.3 == None %}
+                                        <a target="_blank" href="{% static 'not_image_disponible.svg.png' %}">
+                                            <img class="card-img-top" width="500" height="200" src="{% static 'not_image_disponible.svg.png' %}" alt="{{ elt.2 }}">
+                                        </a>
+                                    {% else %}
+                                        <a target="_blank" href="https://image.tmdb.org/t/p/w500{{ elt.3 }}">
+                                            <img class="card-img-top" width="500" height="200" src="https://image.tmdb.org/t/p/w500{{ elt.3 }}" alt="{{ elt.2 }}">
+                                        </a>
+                                    {% endif %}
+
+                                </div>
+                                <div class="col-lg-9">
+                                    <div class="row">
+                                        <div class="col-lg-11">
+                                            <h3 class="text-justify">
+                                                <a class="text-dark" href="{% url 'details_actor' elt.1 %}">{{ elt.2 }}</a>
+                                            </h3>
+                                            <span><sup class="text-success">{{ elt.0 }}</sup></span>
+                                        </div>
+                                        <div class="col-lg-1">
+                                            <span class="text-right"><h1>{{ '' }}</h1></span>
+                                        </div>
+                                    </div>
+
+                                    <div><p style="text-align: justify;">{{ '' }}</p></div>
+                                </div>
+                            </div>
+                        {% endif %}
+
                     </tr>
                     <hr/>
                 {% endfor %}

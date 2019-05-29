@@ -55,8 +55,14 @@
                     {% endfor %}
                 </p>
                 <p class="card-text text-justify">{{ overview }}</p>
-                <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
-                4.0 stars
+                <span title="Note du film : {{ vote_average }} / 10" class="text-warning">
+                    {% for i in COUNTEUR %}
+                        {% if i < vote_average %}&#9733;{% else %}&#9734;{% endif %}
+                    {% endfor %}
+                </span>
+                <p>
+                    <span>Sortie le : </span>{{ release_date|date:'d M Y' }}
+                </p>
               </div>
             </div>
             <!-- /.card -->

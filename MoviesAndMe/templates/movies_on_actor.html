@@ -6,13 +6,6 @@
     <div class="row">
         <div class="col-lg-12"  style="margin-top: 20px;">
             <div class="row">
-                <!--<div class="col-lg-2">
-                    {% if profile_path != None %}
-                        <img width="50" height="50" class="card-img-top img-fluid rounded-circle" src="https://image.tmdb.org/t/p/w500{{ profile_path }}" alt="{{ name }}">
-                    {% else %}
-                        <img width="50" height="50" class="card-img-top rounded-0" src="{% static 'not_image_disponible.svg.png' %}" alt="{{ name }}">
-                    {% endif %}
-                </div>-->
                 <div class="col-lg-6">
                     <h3>Films avec <b>{{ name }}</b></h3>
                 </div>
@@ -20,16 +13,16 @@
             <hr/>
             <div class="row">
                 {% for movie in LIST_MOVIES_ACTOR %}
-                    <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="col-lg-3 col-md-4 mb-3">
                         <div class="card h-auto">
                           <a href="{% url 'details_movie' movie.0 %}"><img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{ movie.2 }}" alt="{{ movie.1 }}"></a>
                           <div class="card-body">
-                            <h4 class="card-title">
+                            <h5 class="card-title">
                               <a href="{% url 'details_movie' movie.0 %}">{{ movie.1 }}</a>
-                            </h4>
+                            </h5>
                             <div class="card-text">
-                                <p>{{ 'Sortie le : ' }}{{ movie.5 }}</p>
-                                <p>{{ 'Alias : ' }}<b>{{ movie.3 }}</b></p>
+                                <div><sup>{{ 'Sortie le : ' }}{{ movie.5|date:'d M Y' }}</sup></div>
+                                <div><sup>{{ 'Alias : ' }}<b>{{ movie.3 }}</b></sup></div>
                             </div>
 
                           </div>

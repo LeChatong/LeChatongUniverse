@@ -1,5 +1,6 @@
 from django.shortcuts import render
 import requests
+from datetime import datetime
 from twython import Twython, TwythonError
 
 # Create your views here.
@@ -33,17 +34,20 @@ def home(request):
     TOP_MOVIES_6 = []
 
     for j in (0,1,2,3):
-        TOP_MOVIES_4.append(
-            [
-                RESULT_ON_TOP[j]['id'],
-                RESULT_ON_TOP[j]['title'],
-                RESULT_ON_TOP[j]['overview'],
-                RESULT_ON_TOP[j]['poster_path'],
-                RESULT_ON_TOP[j]['backdrop_path'],
-                RESULT_ON_TOP[j]['release_date'],
-                j
-            ]
-        )
+        if RESULT_ON_TOP[j]['backdrop_path'] == None:
+            pass
+        else:
+            TOP_MOVIES_4.append(
+                [
+                    RESULT_ON_TOP[j]['id'],
+                    RESULT_ON_TOP[j]['title'],
+                    RESULT_ON_TOP[j]['overview'],
+                    RESULT_ON_TOP[j]['poster_path'],
+                    RESULT_ON_TOP[j]['backdrop_path'],
+                    datetime.strptime(RESULT_ON_TOP[j]['release_date'], "%Y-%m-%d").date(),
+                    j
+                ]
+            )
 
     for i in (0,1,2,3,4,5):
         TOP_MOVIES_6.append(
@@ -53,7 +57,7 @@ def home(request):
                 RESULT_TOP_RATED[i]['overview'],
                 RESULT_TOP_RATED[i]['poster_path'],
                 RESULT_TOP_RATED[i]['backdrop_path'],
-                RESULT_TOP_RATED[i]['release_date'],
+                datetime.strptime(RESULT_TOP_RATED[i]['release_date'], "%Y-%m-%d").date(),
                 RESULT_TOP_RATED[i]['vote_average']
             ]
         )
@@ -61,36 +65,49 @@ def home(request):
     return render(request, 'index.html', locals())
 
 def search_movies(request):
-    response_genre = requests.get(
-        'https://api.themoviedb.org/3/genre/movie/list?api_key=f972c58efb26ab0a5e82cda1f7352586&language=fr-FR')
-    list_genre = response_genre.json()
-    LIST_GENDER = []
-    for elt in list_genre['genres']:
-        LIST_GENDER.append(
-            [
-                elt['id'],
-                elt['name']
-            ]
-        )
-
     if request.method == 'POST':
         search = request.POST.get('search')
         if search != None :
-            response_search = requests.get('https://api.themoviedb.org/3/search/movie?api_key=f972c58efb26ab0a5e82cda1f7352586&language=fr-FR&query='+search)
-            list_movie_after_search = response_search.json()
+            response_search = requests.get('https://api.themoviedb.org/3/search/multi?api_key=f972c58efb26ab0a5e82cda1f7352586&language=fr-FR&query='+search+'&page=1&include_adult=false')
+            list_movie_elt_search = response_search.json()
             RESULT_AFTER_SEARCH = []
-            for movie in list_movie_after_search['results']:
-                RESULT_AFTER_SEARCH.append(
-                    [
-                        movie['id'],
-                        movie['title'],
-                        movie['overview'],
-                        movie['poster_path'],
-                        movie['backdrop_path'],
-                        movie['release_date'],
-                        movie['vote_average']
-                    ]
-                )
+            for elt in list_movie_elt_search['results']:
+                if elt['media_type'] == 'movie':
+                    RESULT_AFTER_SEARCH.append(
+                        [
+                            elt['media_type'],
+                            elt['id'],
+                            elt['title'],
+                            elt['poster_path'],
+                            elt['overview'],
+                            elt['release_date'],
+                            elt['vote_average'],
+                        ]
+                    )
+                else :
+                    if elt['media_type'] == 'tv':
+                        RESULT_AFTER_SEARCH.append(
+                            [
+                                elt['media_type'],
+                                elt['id'],
+                                elt['name'],
+                                elt['poster_path'],
+                                elt['overview'],
+                                elt['first_air_date'],
+                                elt['vote_average'],
+                            ]
+                        )
+                    else:
+                        if elt['media_type'] == 'person':
+                            RESULT_AFTER_SEARCH.append(
+                                [
+                                    elt['media_type'],
+                                    elt['id'],
+                                    elt['name'],
+                                    elt['profile_path'],
+                                ]
+                            )
+
             return render(request, 'search_result.html', locals())
         else:
             return render(request, 'search_result.html', locals())
@@ -160,7 +177,7 @@ def details_movie(request, id):
         'overview':             movie['overview'],
         'poster_path':          movie['poster_path'],
         'backdrop_path':        movie['backdrop_path'],
-        'release_date':         movie['release_date'],
+        'release_date':         datetime.strptime(movie['release_date'], "%Y-%m-%d").date(),
         'vote_average':         movie['vote_average'],
         'homepage':             movie['homepage'],
         'production_companies': movie['production_companies'],
@@ -168,6 +185,7 @@ def details_movie(request, id):
         'list_actor':           LIST_ACTORS_CREDIT,
         'LIST_GENDER':          LIST_GENDER,
         'LIST_SIMILAR_MOVIES':  LIST_SIMILAR_MOVIES,
+        'COUNTEUR':             [1,2,3,4,5,6,7,8,9,10]
     }
     return render(request, 'details_movie.html', context)
 
@@ -199,9 +217,14 @@ def details_actor(request, id):
                 L_MOVIES_ACTOR[i]['poster_path'],
                 L_MOVIES_ACTOR[i]['character'],
                 L_MOVIES_ACTOR[i]['overview'],
-                L_MOVIES_ACTOR[i]['release_date'],
+                datetime.strptime(L_MOVIES_ACTOR[i]['release_date'], "%Y-%m-%d").date(),
             ]
         )
+    if actor['deathday'] != None:
+        actor['deathday'] = datetime.strptime(actor['deathday'], "%Y-%m-%d").date()
+    if actor['birthday'] != None:
+        actor['birthday'] = datetime.strptime(actor['birthday'], "%Y-%m-%d").date()
+
     context = {
         'id':                   actor['id'],
         'name':                 actor['name'],
@@ -239,6 +262,8 @@ def movies_on_actor(request, id):
     LIST_MOVIES_ACTOR = []
     L_MOVIES_ACTOR = actor_movies['cast']
     for elt in L_MOVIES_ACTOR:
+        if elt['release_date'] != None:
+            elt['release_date'] = datetime.strptime(elt['release_date'], "%Y-%m-%d").date()
         LIST_MOVIES_ACTOR.append(
             [
                 elt['id'],
@@ -295,3 +320,42 @@ def actors_on_movie(request, id):
         'LIST_GENDER': LIST_GENDER,
     }
     return render(request, 'actors_on_movie.html', context)
+
+def home_tv(request, page=1):
+    response_genre = requests.get(
+        'https://api.themoviedb.org/3/genre/tv/list?api_key=f972c58efb26ab0a5e82cda1f7352586&language=fr-FR')
+    list_genre = response_genre.json()
+    LIST_GENDER = []
+    for elt in list_genre['genres']:
+        LIST_GENDER.append(
+            [
+                elt['id'],
+                elt['name']
+            ]
+        )
+    #page_next = page + 1
+    #page_prev = page - 1
+    # La liste des séries & animes les plus populaires du moment
+    response_pop = requests.get(
+        'https://api.themoviedb.org/3/tv/popular?api_key=f972c58efb26ab0a5e82cda1f7352586&language=fr-FR&page='+page)
+    list_tv_pop = response_pop.json()
+    RESULT_POPULAR_ON_TV = list_tv_pop['results']
+    POPULAR_ON_TV = []
+
+    for elt in RESULT_POPULAR_ON_TV:
+        POPULAR_ON_TV.append(
+            [
+                elt['id'],
+                elt['name'],
+                elt['overview'],
+                elt['poster_path'],
+                datetime.strptime(elt['first_air_date'], "%Y-%m-%d").date(),
+                elt['vote_average'],
+            ]
+        )
+    context = {
+        'page':             page,
+        'LIST_GENDER':      LIST_GENDER,
+        'POPULAR_ON_TV':    POPULAR_ON_TV
+    }
+    return render(request, 'home_tv.html', context)

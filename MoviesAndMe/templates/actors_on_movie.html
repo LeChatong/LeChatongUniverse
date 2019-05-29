@@ -20,7 +20,7 @@
             <hr/>
             <div class="row">
                 {% for actor in list_actor %}
-                    <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="col-lg-3 col-md-4 mb-3">
                         <div class="card h-auto">
                           <a href="{% url 'details_actor' actor.0 %}">
                               {% if actor.2 != None %}
@@ -31,9 +31,9 @@
 
                           </a>
                           <div class="card-body">
-                            <h4 class="card-title">
+                            <h5 class="card-title">
                               <a href="{% url 'details_actor' actor.0 %}">{{ actor.1 }}</a>
-                            </h4>
+                            </h5>
                             <div class="card-text">
                                 <p>{{ 'Alias : ' }}<b>{{ actor.3 }}</b></p>
                             </div>
