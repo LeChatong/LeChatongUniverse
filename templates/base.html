@@ -43,26 +43,8 @@
 
   <!-- Page Content -->
   <div class="container">
+    {% block content %}{% endblock %}
 
-    <div class="row">
-
-      <div class="col-lg-3">
-
-        <h3 class="my-4">Genres de Films</h3>
-        <div class="list-group">
-            {% for gender in LIST_GENDER %}
-                <a href="#" class="list-group-item">{{ gender.1 }}</a>
-            {% endfor %}
-        </div>
-
-      </div>
-      <!-- /.col-lg-3 -->
-        <div class="col-lg-9">
-            {% block content %}{% endblock %}
-        </div>
-        <!-- /.col-lg-9 -->
-    </div>
-    <!-- /.row -->
 
   </div>
   <!-- /.container -->

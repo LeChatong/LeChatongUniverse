@@ -7,17 +7,6 @@ from twython import Twython, TwythonError
 
 
 def home(request):
-    response_genre = requests.get('https://api.themoviedb.org/3/genre/movie/list?api_key=f972c58efb26ab0a5e82cda1f7352586&language=fr-FR')
-    list_genre = response_genre.json()
-    LIST_GENDER = []
-    for elt in list_genre['genres']:
-        LIST_GENDER.append(
-            [
-                elt['id'],
-                elt['name']
-            ]
-        )
-
     # La liste des films les plus populaires
     response_top = requests.get('https://api.themoviedb.org/3/movie/popular?api_key=f972c58efb26ab0a5e82cda1f7352586&language=fr-FR&page=1')
     list_movie_on_top = response_top.json()
@@ -190,17 +179,6 @@ def details_movie(request, id):
     return render(request, 'details_movie.html', context)
 
 def details_actor(request, id):
-    response_genre = requests.get(
-        'https://api.themoviedb.org/3/genre/movie/list?api_key=f972c58efb26ab0a5e82cda1f7352586&language=fr-FR')
-    list_genre = response_genre.json()
-    LIST_GENDER = []
-    for elt in list_genre['genres']:
-        LIST_GENDER.append(
-            [
-                elt['id'],
-                elt['name']
-            ]
-        )
     response_actor = requests.get('https://api.themoviedb.org/3/person/'+id+'?api_key=f972c58efb26ab0a5e82cda1f7352586&language=fr-FR')
     actor = response_actor.json()
 
@@ -235,7 +213,6 @@ def details_actor(request, id):
         'place_of_birth':       actor['place_of_birth'],
         'homepage':             actor['homepage'],
         'LIST_MOVIES_ACTOR':    LIST_MOVIES_ACTOR,
-        'LIST_GENDER':          LIST_GENDER
     }
     return render(request, 'details_actor.html', context)
 
@@ -359,3 +336,59 @@ def home_tv(request, page=1):
         'POPULAR_ON_TV':    POPULAR_ON_TV
     }
     return render(request, 'home_tv.html', context)
+
+def home_movie(request, page=1):
+    response_genre = requests.get(
+        'https://api.themoviedb.org/3/genre/movie/list?api_key=f972c58efb26ab0a5e82cda1f7352586&language=fr-FR')
+    list_genre = response_genre.json()
+    LIST_GENDER = []
+    for elt in list_genre['genres']:
+        LIST_GENDER.append(
+            [
+                elt['id'],
+                elt['name']
+            ]
+        )
+
+    # La liste des séries & animes les plus populaires du moment
+    response_pop = requests.get(
+        'https://api.themoviedb.org/3/movie/popular?api_key=f972c58efb26ab0a5e82cda1f7352586&language=fr-FR&page='+page)
+    list_movie_pop = response_pop.json()
+    RESULT_POPULAR_MOVIES = list_movie_pop['results']
+    TOTAL_PAGES = int(list_movie_pop['total_pages'])
+    POPULAR_MOVIES = []
+    COUNTER = []
+    page = int(page)
+    page_next = page + 1
+    page_prev = page - 1
+    for elt in RESULT_POPULAR_MOVIES:
+        POPULAR_MOVIES.append(
+            [
+                elt['id'],
+                elt['title'],
+                elt['overview'],
+                elt['poster_path'],
+                datetime.strptime(elt['release_date'], "%Y-%m-%d").date(),
+                elt['vote_average'],
+            ]
+        )
+    TOTAL_PAGES = TOTAL_PAGES - 1
+    if page > 10:
+        if page == TOTAL_PAGES:
+            COUNTER = [page - 9, page - 8, page - 7, page - 6, page - 5, page - 4, page - 3, page - 2, page - 1, page]
+        else:
+            COUNTER = [page - 8, page - 7, page - 6, page - 5, page - 4, page - 3, page - 2, page - 1, page, page + 1]
+    elif page == 10:
+        COUNTER = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+    elif page < 10:
+        COUNTER = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    context = {
+        'page':             page,
+        'LIST_GENDER':      LIST_GENDER,
+        'POPULAR_MOVIES':   POPULAR_MOVIES,
+        'TOTAL_PAGES':      TOTAL_PAGES,
+        'COUNTER':          COUNTER,
+        'page_next':        page_next,
+        'page_prev':        page_prev
+    }
+    return render(request, 'home_movie.html', context)

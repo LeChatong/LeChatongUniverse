@@ -8,7 +8,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Films</a>
+            <a class="nav-link" href="{% url 'home_movie' 1 %}">Films</a>
           </li>
           <li class="nav-item active">
             <a class="nav-link" href="{% url 'home_tv' 1 %}">Séries</a>
@@ -22,32 +22,51 @@
 
 {% block content %}
     <div class="row">
-        <div class="col-lg-12"  style="margin-top: 20px;">
+
+      <div class="col-lg-3">
+
+        <h3 class="my-4">Genres de Série</h3>
+        <div class="list-group">
+            {% for gender in LIST_GENDER %}
+                <a href="#" class="list-group-item">{{ gender.1 }}</a>
+            {% endfor %}
+        </div>
+
+      </div>
+      <!-- /.col-lg-3 -->
+        <div class="col-lg-9">
             <div class="row">
-                <div class="col-lg-12">
-                    <h3>{{ 'Séries et Animé les plus populaire du moment' }}</h3>
-                    <span>page {{ page }}</span>
+                <div class="col-lg-12"  style="margin-top: 20px;">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h3>{{ 'Séries et Animés les plus populaire du moment' }}</h3>
+                            <span>page {{ page }}</span>
+                        </div>
+                    </div>
+                    <hr/>
+                    <div class="row">
+                        {% for tv in POPULAR_ON_TV %}
+                            <div class="col-lg-3 col-md-4 mb-3">
+                                <div class="card h-auto">
+                                  <a href="#"><img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{ tv.3 }}" alt="{{ tv.1 }}"></a>
+                                  <div class="card-body">
+                                    <h5 class="card-title">
+                                      <a href="#">{{ tv.1 }}</a>
+                                    </h5>
+                                    <div class="card-text">
+                                        <div><sup>{{ 'Sortie le : ' }}{{ tv.4|date:'d M Y' }}</sup></div>
+                                    </div>
+
+                                  </div>
+                                </div>
+                          </div>
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
-            <hr/>
-            <div class="row">
-                {% for tv in POPULAR_ON_TV %}
-                    <div class="col-lg-3 col-md-4 mb-3">
-                        <div class="card h-auto">
-                          <a href="#"><img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{ tv.3 }}" alt="{{ tv.1 }}"></a>
-                          <div class="card-body">
-                            <h5 class="card-title">
-                              <a href="#">{{ tv.1 }}</a>
-                            </h5>
-                            <div class="card-text">
-                                <div><sup>{{ 'Sortie le : ' }}{{ tv.4|date:'d M Y' }}</sup></div>
-                            </div>
-
-                          </div>
-                        </div>
-                  </div>
-                {% endfor %}
-            </div>
         </div>
+        <!-- /.col-lg-9 -->
     </div>
+    <!-- /.row -->
+
 {% endblock %}
