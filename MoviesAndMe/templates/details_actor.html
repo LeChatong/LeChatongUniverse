@@ -75,6 +75,31 @@
                         </div>
                     </a>
                 </div>
+                <div class="col-lg-12">
+                    <div class="h2"><b>Séries Majeures</b></div>
+                    <table class="table">
+                        {% for tv in LIST_TV_ACTOR %}
+                            <tr>
+                                <td>
+                                    <img width="100" height="150" src="https://image.tmdb.org/t/p/w1280{{ tv.2 }}">
+                                </td>
+                                <td>
+                                    <a class="h4" href="{% url 'details_tv' tv.0 %}">{{ tv.1 }}</a>
+                                    <div><sup><b>{{ tv.3 }}</b></sup></div>
+                                    <div><sup>{{ tv.5|date:'d M Y' }}</sup></div>
+                                    <div>{{ tv.4|truncatechars_html:250 }}</div>
+                                </td>
+                            </tr>
+
+                        {% endfor %}
+                    </table>
+                    <hr/>
+                    <a class="card-text" href="{% url 'tvs_on_actor' id %}">
+                        <div>
+                            <p class="text-center"> Voir Plus</p>
+                        </div>
+                    </a>
+                </div>
             </div>
         </div>
     </div>

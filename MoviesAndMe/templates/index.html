@@ -9,10 +9,10 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'home_movie' 1 %}">Films</a>
+            <a class="nav-link" href="{% url 'home_movie' %}">Films</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'home_tv' 1 %}">Séries</a>
+            <a class="nav-link" href="{% url 'home_tv' %}">Séries</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Contact</a>
@@ -68,6 +68,24 @@
                           </div>
                           <div class="card-footer">
                               {{ 'Notes : ' }}{{ movie.6 }}{{ ' / 10' }}
+                            <!--<small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>-->
+                          </div>
+                        </div>
+                  </div>
+                {% endfor %}
+                {% for tv in TOP_TVS_6 %}
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card h-100">
+                          <a href="{% url 'details_tv' tv.0 %}"><img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{ tv.3 }}" alt="{{ tv.1 }}"></a>
+                          <div class="card-body">
+                            <h4 class="card-title">
+                              <a href="{% url 'details_tv' tv.0 %}">{{ tv.1 }}</a>
+                            </h4>
+                            <p>{{ 'Sortie le : ' }}{{ tv.5|date:'d M Y' }}</p>
+                            <p class="card-text">{{ tv.2|truncatechars:250 }}</p>
+                          </div>
+                          <div class="card-footer">
+                              {{ 'Notes : ' }}{{ tv.6 }}{{ ' / 10' }}
                             <!--<small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>-->
                           </div>
                         </div>

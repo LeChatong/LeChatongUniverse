@@ -1,9 +1,9 @@
-{% extends 'home_movie.html' %}
+{% extends 'home_tv.html' %}
 {% load static %}
 {% block META_OG %}
-    <meta property="og:title" content="{{ title }}">
+    <meta property="og:title" content="{{ name }}">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="{% url 'details_movie' id %}">
+    <meta property="og:url" content="{% url 'details_tv' id %}">
     <meta property="og:image" content="https://image.tmdb.org/t/p/w1280{{ backdrop_path }}">
     <meta property="og:image:width" content="800">
     <meta property="og:image:height" content="300">
@@ -11,20 +11,21 @@
     <meta property="fb:app_id" content="{{ '285736978971421' }}">
     <meta property="twitter:card" content="summary">
 {% endblock %}
-{% block intitule_page %} {{ title }}{% endblock %}
+
+{% block intitule_page %}{{ name }}{% endblock %}
 {% block link_menu %}
-    <a href="{% url 'home_movie' %}" class="list-group-item">{{ 'Nouveautés' }}</a>
-    <a href="{% url 'popular_movie' 1 %}" class="list-group-item">{{ 'Populaires' }}</a>
-    <a href="{% url 'upcoming_movie' 1 %}" class="list-group-item">{{ 'A venir' }}</a>
+    <a href="{% url 'home_tv' %}" class="list-group-item">{{ 'Nouveautés' }}</a>
+    <a href="{% url 'popular_tv' 1 %}" class="list-group-item">{{ 'Populaires' }}</a>
 {% endblock %}
-{% block details_page %}
-    <div class="row">
+{% block details %}
+    <div class="col-lg-9">
+        <div class="row">
         <div class="col-lg-12" style="margin-top: 20px;">
             <div class="card mt-4">
                 {% if backdrop_path != None %}
-                    <img width="800" height="300" class="card-img-top img-fluid" src="https://image.tmdb.org/t/p/w1280{{ backdrop_path }}" alt="{{ title }}">
+                    <img width="800" height="300" class="card-img-top img-fluid" src="https://image.tmdb.org/t/p/w1280{{ backdrop_path }}" alt="{{ name }}">
                 {% else %}
-                    <img width="800" height="300" class="card-img-top" src="{% static 'not_image_disponible.svg.png' %}" alt="{{ title }}">
+                    <img width="800" height="300" class="card-img-top" src="{% static 'not_image_disponible.svg.png' %}" alt="{{ name }}">
                 {% endif %}
 
                 <div class="card-body">
@@ -32,9 +33,9 @@
                     <div class="row">
                         <div class="col-lg-8">
                             {% if homepage != None %}
-                                <a class="text-dark" href="{{ homepage }}" target="_blank">{{ title }}</a>
+                                <a class="text-dark" href="{{ homepage }}" target="_blank">{{ name }}</a>
                             {% else %}
-                                <a href="#">{{ title }}</a>
+                                <a href="#">{{ name }}</a>
                             {% endif %}
                         </div>
                         <div class="col-lg-1">
@@ -44,19 +45,33 @@
                             <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                         </div>
                         <div class="col-lg-1">
-                            <div class="fb-share-button" data-href="{% url 'details_movie' id %}" data-layout="button" data-size="large">
-                                <a target="_blank" href="{% url 'details_movie' id %}" class="fb-xfbml-parse-ignore">Partager</a>
+                            <div id="fb-root" class="text-justify"></div>
+                              <script>(function(d, s, id) {
+                                var js, fjs = d.getElementsByTagName(s)[0];
+                                if (d.getElementById(id)) return;
+                                js = d.createElement(s); js.id = id;
+                                js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+                                fjs.parentNode.insertBefore(js, fjs);
+                              }(document, 'script', 'facebook-jssdk'));</script>
+                            <div class="fb-share-button"
+                                data-href="{% url 'details_tv' id %}"
+                                 data-size="large"
+                                data-layout="button_count">
+                                Partager
                             </div>
-                            <div id="fb-root"></div>
-                            <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v3.3"></script>
                         </div>
 
                     </div>
                 </h3>
-
                 <p>
                     {% for genre in genres %}
                         <a href="#">{{ genre.name }}</a>,
+                    {% endfor %}
+                </p>
+                <p>
+                    Auteurs :
+                    {% for author in created_by %}
+                        <a href="#">{{ author.1 }}</a>,
                     {% endfor %}
                 </p>
                 <p class="card-text text-justify">{{ overview }}</p>
@@ -66,11 +81,38 @@
                     {% endfor %}
                 </span>
                 <p>
-                    <span>Sortie le : </span>{{ release_date|date:'d M Y' }}
+                    <span>Sortie le : </span>{{ first_air_date|date:'d M Y' }}
                 </p>
               </div>
             </div>
             <!-- /.card -->
+            <div class="card card-outline-secondary my-4">
+                <div class="card-header">
+                    Saisons
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        {% for season in seasons %}
+                            <div class="col-lg-2 col-md-3 mb-1">
+                                <div class="card h-auto">
+                                  <a href="{% url 'details_tv_season' id season.3 %}">
+                                      {% if season.2 != None %}
+                                        <img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{ season.2 }}" alt="{{ season.1 }}">
+                                    {% else %}
+                                        <img class="card-img-top" src="{% static 'not_image_disponible.svg.png' %}" alt="{{ season.1 }}">
+                                    {% endif %}
+
+                                  </a>
+                                    <p class="card-title text-center">
+                                      <a href="{% url 'details_tv_season' id season.3%}">{{ season.1 }}</a>
+                                    </p>
+                                </div>
+                            </div>
+                        {% endfor %}
+
+                    </div>
+                </div>
+            </div>
             <div class="card card-outline-secondary my-4">
                 <div class="card-header">
                     Acteurs
@@ -134,23 +176,23 @@
             </div>
             <div class="card card-outline-secondary my-4">
                 <div class="card-header">
-                    Films Similaires
+                    Séries on Animes Similaires
                 </div>
                 <div class="card-body">
                     <div class="row">
-                        {% for similar_movie in LIST_SIMILAR_MOVIES %}
+                        {% for similar_tv in LIST_SIMILAR_TV %}
                             <div class="col-lg-2 col-md-3 mb-1">
                                 <div class="card h-auto">
-                                  <a href="{% url 'details_movie' similar_movie.0 %}">
-                                      {% if similar_movie.2 != None %}
-                                        <img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{ similar_movie.2 }}" alt="{{ similar_movie.1 }}">
+                                  <a href="{% url 'details_tv' similar_tv.0 %}">
+                                      {% if similar_tv.2 != None %}
+                                        <img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{ similar_tv.2 }}" alt="{{ similar_tv.1 }}">
                                     {% else %}
-                                        <img class="card-img-top" src="{% static 'not_image_disponible.svg.png' %}" alt="{{ similar_movie.1 }}">
+                                        <img class="card-img-top" src="{% static 'not_image_disponible.svg.png' %}" alt="{{ similar_tv.1 }}">
                                     {% endif %}
 
                                   </a>
                                     <p class="card-title text-center">
-                                      <a href="{% url 'details_movie' similar_movie.0 %}">{{ similar_movie.1 }}</a>
+                                      <a href="{% url 'details_tv' similar_tv.0 %}">{{ similar_tv.1 }}</a>
                                     </p>
                                 </div>
                           </div>
@@ -162,5 +204,6 @@
 
 
         </div>
+    </div>
     </div>
 {% endblock %}
