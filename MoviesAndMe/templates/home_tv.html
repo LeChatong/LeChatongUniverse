@@ -26,10 +26,13 @@
       <div class="col-lg-3">
 
         <h3 class="my-4">Menu Séries</h3>
-        <div class="list-group">
+        <div class="list-group dark-theme">
             {% block link_menu %}
-                <a href="{% url 'home_tv' %}" class="list-group-item active">{{ 'Nouveautés' }}</a>
-                <a href="{% url 'popular_tv' 1 %}" class="list-group-item">{{ 'Populaires' }}</a>
+                <a href="{% url 'home_tv' %}" class="list-group-item list-group-item-action list-group-item-dark active">
+                    <i class="text-left"><img width="32" height="32" src="{% static 'sun-white.png' %}"></i>
+                    {{ 'Nouveautés' }}
+                </a>
+                <a href="{% url 'popular_tv' 1 %}" class="list-group-item list-group-item-action">{{ 'Populaires' }}</a>
             {% endblock %}
 
         </div>
