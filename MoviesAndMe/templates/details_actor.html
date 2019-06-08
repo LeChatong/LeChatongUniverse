@@ -53,66 +53,60 @@
                 <nav>
                   <div class="nav nav-tabs" id="nav-tab" role="tablist">
                     <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">
-                        <div class="h2"><b>Films Majeurs</b></div>
+                        <b class="h3 text-dark">Films Majeurs</b>
                     </a>
                     <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">
-                        <div class="h2"><b>Séries Majeures</b></div>
+                        <b class="h3 text-dark">Séries Majeures</b>
                     </a>
                   </div>
                 </nav>
                 <div class="tab-content" id="nav-tabContent">
-              <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                  <div class="col-lg-12">
-                    <table class="table">
-                        {% for movie in LIST_MOVIES_ACTOR %}
-                            <tr>
-                                <td>
-                                    <img width="100" height="150" src="https://image.tmdb.org/t/p/w1280{{ movie.2 }}">
-                                </td>
-                                <td>
-                                    <a class="h4" href="{% url 'details_movie' movie.0 %}">{{ movie.1 }}</a>
-                                    <div><sup><b>{{ movie.3 }}</b></sup></div>
-                                    <div><sup>{{ movie.5|date:'d M Y' }}</sup></div>
-                                    <div>{{ movie.4|truncatechars_html:250 }}</div>
-                                </td>
-                            </tr>
-
-                        {% endfor %}
-                    </table>
-                    <hr/>
-                    <a class="card-text" href="{% url 'movies_on_actor' id %}">
-                        <div>
-                            <p class="text-center"> Voir Plus</p>
+                  <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                      <div class="col-md-12 col-lg-12">
+                            {% for movie in LIST_MOVIES_ACTOR %}
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <img width="100" height="150" src="https://image.tmdb.org/t/p/w1280{{ movie.2 }}">
+                                    </div>
+                                    <div class="col-md-10">
+                                        <a class="h4 text-dark" href="{% url 'details_movie' movie.0 %}">{{ movie.1 }}</a>
+                                        <div><sup><b>{{ movie.3 }}</b></sup></div>
+                                        <div><sup>{{ movie.5|date:'d M Y' }}</sup></div>
+                                        <div>{{ movie.4|truncatechars_html:250 }}</div>
+                                    </div>
+                                </div>
+                                <hr/>
+                            {% endfor %}
                         </div>
-                    </a>
-                </div>
-              </div>
-              <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                  <div class="col-lg-12">
-                    <table class="table">
-                        {% for tv in LIST_TV_ACTOR %}
-                            <tr>
-                                <td>
-                                    <img width="100" height="150" src="https://image.tmdb.org/t/p/w1280{{ tv.2 }}">
-                                </td>
-                                <td>
-                                    <a class="h4" href="{% url 'details_tv' tv.0 %}">{{ tv.1 }}</a>
-                                    <div><sup><b>{{ tv.3 }}</b></sup></div>
-                                    <div><sup>{{ tv.5|date:'d M Y' }}</sup></div>
-                                    <div>{{ tv.4|truncatechars_html:250 }}</div>
-                                </td>
-                            </tr>
-
-                        {% endfor %}
-                    </table>
-                    <hr/>
-                    <a class="card-text" href="{% url 'tvs_on_actor' id %}">
-                        <div>
-                            <p class="text-center"> Voir Plus</p>
+                       <a class="card-text dark-theme" href="{% url 'movies_on_actor' id %}">
+                            <div>
+                                <p class="text-center"> Voir Plus</p>
+                            </div>
+                        </a>
+                  </div>
+                  <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                      <div class="col-md-12 col-lg-12">
+                            {% for tv in LIST_TV_ACTOR %}
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <img width="100" height="150" src="https://image.tmdb.org/t/p/w1280{{ tv.2 }}">
+                                    </div>
+                                    <div class="col-md-10">
+                                        <a class="h4 text-dark" href="{% url 'details_tv' tv.0 %}">{{ tv.1 }}</a>
+                                        <div><sup><b>{{ tv.3 }}</b></sup></div>
+                                        <div><sup>{{ tv.5|date:'d M Y' }}</sup></div>
+                                        <div>{{ tv.4|truncatechars_html:250 }}</div>
+                                    </div>
+                                </div>
+                                <hr/>
+                            {% endfor %}
                         </div>
-                    </a>
-                </div>
-              </div>
+                      <a class="card-text" href="{% url 'tvs_on_actor' id %}">
+                            <div>
+                                <p class="text-center"> Voir Plus</p>
+                            </div>
+                        </a>
+                  </div>
             </div>
             </div>
         </div>
