@@ -212,37 +212,39 @@ def details_actor(request, id):
     a = len(actor_movies['cast'])
     b = len(actor_tvs['cast'])
 
-    for i in (0, 1, 2, 3, 4):
-        if not L_MOVIES_ACTOR[i]['id']:
-            pass
-        LIST_MOVIES_ACTOR.append(
-            [
-                L_MOVIES_ACTOR[i]['id'],
-                L_MOVIES_ACTOR[i]['title'],
-                L_MOVIES_ACTOR[i]['poster_path'],
-                L_MOVIES_ACTOR[i]['character'],
-                L_MOVIES_ACTOR[i]['overview'],
-                datetime.strptime(L_MOVIES_ACTOR[i]['release_date'], "%Y-%m-%d").date(),
-            ]
-        )
-        if (a-1) == i:
-            break
+    if a != 0:
+        for i in (0, 1, 2, 3, 4):
+            if not L_MOVIES_ACTOR[i]['id']:
+                pass
+            LIST_MOVIES_ACTOR.append(
+                [
+                    L_MOVIES_ACTOR[i]['id'],
+                    L_MOVIES_ACTOR[i]['title'],
+                    L_MOVIES_ACTOR[i]['poster_path'],
+                    L_MOVIES_ACTOR[i]['character'],
+                    L_MOVIES_ACTOR[i]['overview'],
+                    datetime.strptime(L_MOVIES_ACTOR[i]['release_date'], "%Y-%m-%d").date(),
+                ]
+            )
+            if (a-1) == i:
+                break
 
-    for i in (0, 1, 2, 3, 4):
-        if not L_TV_ACTOR[i]['id']:
-            pass
-        LIST_TV_ACTOR.append(
-            [
-                L_TV_ACTOR[i]['id'],
-                L_TV_ACTOR[i]['name'],
-                L_TV_ACTOR[i]['poster_path'],
-                L_TV_ACTOR[i]['character'],
-                L_TV_ACTOR[i]['overview'],
-                datetime.strptime(L_TV_ACTOR[i]['first_air_date'], "%Y-%m-%d").date(),
-            ]
-        )
-        if (b-1) == i:
-            break
+    if b != 0:
+        for i in (0, 1, 2, 3, 4):
+            if not L_TV_ACTOR[i]['id']:
+                pass
+            LIST_TV_ACTOR.append(
+                [
+                    L_TV_ACTOR[i]['id'],
+                    L_TV_ACTOR[i]['name'],
+                    L_TV_ACTOR[i]['poster_path'],
+                    L_TV_ACTOR[i]['character'],
+                    L_TV_ACTOR[i]['overview'],
+                    datetime.strptime(L_TV_ACTOR[i]['first_air_date'], "%Y-%m-%d").date(),
+                ]
+            )
+            if (b-1) == i:
+                break
 
     if actor['deathday'] != None:
         actor['deathday'] = datetime.strptime(actor['deathday'], "%Y-%m-%d").date()
