@@ -30,9 +30,7 @@ else:
     DEBUG = True
 
 ALLOWED_HOSTS = [
-    'lechatonguniverse.herokuapp.com',
-    '172.16.131.114',
-    '127.0.0.1'
+    'lechatonguniverse.herokuapp.com'
 ]
 
 
