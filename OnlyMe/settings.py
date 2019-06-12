@@ -27,7 +27,7 @@ SECRET_KEY = '6(a81!x@v)nzopwl8qmxw$z@+(mdp+0e32cg75&p_ob*9&f%e_'
 if os.environ.get('ENV')== 'PRODUCTION':
     DEBUG = False
 else:
-    DEBUG = True
+    DEBUG = False
 
 ALLOWED_HOSTS = [
     'lechatonguniverse.herokuapp.com'
