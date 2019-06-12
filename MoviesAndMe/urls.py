@@ -5,7 +5,7 @@ urlpatterns = [
 
     url(r'^$', views.home, name='home'),
     url(r'^home/$', views.home, name='home'),
-    url(r'^search/$', views.search_movies, name='search_movies'),
+    url(r'^research/$', views.search_movies, name='search_movies'),
     url(r'^movie/details/(?P<id>[0-9]+)/$', views.details_movie, name='details_movie'),
     url(r'^actor/details/(?P<id>[0-9]+)/$', views.details_actor, name='details_actor'),
     url(r'^actor/movies/(?P<id>[0-9]+)/$', views.movies_on_actor, name='movies_on_actor'),

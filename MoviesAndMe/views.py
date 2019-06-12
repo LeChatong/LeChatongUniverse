@@ -1,6 +1,8 @@
 from django.shortcuts import render
+from django.http import Http404
 import requests
 from datetime import datetime
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from twython import Twython, TwythonError
 
 # Create your views here.
@@ -72,54 +74,67 @@ def home(request):
     return render(request, 'index.html', locals())
 
 def search_movies(request):
-    if request.method == 'POST':
-        search = request.POST.get('search')
-        if search != None :
-            response_search = requests.get('https://api.themoviedb.org/3/search/multi?api_key=f972c58efb26ab0a5e82cda1f7352586&language=fr-FR&query='+search+'&page=1&include_adult=false')
-            list_movie_elt_search = response_search.json()
-            RESULT_AFTER_SEARCH = []
-            for elt in list_movie_elt_search['results']:
-                if elt['media_type'] == 'movie':
+    search = request.GET.get('query')
+
+    response_search = requests.get('https://api.themoviedb.org/3/search/multi?api_key=f972c58efb26ab0a5e82cda1f7352586&language=fr-FR&query='+search+'&&include_adult=false')
+    list_movie_elt_search = response_search.json()
+    RESULT_AFTER_SEARCH = []
+    paginator = Paginator(list_movie_elt_search['results'], 20)
+    page = request.GET.get('page')
+
+    try:
+        pagination = paginator.page(page)
+    except PageNotAnInteger:
+        pagination = paginator.page(1)
+    except EmptyPage:
+        pagination = paginator.page(paginator.num_pages)
+
+    if pagination.object_list:
+        for elt in pagination.object_list:
+            if elt['media_type'] == 'movie':
+                RESULT_AFTER_SEARCH.append(
+                    [
+                        elt['media_type'],
+                        elt['id'],
+                        elt['title'],
+                        elt['poster_path'],
+                        elt['overview'],
+                        elt['release_date'],
+                        elt['vote_average'],
+                    ]
+                )
+            else:
+                if elt['media_type'] == 'tv':
                     RESULT_AFTER_SEARCH.append(
                         [
                             elt['media_type'],
                             elt['id'],
-                            elt['title'],
+                            elt['name'],
                             elt['poster_path'],
                             elt['overview'],
-                            elt['release_date'],
+                            elt['first_air_date'],
                             elt['vote_average'],
                         ]
                     )
-                else :
-                    if elt['media_type'] == 'tv':
+                else:
+                    if elt['media_type'] == 'person':
                         RESULT_AFTER_SEARCH.append(
                             [
                                 elt['media_type'],
                                 elt['id'],
                                 elt['name'],
-                                elt['poster_path'],
-                                elt['overview'],
-                                elt['first_air_date'],
-                                elt['vote_average'],
+                                elt['profile_path'],
                             ]
                         )
-                    else:
-                        if elt['media_type'] == 'person':
-                            RESULT_AFTER_SEARCH.append(
-                                [
-                                    elt['media_type'],
-                                    elt['id'],
-                                    elt['name'],
-                                    elt['profile_path'],
-                                ]
-                            )
-
-            return render(request, 'search_result.html', locals())
-        else:
-            return render(request, 'search_result.html', locals())
     else:
-        return render(request, 'index.html', locals())
+        raise Http404("No MyModel matches the given query.")
+
+    context = {
+        'RESULT_AFTER_SEARCH':  RESULT_AFTER_SEARCH,
+        'search':               search,
+        'pagination':            pagination
+    }
+    return render(request, 'search_result.html', context)
 
 def details_movie(request, id):
 
@@ -214,8 +229,13 @@ def details_actor(request, id):
 
     if a != 0:
         for i in (0, 1, 2, 3, 4):
+            release_date = ''
             if not L_MOVIES_ACTOR[i]['id']:
                 pass
+            if not L_MOVIES_ACTOR[i]['release_date']:
+                release_date = None
+            else:
+                release_date = datetime.strptime(L_MOVIES_ACTOR[i]['release_date'], "%Y-%m-%d").date()
             LIST_MOVIES_ACTOR.append(
                 [
                     L_MOVIES_ACTOR[i]['id'],
@@ -223,7 +243,7 @@ def details_actor(request, id):
                     L_MOVIES_ACTOR[i]['poster_path'],
                     L_MOVIES_ACTOR[i]['character'],
                     L_MOVIES_ACTOR[i]['overview'],
-                    datetime.strptime(L_MOVIES_ACTOR[i]['release_date'], "%Y-%m-%d").date(),
+                    release_date,
                 ]
             )
             if (a-1) == i:
