@@ -30,7 +30,7 @@ if os.environ.get('ENV') == 'PRODUCTION':
         'lechatonguniverse.herokuapp.com'
     ]
 else:
-    DEBUG = True
+    DEBUG = False
     ALLOWED_HOSTS = [
     'lechatonguniverse.herokuapp.com',
     '172.16.131.114',
