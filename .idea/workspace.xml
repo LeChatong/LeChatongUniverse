@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="87406ce3-e5f6-4d08-b4ae-7129b8e07aa8" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlyMe/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/OnlyMe/settings.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -70,11 +71,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/OnlyMe/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="23" column="10" selection-start-line="23" selection-end-line="23" selection-end-column="10" />
+            <state relative-caret-position="88">
+              <caret line="30" column="5" lean-forward="true" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+              <folding>
+                <element signature="e#921#1001#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -115,7 +119,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="130">
@@ -181,10 +185,10 @@
         <option value="$PROJECT_DIR$/templates/404.html" />
         <option value="$PROJECT_DIR$/templates/500.html" />
         <option value="$PROJECT_DIR$/MoviesAndMe/urls.py" />
-        <option value="$PROJECT_DIR$/OnlyMe/settings.py" />
         <option value="$PROJECT_DIR$/MoviesAndMe/views.py" />
         <option value="$PROJECT_DIR$/MoviesAndMe/templates/search_result.html" />
         <option value="$PROJECT_DIR$/templates/base.html" />
+        <option value="$PROJECT_DIR$/OnlyMe/settings.py" />
       </list>
     </option>
   </component>
@@ -220,6 +224,12 @@
               <item name="OnlyMe" type="b2602c69:ProjectViewProjectNode" />
               <item name="OnlyMe" type="462c0819:PsiDirectoryNode" />
               <item name="MoviesAndMe" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OnlyMe" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OnlyMe" type="462c0819:PsiDirectoryNode" />
+              <item name="MoviesAndMe" type="462c0819:PsiDirectoryNode" />
+              <item name="dumps" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="OnlyMe" type="b2602c69:ProjectViewProjectNode" />
@@ -466,11 +476,26 @@
       <option name="project" value="LOCAL" />
       <updated>1560340437184</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Amélioration de la recherche">
+      <created>1560340741633</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1560340741633</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Amélioration de la recherche">
+      <created>1560341023839</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1560341023839</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.13560411" side_tool="true" visible="true" weight="0.32871014" />
@@ -478,8 +503,8 @@
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4993573" weight="0.3293011" />
       <window_info anchor="bottom" id="Python Console" order="7" sideWeight="0.4993573" weight="0.3293011" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.48843187" weight="0.30651873" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.8643959" visible="true" weight="0.32871014" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25128534" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.8643959" visible="true" weight="0.32871014" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25128534" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" weight="0.17159383" />
       <window_info anchor="right" id="SciView" order="3" />
@@ -636,9 +661,6 @@
       </provider>
     </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/bac7b837-e95f-4933-beb4-646baf8c02a9/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MoviesAndMe/dumps/db.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/requirement.txt">
@@ -852,13 +874,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/OnlyMe/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="23" column="10" selection-start-line="23" selection-end-line="23" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/search_result.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="552">
@@ -870,6 +885,19 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="130">
           <caret line="54" column="10" lean-forward="true" selection-start-line="54" selection-start-column="10" selection-end-line="54" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MoviesAndMe/dumps/db.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OnlyMe/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="30" column="5" lean-forward="true" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+          <folding>
+            <element signature="e#921#1001#0" />
+          </folding>
         </state>
       </provider>
     </entry>
