@@ -30,7 +30,7 @@ if os.environ.get('ENV') == 'PRODUCTION':
         'lechatonguniverse.herokuapp.com'
     ]
 else:
-    DEBUG = False
+    DEBUG = True
     ALLOWED_HOSTS = [
     'lechatonguniverse.herokuapp.com',
     '172.16.131.114',
@@ -156,6 +156,6 @@ if os.environ.get('ENV') == 'PRODUCTION':
         os.path.join(PROJECT_ROOT, 'static'),
     )
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
+    STATIC_URL = '/static/'
     db_from_env = dj_database_url.config(conn_max_age=500)
     DATABASES['default'].update(db_from_env)
