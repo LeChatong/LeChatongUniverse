@@ -25,19 +25,14 @@ SECRET_KEY = '6(a81!x@v)nzopwl8qmxw$z@+(mdp+0e32cg75&p_ob*9&f%e_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 if os.environ.get('ENV') == 'PRODUCTION':
-    DEBUG = True
-    ALLOWED_HOSTS = [
-        'lechatonguniverse.herokuapp.com'
-    ]
+    DEBUG = False
 else:
     DEBUG = True
-    ALLOWED_HOSTS = [
-    'lechatonguniverse.herokuapp.com',
-    '172.16.131.114',
-    '127.0.0.1'
+
+ALLOWED_HOSTS = [
+        'lechatonguniverse.herokuapp.com',
+        '127.0.0.1'
 ]
-
-
 # Application definition
 
 INSTALLED_APPS = [
