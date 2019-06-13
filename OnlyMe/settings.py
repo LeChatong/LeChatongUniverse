@@ -27,7 +27,7 @@ SECRET_KEY = '6(a81!x@v)nzopwl8qmxw$z@+(mdp+0e32cg75&p_ob*9&f%e_'
 if os.environ.get('ENV') == 'PRODUCTION':
     DEBUG = False
 else:
-    DEBUG = True
+    DEBUG = False
 
 ALLOWED_HOSTS = [
         'lechatonguniverse.herokuapp.com',
@@ -144,7 +144,7 @@ MEDIA_URL = '/media/'
 
 API_KEY_MOVIE = 'f972c58efb26ab0a5e82cda1f7352586'
 
-if os.environ.get('ENV')== 'PRODUCTION':
+if os.environ.get('ENV') == 'PRODUCTION':
     PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
     STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
     STATICFILES_DIRS = (
