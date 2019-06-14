@@ -120,33 +120,36 @@
                                                     </button>
                                                   </div>
                                                   <div class="modal-body">
-                                                    <table class="table">
-                                                        <thead class="thead-light">
-                                                            <tr>
-                                                                <th scope="col">Langue</th>
-                                                                <th scope="col">Vidéo</th>
-                                                                <th scope="col">Audio</th>
-                                                                <th scope="col">Sous-titré?</th>
-                                                                <th scope="col">Lien</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <tr>
-                                                                {% for elt in episode.6 %}
-                                                                    <td>{{ elt.1 }}</td>
-                                                                    <td>{{ elt.3 }}</td>
-                                                                    <td>{{ elt.4 }}</td>
-                                                                    <td>{{ elt.5 }} ({{ elt.6 }})</td>
-                                                                    <td>
-                                                                        <a target="_blank" href="{{ elt.2 }}">
-                                                                            <i class="align-left"><img src="{% static 'download.png' %}"></i>
-                                                                            Télécharger
-                                                                        </a>
-                                                                    </td>
-                                                                {% endfor %}
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
+                                                      <div class="container-fluid">
+                                                          <table class="table-responsive-xl table thead-light">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th scope="col">Langue</th>
+                                                                    <th scope="col">Vidéo</th>
+                                                                    <th scope="col">Audio</th>
+                                                                    <th scope="col">Sous-titré?</th>
+                                                                    <th scope="col">Lien</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    {% for elt in episode.6 %}
+                                                                        <td>{{ elt.1 }}</td>
+                                                                        <td>{{ elt.3 }}</td>
+                                                                        <td>{{ elt.4 }}</td>
+                                                                        <td>{{ elt.5 }} ({{ elt.6 }})</td>
+                                                                        <td>
+                                                                            <a target="_blank" href="{{ elt.2 }}">
+                                                                                <i class="align-left"><img src="{% static 'download.png' %}"></i>
+                                                                                Télécharger
+                                                                            </a>
+                                                                        </td>
+                                                                    {% endfor %}
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                      </div>
+
                                                   </div>
                                                     <div class="modal-footer">
                                                         <p><a class="bold" href="https://desktop.telegram.org/" target="_blank">{{ '*Telegram' }}</a> {{ ' requis' }}</p>
