@@ -3,6 +3,7 @@ from django.http import Http404
 import requests
 from datetime import datetime
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+from .models import movie_detail, tv_detail
 from twython import Twython, TwythonError
 
 # Create your views here.
@@ -188,6 +189,27 @@ def details_movie(request, id):
                 ]
             )
 
+    M_DETAILS = []
+    try:
+        m_details = movie_detail.objects.filter(id_movie = id)
+        if not m_details.exists():
+            M_DETAILS = None
+        else:
+            for elt in m_details:
+                M_DETAILS.append(
+                    [
+                        elt.id,
+                        elt.voice_language,
+                        elt.link_telegram,
+                        elt.quality_video,
+                        elt.quality_audio,
+                        elt.subtitle,
+                        elt.subtitle_language
+                    ]
+                )
+    except movie_detail.DoesNotExist:
+        m_details = None
+
     context = {
         'id':                   movie['id'],
         'title':                movie['title'],
@@ -202,7 +224,8 @@ def details_movie(request, id):
         'genres':               movie['genres'],
         'list_actor':           LIST_ACTORS_CREDIT,
         'LIST_SIMILAR_MOVIES':  LIST_SIMILAR_MOVIES,
-        'COUNTEUR':             [1,2,3,4,5,6,7,8,9,10]
+        'COUNTEUR':             [1,2,3,4,5,6,7,8,9,10],
+        'm_details':             M_DETAILS
     }
     return render(request, 'details_movie.html', context)
 
@@ -679,6 +702,24 @@ def details_season_tv(request, id, season):
     saison = response_season.json()
     EPISODES = []
     for eps in saison['episodes']:
+        TV_DETAILS = []
+        t_detail = tv_detail.objects.filter(id_tv=id, nb_season=season, nb_episode=eps['episode_number'])
+        if not t_detail.exists():
+            TV_DETAILS = None
+        else:
+            for elt in t_detail:
+                TV_DETAILS.append(
+                    [
+                        elt.id,
+                        elt.voice_language,
+                        elt.link_telegram,
+                        elt.quality_video,
+                        elt.quality_audio,
+                        elt.subtitle,
+                        elt.subtitle_language
+                    ]
+                )
+
         EPISODES.append(
             [
                 eps['id'],
@@ -686,7 +727,8 @@ def details_season_tv(request, id, season):
                 eps['air_date'],
                 eps['episode_number'],
                 eps['overview'],
-                eps['still_path']
+                eps['still_path'],
+                TV_DETAILS
             ]
         )
 

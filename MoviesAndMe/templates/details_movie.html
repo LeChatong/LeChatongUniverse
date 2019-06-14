@@ -62,6 +62,55 @@
                         <a href="#">{{ genre.name }}</a>,
                     {% endfor %}
                 </p>
+                {% if m_details != None %}
+                    <p>
+                        <sup><a type="button" class="btn btn-success" data-toggle="modal" data-target="#downloadModal" href="">{{ 'Télécharger' }}</a> </sup>
+                    </p>
+                    <div class="modal fade" id="downloadModal" tabindex="-1" role="dialog" aria-labelledby="downloadModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Lien de Téléchargement</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <table class="table">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th scope="col">Langue</th>
+                                        <th scope="col">Vidéo</th>
+                                        <th scope="col">Audio</th>
+                                        <th scope="col">Sous-titré?</th>
+                                        <th scope="col">Lien</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        {% for elt in m_details %}
+                                            <td>{{ elt.1 }}</td>
+                                            <td>{{ elt.3 }}</td>
+                                            <td>{{ elt.4 }}</td>
+                                            <td>{{ elt.5 }} ({{ elt.6 }})</td>
+                                            <td>
+                                                <a target="_blank" href="{{ elt.2 }}">
+                                                    <i class="align-left"><img src="{% static 'download.png' %}"></i>
+                                                    Télécharger
+                                                </a>
+                                            </td>
+                                        {% endfor %}
+                                    </tr>
+                                </tbody>
+                            </table>
+                          </div>
+                            <div class="modal-footer">
+                                <p><a class="bold" href="https://desktop.telegram.org/" target="_blank">{{ '*Telegram' }}</a> {{ ' requis' }}</p>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                {% endif %}
                 <p class="card-text text-justify">{{ overview }}</p>
                 <span title="Note du film : {{ vote_average }} / 10" class="text-warning">
                     {% for i in COUNTEUR %}

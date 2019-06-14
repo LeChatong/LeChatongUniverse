@@ -137,106 +137,128 @@
       <HandlerId>335</HandlerId>
       <Type>index</Type>
     </access-method>
-    <sequence id="27" parent="20" name="auth_group_id_seq">
+    <sequence id="27" parent="20" name="MoviesAndMe_movie_detail_id_seq">
+      <ObjectId>41153</ObjectId>
+      <StateNumber>1475</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="28" parent="20" name="MoviesAndMe_tv_detail_id_seq">
+      <ObjectId>41161</ObjectId>
+      <StateNumber>1484</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="29" parent="20" name="auth_group_id_seq">
       <ObjectId>41009</ObjectId>
       <StateNumber>1425</StateNumber>
       <SequenceIdentity>1..2147483647</SequenceIdentity>
       <CacheSize>1</CacheSize>
       <DataType>integer</DataType>
     </sequence>
-    <sequence id="28" parent="20" name="auth_group_permissions_id_seq">
+    <sequence id="30" parent="20" name="auth_group_permissions_id_seq">
       <ObjectId>41019</ObjectId>
       <StateNumber>1425</StateNumber>
       <SequenceIdentity>1..2147483647</SequenceIdentity>
       <CacheSize>1</CacheSize>
       <DataType>integer</DataType>
     </sequence>
-    <sequence id="29" parent="20" name="auth_permission_id_seq">
+    <sequence id="31" parent="20" name="auth_permission_id_seq">
       <ObjectId>41001</ObjectId>
       <StateNumber>1425</StateNumber>
       <SequenceIdentity>1..2147483647</SequenceIdentity>
       <CacheSize>1</CacheSize>
       <DataType>integer</DataType>
     </sequence>
-    <sequence id="30" parent="20" name="auth_user_groups_id_seq">
+    <sequence id="32" parent="20" name="auth_user_groups_id_seq">
       <ObjectId>41037</ObjectId>
       <StateNumber>1425</StateNumber>
       <SequenceIdentity>1..2147483647</SequenceIdentity>
       <CacheSize>1</CacheSize>
       <DataType>integer</DataType>
     </sequence>
-    <sequence id="31" parent="20" name="auth_user_id_seq">
+    <sequence id="33" parent="20" name="auth_user_id_seq">
       <ObjectId>41027</ObjectId>
       <StateNumber>1425</StateNumber>
       <SequenceIdentity>1..2147483647</SequenceIdentity>
       <CacheSize>1</CacheSize>
       <DataType>integer</DataType>
     </sequence>
-    <sequence id="32" parent="20" name="auth_user_user_permissions_id_seq">
+    <sequence id="34" parent="20" name="auth_user_user_permissions_id_seq">
       <ObjectId>41045</ObjectId>
       <StateNumber>1425</StateNumber>
       <SequenceIdentity>1..2147483647</SequenceIdentity>
       <CacheSize>1</CacheSize>
       <DataType>integer</DataType>
     </sequence>
-    <sequence id="33" parent="20" name="django_admin_log_id_seq">
+    <sequence id="35" parent="20" name="django_admin_log_id_seq">
       <ObjectId>41105</ObjectId>
       <StateNumber>1427</StateNumber>
       <SequenceIdentity>1..2147483647</SequenceIdentity>
       <CacheSize>1</CacheSize>
       <DataType>integer</DataType>
     </sequence>
-    <sequence id="34" parent="20" name="django_content_type_id_seq">
+    <sequence id="36" parent="20" name="django_content_type_id_seq">
       <ObjectId>40991</ObjectId>
       <StateNumber>1423</StateNumber>
       <SequenceIdentity>1..2147483647</SequenceIdentity>
       <CacheSize>1</CacheSize>
       <DataType>integer</DataType>
     </sequence>
-    <sequence id="35" parent="20" name="django_migrations_id_seq">
+    <sequence id="37" parent="20" name="django_migrations_id_seq">
       <ObjectId>40980</ObjectId>
       <StateNumber>1422</StateNumber>
       <SequenceIdentity>1..2147483647</SequenceIdentity>
       <CacheSize>1</CacheSize>
       <DataType>integer</DataType>
     </sequence>
-    <table id="36" parent="20" name="auth_group">
+    <table id="38" parent="20" name="MoviesAndMe_movie_detail">
+      <ObjectId>41155</ObjectId>
+      <StateNumber>1484</StateNumber>
+    </table>
+    <table id="39" parent="20" name="MoviesAndMe_tv_detail">
+      <ObjectId>41163</ObjectId>
+      <StateNumber>1484</StateNumber>
+    </table>
+    <table id="40" parent="20" name="auth_group">
       <ObjectId>41011</ObjectId>
       <StateNumber>1425</StateNumber>
     </table>
-    <table id="37" parent="20" name="auth_group_permissions">
+    <table id="41" parent="20" name="auth_group_permissions">
       <ObjectId>41021</ObjectId>
       <StateNumber>1425</StateNumber>
     </table>
-    <table id="38" parent="20" name="auth_permission">
+    <table id="42" parent="20" name="auth_permission">
       <ObjectId>41003</ObjectId>
       <StateNumber>1425</StateNumber>
     </table>
-    <table id="39" parent="20" name="auth_user">
+    <table id="43" parent="20" name="auth_user">
       <ObjectId>41029</ObjectId>
       <StateNumber>1442</StateNumber>
     </table>
-    <table id="40" parent="20" name="auth_user_groups">
+    <table id="44" parent="20" name="auth_user_groups">
       <ObjectId>41039</ObjectId>
       <StateNumber>1425</StateNumber>
     </table>
-    <table id="41" parent="20" name="auth_user_user_permissions">
+    <table id="45" parent="20" name="auth_user_user_permissions">
       <ObjectId>41047</ObjectId>
       <StateNumber>1425</StateNumber>
     </table>
-    <table id="42" parent="20" name="django_admin_log">
+    <table id="46" parent="20" name="django_admin_log">
       <ObjectId>41107</ObjectId>
       <StateNumber>1427</StateNumber>
     </table>
-    <table id="43" parent="20" name="django_content_type">
+    <table id="47" parent="20" name="django_content_type">
       <ObjectId>40993</ObjectId>
       <StateNumber>1425</StateNumber>
     </table>
-    <table id="44" parent="20" name="django_migrations">
+    <table id="48" parent="20" name="django_migrations">
       <ObjectId>40982</ObjectId>
       <StateNumber>1422</StateNumber>
     </table>
-    <table id="45" parent="20" name="django_session">
+    <table id="49" parent="20" name="django_session">
       <ObjectId>41135</ObjectId>
       <StateNumber>1446</StateNumber>
     </table>

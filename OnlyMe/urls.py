@@ -20,7 +20,7 @@ from MoviesAndMe import views
 
 urlpatterns = [
 
-    url(r'^admin/', admin.site.urls),
+    url(r'^lechatong/', admin.site.urls),
     url(r'^moviesandme/', include('MoviesAndMe.urls')),
     path('', views.home),
 ]

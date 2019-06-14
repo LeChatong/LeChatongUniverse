@@ -14,8 +14,11 @@
 
 {% block intitule_page %}{{ name_tv }}-{{ name_season }}{% endblock %}
 {% block link_menu %}
-    <a href="{% url 'home_tv' %}" class="list-group-item">{{ 'Nouveautés' }}</a>
-    <a href="{% url 'popular_tv' 1 %}" class="list-group-item">{{ 'Populaires' }}</a>
+    <a href="{% url 'home_tv' %}" class="list-group-item list-group-item-action">
+        <i class="text-left"><img width="32" height="32" src="{% static 'sun-black.png' %}"></i>
+        {{ 'Nouveautés' }}
+    </a>
+    <a href="{% url 'popular_tv' 1 %}" class="list-group-item list-group-item-action">{{ 'Populaires' }}</a>
 {% endblock %}
 {% block details %}
     <div class="col-lg-9">
@@ -100,6 +103,58 @@
                                         <a class="h4" href="#">{{ episode.1 }}</a>
                                         <div><sup>{{ episode.2|date:'d M Y' }}</sup></div>
                                         <div>{{ episode.4|truncatechars_html:250 }}</div>
+                                        {% if episode.6 != None %}
+                                            <div class="">
+                                                <a type="button" class="btn btn-success" data-toggle="modal" data-target="#downloadModal-{{ episode.3 }}" href="">
+                                                    <i class="material-icons">vertical_align_bottom</i>
+                                                    {{ 'Télécharger' }}
+                                                </a>
+                                            </div>
+                                            <div class="modal fade" id="downloadModal-{{ episode.3 }}" tabindex="-1" role="dialog" aria-labelledby="downloadModalLabel-{{ episode.3 }}" aria-hidden="true">
+                                              <div class="modal-dialog modal-lg" role="document">
+                                                <div class="modal-content">
+                                                  <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Lien de Téléchargement</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                      <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                  </div>
+                                                  <div class="modal-body">
+                                                    <table class="table">
+                                                        <thead class="thead-light">
+                                                            <tr>
+                                                                <th scope="col">Langue</th>
+                                                                <th scope="col">Vidéo</th>
+                                                                <th scope="col">Audio</th>
+                                                                <th scope="col">Sous-titré?</th>
+                                                                <th scope="col">Lien</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                {% for elt in episode.6 %}
+                                                                    <td>{{ elt.1 }}</td>
+                                                                    <td>{{ elt.3 }}</td>
+                                                                    <td>{{ elt.4 }}</td>
+                                                                    <td>{{ elt.5 }} ({{ elt.6 }})</td>
+                                                                    <td>
+                                                                        <a target="_blank" href="{{ elt.2 }}">
+                                                                            <i class="align-left"><img src="{% static 'download.png' %}"></i>
+                                                                            Télécharger
+                                                                        </a>
+                                                                    </td>
+                                                                {% endfor %}
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                  </div>
+                                                    <div class="modal-footer">
+                                                        <p><a class="bold" href="https://desktop.telegram.org/" target="_blank">{{ '*Telegram' }}</a> {{ ' requis' }}</p>
+                                                    </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                        {% endif %}
                                     </td>
                                 </tr>
 
