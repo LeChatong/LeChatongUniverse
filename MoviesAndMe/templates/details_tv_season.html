@@ -132,8 +132,8 @@
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
-                                                                <tr>
-                                                                    {% for elt in episode.6 %}
+                                                                {% for elt in episode.6 %}
+                                                                    <tr>
                                                                         <td>{{ elt.1 }}</td>
                                                                         <td>{{ elt.3 }}</td>
                                                                         <td>{{ elt.4 }}</td>
@@ -144,8 +144,8 @@
                                                                                 Télécharger
                                                                             </a>
                                                                         </td>
-                                                                    {% endfor %}
-                                                                </tr>
+                                                                    </tr>
+                                                                {% endfor %}
                                                             </tbody>
                                                         </table>
                                                       </div>
