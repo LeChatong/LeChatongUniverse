@@ -102,11 +102,10 @@
                                     <td class="text-justify">
                                         <a class="h4" href="#">{{ episode.1 }}</a>
                                         <div><sup>{{ episode.2|date:'d M Y' }}</sup></div>
-                                        <div>{{ episode.4|truncatechars_html:250 }}</div>
+                                        <div>{{ episode.4 }}</div>
                                         {% if episode.6 != None %}
                                             <div class="">
-                                                <a type="button" class="btn btn-success" data-toggle="modal" data-target="#downloadModal-{{ episode.3 }}" href="">
-                                                    <i class="material-icons">vertical_align_bottom</i>
+                                                <a class="badge badge-success" data-toggle="modal" data-target="#downloadModal-{{ episode.3 }}" href="">
                                                     {{ 'Télécharger' }}
                                                 </a>
                                             </div>
@@ -141,7 +140,6 @@
                                                                         <td>
                                                                             <a target="_blank" href="{{ elt.2 }}">
                                                                                 <i class="align-left"><img src="{% static 'download.png' %}"></i>
-                                                                                Télécharger
                                                                             </a>
                                                                         </td>
                                                                     </tr>

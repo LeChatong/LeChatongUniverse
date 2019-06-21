@@ -255,10 +255,13 @@ def details_actor(request, id):
             release_date = ''
             if not L_MOVIES_ACTOR[i]['id']:
                 pass
-            if not L_MOVIES_ACTOR[i]['release_date']:
-                release_date = None
+            if 'release_date' in L_MOVIES_ACTOR[i]:
+                if not L_MOVIES_ACTOR[i]['release_date']:
+                    release_date = None
+                else:
+                    release_date = datetime.strptime(L_MOVIES_ACTOR[i]['release_date'], "%Y-%m-%d").date()
             else:
-                release_date = datetime.strptime(L_MOVIES_ACTOR[i]['release_date'], "%Y-%m-%d").date()
+                pass
             LIST_MOVIES_ACTOR.append(
                 [
                     L_MOVIES_ACTOR[i]['id'],
