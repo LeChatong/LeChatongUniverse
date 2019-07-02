@@ -2,15 +2,161 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="87406ce3-e5f6-4d08-b4ae-7129b8e07aa8" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/css/autocomplete.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/css/base.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/css/changelists.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/css/dashboard.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/css/fonts.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/css/forms.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/css/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/css/responsive.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/css/responsive_rtl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/css/rtl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/css/vendor/select2/LICENSE-SELECT2.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/css/vendor/select2/select2.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/css/vendor/select2/select2.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/css/widgets.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/fonts/LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/fonts/README.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/fonts/Roboto-Bold-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/fonts/Roboto-Light-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/fonts/Roboto-Regular-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/img/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/img/README.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/img/calendar-icons.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/img/gis/move_vertex_off.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/img/gis/move_vertex_on.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/img/icon-addlink.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/img/icon-alert.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/img/icon-calendar.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/img/icon-changelink.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/img/icon-clock.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/img/icon-deletelink.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/img/icon-no.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/img/icon-unknown-alt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/img/icon-unknown.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/img/icon-viewlink.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/img/icon-yes.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/img/inline-delete.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/img/search.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/img/selector-icons.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/img/sorting-icons.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/img/tooltag-add.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/img/tooltag-arrowright.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/SelectBox.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/SelectFilter2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/actions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/actions.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/admin/DateTimeShortcuts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/admin/RelatedObjectLookups.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/autocomplete.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/calendar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/cancel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/change_form.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/collapse.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/collapse.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/core.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/inlines.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/inlines.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/jquery.init.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/popup_response.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/prepopulate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/prepopulate.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/prepopulate_init.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/timeparse.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/urlify.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/vendor/jquery/LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/vendor/jquery/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/vendor/jquery/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/vendor/select2/LICENSE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/vendor/select2/i18n/ar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/vendor/select2/i18n/az.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/vendor/select2/i18n/bg.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/vendor/select2/i18n/ca.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/vendor/select2/i18n/cs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/vendor/select2/i18n/da.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/vendor/select2/i18n/de.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/vendor/select2/i18n/el.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/vendor/select2/i18n/en.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/vendor/select2/i18n/es.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/vendor/select2/i18n/et.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/vendor/select2/i18n/eu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/vendor/select2/i18n/fa.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/vendor/select2/i18n/fi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/vendor/select2/i18n/fr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/vendor/select2/i18n/gl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/vendor/select2/i18n/he.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/vendor/select2/i18n/hi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/vendor/select2/i18n/hr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/vendor/select2/i18n/hu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/vendor/select2/i18n/id.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/vendor/select2/i18n/is.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/vendor/select2/i18n/it.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/vendor/select2/i18n/ja.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/vendor/select2/i18n/km.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/vendor/select2/i18n/ko.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/vendor/select2/i18n/lt.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/vendor/select2/i18n/lv.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/vendor/select2/i18n/mk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/vendor/select2/i18n/ms.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/vendor/select2/i18n/nb.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/vendor/select2/i18n/nl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/vendor/select2/i18n/pl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/vendor/select2/i18n/pt-BR.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/vendor/select2/i18n/pt.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/vendor/select2/i18n/ro.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/vendor/select2/i18n/ru.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/vendor/select2/i18n/sk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/vendor/select2/i18n/sr-Cyrl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/vendor/select2/i18n/sr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/vendor/select2/i18n/sv.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/vendor/select2/i18n/th.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/vendor/select2/i18n/tr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/vendor/select2/i18n/uk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/vendor/select2/i18n/vi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/vendor/select2/i18n/zh-CN.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/vendor/select2/i18n/zh-TW.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/vendor/select2/select2.full.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/vendor/select2/select2.full.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/vendor/xregexp/LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/vendor/xregexp/xregexp.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/admin/js/vendor/xregexp/xregexp.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/css/bootstrap-grid.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/css/bootstrap-grid.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/css/bootstrap-grid.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/css/bootstrap-grid.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/css/bootstrap-reboot.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/css/bootstrap-reboot.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/css/bootstrap-reboot.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/css/bootstrap-reboot.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/css/shop-homepage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/download.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/facebook.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/jquery/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/jquery/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/jquery/jquery.min.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/jquery/jquery.slim.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/jquery/jquery.slim.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/jquery/jquery.slim.min.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/js/bootstrap.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/js/bootstrap.bundle.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/js/bootstrap.bundle.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/js/bootstrap.bundle.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/js/bootstrap.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/js/bootstrap.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/not_image_disponible.svg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/sun-black.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/sun-white.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/twitter.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MoviesAndMe/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/MoviesAndMe/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MoviesAndMe/templates/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/MoviesAndMe/templates/404.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MoviesAndMe/templates/500.html" beforeDir="false" afterPath="$PROJECT_DIR$/MoviesAndMe/templates/500.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MoviesAndMe/templates/details_actor.html" beforeDir="false" afterPath="$PROJECT_DIR$/MoviesAndMe/templates/details_actor.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MoviesAndMe/templates/details_tv_season.html" beforeDir="false" afterPath="$PROJECT_DIR$/MoviesAndMe/templates/details_tv_season.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MoviesAndMe/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/MoviesAndMe/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlyMe/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/OnlyMe/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -43,11 +189,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/OnlyMe/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="29" column="16" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
+            <state relative-caret-position="51">
+              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
             </state>
           </provider>
         </entry>
@@ -56,9 +202,9 @@
         <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/500.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
-              <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+              <caret line="4" column="67" selection-start-line="4" selection-start-column="67" selection-end-line="4" selection-end-column="67" />
               <folding>
-                <element signature="e#99#146#0#HTML" expanded="true" />
+                <element signature="e#99#119#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -67,8 +213,8 @@
       <file leaf-file-name="search_result.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/search_result.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="20" column="68" lean-forward="true" selection-start-line="20" selection-start-column="68" selection-end-line="20" selection-end-column="68" />
+            <state relative-caret-position="340">
+              <caret line="20" column="68" selection-start-line="20" selection-start-column="68" selection-end-line="20" selection-end-column="68" />
             </state>
           </provider>
         </entry>
@@ -76,10 +222,11 @@
       <file leaf-file-name="404.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/404.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="56" lean-forward="true" selection-start-line="3" selection-start-column="56" selection-end-line="3" selection-end-column="78" />
+            <state relative-caret-position="34">
+              <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
               <folding>
-                <element signature="e#85#106#0#HTML" expanded="true" />
+                <element signature="e#67#88#0#HTML" expanded="true" />
+                <element signature="e#121#169#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -88,16 +235,16 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MoviesAndMe/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
+            <state relative-caret-position="680">
               <caret line="40" column="12" selection-start-line="40" selection-start-column="4" selection-end-line="40" selection-end-column="12" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="admin.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MoviesAndMe/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
+            <state relative-caret-position="187">
               <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
@@ -109,17 +256,12 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MoviesAndMe/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="77">
-              <caret line="233" column="111" lean-forward="true" selection-start-line="233" selection-start-column="9" selection-end-line="233" selection-end-column="111" />
+            <state relative-caret-position="1360">
+              <caret line="233" column="111" selection-start-line="233" selection-start-column="9" selection-end-line="233" selection-end-column="111" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
                 <element signature="e#325#2785#0" />
                 <element signature="e#5162#8505#0" />
-                <element signature="e#11544#12879#0" />
-                <element signature="e#12916#14227#0" />
-                <element signature="e#14267#15558#0" />
-                <element signature="e#15586#16372#0" />
-                <element signature="e#25449#27362#0" />
               </folding>
             </state>
           </provider>
@@ -128,7 +270,7 @@
       <file leaf-file-name="details_actor.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/details_actor.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
+            <state relative-caret-position="1071">
               <caret line="63" column="68" selection-start-line="63" selection-start-column="68" selection-end-line="63" selection-end-column="68" />
               <folding>
                 <element signature="e#3002#3048#0#HTML" expanded="true" />
@@ -140,23 +282,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/base.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="146">
-              <caret line="43" column="25" lean-forward="true" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="25" />
-              <folding>
-                <element signature="n#style#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="details_tv_season.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/details_tv_season.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1190">
-              <caret line="141" column="145" selection-start-line="141" selection-start-column="145" selection-end-line="141" selection-end-column="145" />
+            <state relative-caret-position="2380">
+              <caret line="140" column="78" selection-start-line="140" selection-start-column="78" selection-end-line="140" selection-end-column="78" />
               <folding>
                 <element signature="e#6780#6787#1#HTML" expanded="true" />
               </folding>
@@ -225,15 +355,15 @@
         <option value="$PROJECT_DIR$/MoviesAndMe/tests.py" />
         <option value="$PROJECT_DIR$/MoviesAndMe/templates/details_movie.html" />
         <option value="$PROJECT_DIR$/MoviesAndMe/models.py" />
-        <option value="$PROJECT_DIR$/MoviesAndMe/templates/details_tv_season.html" />
         <option value="$PROJECT_DIR$/MoviesAndMe/templates/404.html" />
-        <option value="$PROJECT_DIR$/OnlyMe/settings.py" />
-        <option value="$PROJECT_DIR$/MoviesAndMe/templates/500.html" />
         <option value="$PROJECT_DIR$/MoviesAndMe/templates/search_result.html" />
         <option value="$PROJECT_DIR$/MoviesAndMe/views.py" />
         <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/MoviesAndMe/templates/details_actor.html" />
         <option value="$PROJECT_DIR$/MoviesAndMe/admin.py" />
+        <option value="$PROJECT_DIR$/MoviesAndMe/templates/details_tv_season.html" />
+        <option value="$PROJECT_DIR$/MoviesAndMe/templates/500.html" />
+        <option value="$PROJECT_DIR$/OnlyMe/settings.py" />
       </list>
     </option>
   </component>
@@ -275,6 +405,11 @@
               <item name="OnlyMe" type="b2602c69:ProjectViewProjectNode" />
               <item name="OnlyMe" type="462c0819:PsiDirectoryNode" />
               <item name="OnlyMe" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OnlyMe" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OnlyMe" type="462c0819:PsiDirectoryNode" />
+              <item name="staticfiles" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="OnlyMe" type="b2602c69:ProjectViewProjectNode" />
@@ -360,20 +495,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1557311815933</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Première version du Projet OnlyMe, ne contenant que l'application MoviesAndMe/LechatongMovies&#10;(Ajout requirement and Runtime">
-      <created>1558958406055</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1558958406055</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Première version du Projet OnlyMe, ne contenant que l'application MoviesAndMe/LechatongMovies&#10;(Ajout requirement and Runtime">
-      <created>1558971093482</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1558971093482</updated>
     </task>
     <task id="LOCAL-00005" summary="Track">
       <created>1558971233312</created>
@@ -704,20 +825,34 @@
       <option name="project" value="LOCAL" />
       <updated>1560792141903</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Amelioration du design de l'administration et des détails">
+      <created>1561123708230</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1561123708232</updated>
+    </task>
+    <task id="LOCAL-00053" summary="Amelioration du design de l'administration et des détails">
+      <created>1561123918159</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1561123918159</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5263496" side_tool="true" visible="true" weight="0.30651873" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.52699226" side_tool="true" visible="true" weight="0.30651873" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4993573" weight="0.3293011" />
       <window_info anchor="bottom" id="Python Console" order="7" sideWeight="0.4993573" weight="0.3293011" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4736504" visible="true" weight="0.30651873" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.844473" weight="0.32871014" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27763495" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4730077" visible="true" weight="0.30651873" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.8431877" weight="0.32871014" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.281491" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" visible="true" weight="0.14203085" />
       <window_info anchor="right" id="SciView" order="3" />
@@ -778,7 +913,8 @@
     <MESSAGE value="Design amélioré et application mieux structuré" />
     <MESSAGE value="Amélioration de la recherche" />
     <MESSAGE value="Ajout du du téléchargement et de nouvelles tables dans la BD" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout du du téléchargement et de nouvelles tables dans la BD" />
+    <MESSAGE value="Amelioration du design de l'administration et des détails" />
+    <option name="LAST_COMMIT_MESSAGE" value="Amelioration du design de l'administration et des détails" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -786,9 +922,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/manage.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://C:/Python/Lib/os.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="292">
@@ -893,13 +1026,7 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://C:/Python/Lib/site-packages/django/templatetags/static.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/MoviesAndMe/static/css/bootstrap.css">
       <provider selected="true" editor-type-id="text-editor">
@@ -1019,46 +1146,48 @@
     <entry file="file://$PROJECT_DIR$/OnlyMe/static/download.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/404.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="56" lean-forward="true" selection-start-line="3" selection-start-column="56" selection-end-line="3" selection-end-column="78" />
-          <folding>
-            <element signature="e#85#106#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OnlyMe/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="29" column="16" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/500.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
-          <folding>
-            <element signature="e#99#146#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="43" column="25" lean-forward="true" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="25" />
+        <state relative-caret-position="731">
+          <caret line="43" column="25" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="25" />
           <folding>
             <element signature="n#style#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/MoviesAndMe/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1360">
+          <caret line="233" column="111" selection-start-line="233" selection-start-column="9" selection-end-line="233" selection-end-column="111" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+            <element signature="e#325#2785#0" />
+            <element signature="e#5162#8505#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MoviesAndMe/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="40" column="12" selection-start-line="40" selection-start-column="4" selection-end-line="40" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MoviesAndMe/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/details_actor.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
+        <state relative-caret-position="1071">
           <caret line="63" column="68" selection-start-line="63" selection-start-column="68" selection-end-line="63" selection-end-column="68" />
           <folding>
             <element signature="e#3002#3048#0#HTML" expanded="true" />
@@ -1071,8 +1200,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/details_tv_season.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1190">
-          <caret line="141" column="145" selection-start-line="141" selection-start-column="145" selection-end-line="141" selection-end-column="145" />
+        <state relative-caret-position="2380">
+          <caret line="140" column="78" selection-start-line="140" selection-start-column="78" selection-end-line="140" selection-end-column="78" />
           <folding>
             <element signature="e#6780#6787#1#HTML" expanded="true" />
           </folding>
@@ -1081,42 +1210,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/search_result.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="20" column="68" lean-forward="true" selection-start-line="20" selection-start-column="68" selection-end-line="20" selection-end-column="68" />
+        <state relative-caret-position="340">
+          <caret line="20" column="68" selection-start-line="20" selection-start-column="68" selection-end-line="20" selection-end-column="68" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MoviesAndMe/views.py">
+    <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/404.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="77">
-          <caret line="233" column="111" lean-forward="true" selection-start-line="233" selection-start-column="9" selection-end-line="233" selection-end-column="111" />
+        <state relative-caret-position="34">
+          <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
           <folding>
-            <element signature="e#0#35#0" expanded="true" />
-            <element signature="e#325#2785#0" />
-            <element signature="e#5162#8505#0" />
-            <element signature="e#11544#12879#0" />
-            <element signature="e#12916#14227#0" />
-            <element signature="e#14267#15558#0" />
-            <element signature="e#15586#16372#0" />
-            <element signature="e#25449#27362#0" />
+            <element signature="e#67#88#0#HTML" expanded="true" />
+            <element signature="e#121#169#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MoviesAndMe/models.py">
+    <entry file="file://$PROJECT_DIR$/MoviesAndMe/staticfiles/js/bootstrap.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/500.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="40" column="12" selection-start-line="40" selection-start-column="4" selection-end-line="40" selection-end-column="12" />
+        <state relative-caret-position="68">
+          <caret line="4" column="67" selection-start-line="4" selection-start-column="67" selection-end-line="4" selection-end-column="67" />
+          <folding>
+            <element signature="e#99#119#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MoviesAndMe/admin.py">
+    <entry file="file://$PROJECT_DIR$/OnlyMe/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="51">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>
