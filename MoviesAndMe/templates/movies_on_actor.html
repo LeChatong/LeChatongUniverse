@@ -26,7 +26,7 @@
                               <a href="{% url 'details_movie' movie.0 %}">{{ movie.1 }}</a>
                             </h5>
                             <div class="card-text">
-                                <div><sup>{{ 'Sortie le : ' }}{{ movie.5|date:'d M Y' }}</sup></div>
+                                <div><sup>{{ 'Sortie le : ' }}{# movie.5|date:'d M Y' #} </sup></div>
                                 <div><sup>{{ 'Alias : ' }}<b>{{ movie.3 }}</b></sup></div>
                             </div>
 

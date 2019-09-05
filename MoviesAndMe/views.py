@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import Http404
 import requests
 from datetime import datetime
@@ -76,66 +76,75 @@ def home(request):
 
 def search_movies(request):
     search = request.GET.get('query')
+    if search == '':
+        return redirect(page_error)
+    else:
+        response_search = requests.get('https://api.themoviedb.org/3/search/multi?api_key=f972c58efb26ab0a5e82cda1f7352586&language=fr-FR&query='+search+'&&include_adult=false')
+        list_movie_elt_search = response_search.json()
 
-    response_search = requests.get('https://api.themoviedb.org/3/search/multi?api_key=f972c58efb26ab0a5e82cda1f7352586&language=fr-FR&query='+search+'&&include_adult=false')
-    list_movie_elt_search = response_search.json()
-    RESULT_AFTER_SEARCH = []
-    paginator = Paginator(list_movie_elt_search['results'], 20)
-    page = request.GET.get('page')
+        RESULT_AFTER_SEARCH = []
+        paginator = Paginator(list_movie_elt_search['results'], 15)
+        page = request.GET.get('page')
 
-    try:
-        pagination = paginator.page(page)
-    except PageNotAnInteger:
-        pagination = paginator.page(1)
-    except EmptyPage:
-        pagination = paginator.page(paginator.num_pages)
+        try:
+            pagination = paginator.page(page)
+        except PageNotAnInteger:
+            pagination = paginator.page(1)
+        except EmptyPage:
+            pagination = paginator.page(paginator.num_pages)
 
-    if pagination.object_list:
-        for elt in pagination.object_list:
-            if elt['media_type'] == 'movie':
-                RESULT_AFTER_SEARCH.append(
-                    [
-                        elt['media_type'],
-                        elt['id'],
-                        elt['title'],
-                        elt['poster_path'],
-                        elt['overview'],
-                        elt['release_date'],
-                        elt['vote_average'],
-                    ]
-                )
-            else:
-                if elt['media_type'] == 'tv':
+        if pagination.object_list:
+            for elt in pagination.object_list:
+                if elt['media_type'] == 'movie':
                     RESULT_AFTER_SEARCH.append(
                         [
                             elt['media_type'],
                             elt['id'],
-                            elt['name'],
+                            elt['title'],
                             elt['poster_path'],
                             elt['overview'],
-                            elt['first_air_date'],
+                            elt['release_date'],
                             elt['vote_average'],
                         ]
                     )
                 else:
-                    if elt['media_type'] == 'person':
+                    if elt['media_type'] == 'tv':
                         RESULT_AFTER_SEARCH.append(
                             [
                                 elt['media_type'],
                                 elt['id'],
                                 elt['name'],
-                                elt['profile_path'],
+                                elt['poster_path'],
+                                elt['overview'],
+                                elt['first_air_date'],
+                                elt['vote_average'],
                             ]
                         )
-    else:
-        raise Http404("No MyModel matches the given query.")
+                    else:
+                        if elt['media_type'] == 'person':
+                            RESULT_AFTER_SEARCH.append(
+                                [
+                                    elt['media_type'],
+                                    elt['id'],
+                                    elt['name'],
+                                    elt['profile_path'],
+                                ]
+                            )
+        else:
+            return redirect(page_not_found)
 
-    context = {
-        'RESULT_AFTER_SEARCH':  RESULT_AFTER_SEARCH,
-        'search':               search,
-        'pagination':            pagination
-    }
-    return render(request, 'search_result.html', context)
+        context = {
+            'RESULT_AFTER_SEARCH':  RESULT_AFTER_SEARCH,
+            'search':               search,
+            'pagination':            pagination
+        }
+        return render(request, 'search_result.html', context)
+
+def page_not_found(request):
+    return render(request, 'page-not-found.html')
+
+def page_error(request):
+    return render(request, 'page_error.html')
 
 def details_movie(request, id):
 
@@ -323,8 +332,8 @@ def movies_on_actor(request, id):
     LIST_MOVIES_ACTOR = []
     L_MOVIES_ACTOR = actor_movies['cast']
     for elt in L_MOVIES_ACTOR:
-        if elt['release_date'] != None and elt['release_date'] != "":
-            elt['release_date'] = datetime.strptime(elt['release_date'], "%Y-%m-%d").date()
+        #if elt['release_date'] != None and elt['release_date'] != "":
+        #    elt['release_date'] = datetime.strptime(elt['release_date'], "%Y-%m-%d").date()
 
         if elt['id'] == None or elt['title'] == None or not elt['character'] or elt['release_date'] == None:
             pass
@@ -335,7 +344,7 @@ def movies_on_actor(request, id):
                 elt['poster_path'],
                 elt['character'],
                 elt['overview'],
-                elt['release_date'],
+        #        elt['release_date'],
             ]
         )
     context = {
@@ -418,6 +427,32 @@ def actors_on_movie(request, id):
         'LIST_GENDER': LIST_GENDER,
     }
     return render(request, 'actors_on_movie.html', context)
+
+def actors_on_tv(request, id):
+    response_tv = requests.get(
+        'https://api.themoviedb.org/3/tv/' + id + '?api_key=f972c58efb26ab0a5e82cda1f7352586&language=fr-FR')
+    tv = response_tv.json()
+    response_actors = requests.get(
+        'https://api.themoviedb.org/3/tv/' + id + '/credits?api_key=f972c58efb26ab0a5e82cda1f7352586')
+    list_actors = response_actors.json()
+    LIST_ACTORS = list_actors['cast']
+    LIST_ACTORS_CREDIT = []
+    for elt in LIST_ACTORS:
+        LIST_ACTORS_CREDIT.append(
+            [
+                elt['id'],
+                elt['name'],
+                elt['profile_path'],
+                elt['character'],
+            ]
+        )
+    context = {
+        'id': tv['id'],
+        'title': tv['name'],
+        'original_title': tv['original_name'],
+        'list_actor': LIST_ACTORS_CREDIT,
+    }
+    return render(request, 'actors_on_tv.html', context)
 
 def home_tv(request):
     # La liste des séries & animes les plus populaires du moment
@@ -515,7 +550,7 @@ def home_movie(request):
     return render(request, 'home_movie.html', context)
 
 def popular_movie(request, page=1):
-    # La liste des séries & animes les plus populaires du moment
+    # La liste des films les plus populaires du moment
     response_pop = requests.get(
         'https://api.themoviedb.org/3/movie/popular?api_key=f972c58efb26ab0a5e82cda1f7352586&language=fr-FR&page='+page)
     list_movie_pop = response_pop.json()

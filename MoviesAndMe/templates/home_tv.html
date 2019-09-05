@@ -39,41 +39,41 @@
         </div>
 
       </div>
-        <!-- /.col-lg-3 -->
-        {% block details %}
-
-            <div class="col-lg-9">
-                <div class="row">
-                    <div class="col-lg-12"  style="margin-top: 20px;">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <h3>{{ 'Séries / Animés du moment' }}</h3>
+      <div class="col-lg-9">
+            {% block details %}
+                <div class="col-lg-9">
+                    <div class="row">
+                        <div class="col-lg-12"  style="margin-top: 20px;">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <h3>{{ 'Séries / Animés du moment' }}</h3>
+                                </div>
                             </div>
-                        </div>
-                        <hr/>
-                        <div class="row">
-                            {% for tv in POPULAR_ON_TV %}
-                                <div class="col-lg-3 col-md-4 mb-3">
-                                    <div class="card h-auto">
-                                      <a href="{% url 'details_tv' tv.0 %}"><img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{ tv.3 }}" alt="{{ tv.1 }}"></a>
-                                      <div class="card-body">
-                                        <h5 class="card-title">
-                                          <a href="{% url 'details_tv' tv.0 %}">{{ tv.1 }}</a>
-                                        </h5>
-                                        <div class="card-text">
-                                            <div><sup>{{ 'Sortie le : ' }}{{ tv.4|date:'d M Y' }}</sup></div>
-                                        </div>
+                            <hr/>
+                            <div class="row">
+                                {% for tv in POPULAR_ON_TV %}
+                                    <div class="col-lg-3 col-md-4 mb-3">
+                                        <div class="card h-auto">
+                                          <a href="{% url 'details_tv' tv.0 %}"><img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{ tv.3 }}" alt="{{ tv.1 }}"></a>
+                                          <div class="card-body">
+                                            <h5 class="card-title">
+                                              <a href="{% url 'details_tv' tv.0 %}">{{ tv.1 }}</a>
+                                            </h5>
+                                            <div class="card-text">
+                                                <div><sup>{{ 'Sortie le : ' }}{{ tv.4|date:'d M Y' }}</sup></div>
+                                            </div>
 
-                                      </div>
-                                    </div>
-                              </div>
-                            {% endfor %}
+                                          </div>
+                                        </div>
+                                  </div>
+                                {% endfor %}
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- /.col-lg-9 -->
-        {% endblock %}
+            {% endblock %}
+      </div>
+
     </div>
 {% endblock %}
 

@@ -21,192 +21,188 @@
     <a href="{% url 'popular_tv' 1 %}" class="list-group-item list-group-item-action">{{ 'Populaires' }}</a>
 {% endblock %}
 {% block details %}
-    <div class="col-lg-9">
-        <div class="row">
-        <div class="col-lg-12" style="margin-top: 20px;">
-            <div class="card mt-4">
-                {% if backdrop_path != None %}
-                    <img width="800" height="300" class="card-img-top img-fluid" src="https://image.tmdb.org/t/p/w1280{{ backdrop_path }}" alt="{{ name }}">
-                {% else %}
-                    <img width="800" height="300" class="card-img-top" src="{% static 'not_image_disponible.svg.png' %}" alt="{{ name }}">
-                {% endif %}
+    <div class="col-lg-12" style="margin-top: 20px;">
+                <div class="card mt-4">
+                    {% if backdrop_path != None %}
+                        <img width="800" height="300" class="card-img-top img-fluid" src="https://image.tmdb.org/t/p/w1280{{ backdrop_path }}" alt="{{ name }}">
+                    {% else %}
+                        <img width="800" height="300" class="card-img-top" src="{% static 'not_image_disponible.svg.png' %}" alt="{{ name }}">
+                    {% endif %}
 
-                <div class="card-body">
-                <h3 class="card-title">
-                    <div class="row">
-                        <div class="col-lg-8">
-                            {% if homepage != None %}
-                                <a class="text-dark" href="{{ homepage }}" target="_blank">{{ name }}</a>
-                            {% else %}
-                                <a href="#">{{ name }}</a>
-                            {% endif %}
-                        </div>
-                        <div class="col-lg-1">
-                            <a class="twitter-share-button" data-size="large" href="https://twitter.com/intent/tweet">
-                                @LeChatong
-                            </a>
-                            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                        </div>
-                        <div class="col-lg-1">
-                            <div id="fb-root" class="text-justify"></div>
-                              <script>(function(d, s, id) {
-                                var js, fjs = d.getElementsByTagName(s)[0];
-                                if (d.getElementById(id)) return;
-                                js = d.createElement(s); js.id = id;
-                                js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
-                                fjs.parentNode.insertBefore(js, fjs);
-                              }(document, 'script', 'facebook-jssdk'));</script>
-                            <div class="fb-share-button"
-                                data-href="{% url 'details_tv' id %}"
-                                 data-size="large"
-                                data-layout="button_count">
-                                Partager
+                    <div class="card-body">
+                    <h3 class="card-title">
+                        <div class="row">
+                            <div class="col-lg-8">
+                                {% if homepage != None %}
+                                    <a class="text-dark" href="{{ homepage }}" target="_blank">{{ name }}</a>
+                                {% else %}
+                                    <a href="#">{{ name }}</a>
+                                {% endif %}
                             </div>
-                        </div>
-
-                    </div>
-                </h3>
-                <p>
-                    {% for genre in genres %}
-                        <a href="#">{{ genre.name }}</a>,
-                    {% endfor %}
-                </p>
-                <p>
-                    Auteurs :
-                    {% for author in created_by %}
-                        <a href="#">{{ author.1 }}</a>,
-                    {% endfor %}
-                </p>
-                <p class="card-text text-justify">{{ overview }}</p>
-                <span title="Note du film : {{ vote_average }} / 10" class="text-warning">
-                    {% for i in COUNTEUR %}
-                        {% if i < vote_average %}&#9733;{% else %}&#9734;{% endif %}
-                    {% endfor %}
-                </span>
-                <p>
-                    <span>Sortie le : </span>{{ first_air_date|date:'d M Y' }}
-                </p>
-              </div>
-            </div>
-            <!-- /.card -->
-            <div class="card card-outline-secondary my-4">
-                <div class="card-header">
-                    Saisons
-                </div>
-                <div class="card-body">
-                    <div class="row">
-                        {% for season in seasons %}
-                            <div class="col-lg-2 col-md-3 mb-1">
-                                <div class="card h-auto">
-                                  <a href="{% url 'details_tv_season' id season.3 %}">
-                                      {% if season.2 != None %}
-                                        <img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{ season.2 }}" alt="{{ season.1 }}">
-                                    {% else %}
-                                        <img class="card-img-top" src="{% static 'not_image_disponible.svg.png' %}" alt="{{ season.1 }}">
-                                    {% endif %}
-
-                                  </a>
-                                    <p class="card-title text-center">
-                                      <a href="{% url 'details_tv_season' id season.3%}">{{ season.1 }}</a>
-                                    </p>
+                            <div class="col-lg-1">
+                                <a class="twitter-share-button" data-size="large" href="https://twitter.com/intent/tweet">
+                                    @LeChatong
+                                </a>
+                                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                            </div>
+                            <div class="col-lg-1">
+                                <div id="fb-root" class="text-justify"></div>
+                                  <script>(function(d, s, id) {
+                                    var js, fjs = d.getElementsByTagName(s)[0];
+                                    if (d.getElementById(id)) return;
+                                    js = d.createElement(s); js.id = id;
+                                    js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+                                    fjs.parentNode.insertBefore(js, fjs);
+                                  }(document, 'script', 'facebook-jssdk'));</script>
+                                <div class="fb-share-button"
+                                    data-href="{% url 'details_tv' id %}"
+                                     data-size="large"
+                                    data-layout="button_count">
+                                    Partager
                                 </div>
                             </div>
-                        {% endfor %}
 
+                        </div>
+                    </h3>
+                    <p>
+                        {% for genre in genres %}
+                            <a href="#">{{ genre.name }}</a>,
+                        {% endfor %}
+                    </p>
+                    <p>
+                        Auteurs :
+                        {% for author in created_by %}
+                            <a href="#">{{ author.1 }}</a>,
+                        {% endfor %}
+                    </p>
+                    <p class="card-text text-justify">{{ overview }}</p>
+                    <span title="Note du film : {{ vote_average }} / 10" class="text-warning">
+                        {% for i in COUNTEUR %}
+                            {% if i < vote_average %}&#9733;{% else %}&#9734;{% endif %}
+                        {% endfor %}
+                    </span>
+                    <p>
+                        <span>Sortie le : </span>{{ first_air_date|date:'d M Y' }}
+                    </p>
+                  </div>
+                </div>
+                <!-- /.card -->
+                <div class="card card-outline-secondary my-4">
+                    <div class="card-header">
+                        Saisons
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            {% for season in seasons %}
+                                <div class="col-lg-2 col-md-3 mb-1">
+                                    <div class="card h-auto">
+                                      <a href="{% url 'details_tv_season' id season.3 %}">
+                                          {% if season.2 != None %}
+                                            <img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{ season.2 }}" alt="{{ season.1 }}">
+                                        {% else %}
+                                            <img class="card-img-top" src="{% static 'not_image_disponible.svg.png' %}" alt="{{ season.1 }}">
+                                        {% endif %}
+
+                                      </a>
+                                        <p class="card-title text-center">
+                                          <a href="{% url 'details_tv_season' id season.3%}">{{ season.1 }}</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            {% endfor %}
+
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="card card-outline-secondary my-4">
-                <div class="card-header">
-                    Acteurs
-                </div>
-                <div class="card-body">
-                    <div class="row">
-                        {% for actor in list_actor %}
+                <div class="card card-outline-secondary my-4">
+                    <div class="card-header">
+                        Acteurs
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            {% for actor in list_actor %}
+                                <div class="col-lg-2 text-center">
+                                    {% if actor.2 == None %}
+                                        <a href="{% url 'details_actor' actor.0 %}" title="{{ actor.1 }}">
+                                            <img width="75" height="75" alt="{{ actor.3 }}" class="rounded-circle" src="{% static 'not_image_disponible.svg.png' %}">
+                                        </a>
+                                    {% else %}
+                                        <a href="{% url 'details_actor' actor.0 %}" title="{{ actor.1 }}">
+                                            <img width="75" height="75" alt="{{ actor.3 }}" class="rounded-circle" src="https://image.tmdb.org/t/p/w300{{ actor.2 }}">
+                                        </a>
+                                    {% endif %}
+                                    <div>
+                                        <sub><a href="{% url 'details_actor' actor.0 %}" title="{{ actor.3 }}">{{ actor.1 }}</a></sub>
+                                    </div>
+                                </div>
+                            {% endfor %}
                             <div class="col-lg-2 text-center">
-                                {% if actor.2 == None %}
-                                    <a href="{% url 'details_actor' actor.0 %}" title="{{ actor.1 }}">
-                                        <img width="75" height="75" alt="{{ actor.3 }}" class="rounded-circle" src="{% static 'not_image_disponible.svg.png' %}">
+                                <a href="#">
+                                    <img width="75" height="75" alt="#" class="rounded-circle" src="{% static 'not_image_disponible.svg.png' %}">
+                                </a>
+                                <div>
+                                    <sub><a href="{% url 'actors_on_tv' id %}">Voir Plus</a></sub>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-outline-secondary my-4">
+                  <div class="card-header">
+                    Sociétés de Production
+                  </div>
+                  <div class="card-body">
+                    <div class="row">
+                        {% for company in production_companies %}
+                            <div class="col-lg-2 text-center">
+                                {% if company.logo_path == None %}
+                                    <a href="#">
+                                        <img width="75" height="75" alt="{{ company.name }}" class="rounded-circle" src="{% static 'not_image_disponible.svg.png' %}">
                                     </a>
                                 {% else %}
-                                    <a href="{% url 'details_actor' actor.0 %}" title="{{ actor.1 }}">
-                                        <img width="75" height="75" alt="{{ actor.3 }}" class="rounded-circle" src="https://image.tmdb.org/t/p/w300{{ actor.2 }}">
+                                    <a href="#">
+                                        <img width="75" height="75" alt="{{ company.name }}" class="rounded-circle" src="https://image.tmdb.org/t/p/w200{{ company.logo_path }}">
                                     </a>
                                 {% endif %}
                                 <div>
-                                    <sub><a href="{% url 'details_actor' actor.0 %}" title="{{ actor.3 }}">{{ actor.1 }}</a></sub>
+                                    <sub><a href="#">{{ company.name }}, {{ company.origin_country }}</a></sub>
                                 </div>
+
                             </div>
                         {% endfor %}
-                        <div class="col-lg-2 text-center">
-                            <a href="#">
-                                <img width="75" height="75" alt="#" class="rounded-circle" src="{% static 'not_image_disponible.svg.png' %}">
-                            </a>
-                            <div>
-                                <sub><a href="{% url 'actors_on_movie' id %}">Voir Plus</a></sub>
-                            </div>
-                        </div>
+                    </div>
 
+                  </div>
+                </div>
+                <div class="card card-outline-secondary my-4">
+                    <div class="card-header">
+                        Séries on Animes Similaires
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            {% for similar_tv in LIST_SIMILAR_TV %}
+                                <div class="col-lg-2 col-md-3 mb-1">
+                                    <div class="card h-auto">
+                                      <a href="{% url 'details_tv' similar_tv.0 %}">
+                                          {% if similar_tv.2 != None %}
+                                            <img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{ similar_tv.2 }}" alt="{{ similar_tv.1 }}">
+                                        {% else %}
+                                            <img class="card-img-top" src="{% static 'not_image_disponible.svg.png' %}" alt="{{ similar_tv.1 }}">
+                                        {% endif %}
+
+                                      </a>
+                                        <p class="card-title text-center">
+                                          <a href="{% url 'details_tv' similar_tv.0 %}">{{ similar_tv.1 }}</a>
+                                        </p>
+                                    </div>
+                              </div>
+                            {% endfor %}
+                        </div>
                     </div>
                 </div>
+                <!-- /.card -->
+
+
             </div>
-            <div class="card card-outline-secondary my-4">
-              <div class="card-header">
-                Sociétés de Production
-              </div>
-              <div class="card-body">
-                <div class="row">
-                    {% for company in production_companies %}
-                        <div class="col-lg-2 text-center">
-                            {% if company.logo_path == None %}
-                                <a href="#">
-                                    <img width="75" height="75" alt="{{ company.name }}" class="rounded-circle" src="{% static 'not_image_disponible.svg.png' %}">
-                                </a>
-                            {% else %}
-                                <a href="#">
-                                    <img width="75" height="75" alt="{{ company.name }}" class="rounded-circle" src="https://image.tmdb.org/t/p/w200{{ company.logo_path }}">
-                                </a>
-                            {% endif %}
-                            <div>
-                                <sub><a href="#">{{ company.name }}, {{ company.origin_country }}</a></sub>
-                            </div>
-
-                        </div>
-                    {% endfor %}
-                </div>
-
-              </div>
-            </div>
-            <div class="card card-outline-secondary my-4">
-                <div class="card-header">
-                    Séries on Animes Similaires
-                </div>
-                <div class="card-body">
-                    <div class="row">
-                        {% for similar_tv in LIST_SIMILAR_TV %}
-                            <div class="col-lg-2 col-md-3 mb-1">
-                                <div class="card h-auto">
-                                  <a href="{% url 'details_tv' similar_tv.0 %}">
-                                      {% if similar_tv.2 != None %}
-                                        <img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{ similar_tv.2 }}" alt="{{ similar_tv.1 }}">
-                                    {% else %}
-                                        <img class="card-img-top" src="{% static 'not_image_disponible.svg.png' %}" alt="{{ similar_tv.1 }}">
-                                    {% endif %}
-
-                                  </a>
-                                    <p class="card-title text-center">
-                                      <a href="{% url 'details_tv' similar_tv.0 %}">{{ similar_tv.1 }}</a>
-                                    </p>
-                                </div>
-                          </div>
-                        {% endfor %}
-                    </div>
-                </div>
-            </div>
-            <!-- /.card -->
-
-
-        </div>
-    </div>
-    </div>
 {% endblock %}

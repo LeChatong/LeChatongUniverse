@@ -109,12 +109,12 @@
             </table>
               <div class="clearfix"></div>
               <nav aria-label="...">
-                <ul class="pager">
+                <ul class="pagination">
                   {% if pagination.has_previous %}
-                      <li><a href="?page={{ pagination.previous_page_number }}&query={{ search }}">Précédent</a></li>
+                      <li class="page-item"><a class="page-link" href="?page={{ pagination.previous_page_number }}&query={{ search }}">Précédent</a></li>
                   {% endif %}
                   {% if pagination.has_next %}
-                      <li><a href="?page={{ pagination.next_page_number }}&query={{ search }}">Suivant</a></li>
+                      <li class="page-item"><a class="page-link" href="?page={{ pagination.next_page_number }}&query={{ search }}">Suivant</a></li>
                   {% endif %}
                 </ul>
               </nav>
