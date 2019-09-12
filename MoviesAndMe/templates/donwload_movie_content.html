@@ -1,0 +1,43 @@
+{% extends 'home_movie.html' %}
+{% load static %}
+{% block intitule_page %}Films Téléchargeables{% endblock %}
+{% block link_menu %}
+    <a href="{% url 'home_movie' %}" class="list-group-item list-group-item-action">
+        <i class="text-left"><img width="32" height="32" src="{% static 'sun-black.png' %}"></i>
+        {{ 'Nouveautés' }}
+    </a>
+    <a href="{% url 'popular_movie' 1 %}" class="list-group-item list-group-item-action">{{ 'Populaires' }}</a>
+    <a href="{% url 'upcoming_movie' 1 %}" class="list-group-item list-group-item-action">{{ 'A venir' }}</a>
+    <a href="{% url 'donwload_movie_content' %}" class="list-group-item list-group-item-action list-group-item-dark active">{{ 'Téléchargeable' }}</a>
+{% endblock %}
+{% block details_page %}
+    <div class="row">
+        <div class="col-lg-12 col-md-10 mb-12"  style="margin-top: 20px;">
+            <div class="row">
+                <div class="col-lg-12 col-md-10 mb-12">
+                    <h3>{{ 'Films disponibles en téléchargement' }}</h3>
+                </div>
+            </div>
+            <hr/>
+            <div class="row">
+                {% for elt in list_movie %}
+                    <div class="col-lg-3 col-md-4 mb-3">
+                        <div class="card h-auto">
+                          <a href="{% url 'details_movie' elt.0%}"><img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{ elt.4 }}" alt="{{ elt.3 }}"></a>
+                          <div class="card-body">
+                            <h5 class="card-title">
+                              <a title="{{ elt.3 }}" href="{% url 'details_movie' elt.0 %}">{{ elt.2 }}</a>
+                            </h5>
+                            <div class="card-text">
+                                <div><sup><a target="_blank" href="{{ elt.1 }}">Télécharger</a></sup></div>
+                            </div>
+
+                          </div>
+                        </div>
+                  </div>
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

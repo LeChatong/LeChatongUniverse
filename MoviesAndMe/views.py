@@ -785,3 +785,26 @@ def details_season_tv(request, id, season):
         'season_number':    saison['season_number']
     }
     return render(request, 'details_tv_season.html', context)
+
+def donwload_movie_content(request):
+    movies = movie_detail.objects.all().order_by('title_movie')
+    list_movie = []
+    for elt in movies:
+        id = str(elt.id_movie)
+        response_movie = requests.get(
+            'https://api.themoviedb.org/3/movie/' + id + '?api_key=f972c58efb26ab0a5e82cda1f7352586&language=fr-FR')
+        movie = response_movie.json()
+        list_movie.append(
+            [
+                elt.id_movie,
+                elt.link_telegram,
+                movie['title'],
+                movie['overview'],
+                movie['poster_path']
+            ]
+        )
+
+    context = {
+        'list_movie': list_movie
+    }
+    return render(request, 'donwload_movie_content.html', context)
