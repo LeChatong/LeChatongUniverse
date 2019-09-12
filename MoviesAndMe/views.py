@@ -794,13 +794,23 @@ def donwload_movie_content(request):
         response_movie = requests.get(
             'https://api.themoviedb.org/3/movie/' + id + '?api_key=f972c58efb26ab0a5e82cda1f7352586&language=fr-FR')
         movie = response_movie.json()
+        if movie['poster_path']:
+            poster = movie['poster_path']
+        else:
+            poster = None
+
+        if movie['poster_path']:
+            overview = movie['overview']
+        else:
+            overview = '...'
+
         list_movie.append(
             [
                 elt.id_movie,
                 elt.link_telegram,
                 elt.title_movie,
-                elt.voice_language,
-                movie['poster_path']
+                overview,
+                poster
             ]
         )
 
