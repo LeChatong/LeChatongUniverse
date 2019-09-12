@@ -799,7 +799,7 @@ def donwload_movie_content(request):
                 elt.id_movie,
                 elt.link_telegram,
                 elt.title_movie,
-                movie['overview'],
+                elt.voice_language,
                 movie['poster_path']
             ]
         )

@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="87406ce3-e5f6-4d08-b4ae-7129b8e07aa8" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/MoviesAndMe/templates/donwload_movie_content.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MoviesAndMe/templates/details_tv_season.html" beforeDir="false" afterPath="$PROJECT_DIR$/MoviesAndMe/templates/details_tv_season.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MoviesAndMe/templates/home_movie.html" beforeDir="false" afterPath="$PROJECT_DIR$/MoviesAndMe/templates/home_movie.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MoviesAndMe/templates/popular_movie.html" beforeDir="false" afterPath="$PROJECT_DIR$/MoviesAndMe/templates/popular_movie.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MoviesAndMe/templates/upcoming_movie.html" beforeDir="false" afterPath="$PROJECT_DIR$/MoviesAndMe/templates/upcoming_movie.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MoviesAndMe/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/MoviesAndMe/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MoviesAndMe/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/MoviesAndMe/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -86,11 +80,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MoviesAndMe/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="790" column="19" lean-forward="true" selection-start-line="790" selection-start-column="19" selection-end-line="790" selection-end-column="19" />
+            <state relative-caret-position="317">
+              <caret line="801" column="34" selection-start-line="801" selection-start-column="34" selection-end-line="801" selection-end-column="34" />
               <folding>
                 <element signature="e#0#45#0" expanded="true" />
                 <element signature="e#335#2795#0" />
@@ -112,7 +106,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="donwload_movie_content.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="donwload_movie_content.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/donwload_movie_content.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="234">
@@ -254,9 +248,9 @@
         <option value="$PROJECT_DIR$/MoviesAndMe/urls.py" />
         <option value="$PROJECT_DIR$/MoviesAndMe/templates/upcoming_movie.html" />
         <option value="$PROJECT_DIR$/MoviesAndMe/templates/home_movie.html" />
-        <option value="$PROJECT_DIR$/MoviesAndMe/views.py" />
         <option value="$PROJECT_DIR$/MoviesAndMe/templates/popular_movie.html" />
         <option value="$PROJECT_DIR$/MoviesAndMe/templates/donwload_movie_content.html" />
+        <option value="$PROJECT_DIR$/MoviesAndMe/views.py" />
       </list>
     </option>
   </component>
@@ -394,20 +388,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1557311815933</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Ajout de requirements">
-      <created>1558973227183</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1558973227183</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Ajout de requirements">
-      <created>1558973322576</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1558973322576</updated>
     </task>
     <task id="LOCAL-00010" summary="Ajout STATICROOT">
       <created>1558973705457</created>
@@ -738,20 +718,33 @@
       <option name="project" value="LOCAL" />
       <updated>1567683677438</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="- Ajout du contenu pour les films téléchargeable">
+      <created>1568285937607</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1568285937608</updated>
+    </task>
+    <task id="LOCAL-00058" summary="- Ajout du contenu pour les films téléchargeable">
+      <created>1568286347822</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1568286347822</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5321337" side_tool="true" visible="true" weight="0.30651873" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.43637532" side_tool="true" visible="true" weight="0.33009708" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4993573" weight="0.3293011" />
       <window_info anchor="bottom" id="Python Console" order="7" sideWeight="0.4993573" weight="0.3293011" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.46786633" visible="true" weight="0.30651873" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.56491005" weight="0.33009708" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.46722364" weight="0.30651873" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.5636247" visible="true" weight="0.33009708" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3200514" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" visible="true" weight="0.14203085" />
@@ -815,7 +808,8 @@
     <MESSAGE value="Ajout du du téléchargement et de nouvelles tables dans la BD" />
     <MESSAGE value="Amelioration du design de l'administration et des détails" />
     <MESSAGE value="- Ajout des pages d'erreurs&#10;- Ajout de la page de consultation des acteurs d'une série" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Ajout des pages d'erreurs&#10;- Ajout de la page de consultation des acteurs d'une série" />
+    <MESSAGE value="- Ajout du contenu pour les films téléchargeable" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Ajout du contenu pour les films téléchargeable" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1166,10 +1160,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/donwload_movie_content.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="31" column="59" selection-start-line="31" selection-start-column="59" selection-end-line="31" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/MoviesAndMe/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="790" column="19" lean-forward="true" selection-start-line="790" selection-start-column="19" selection-end-line="790" selection-end-column="19" />
+        <state relative-caret-position="317">
+          <caret line="801" column="34" selection-start-line="801" selection-start-column="34" selection-end-line="801" selection-end-column="34" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
             <element signature="e#335#2795#0" />
@@ -1187,13 +1188,6 @@
             <element signature="e#23623#26828#0" />
             <element signature="e#26878#28791#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/donwload_movie_content.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="31" column="59" selection-start-line="31" selection-start-column="59" selection-end-line="31" selection-end-column="59" />
         </state>
       </provider>
     </entry>
