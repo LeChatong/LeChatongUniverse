@@ -798,7 +798,7 @@ def donwload_movie_content(request):
             [
                 elt.id_movie,
                 elt.link_telegram,
-                movie['title'],
+                elt.title_movie,
                 movie['overview'],
                 movie['poster_path']
             ]
