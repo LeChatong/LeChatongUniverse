@@ -804,7 +804,7 @@ def donwload_movie_content(request):
     for elt in movies:
         id = str(elt.id_movie)
         response_movie = requests.get(
-            'https://api.themoviedb.org/3/movie/' + id + '?api_key=f972c58efb26ab0a5e82cda1f7352586&language=fr-FR')
+            'https://api.themoviedb.org/3/movie/550?api_key=f972c58efb26ab0a5e82cda1f7352586&language=fr-FR')
         movie = response_movie.json()
 
         try:
@@ -819,7 +819,8 @@ def donwload_movie_content(request):
 
         list_movie.append(
             [
-                elt.id_movie,
+                #elt.id_movie,
+                550,
                 elt.link_telegram,
                 elt.title_movie,
                 overview,
