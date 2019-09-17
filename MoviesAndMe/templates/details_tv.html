@@ -82,7 +82,12 @@
                         {% endfor %}
                     </span>
                     <p>
-                        <span>Sortie le : </span>{{ first_air_date|date:'d M Y' }}
+                        <span>Sortie le : </span>
+                        {% if first_air_date != None %}
+                            {{ first_air_date|date:'d M Y' }}
+                        {% else %}
+                            {{ '...' }}
+                        {% endif %}
                     </p>
                   </div>
                 </div>

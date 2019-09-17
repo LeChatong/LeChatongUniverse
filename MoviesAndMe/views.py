@@ -103,7 +103,6 @@ def search_movies(request):
                             elt['title'],
                             elt['poster_path'],
                             elt['overview'],
-                            elt['release_date'],
                             elt['vote_average'],
                         ]
                     )
@@ -116,7 +115,6 @@ def search_movies(request):
                                 elt['name'],
                                 elt['poster_path'],
                                 elt['overview'],
-                                elt['first_air_date'],
                                 elt['vote_average'],
                             ]
                         )
@@ -332,8 +330,15 @@ def movies_on_actor(request, id):
     LIST_MOVIES_ACTOR = []
     L_MOVIES_ACTOR = actor_movies['cast']
     for elt in L_MOVIES_ACTOR:
-        #if elt['release_date'] != None and elt['release_date'] != "":
-        #    elt['release_date'] = datetime.strptime(elt['release_date'], "%Y-%m-%d").date()
+        try:
+            release_date = datetime.strptime(elt['release_date'], "%Y-%m-%d").date()
+        except TypeError:
+            release_date = None
+
+        try:
+            character = elt['character']
+        except TypeError:
+            character = None
 
         if elt['id'] == None or elt['title'] == None or not elt['character'] or elt['release_date'] == None:
             pass
@@ -342,9 +347,8 @@ def movies_on_actor(request, id):
                 elt['id'],
                 elt['title'],
                 elt['poster_path'],
-                elt['character'],
-                elt['overview'],
-        #        elt['release_date'],
+                character,
+                release_date
             ]
         )
     context = {
@@ -367,19 +371,24 @@ def tvs_on_actor(request, id):
     LIST_TVS_ACTOR = []
     L_TVS_ACTOR = actor_tvs['cast']
     for elt in L_TVS_ACTOR:
-        if elt['first_air_date'] != None and elt['first_air_date'] != "":
-            elt['first_air_date'] = datetime.strptime(elt['first_air_date'], "%Y-%m-%d").date()
+        try:
+            first_air_date = datetime.strptime(elt['first_air_date'], "%Y-%m-%d").date()
+        except TypeError:
+            first_air_date = None
 
-        if elt['id'] == None or elt['name'] == None or not elt['character'] or elt['first_air_date'] == None:
-            pass
+        try:
+            character = elt['character']
+        except TypeError:
+            character = None
+
         LIST_TVS_ACTOR.append(
             [
                 elt['id'],
                 elt['name'],
                 elt['poster_path'],
-                elt['character'],
+                character,
                 elt['overview'],
-                elt['first_air_date'],
+                first_air_date,
             ]
         )
     context = {
@@ -709,7 +718,10 @@ def details_tv(request, id):
                 author['credit_id']
             ]
         )
-
+    try:
+        fad = datetime.strptime(tv['first_air_date'], "%Y-%m-%d").date()
+    except TypeError:
+        fad = None
     context = {
         'id':                   tv['id'],
         'name':                 tv['name'],
@@ -720,7 +732,7 @@ def details_tv(request, id):
         'genres':               tv['genres'],
         'created_by':           AUTHORS,
         'seasons':              SEASONS,
-        'first_air_date':       datetime.strptime(tv['first_air_date'], "%Y-%m-%d").date(),
+        'first_air_date':       fad,
         'number_of_episodes':   tv['number_of_episodes'],
         'number_of_seasons':    tv['number_of_seasons'],
         'production_companies': tv['production_companies'],
@@ -794,14 +806,15 @@ def donwload_movie_content(request):
         response_movie = requests.get(
             'https://api.themoviedb.org/3/movie/' + id + '?api_key=f972c58efb26ab0a5e82cda1f7352586&language=fr-FR')
         movie = response_movie.json()
-        if movie['poster_path']:
+
+        try:
             poster = movie['poster_path']
-        else:
+        except KeyError:
             poster = None
 
-        if movie['poster_path']:
+        try:
             overview = movie['overview']
-        else:
+        except KeyError:
             overview = '...'
 
         list_movie.append(

@@ -23,7 +23,13 @@
                 {% for elt in list_movie %}
                     <div class="col-lg-3 col-md-4 mb-3">
                         <div class="card h-auto">
-                          <a href="{% url 'details_movie' elt.0%}"><img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{ elt.4 }}" alt="{{ elt.3 }}"></a>
+                          <a href="{% url 'details_movie' elt.0%}">
+                              {% if elt.4 != None %}
+                                <img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{ elt.4 }}" alt="{{ elt.3 }}">
+                              {% else %}
+                                <img class="card-img-top" src="{% static 'not_image_disponible.svg.png' %}" alt="{{ elt.3 }}">
+                              {% endif %}
+                          </a>
                           <div class="card-body">
                             <h5 class="card-title">
                               <a title="{{ elt.3 }}" href="{% url 'details_movie' elt.0 %}">{{ elt.2 }}</a>
