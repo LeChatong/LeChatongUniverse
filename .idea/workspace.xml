@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="87406ce3-e5f6-4d08-b4ae-7129b8e07aa8" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/MoviesAndMe/static/LCU-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/LCU-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlyMe/static/LCU-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlyMe/staticfiles/LCU-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/staticfiles/LCU-icon.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MoviesAndMe/templates/donwload_movie_content.html" beforeDir="false" afterPath="$PROJECT_DIR$/MoviesAndMe/templates/donwload_movie_content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MoviesAndMe/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/MoviesAndMe/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -82,11 +75,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="donwload_movie_content.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="donwload_movie_content.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/donwload_movie_content.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="73" selection-start-line="9" selection-start-column="73" selection-end-line="9" selection-end-column="73" />
+            <state relative-caret-position="102">
+              <caret line="6" column="62" selection-start-line="6" selection-start-column="62" selection-end-line="6" selection-end-column="62" />
             </state>
           </provider>
         </entry>
@@ -100,7 +93,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
@@ -112,8 +105,8 @@
       <file leaf-file-name="details_movie.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/details_movie.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="14" lean-forward="true" selection-start-line="2" selection-end-line="12" selection-end-column="14" />
+            <state relative-caret-position="799">
+              <caret line="47" column="113" lean-forward="true" selection-start-line="44" selection-start-column="28" selection-end-line="47" selection-end-column="113" />
             </state>
           </provider>
         </entry>
@@ -191,8 +184,8 @@
         <option value="$PROJECT_DIR$/MoviesAndMe/templates/movies_on_actor.html" />
         <option value="$PROJECT_DIR$/MoviesAndMe/templates/tvs_on_actor.html" />
         <option value="$PROJECT_DIR$/MoviesAndMe/views.py" />
-        <option value="$PROJECT_DIR$/MoviesAndMe/templates/donwload_movie_content.html" />
         <option value="$PROJECT_DIR$/templates/base.html" />
+        <option value="$PROJECT_DIR$/MoviesAndMe/templates/donwload_movie_content.html" />
       </list>
     </option>
   </component>
@@ -338,20 +331,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1557311815933</updated>
-    </task>
-    <task id="LOCAL-00016" summary="Ajout de l'espace pour série et animé">
-      <created>1559152361131</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1559152361131</updated>
-    </task>
-    <task id="LOCAL-00017" summary="Ajout de l'espace pour série et animé">
-      <created>1559217229515</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1559217229515</updated>
     </task>
     <task id="LOCAL-00018" summary="Design amélioré et application mieux structuré">
       <created>1559667395455</created>
@@ -682,20 +661,35 @@
       <option name="project" value="LOCAL" />
       <updated>1568972012734</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="- Ajout du contenu pour les films téléchargeable et correction des bugs">
+      <created>1568979192305</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1568979192305</updated>
+    </task>
+    <task id="LOCAL-00066" summary="- Ajout du contenu pour les films téléchargeable et correction des bugs">
+      <created>1568979938899</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1568979938899</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.50064266" side_tool="true" visible="true" weight="0.30651873" />
+      <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.53984576" side_tool="true" visible="true" weight="0.30651873" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4993573" weight="0.3293011" />
       <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.4993573" weight="0.3293011" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.46143958" weight="0.30651873" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.5571979" weight="0.23439667" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.34640104" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.46015424" visible="true" weight="0.30651873" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.5559126" weight="0.23439667" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.34640104" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="4" visible="true" weight="0.13303342" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4993573" weight="0.32871014" />
@@ -1028,20 +1022,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/details_movie.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="14" lean-forward="true" selection-start-line="2" selection-end-line="12" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/donwload_movie_content.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="73" selection-start-line="9" selection-start-column="73" selection-end-line="9" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MoviesAndMe/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="316">
@@ -1076,6 +1056,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="70" selection-start-line="10" selection-start-column="70" selection-end-line="10" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/details_movie.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="799">
+          <caret line="47" column="113" lean-forward="true" selection-start-line="44" selection-start-column="28" selection-end-line="47" selection-end-column="113" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/donwload_movie_content.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="62" selection-start-line="6" selection-start-column="62" selection-end-line="6" selection-end-column="62" />
         </state>
       </provider>
     </entry>
