@@ -829,6 +829,7 @@ def donwload_movie_content(request):
 
     context = {
         'list_movie': list_movie,
-        'nb_movie'  : len(list_movie)
+        'nb_movie'  : len(list_movie),
+        'descrption' : ' films disponibles en téléchargement gratuit sur LeChatongUniverse'
     }
     return render(request, 'donwload_movie_content.html', context)
