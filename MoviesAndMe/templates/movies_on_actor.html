@@ -27,10 +27,12 @@
                           <a href="{% url 'details_movie' movie.0 %}"><img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{ movie.2 }}" alt="{{ movie.1 }}"></a>
                           <div class="card-body">
                             <h5 class="card-title">
-                              <a href="{% url 'details_movie' movie.0 %}">{{ movie.1 }}</a>
+                              <a class="text-dark" href="{% url 'details_movie' movie.0 %}">{{ movie.1 }}</a>
                             </h5>
                             <div class="card-text">
-                                <div><sup>{{ 'Sortie le : ' }}{{ movie.4|date:'d M Y' }} </sup></div>
+                                {% if movie.4 != None %}
+                                    <div><sup>{{ 'Sortie le : ' }}{{ movie.4|date:'d M Y' }} </sup></div>
+                                {% endif %}
                                 <div><sup>{{ 'Alias : ' }}<b>{{ movie.3 }}</b></sup></div>
                             </div>
 

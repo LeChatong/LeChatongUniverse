@@ -7,8 +7,7 @@
     <a href="{% url 'popular_tv' 1 %}" class="list-group-item list-group-item-action">{{ 'Populaires' }}</a>
 {% endblock %}
 {% block details %}
-    <div class="col-lg-9">
-        <div class="row">
+    <div class="row">
             <div class="col-lg-12"  style="margin-top: 20px;">
                 <div class="row">
                     <div class="col-lg-6">
@@ -23,10 +22,12 @@
                               <a href="{% url 'details_tv' tv.0 %}"><img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{ tv.2 }}" alt="{{ tv.1 }}"></a>
                               <div class="card-body">
                                 <h5 class="card-title">
-                                  <a href="{% url 'details_tv' tv.0 %}">{{ tv.1 }}</a>
+                                  <a class="text-dark" href="{% url 'details_tv' tv.0 %}">{{ tv.1 }}</a>
                                 </h5>
                                 <div class="card-text">
-                                    <div><sup>{{ 'Sortie le : ' }}{{ tv.5|date:'d M Y' }}</sup></div>
+                                    {% if tv.5 != None %}
+                                        <div><sup>{{ 'Sortie le : ' }}{{ tv.5|date:'d M Y' }}</sup></div>
+                                    {% endif %}
                                     <div><sup>{{ 'Alias : ' }}<b>{{ tv.3 }}</b></sup></div>
                                 </div>
 
@@ -37,6 +38,4 @@
                 </div>
             </div>
         </div>
-    </div>
-
 {% endblock %}

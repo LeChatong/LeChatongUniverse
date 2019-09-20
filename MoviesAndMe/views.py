@@ -331,7 +331,10 @@ def movies_on_actor(request, id):
     L_MOVIES_ACTOR = actor_movies['cast']
     for elt in L_MOVIES_ACTOR:
         try:
-            release_date = datetime.strptime(elt['release_date'], "%Y-%m-%d").date()
+            try:
+                release_date = datetime.strptime(elt['release_date'], "%Y-%m-%d").date()
+            except ValueError:
+                release_date = None
         except TypeError:
             release_date = None
 
@@ -372,7 +375,10 @@ def tvs_on_actor(request, id):
     L_TVS_ACTOR = actor_tvs['cast']
     for elt in L_TVS_ACTOR:
         try:
-            first_air_date = datetime.strptime(elt['first_air_date'], "%Y-%m-%d").date()
+            try:
+                first_air_date = datetime.strptime(elt['first_air_date'], "%Y-%m-%d").date()
+            except ValueError:
+                first_air_date = None
         except TypeError:
             first_air_date = None
 
@@ -808,11 +814,6 @@ def donwload_movie_content(request):
         movie = response_movie.json()
 
         try:
-            poster = movie['poster_path']
-        except KeyError:
-            poster = None
-
-        try:
             overview = movie['overview']
         except KeyError:
             overview = '...'
@@ -822,12 +823,12 @@ def donwload_movie_content(request):
                 elt.id_movie,
                 elt.link_telegram,
                 elt.title_movie,
-                overview,
-                poster
+                overview
             ]
         )
 
     context = {
-        'list_movie': list_movie
+        'list_movie': list_movie,
+        'nb_movie'  : len(list_movie)
     }
     return render(request, 'donwload_movie_content.html', context)

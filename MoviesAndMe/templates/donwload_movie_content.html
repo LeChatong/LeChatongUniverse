@@ -15,33 +15,25 @@
         <div class="col-lg-12 col-md-10 mb-12"  style="margin-top: 20px;">
             <div class="row">
                 <div class="col-lg-12 col-md-10 mb-12">
-                    <h3>{{ 'Films disponibles en téléchargement' }}</h3>
+                    <h3>{{ nb_movie }}{{ ' films disponibles en téléchargement' }}</h3>
                 </div>
             </div>
             <hr/>
             <div class="row">
+            <table class="table table-hover table-responsive">
                 {% for elt in list_movie %}
-                    <div class="col-lg-3 col-md-4 mb-3">
-                        <div class="card h-auto">
-                          <a href="{% url 'details_movie' elt.0%}">
-                              {% if elt.4 != None %}
-                                <img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{ elt.4 }}" alt="{{ elt.3 }}">
-                              {% else %}
-                                <img class="card-img-top" src="{% static 'not_image_disponible.svg.png' %}" alt="{{ elt.3 }}">
-                              {% endif %}
-                          </a>
-                          <div class="card-body">
-                            <h5 class="card-title">
-                              <a title="{{ elt.3 }}" href="{% url 'details_movie' elt.0 %}">{{ elt.2 }}</a>
-                            </h5>
-                            <div class="card-text">
-                                <div><sup><a target="_blank" href="{{ elt.1 }}">Télécharger</a></sup></div>
-                            </div>
-
-                          </div>
-                        </div>
-                  </div>
+                    <tr>
+                        <td>
+                            <h4 class="text-dark">
+                              <a class="text-dark" title="{{ elt.3 }}" href="{% url 'details_movie' elt.0 %}">{{ elt.2 }}</a>
+                            </h4>
+                        </td>
+                        <td>
+                            <a target="_blank" href="{{ elt.1 }}">Télécharger</a>
+                        </td>
+                    </tr>
                 {% endfor %}
+            </table>
             </div>
 
         </div>

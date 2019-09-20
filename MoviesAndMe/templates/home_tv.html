@@ -54,7 +54,7 @@
                                 {% for tv in POPULAR_ON_TV %}
                                     <div class="col-lg-3 col-md-4 mb-3">
                                         <div class="card h-auto">
-                                          <a href="{% url 'details_tv' tv.0 %}"><img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{ tv.3 }}" alt="{{ tv.1 }}"></a>
+                                          <a class="text-dark" href="{% url 'details_tv' tv.0 %}"><img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{ tv.3 }}" alt="{{ tv.1 }}"></a>
                                           <div class="card-body">
                                             <h5 class="card-title">
                                               <a href="{% url 'details_tv' tv.0 %}">{{ tv.1 }}</a>
