@@ -849,16 +849,18 @@ def downloable_tv_content(request):
             'https://api.themoviedb.org/3/tv/' + id + '?api_key=f972c58efb26ab0a5e82cda1f7352586&language=fr-FR')
         tv = response_tv.json()
         try:
-            overview = tv['overview']
+            overview = tv['overview'],
+            name = tv['name']
         except KeyError:
             overview = '...'
+            name = '...'
 
         list_tvs.append(
             [
                 elt.id_tv,
                 elt.title_tv,
                 overview,
-                tv['name']
+                name
             ]
         )
     context = {
