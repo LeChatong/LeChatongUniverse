@@ -21,5 +21,6 @@ urlpatterns = [
     url(r'^tv/details/(?P<id>[0-9]+)/season/(?P<season>[0-9]+)$', views.details_season_tv, name='details_tv_season'),
     url(r'^page-not-found/', views.page_not_found, name='page_not_found'),
     url(r'^page-error/', views.page_error, name='page_error'),
-    url(r'^movies/downloadable/', views.donwload_movie_content, name='donwload_movie_content')
+    url(r'^movies/downloadable/', views.donwload_movie_content, name='donwload_movie_content'),
+    url(r'^tv/downloadable/', views.downloable_tv_content, name='donwload_tv_content')
 ]

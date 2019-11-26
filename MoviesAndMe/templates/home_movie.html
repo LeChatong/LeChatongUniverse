@@ -20,13 +20,14 @@
           </li>
         </ul>
 {% endblock %}
+
 {% block content %}
     <div class="row">
 
       <div class="col-lg-3">
 
         <h3 class="my-4">Menu Films</h3>
-        <div class="list-group">
+        <div class="list-group  dark-theme">
             {% block link_menu %}
                 <a href="{% url 'home_movie' %}" class="list-group-item list-group-item-action list-group-item-dark active">
                     <i class="text-left"><img width="32" height="32" src="{% static 'sun-white.png' %}"></i>

@@ -10,20 +10,20 @@
                     <tr>
                         {% if elt.0 == 'movie' %}
                             <div class="row">
-                                <div class="col-lg-3">
+                                <div class="col-lg-2">
 
                                     {% if elt.3 == None %}
                                         <a target="_blank" href="{% static 'not_image_disponible.svg.png' %}">
-                                            <img class="card-img-top" width="500" height="200" src="{% static 'not_image_disponible.svg.png' %}" alt="{{ elt.2 }}">
+                                            <img class="rounded-circle" width="100" height="100" src="{% static 'not_image_disponible.svg.png' %}" alt="{{ elt.2 }}">
                                         </a>
                                     {% else %}
                                         <a target="_blank" href="https://image.tmdb.org/t/p/w500{{ elt.3 }}">
-                                            <img class="card-img-top" width="500" height="200" src="https://image.tmdb.org/t/p/w500{{ elt.3 }}" alt="{{ elt.2 }}">
+                                            <img class="rounded-circle" width="100" height="100" src="https://image.tmdb.org/t/p/w500{{ elt.3 }}" alt="{{ elt.2 }}">
                                         </a>
                                     {% endif %}
 
                                 </div>
-                                <div class="col-lg-9">
+                                <div class="col-lg-10">
                                     <div class="row">
                                         <div class="col-lg-11">
                                             <h3 class="text-justify">
@@ -41,20 +41,20 @@
                             </div>
                         {% elif elt.0 == 'tv' %}
                             <div class="row">
-                                <div class="col-lg-3">
+                                <div class="col-lg-2">
 
                                     {% if elt.3 == None %}
                                         <a target="_blank" href="{% static 'not_image_disponible.svg.png' %}">
-                                            <img class="card-img-top" width="500" height="200" src="{% static 'not_image_disponible.svg.png' %}" alt="{{ elt.2 }}">
+                                            <img class="rounded-circle" width="100" height="100" src="{% static 'not_image_disponible.svg.png' %}" alt="{{ elt.2 }}">
                                         </a>
                                     {% else %}
                                         <a target="_blank" href="https://image.tmdb.org/t/p/w500{{ elt.3 }}">
-                                            <img class="card-img-top" width="500" height="200" src="https://image.tmdb.org/t/p/w500{{ elt.3 }}" alt="{{ elt.2 }}">
+                                            <img class="rounded-circle" width="100" height="100" src="https://image.tmdb.org/t/p/w500{{ elt.3 }}" alt="{{ elt.2 }}">
                                         </a>
                                     {% endif %}
 
                                 </div>
-                                <div class="col-lg-9">
+                                <div class="col-lg-10">
                                     <div class="row">
                                         <div class="col-lg-11">
                                             <h3 class="text-justify">
@@ -72,20 +72,20 @@
                             </div>
                         {% elif elt.0 == 'person' %}
                             <div class="row">
-                                <div class="col-lg-3">
+                                <div class="col-lg-2">
 
                                     {% if elt.3 == None %}
                                         <a target="_blank" href="{% static 'not_image_disponible.svg.png' %}">
-                                            <img class="card-img-top" width="500" height="200" src="{% static 'not_image_disponible.svg.png' %}" alt="{{ elt.2 }}">
+                                            <img class="rounded-circle" width="100" height="100" src="{% static 'not_image_disponible.svg.png' %}" alt="{{ elt.2 }}">
                                         </a>
                                     {% else %}
                                         <a target="_blank" href="https://image.tmdb.org/t/p/w500{{ elt.3 }}">
-                                            <img class="card-img-top" width="500" height="200" src="https://image.tmdb.org/t/p/w500{{ elt.3 }}" alt="{{ elt.2 }}">
+                                            <img class="rounded-circle" width="100" height="100" src="https://image.tmdb.org/t/p/w500{{ elt.3 }}" alt="{{ elt.2 }}">
                                         </a>
                                     {% endif %}
 
                                 </div>
-                                <div class="col-lg-9">
+                                <div class="col-lg-10">
                                     <div class="row">
                                         <div class="col-lg-11">
                                             <h3 class="text-justify">

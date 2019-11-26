@@ -286,6 +286,10 @@ def details_actor(request, id):
         for i in (0, 1, 2, 3, 4):
             if not L_TV_ACTOR[i]['id']:
                 pass
+            try:
+                first_air_date = datetime.strptime(L_TV_ACTOR[i]['first_air_date'], "%Y-%m-%d").date()
+            except ValueError:
+                first_air_date = '...'
             LIST_TV_ACTOR.append(
                 [
                     L_TV_ACTOR[i]['id'],
@@ -293,7 +297,7 @@ def details_actor(request, id):
                     L_TV_ACTOR[i]['poster_path'],
                     L_TV_ACTOR[i]['character'],
                     L_TV_ACTOR[i]['overview'],
-                    datetime.strptime(L_TV_ACTOR[i]['first_air_date'], "%Y-%m-%d").date(),
+                    first_air_date,
                 ]
             )
             if (b-1) == i:
@@ -833,3 +837,32 @@ def donwload_movie_content(request):
         'descrption' : ' films disponibles en téléchargement gratuit sur LeChatongUniverse'
     }
     return render(request, 'donwload_movie_content.html', context)
+
+def downloable_tv_content(request):
+    name_map = {'id_tv':'id'}
+    tvs = tv_detail.objects.all().order_by('id_tv', 'title_tv').distinct('id_tv')
+    #tvs = tv_detail.objects.raw('SELECT DISTINCT tv.id_tv, (SELECT COUNT( DISTINCT t.nb_season) FROM "MoviesAndMe_tv_detail" t WHERE t.id_tv = tv.id_tv) as nb_season, tv.title_tv FROM "MoviesAndMe_tv_detail" tv ORDER BY tv.title_tv', name_map)
+    list_tvs = []
+    for elt in tvs:
+        id = str(elt.id_tv)
+        response_tv = requests.get(
+            'https://api.themoviedb.org/3/tv/' + id + '?api_key=f972c58efb26ab0a5e82cda1f7352586&language=fr-FR')
+        tv = response_tv.json()
+        try:
+            overview = tv['overview']
+        except KeyError:
+            overview = '...'
+
+        list_tvs.append(
+            [
+                elt.id_tv,
+                elt.title_tv,
+                overview
+            ]
+        )
+    context = {
+        'list_tvs': list_tvs,
+        'nb_tv': len(list_tvs),
+        'descrption': ' Séries et animes disponibles en téléchargement gratuit sur LeChatongUniverse'
+    }
+    return render(request, 'download_tv_content.html', context)
