@@ -857,7 +857,8 @@ def downloable_tv_content(request):
             [
                 elt.id_tv,
                 elt.title_tv,
-                overview
+                overview,
+                tv['name']
             ]
         )
     context = {
