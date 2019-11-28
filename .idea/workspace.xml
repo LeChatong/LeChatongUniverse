@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="87406ce3-e5f6-4d08-b4ae-7129b8e07aa8" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MoviesAndMe/templates/download_tv_content.html" beforeDir="false" afterPath="$PROJECT_DIR$/MoviesAndMe/templates/download_tv_content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MoviesAndMe/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/MoviesAndMe/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -108,11 +106,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MoviesAndMe/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="860" column="26" lean-forward="true" selection-start-line="860" selection-start-column="26" selection-end-line="860" selection-end-column="26" />
-              <folding>
-                <element signature="e#29124#30004#0" />
-              </folding>
+            <state relative-caret-position="300">
+              <caret line="859" column="26" selection-start-line="859" selection-start-column="26" selection-end-line="859" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -120,7 +115,7 @@
       <file leaf-file-name="download_tv_content.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/download_tv_content.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
+            <state relative-caret-position="782">
               <caret line="46" column="115" selection-start-line="46" selection-start-column="115" selection-end-line="46" selection-end-column="115" />
             </state>
           </provider>
@@ -142,7 +137,7 @@
       <file leaf-file-name="home_movie.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/home_movie.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
+            <state relative-caret-position="799">
               <caret line="47" column="57" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="57" />
               <folding>
                 <element signature="n#block#2;n#!!top" />
@@ -227,8 +222,8 @@
         <option value="$PROJECT_DIR$/MoviesAndMe/templates/details_tv.html" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/bac7b837-e95f-4933-beb4-646baf8c02a9/console_1.sql" />
         <option value="$PROJECT_DIR$/MoviesAndMe/templates/search_result.html" />
-        <option value="$PROJECT_DIR$/MoviesAndMe/views.py" />
         <option value="$PROJECT_DIR$/MoviesAndMe/templates/download_tv_content.html" />
+        <option value="$PROJECT_DIR$/MoviesAndMe/views.py" />
       </list>
     </option>
   </component>
@@ -253,6 +248,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -285,7 +281,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -362,20 +357,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1557311815933</updated>
-    </task>
-    <task id="LOCAL-00021" summary="Design amélioré et application mieux structuré">
-      <created>1560272402257</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1560272402257</updated>
-    </task>
-    <task id="LOCAL-00022" summary="Amélioration de la recherche">
-      <created>1560338556193</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1560338556193</updated>
     </task>
     <task id="LOCAL-00023" summary="Amélioration de la recherche">
       <created>1560340437184</created>
@@ -706,27 +687,40 @@
       <option name="project" value="LOCAL" />
       <updated>1574770704753</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="- Ajout du contenu pour les series et animés téléchargeable et correction des bugs">
+      <created>1574770760099</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1574770760099</updated>
+    </task>
+    <task id="LOCAL-00071" summary="- Ajout du contenu pour les series et animés téléchargeable et correction des bugs">
+      <created>1574771199613</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1574771199613</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.54498714" side_tool="true" visible="true" weight="0.30651873" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.44794345" side_tool="true" visible="true" weight="0.23023579" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.45501286" visible="true" weight="0.30651873" />
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4993573" weight="0.3293011" />
       <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.4993573" weight="0.3293011" />
-      <window_info anchor="bottom" id="Terminal" order="13" sideWeight="0.5533419" weight="0.23023579" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24100257" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.45501286" weight="0.30651873" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="13" sideWeight="0.55205655" visible="true" weight="0.23023579" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24421594" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.27313626" />
+      <window_info anchor="right" id="Database" order="4" weight="0.27313626" />
       <window_info anchor="right" id="SciView" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.48907456" weight="0.36199722" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.48907456" weight="0.36199722" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -994,7 +988,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/home_movie.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
+        <state relative-caret-position="799">
           <caret line="47" column="57" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="57" />
           <folding>
             <element signature="n#block#2;n#!!top" />
@@ -1038,9 +1032,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1734">
           <caret line="118" column="84" selection-start-line="118" selection-start-column="84" selection-end-line="118" selection-end-column="84" />
-          <folding>
-            <element signature="e#1459#1489#0#DjangoTemplate" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1081,18 +1072,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/download_tv_content.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
+        <state relative-caret-position="782">
           <caret line="46" column="115" selection-start-line="46" selection-start-column="115" selection-end-line="46" selection-end-column="115" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MoviesAndMe/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="860" column="26" lean-forward="true" selection-start-line="860" selection-start-column="26" selection-end-line="860" selection-end-column="26" />
-          <folding>
-            <element signature="e#29124#30004#0" />
-          </folding>
+        <state relative-caret-position="300">
+          <caret line="859" column="26" selection-start-line="859" selection-start-column="26" selection-end-line="859" selection-end-column="26" />
         </state>
       </provider>
     </entry>
