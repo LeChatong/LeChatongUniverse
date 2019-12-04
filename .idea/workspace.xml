@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="87406ce3-e5f6-4d08-b4ae-7129b8e07aa8" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MoviesAndMe/templates/details_movie.html" beforeDir="false" afterPath="$PROJECT_DIR$/MoviesAndMe/templates/details_movie.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MoviesAndMe/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/MoviesAndMe/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,51 +28,6 @@
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="lechatonguniverse@127.0.0.1" type="feb32156:DbDataSourceImpl" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="lechatonguniverse@127.0.0.1" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="lechatonguniverse@127.0.0.1" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="lechatonguniverse: database" type="6d9b600a:PostgresImplModel$Database" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="lechatonguniverse@127.0.0.1" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="lechatonguniverse: database" type="6d9b600a:PostgresImplModel$Database" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="lechatonguniverse@127.0.0.1" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="lechatonguniverse: database" type="6d9b600a:PostgresImplModel$Database" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="public: schema" type="a16502c0:PostgresImplModel$Schema" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="lechatonguniverse@127.0.0.1" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="lechatonguniverse: database" type="6d9b600a:PostgresImplModel$Database" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="public: schema" type="a16502c0:PostgresImplModel$Schema" />
-        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="lechatonguniverse@127.0.0.1" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="lechatonguniverse: database" type="6d9b600a:PostgresImplModel$Database" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="public: schema" type="a16502c0:PostgresImplModel$Schema" />
-        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="MoviesAndMe_tv_detail: table" type="a93d6ac6:PostgresImplModel$LocalTable" />
       </path>
     </expand>
     <select />
@@ -106,8 +63,21 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MoviesAndMe/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="859" column="26" selection-start-line="859" selection-start-column="26" selection-end-line="859" selection-end-column="26" />
+            <state relative-caret-position="123">
+              <caret line="830" column="21" lean-forward="true" selection-start-line="830" selection-start-column="21" selection-end-line="830" selection-end-column="21" />
+              <folding>
+                <element signature="e#23846#27118#0" />
+                <element signature="e#27168#29081#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="details_movie.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/details_movie.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="95" column="78" selection-start-line="95" selection-start-column="78" selection-end-line="95" selection-end-column="78" />
             </state>
           </provider>
         </entry>
@@ -128,7 +98,6 @@
               <caret line="31" column="119" selection-start-line="31" selection-start-column="91" selection-end-line="31" selection-end-column="119" />
               <folding>
                 <element signature="n#block#2;n#!!top" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -215,7 +184,6 @@
         <option value="$PROJECT_DIR$/MoviesAndMe/templates/tvs_on_actor.html" />
         <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/MoviesAndMe/templates/donwload_movie_content.html" />
-        <option value="$PROJECT_DIR$/MoviesAndMe/templates/details_movie.html" />
         <option value="$PROJECT_DIR$/MoviesAndMe/templates/home_movie.html" />
         <option value="$PROJECT_DIR$/MoviesAndMe/urls.py" />
         <option value="$PROJECT_DIR$/MoviesAndMe/templates/home_tv.html" />
@@ -223,6 +191,7 @@
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/bac7b837-e95f-4933-beb4-646baf8c02a9/console_1.sql" />
         <option value="$PROJECT_DIR$/MoviesAndMe/templates/search_result.html" />
         <option value="$PROJECT_DIR$/MoviesAndMe/templates/download_tv_content.html" />
+        <option value="$PROJECT_DIR$/MoviesAndMe/templates/details_movie.html" />
         <option value="$PROJECT_DIR$/MoviesAndMe/views.py" />
       </list>
     </option>
@@ -248,7 +217,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -260,6 +228,12 @@
               <item name="OnlyMe" type="b2602c69:ProjectViewProjectNode" />
               <item name="OnlyMe" type="462c0819:PsiDirectoryNode" />
               <item name="MoviesAndMe" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OnlyMe" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OnlyMe" type="462c0819:PsiDirectoryNode" />
+              <item name="MoviesAndMe" type="462c0819:PsiDirectoryNode" />
+              <item name="dumps" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="OnlyMe" type="b2602c69:ProjectViewProjectNode" />
@@ -281,6 +255,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -293,6 +268,7 @@
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -357,13 +333,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1557311815933</updated>
-    </task>
-    <task id="LOCAL-00023" summary="Amélioration de la recherche">
-      <created>1560340437184</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1560340437184</updated>
     </task>
     <task id="LOCAL-00024" summary="Amélioration de la recherche">
       <created>1560340741633</created>
@@ -701,22 +670,29 @@
       <option name="project" value="LOCAL" />
       <updated>1574771199613</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="- Ajout du contenu pour les series et animés téléchargeable et correction des bugs">
+      <created>1574953331397</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1574953331398</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.44794345" side_tool="true" visible="true" weight="0.23023579" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5456298" side_tool="true" visible="true" weight="0.22607489" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4993573" weight="0.3293011" />
       <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.4993573" weight="0.3293011" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.45501286" weight="0.30651873" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="13" sideWeight="0.55205655" visible="true" weight="0.23023579" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24421594" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.45437017" weight="0.30651873" />
+      <window_info anchor="bottom" id="Terminal" order="13" sideWeight="0.5488432" weight="0.23023579" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12917738" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="right" id="Database" order="4" weight="0.27313626" />
+      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.075835474" />
       <window_info anchor="right" id="SciView" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -788,21 +764,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/static/js/bootstrap.js" />
-    <entry file="file://$PROJECT_DIR$/MoviesAndMe/static/css/bootstrap.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="5" column="81617" selection-start-line="5" selection-start-column="81617" selection-end-line="5" selection-end-column="81617" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OnlyMe/static/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="11" selection-start-column="11" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MoviesAndMe/static/css/shop-homepage.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -925,9 +886,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MoviesAndMe/dumps/data.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/latest.dump.1" />
     <entry file="file://$PROJECT_DIR$/latest.dump" />
     <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/popular_tv.html">
@@ -1016,7 +974,6 @@
           <caret line="31" column="119" selection-start-line="31" selection-start-column="91" selection-end-line="31" selection-end-column="119" />
           <folding>
             <element signature="n#block#2;n#!!top" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1025,13 +982,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="19" column="8" lean-forward="true" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/details_movie.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1734">
-          <caret line="118" column="84" selection-start-line="118" selection-start-column="84" selection-end-line="118" selection-end-column="84" />
         </state>
       </provider>
     </entry>
@@ -1077,10 +1027,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/MoviesAndMe/dumps/db.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MoviesAndMe/dumps/data.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/MobaXterm/slash/RemoteFiles/198632_2_2/mail.txt.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/MobaXterm/slash/RemoteFiles/198632_2_1/online_detailfichePaie.html.twig">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/details_movie.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="95" column="78" selection-start-line="95" selection-start-column="78" selection-end-line="95" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/MoviesAndMe/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="859" column="26" selection-start-line="859" selection-start-column="26" selection-end-line="859" selection-end-column="26" />
+        <state relative-caret-position="123">
+          <caret line="830" column="21" lean-forward="true" selection-start-line="830" selection-start-column="21" selection-end-line="830" selection-end-column="21" />
+          <folding>
+            <element signature="e#23846#27118#0" />
+            <element signature="e#27168#29081#0" />
+          </folding>
         </state>
       </provider>
     </entry>

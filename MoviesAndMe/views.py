@@ -809,7 +809,7 @@ def details_season_tv(request, id, season):
     return render(request, 'details_tv_season.html', context)
 
 def donwload_movie_content(request):
-    movies = movie_detail.objects.all().order_by('title_movie')
+    movies = movie_detail.objects.all().order_by('id_movie','title_movie').distinct('id_movie')
     list_movie = []
     for elt in movies:
         id = str(elt.id_movie)
@@ -819,14 +819,16 @@ def donwload_movie_content(request):
 
         try:
             overview = movie['overview']
+            name = movie['title']
         except KeyError:
             overview = '...'
+            name = '...'
 
         list_movie.append(
             [
                 elt.id_movie,
                 elt.link_telegram,
-                elt.title_movie,
+                name,
                 overview
             ]
         )
