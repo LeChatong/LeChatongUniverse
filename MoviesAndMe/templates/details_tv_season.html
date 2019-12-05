@@ -23,6 +23,14 @@
 {% endblock %}
 {% block details %}
     <div class="col-lg-12" style="margin-top: 20px;">
+        <nav aria-label="breadcrumb">
+              <ol class="breadcrumb dark-theme">
+                <li class="breadcrumb-item"><a class="text-dark" href="{% url 'home' %}">Accueil</a></li>
+                <li class="breadcrumb-item"><a class="text-dark" href="{% url 'home_tv' %}">Séries & animes</a></li>
+                  <li class="breadcrumb-item"><a class="text-dark" href="{% url 'details_tv' id %}">{{ name_tv }}</a></li>
+                <li class="breadcrumb-item active" aria-current="page">{{ name_season }}</li>
+              </ol>
+            </nav>
         <div class="row">
                 <div class="col-lg-4">
                     <div class="card mt-4">
@@ -101,7 +109,7 @@
 
                                     </td>
                                     <td class="text-justify">
-                                        <a class="h4" href="#">{{ episode.1 }}</a>
+                                        <a class="h4 text-dark" href="#">{{ episode.1 }}</a>
                                         <div><sup>{{ episode.2|date:'d M Y' }}</sup></div>
                                         <div>{{ episode.4 }}</div>
                                         {% if episode.6 != None %}

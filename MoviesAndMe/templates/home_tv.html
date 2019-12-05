@@ -57,7 +57,7 @@
                                           <a class="text-dark" href="{% url 'details_tv' tv.0 %}"><img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{ tv.3 }}" alt="{{ tv.1 }}"></a>
                                           <div class="card-body">
                                             <h5 class="card-title">
-                                              <a href="{% url 'details_tv' tv.0 %}">{{ tv.1 }}</a>
+                                              <a class="text-dark" href="{% url 'details_tv' tv.0 %}">{{ tv.1 }}</a>
                                             </h5>
                                             <div class="card-text">
                                                 <div><sup>{{ 'Sortie le : ' }}{{ tv.4|date:'d M Y' }}</sup></div>

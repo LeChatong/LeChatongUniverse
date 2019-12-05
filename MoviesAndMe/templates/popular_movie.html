@@ -18,18 +18,18 @@
                     <h3>{{ 'Films les plus populaires du moment' }}</h3>
                     <span>
                         <nav aria-label="..." class="dark-theme">
-                          <ul class="pagination justify-content-center">
+                          <ul class="pagination justify-content-center text-dark">
                             <li class="page-item {% if page == 1 %}disabled{% endif %}">
-                              <a class="page-link" {% if page == 1 %}tabindex="-1" aria-disabled="true"{% endif %} href="{% url 'popular_movie' page_prev %}" >Précédent</a>
+                              <a class="page-link text-dark" {% if page == 1 %}tabindex="-1" aria-disabled="true"{% endif %} href="{% url 'popular_movie' page_prev %}" >Précédent</a>
                             </li>
                                {% if page >= 10 %}
                                   <li class="page-item">
-                                    <a class="page-link" href="{% url 'popular_movie' 1 %}">{{ 1 }}</a>
+                                    <a class="page-link text-dark" href="{% url 'popular_movie' 1 %}">{{ 1 }}</a>
                                   </li>
                               {% endif %}
                               {% for elt in COUNTER %}
                                   <li class="page-item  {% if elt == page %}active{% endif %}" {% if elt == page %}aria-current="page"{% endif %}>
-                                      <a class="page-link" href="{% url 'popular_movie' elt %}">
+                                      <a class="page-link text-dark" href="{% url 'popular_movie' elt %}">
                                           {{ elt }}
                                           {% if elt == page %}
                                               <span class="sr-only">(current)</span>

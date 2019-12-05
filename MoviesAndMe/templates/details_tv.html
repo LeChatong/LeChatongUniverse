@@ -23,6 +23,13 @@
 {% endblock %}
 {% block details %}
     <div class="col-lg-12" style="margin-top: 20px;">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb dark-theme">
+            <li class="breadcrumb-item"><a class="text-dark" href="{% url 'home' %}">Accueil</a></li>
+            <li class="breadcrumb-item"><a class="text-dark" href="{% url 'home_tv' %}">Séries & animes</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{ name }}</li>
+          </ol>
+        </nav>
                 <div class="card mt-4">
                     {% if backdrop_path != None %}
                         <img width="800" height="300" class="card-img-top img-fluid" src="https://image.tmdb.org/t/p/w1280{{ backdrop_path }}" alt="{{ name }}">
@@ -66,14 +73,15 @@
                         </div>
                     </h3>
                     <p>
+                        Genres :
                         {% for genre in genres %}
-                            <a href="#">{{ genre.name }}</a>,
+                            <a class="text-dark" href="#"><b>{{ genre.name }}</b></a>,
                         {% endfor %}
                     </p>
                     <p>
                         Auteurs :
                         {% for author in created_by %}
-                            <a href="#">{{ author.1 }}</a>,
+                            <a class="text-dark" href="#"><b>{{ author.1 }}</b></a>,
                         {% endfor %}
                     </p>
                     <p class="card-text text-justify">{{ overview }}</p>
@@ -111,7 +119,7 @@
 
                                       </a>
                                         <p class="card-title text-center">
-                                          <a href="{% url 'details_tv_season' id season.3%}">{{ season.1 }}</a>
+                                          <a  class="text-dark" href="{% url 'details_tv_season' id season.3%}">{{ season.1 }}</a>
                                         </p>
                                     </div>
                                 </div>
@@ -138,7 +146,7 @@
                                         </a>
                                     {% endif %}
                                     <div>
-                                        <sub><a href="{% url 'details_actor' actor.0 %}" title="{{ actor.3 }}">{{ actor.1 }}</a></sub>
+                                        <sub><a class="text-dark" href="{% url 'details_actor' actor.0 %}" title="{{ actor.3 }}">{{ actor.1 }}</a></sub>
                                     </div>
                                 </div>
                             {% endfor %}
@@ -147,7 +155,7 @@
                                     <img width="75" height="75" alt="#" class="rounded-circle" src="{% static 'not_image_disponible.svg.png' %}">
                                 </a>
                                 <div>
-                                    <sub><a href="{% url 'actors_on_tv' id %}">Voir Plus</a></sub>
+                                    <sub><a class="text-dark"  href="{% url 'actors_on_tv' id %}">Voir Plus</a></sub>
                                 </div>
                             </div>
 
@@ -172,7 +180,7 @@
                                     </a>
                                 {% endif %}
                                 <div>
-                                    <sub><a href="#">{{ company.name }}, {{ company.origin_country }}</a></sub>
+                                    <sub><a class="text-dark" href="#">{{ company.name }}, {{ company.origin_country }}</a></sub>
                                 </div>
 
                             </div>
@@ -199,7 +207,7 @@
 
                                       </a>
                                         <p class="card-title text-center">
-                                          <a href="{% url 'details_tv' similar_tv.0 %}">{{ similar_tv.1 }}</a>
+                                          <a class="text-dark" href="{% url 'details_tv' similar_tv.0 %}">{{ similar_tv.1 }}</a>
                                         </p>
                                     </div>
                               </div>
