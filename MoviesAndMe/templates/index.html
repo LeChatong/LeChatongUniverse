@@ -61,7 +61,7 @@
                           <a href="{% url 'details_movie' movie.0 %}"><img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{ movie.3 }}" alt="{{ movie.1 }}"></a>
                           <div class="card-body">
                             <h4 class="card-title">
-                              <a href="{% url 'details_movie' movie.0 %}">{{ movie.1 }}</a>
+                              <a class="text-dark" href="{% url 'details_movie' movie.0 %}">{{ movie.1 }}</a>
                             </h4>
                             <p>{{ 'Sortie le : ' }}{{ movie.5|date:'d M Y' }}</p>
                             <p class="card-text">{{ movie.2|truncatechars:250 }}</p>
@@ -79,7 +79,7 @@
                           <a href="{% url 'details_tv' tv.0 %}"><img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{ tv.3 }}" alt="{{ tv.1 }}"></a>
                           <div class="card-body">
                             <h4 class="card-title">
-                              <a href="{% url 'details_tv' tv.0 %}">{{ tv.1 }}</a>
+                              <a class="text-dark" href="{% url 'details_tv' tv.0 %}">{{ tv.1 }}</a>
                             </h4>
                             <p>{{ 'Sortie le : ' }}{{ tv.5|date:'d M Y' }}</p>
                             <p class="card-text">{{ tv.2|truncatechars:250 }}</p>

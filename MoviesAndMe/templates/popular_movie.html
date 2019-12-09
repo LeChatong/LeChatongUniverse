@@ -16,7 +16,7 @@
             <div class="row">
                 <div class="col-lg-12 col-md-10 mb-12">
                     <h3>{{ 'Films les plus populaires du moment' }}</h3>
-                    <span>
+                    <!--<span>
                         <nav aria-label="..." class="dark-theme">
                           <ul class="pagination justify-content-center text-dark">
                             <li class="page-item {% if page == 1 %}disabled{% endif %}">
@@ -47,7 +47,7 @@
                             </li>
                           </ul>
                         </nav>
-                    </span>
+                    </span>-->
                 </div>
             </div>
             <hr/>
@@ -58,7 +58,7 @@
                           <a href="{% url 'details_movie' movie.0 %}"><img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{ movie.3 }}" alt="{{ movie.1 }}"></a>
                           <div class="card-body">
                             <h5 class="card-title">
-                              <a title="{{ movie.2 }}" href="{% url 'details_movie' movie.0 %}">{{ movie.1 }}</a>
+                              <a class="text-dark" title="{{ movie.2 }}" href="{% url 'details_movie' movie.0 %}">{{ movie.1 }}</a>
                             </h5>
                             <div class="card-text">
                                 <div><sup>{{ 'Sortie le : ' }}{{ movie.4|date:'d M Y' }}</sup></div>
@@ -73,7 +73,7 @@
             <div class="row">
                 <div class="col-lg-12 col-md-12 mb-12">
                     <span>
-                        <nav aria-label="..." class="dark-theme">
+                        <!--<nav aria-label="..." class="dark-theme">
                           <ul class="pagination justify-content-center">
                             <li class="page-item {% if page == 1 %}disabled{% endif %}">
                               <a class="page-link" {% if page == 1 %}tabindex="-1" aria-disabled="true"{% endif %} href="{% url 'popular_movie' page_prev %}" >Précédent</a>
@@ -102,7 +102,7 @@
                               <a class="page-link" {% if page == TOTAL_PAGES %}tabindex="-1" aria-disabled="true"{% endif %} href="{% url 'popular_movie' page_next %}">Suivant</a>
                             </li>
                           </ul>
-                        </nav>
+                        </nav>-->
                     </span>
                 </div>
             </div>
