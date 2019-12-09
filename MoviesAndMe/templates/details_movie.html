@@ -152,7 +152,7 @@
                                     </a>
                                 {% endif %}
                                 <div>
-                                    <sub><a href="{% url 'details_actor' actor.0 %}" title="{{ actor.3 }}">{{ actor.1 }}</a></sub>
+                                    <sub><a class="text-dark" href="{% url 'details_actor' actor.0 %}" title="{{ actor.3 }}">{{ actor.1 }}</a></sub>
                                 </div>
                             </div>
                         {% endfor %}
@@ -161,7 +161,7 @@
                                 <img width="75" height="75" alt="#" class="rounded-circle" src="{% static 'not_image_disponible.svg.png' %}">
                             </a>
                             <div>
-                                <sub><a href="{% url 'actors_on_movie' id %}">Voir Plus</a></sub>
+                                <sub><a class="text-dark" href="{% url 'actors_on_movie' id %}">Voir Plus</a></sub>
                             </div>
                         </div>
 
@@ -186,7 +186,7 @@
                                 </a>
                             {% endif %}
                             <div>
-                                <sub><a href="#">{{ company.name }}, {{ company.origin_country }}</a></sub>
+                                <sub><a class="text-dark" href="#">{{ company.name }}, {{ company.origin_country }}</a></sub>
                             </div>
 
                         </div>
@@ -213,7 +213,7 @@
 
                                   </a>
                                     <p class="card-title text-center">
-                                      <a href="{% url 'details_movie' similar_movie.0 %}">{{ similar_movie.1 }}</a>
+                                      <a class="text-dark" href="{% url 'details_movie' similar_movie.0 %}">{{ similar_movie.1 }}</a>
                                     </p>
                                 </div>
                           </div>
