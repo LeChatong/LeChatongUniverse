@@ -3,10 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="87406ce3-e5f6-4d08-b4ae-7129b8e07aa8" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MoviesAndMe/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/MoviesAndMe/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MoviesAndMe/templates/popular_movie.html" beforeDir="false" afterPath="$PROJECT_DIR$/MoviesAndMe/templates/popular_movie.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MoviesAndMe/templates/popular_tv.html" beforeDir="false" afterPath="$PROJECT_DIR$/MoviesAndMe/templates/popular_tv.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MoviesAndMe/templates/upcoming_movie.html" beforeDir="false" afterPath="$PROJECT_DIR$/MoviesAndMe/templates/upcoming_movie.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MoviesAndMe/templates/details_actor.html" beforeDir="false" afterPath="$PROJECT_DIR$/MoviesAndMe/templates/details_actor.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MoviesAndMe/templates/details_movie.html" beforeDir="false" afterPath="$PROJECT_DIR$/MoviesAndMe/templates/details_movie.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -44,20 +42,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MoviesAndMe/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="156" column="1" lean-forward="true" selection-start-line="156" selection-start-column="1" selection-end-line="156" selection-end-column="1" />
-              <folding>
-                <element signature="e#0#45#0" expanded="true" />
-                <element signature="e#2829#5299#0" />
-                <element signature="e#8871#12074#0" />
-                <element signature="e#12114#13593#0" />
-                <element signature="e#13630#14992#0" />
-                <element signature="e#23846#27118#0" />
-                <element signature="e#27168#29081#0" />
-              </folding>
+            <state relative-caret-position="3198">
+              <caret line="224" column="20" selection-start-line="224" selection-start-column="9" selection-end-line="224" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="details_movie.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/details_movie.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="32" column="18" lean-forward="true" selection-start-line="26" selection-start-column="12" selection-end-line="32" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="details_actor.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/details_actor.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="18" column="38" lean-forward="true" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -71,29 +78,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="popular_movie.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/popular_movie.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1020">
-              <caret line="60" column="51" selection-start-line="60" selection-start-column="51" selection-end-line="60" selection-end-column="51" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="upcoming_movie.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/upcoming_movie.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="19" selection-start-column="19" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home_movie.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/home_movie.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="16" selection-start-column="16" selection-end-column="16" />
+            <state relative-caret-position="1020">
+              <caret line="60" column="33" selection-start-line="60" selection-start-column="33" selection-end-line="60" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -196,7 +185,6 @@
         <option value="$PROJECT_DIR$/MoviesAndMe/tests.py" />
         <option value="$PROJECT_DIR$/MoviesAndMe/models.py" />
         <option value="$PROJECT_DIR$/MoviesAndMe/templates/404.html" />
-        <option value="$PROJECT_DIR$/MoviesAndMe/templates/details_actor.html" />
         <option value="$PROJECT_DIR$/MoviesAndMe/admin.py" />
         <option value="$PROJECT_DIR$/MoviesAndMe/templates/500.html" />
         <option value="$PROJECT_DIR$/OnlyMe/settings.py" />
@@ -215,12 +203,13 @@
         <option value="$PROJECT_DIR$/MoviesAndMe/views.py" />
         <option value="$PROJECT_DIR$/MoviesAndMe/templates/details_tv.html" />
         <option value="$PROJECT_DIR$/MoviesAndMe/templates/details_tv_season.html" />
-        <option value="$PROJECT_DIR$/MoviesAndMe/templates/details_movie.html" />
         <option value="$PROJECT_DIR$/MoviesAndMe/templates/home_tv.html" />
         <option value="$PROJECT_DIR$/MoviesAndMe/templates/popular_tv.html" />
         <option value="$PROJECT_DIR$/MoviesAndMe/templates/popular_movie.html" />
         <option value="$PROJECT_DIR$/MoviesAndMe/templates/upcoming_movie.html" />
         <option value="$PROJECT_DIR$/MoviesAndMe/templates/index.html" />
+        <option value="$PROJECT_DIR$/MoviesAndMe/templates/details_movie.html" />
+        <option value="$PROJECT_DIR$/MoviesAndMe/templates/details_actor.html" />
       </list>
     </option>
   </component>
@@ -245,6 +234,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -266,6 +256,12 @@
             <path>
               <item name="OnlyMe" type="b2602c69:ProjectViewProjectNode" />
               <item name="OnlyMe" type="462c0819:PsiDirectoryNode" />
+              <item name="MoviesAndMe" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OnlyMe" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OnlyMe" type="462c0819:PsiDirectoryNode" />
               <item name="OnlyMe" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -283,7 +279,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -361,20 +356,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1557311815933</updated>
-    </task>
-    <task id="LOCAL-00028" summary="Amélioration de la recherche">
-      <created>1560347644088</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1560347644088</updated>
-    </task>
-    <task id="LOCAL-00029" summary="Amélioration de la recherche">
-      <created>1560351003037</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1560351003037</updated>
     </task>
     <task id="LOCAL-00030" summary="Amélioration de la recherche">
       <created>1560351850130</created>
@@ -705,20 +686,34 @@
       <option name="project" value="LOCAL" />
       <updated>1575564969945</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="- Ajout du contenu pour les series et animés téléchargeable et correction des bugs">
+      <created>1575900556104</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1575900556105</updated>
+    </task>
+    <task id="LOCAL-00078" summary="- Ajout du contenu pour les series et animés téléchargeable et correction des bugs">
+      <created>1575901826254</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1575901826254</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5482005" side_tool="true" visible="true" weight="0.30651873" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.45565552" side_tool="true" visible="true" weight="0.23023579" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4993573" weight="0.3293011" />
       <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.4993573" weight="0.3293011" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.45179948" weight="0.30651873" />
-      <window_info anchor="bottom" id="Terminal" order="13" sideWeight="0.5456298" weight="0.23023579" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13431877" />
+      <window_info anchor="bottom" id="Terminal" order="13" sideWeight="0.5443445" visible="true" weight="0.23023579" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13560411" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="4" visible="true" weight="0.075835474" />
       <window_info anchor="right" id="SciView" order="3" />
@@ -931,13 +926,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/details_actor.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1071">
-          <caret line="63" column="68" selection-start-line="63" selection-start-column="68" selection-end-line="63" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MoviesAndMe/dumps/db.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -971,6 +959,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -985,13 +976,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1887">
           <caret line="111" column="50" selection-start-line="111" selection-start-column="50" selection-end-line="111" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/details_movie.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1139">
-          <caret line="67" column="19" selection-start-line="67" selection-start-column="19" selection-end-line="67" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -1067,24 +1051,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/upcoming_movie.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="19" selection-start-column="19" selection-end-column="19" />
+        <state relative-caret-position="1020">
+          <caret line="60" column="33" selection-start-line="60" selection-start-column="33" selection-end-line="60" selection-end-column="51" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MoviesAndMe/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="156" column="1" lean-forward="true" selection-start-line="156" selection-start-column="1" selection-end-line="156" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-            <element signature="e#2829#5299#0" />
-            <element signature="e#8871#12074#0" />
-            <element signature="e#12114#13593#0" />
-            <element signature="e#13630#14992#0" />
-            <element signature="e#23846#27118#0" />
-            <element signature="e#27168#29081#0" />
-          </folding>
+        <state relative-caret-position="3198">
+          <caret line="224" column="20" selection-start-line="224" selection-start-column="9" selection-end-line="224" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/details_movie.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="32" column="18" lean-forward="true" selection-start-line="26" selection-start-column="12" selection-end-line="32" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/details_actor.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="38" lean-forward="true" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
         </state>
       </provider>
     </entry>

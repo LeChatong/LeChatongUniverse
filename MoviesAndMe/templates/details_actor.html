@@ -19,7 +19,7 @@
                     <div class="mt-4">
                         <div class="h2">
                             {% if homepage != None %}
-                                <a href="{{ homepage }}" target="_blank" title="{{ name }}">{{ name }}</a>
+                                <a class="text-dark" href="{{ homepage }}" target="_blank" title="{{ name }}">{{ name }}</a>
                             {% else %}
                                 {{ name }}
                             {% endif %}
@@ -80,7 +80,7 @@
                         </div>
                        <a class="card-text dark-theme" href="{% url 'movies_on_actor' id %}">
                             <div>
-                                <p class="text-center"> Voir Plus</p>
+                                <p class="text-dark text-center"> Voir Plus</p>
                             </div>
                         </a>
                   </div>
@@ -103,7 +103,7 @@
                         </div>
                       <a class="card-text" href="{% url 'tvs_on_actor' id %}">
                             <div>
-                                <p class="text-center"> Voir Plus</p>
+                                <p class="text-dark text-center"> Voir Plus</p>
                             </div>
                         </a>
                   </div>
