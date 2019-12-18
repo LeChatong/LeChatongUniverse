@@ -38,7 +38,7 @@ class tv_detail(models.Model):
     id_tv = models.IntegerField()
     nb_season = models.IntegerField(verbose_name='Saison',default=0)
     nb_episode = models.IntegerField(verbose_name='Episode',default=0)
-    title_tv = models.CharField(verbose_name='Titre',max_length=250)
+    title_tv = models.CharField(verbose_name='Titre',max_length=250,)
     link_telegram = models.URLField(verbose_name='Lien Télégram')
     LANGUAGE = (
         ('FRANÇAIS', 'FRANÇAIS'),
