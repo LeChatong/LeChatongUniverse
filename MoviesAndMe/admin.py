@@ -9,7 +9,21 @@ class movie_detailAdmin(admin.ModelAdmin):
     list_per_page = 30
     list_display = ('title_movie', 'link_telegram')
     search_fields = ('title_movie',)
-
+    fieldsets = (
+        ('Général', {
+            'classes': ['wide', 'extrapretty'],
+            'fields': ('id_movie', 'link_telegram',
+                       'voice_language', 'quality_video', 'quality_audio',
+                       'subtitle', 'subtitle_language')
+        }),
+    )
+    exclude = ('title_movie',)
+    def save_model(self, request, obj, form, change):
+        response_movie = requests.get(
+            'https://api.themoviedb.org/3/movie/' + str(obj.id_movie) + '?api_key=f972c58efb26ab0a5e82cda1f7352586&language=fr-FR')
+        movie = response_movie.json()
+        obj.title_movie = movie['title']
+        super().save_model(request, obj, form, change)
 
 
 
