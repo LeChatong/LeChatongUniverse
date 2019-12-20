@@ -8,8 +8,19 @@
     <meta name="description" content="Site de distribution de contenu multimédia">
     <meta name="author" content="LeChatong">
     <meta name="keywords" content="LeChatongUniverse, LeChatong, lechatong, lechatonguniverse, ulrich tchatong">
+
     <link rel="icon" type="image/x-icon" href="{% static 'LCU-icon.png' %}">
-    {% block META_OG %}{% endblock %}
+    {% block META_OG %}
+        <meta property="og:title" content="LeChatongUniverse">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="{% url 'home' %}">
+        <meta property="og:image" content="https://lechatonguniverse.herokuapp.com{% static 'LCU-icon.png' %}">
+        <meta property="og:image:width" content="800">
+        <meta property="og:image:height" content="300">
+        <meta property="og:description" content="LeChatongUniverse vous souhaite de Bonnes Fêtes de Fin d'Année !">
+        <meta property="fb:app_id" content="{{ '285736978971421' }}">
+        <meta property="twitter:card" content="summary">
+    {% endblock %}
 
     <title>{% block title %}LeChatongUniverse - {% block intitule_page %}{% endblock %}{% endblock %}</title>
     <link rel="me" href="https://twitter.com/LeChatong">
@@ -18,10 +29,12 @@
 
   <!-- Custom styles for this template -->
     <link href="{% static 'css/shop-homepage.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
-<body>
+<body style="background-image: url({% static 'Christmas.jpg' %});
+        background-size: 100% 100%; background-repeat: no-repeat; background-attachment: fixed;">
 
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -50,7 +63,7 @@
   <!-- /.container -->
 
   <!-- Footer -->
-  <footer class="py-5 bg-dark" style="padding-top: 20px;">
+  <footer class="py-5 bg-dark page-footer" style="padding-top: 20px; alignment: bottom; ">
     <div class="container">
       <p class="m-0 text-center text-white">Copyright &copy; <a class="text-light" target="_blank" href="https://www.linkedin.com/in/ulrich-armel-tchatong-0a3860bb/">LeChatong</a>  2019</p>
     </div>
@@ -61,7 +74,7 @@
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="{% static 'js/bootstrap.bundle.min.js'  %}"></script>
 
-
+    <script src="//instant.page/3.0.0" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
 </body>
 
 </html>
