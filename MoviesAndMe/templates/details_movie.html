@@ -178,11 +178,11 @@
                         <div class="col-lg-2 text-center">
                             {% if company.logo_path == None %}
                                 <a href="#">
-                                    <img width="75" height="75" alt="{{ company.name }}" class="rounded-circle" src="{% static 'not_image_disponible.svg.png' %}">
+                                    <img width="75" height="75" alt="{{ company.name }}" class="rounded-bottom rounded-top" src="{% static 'not_image_disponible.svg.png' %}">
                                 </a>
                             {% else %}
                                 <a href="#">
-                                    <img width="75" height="75" alt="{{ company.name }}" class="rounded-circle" src="https://image.tmdb.org/t/p/w200{{ company.logo_path }}">
+                                    <img width="75" height="75" alt="{{ company.name }}" class="rounded-bottom rounded-top" src="https://image.tmdb.org/t/p/w200{{ company.logo_path }}">
                                 </a>
                             {% endif %}
                             <div>

@@ -44,7 +44,7 @@ class tv_detailAdmin(admin.ModelAdmin):
         response_tv = requests.get(
             'https://api.themoviedb.org/3/tv/' + str(obj.id_tv) + '?api_key=f972c58efb26ab0a5e82cda1f7352586&language=fr-FR')
         tv = response_tv.json()
-        obj.title_tv = tv['name']+' S '+str(obj.nb_season)+' EPS '+str(obj.nb_episode)
+        obj.title_tv = tv['name']+' saison '+str(obj.nb_season)+' épisode '+str(obj.nb_episode)
         super().save_model(request, obj, form, change)
 
 def export_as_json(ModelAdmin, request, queryset):
