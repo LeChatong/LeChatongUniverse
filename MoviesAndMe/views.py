@@ -1,13 +1,22 @@
-from django.shortcuts import render, redirect
-from django.http import Http404
-import requests
 from datetime import datetime
-from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
-from .models import movie_detail, tv_detail
-from twython import Twython, TwythonError
 
+import requests
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+from django.shortcuts import render, redirect
+from django.conf import settings
+from django.utils import translation
+from django.utils.translation import ugettext as _
+
+from .models import movie_detail, tv_detail
+
+language = settings.LANGUAGE_CODE
 # Create your views here.
 
+
+def change_language(request, lang):
+    translation.activate(lang)
+    print(translation.get_language())
+    return redirect(home)
 
 def home(request):
     # La liste des films les plus populaires

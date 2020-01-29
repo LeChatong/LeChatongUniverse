@@ -55,6 +55,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
 ]
 
 ROOT_URLCONF = 'OnlyMe.urls'
@@ -71,6 +72,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                "django.template.context_processors.i18n",
             ],
         },
     },
@@ -128,6 +130,13 @@ USE_L10N = True
 
 USE_TZ = True
 
+gettext = lambda x: x
+
+from django.utils.translation import ugettext_lazy as _
+LANGUAGES = (
+   ('fr', _('French')),
+   ('en', _('English')),
+)
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
@@ -138,6 +147,10 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
+
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, '/locale/'),
+)
 
 #STATICFILES_DIRS = (
 #    os.path.join(BASE_DIR, 'static'),

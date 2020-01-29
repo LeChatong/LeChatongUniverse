@@ -1,99 +1,146 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% block META_OG %}{% endblock %}
-{% block title %}LeChatongUniverse - {% block intitule_page %}Acceuil{% endblock %}{% endblock %}
-{% block menu_vav %}
-    <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="{% url 'home' %}">Acceuil
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'home_movie' %}">Films</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'home_tv' %}">Séries</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
-          </li>
-        </ul>
+{% block title %}LeChatongUniverse - {% block intitule_page %}{% trans 'Acceuil' %}{% endblock %}{% endblock %}
+{% block navigation %}
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="{% url 'home' %}">LeChatongUniverse</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+              <form class="form-inline" action="{% url 'search_movies' %}" method="get">
+                <input class="form-control mr-sm-4" name="query" type="search" placeholder="Avengers, Star Wars ..." aria-label="Search">
+                <button class="btn btn-outline-light my-2 my-sm-0" type="submit">{% trans 'Rechercher' %}</button>
+              </form>
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'home' %}">{% trans 'Acceuil' %}<span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'home_movie' %}">{% trans 'Films' %}</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'home_tv' %}">{% trans 'Séries' %}</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">{% trans 'Contact' %}</a>
+                  </li>
+                </ul>
+              <span class="fr-separator"></span>
+                <form action="{% url 'set_language' %}" method="post">
+                {% csrf_token %}
+                <input name="next" type="hidden" value="{{ redirect_to }}" />
+                <ul class="navbar-nav ml-auto language menu">
+                    {% get_current_language as LANGUAGE_CODE %}
+                    {% get_available_languages as LANGUAGES %}
+                    {% get_language_info_list for LANGUAGES as languages %}
+                    {% for language in languages %}
+                        <li class="nav-item">
+                            <button  class="nav-link btn btn-dark" type="submit"
+                                    name="language"
+                                    value="{{ language.code }}"
+                                    class="{% if language.code == LANGUAGE_CODE %}selected{% endif %}">
+                                <sup title="{{ language.name_local }}">{{ language.code | upper }}</sup>
+                            </button>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </form>
+              <!--<ul class="navbar-nav ml-auto">
+                  {% for lang in LANGUAGES %}
+                    <li class="nav-item">
+                        <a href="{% url 'change_language' lang.0 %}" class="nav-link">{{ lang.1 }}</a>
+                    </li>
+                  {% endfor %}
+              </ul>-->
+          </div>
+        </div>
+      </nav>
 {% endblock %}
-{% block content %}
-    <div class="row">
-        <div class="col-lg-12">
-            <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
-              <ol class="carousel-indicators">
-                  {% for movie in TOP_MOVIES_4 %}
-                      <li data-target="#carouselExampleIndicators" data-slide-to="{{ movie.6 }}" {% if movie.6 == 0 %}class="active"{% endif %}></li>
-                  {% endfor %}
-              </ol>
-              <div class="carousel-inner" role="listbox">
-                  {% for movie in TOP_MOVIES_4 %}
-                      <div class="carousel-item {% if movie.6 == 0 %}active{% endif %}">
-                          <a href="{% url 'details_movie' movie.0 %}">
-                            <img id="{{ movie.1 }}-{{ movie.0 }}" class="d-block img-fluid" width="1280" height="350" src="https://image.tmdb.org/t/p/w1280{{ movie.4 }}" alt="{{ movie.1 }}">
-                            <div class="carousel-caption d-none d-md-block">
-                                <div class="text-left">
-                                    <h1>{{ movie.1|upper }}</h1>
-                                    <p>{{ movie.2|truncatechars:150 }}</p>
+{% block main %}
+    {% block content %}
+        <div class="row">
+            <div class="col-lg-12">
+                <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
+                  <ol class="carousel-indicators">
+                      {% for movie in TOP_MOVIES_4 %}
+                          <li data-target="#carouselExampleIndicators" data-slide-to="{{ movie.6 }}" {% if movie.6 == 0 %}class="active"{% endif %}></li>
+                      {% endfor %}
+                  </ol>
+                  <div class="carousel-inner" role="listbox">
+                      {% for movie in TOP_MOVIES_4 %}
+                          <div class="carousel-item {% if movie.6 == 0 %}active{% endif %}">
+                              <a href="{% url 'details_movie' movie.0 %}">
+                                <img id="{{ movie.1 }}-{{ movie.0 }}" class="d-block img-fluid" width="1280" height="350" src="https://image.tmdb.org/t/p/w1280{{ movie.4 }}" alt="{{ movie.1 }}">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <div class="text-left">
+                                        <h1>{{ movie.1|upper }}</h1>
+                                        <p>{{ movie.2|truncatechars:150 }}</p>
+                                    </div>
                                 </div>
+                              </a>
+
+                          </div>
+                      {% endfor %}
+                  </div>
+                      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                      </a>
+                      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                      </a>
+                </div>
+
+                <div class="row">
+                    {% for movie in TOP_MOVIES_6 %}
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card h-100">
+                              <a href="{% url 'details_movie' movie.0 %}"><img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{ movie.3 }}" alt="{{ movie.1 }}"></a>
+                              <div class="card-body">
+                                <h4 class="card-title">
+                                  <a class="text-dark" href="{% url 'details_movie' movie.0 %}">{{ movie.1 }}</a>
+                                </h4>
+                                <p>{{ 'Sortie le : ' }}{{ movie.5|date:'d M Y' }}</p>
+                                <p class="card-text">{{ movie.2|truncatechars:250 }}</p>
+                              </div>
+                              <div class="card-footer">
+                                  {{ 'Notes : ' }}{{ movie.6 }}{{ ' / 10' }}
+                                <!--<small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>-->
+                              </div>
                             </div>
-                          </a>
-
                       </div>
-                  {% endfor %}
-              </div>
-                  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                  </a>
-                  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                  </a>
-            </div>
-
-            <div class="row">
-                {% for movie in TOP_MOVIES_6 %}
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="card h-100">
-                          <a href="{% url 'details_movie' movie.0 %}"><img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{ movie.3 }}" alt="{{ movie.1 }}"></a>
-                          <div class="card-body">
-                            <h4 class="card-title">
-                              <a class="text-dark" href="{% url 'details_movie' movie.0 %}">{{ movie.1 }}</a>
-                            </h4>
-                            <p>{{ 'Sortie le : ' }}{{ movie.5|date:'d M Y' }}</p>
-                            <p class="card-text">{{ movie.2|truncatechars:250 }}</p>
-                          </div>
-                          <div class="card-footer">
-                              {{ 'Notes : ' }}{{ movie.6 }}{{ ' / 10' }}
-                            <!--<small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>-->
-                          </div>
-                        </div>
-                  </div>
-                {% endfor %}
-                {% for tv in TOP_TVS_6 %}
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="card h-100">
-                          <a href="{% url 'details_tv' tv.0 %}"><img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{ tv.3 }}" alt="{{ tv.1 }}"></a>
-                          <div class="card-body">
-                            <h4 class="card-title">
-                              <a class="text-dark" href="{% url 'details_tv' tv.0 %}">{{ tv.1 }}</a>
-                            </h4>
-                            <p>{{ 'Sortie le : ' }}{{ tv.5|date:'d M Y' }}</p>
-                            <p class="card-text">{{ tv.2|truncatechars:250 }}</p>
-                          </div>
-                          <div class="card-footer">
-                              {{ 'Notes : ' }}{{ tv.6 }}{{ ' / 10' }}
-                            <!--<small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>-->
-                          </div>
-                        </div>
-                  </div>
-                {% endfor %}
+                    {% endfor %}
+                    {% for tv in TOP_TVS_6 %}
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card h-100">
+                              <a href="{% url 'details_tv' tv.0 %}"><img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{ tv.3 }}" alt="{{ tv.1 }}"></a>
+                              <div class="card-body">
+                                <h4 class="card-title">
+                                  <a class="text-dark" href="{% url 'details_tv' tv.0 %}">{{ tv.1 }}</a>
+                                </h4>
+                                <p>{{ 'Sortie le : ' }}{{ tv.5|date:'d M Y' }}</p>
+                                <p class="card-text">{{ tv.2|truncatechars:250 }}</p>
+                              </div>
+                              <div class="card-footer">
+                                  {{ 'Notes : ' }}{{ tv.6 }}{{ ' / 10' }}
+                                <!--<small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>-->
+                              </div>
+                            </div>
+                      </div>
+                    {% endfor %}
+                </div>
             </div>
         </div>
-    </div>
-
-        <!-- /.row -->
+    {% endblock %}
+{% endblock %}
+{% block footer %}
+    <footer class="py-5 bg-dark page-footer" style="padding-top: 20px; alignment: bottom; ">
+        <div class="container">
+          <p class="m-0 text-center text-white">Copyright &copy; <a class="text-light" target="_blank" href="https://www.linkedin.com/in/ulrich-armel-tchatong-0a3860bb/">LeChatong</a>  2019</p>
+        </div>
+    </footer>
 {% endblock %}

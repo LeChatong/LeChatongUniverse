@@ -1,4 +1,5 @@
 {% extends 'home_tv.html' %}
+{% load i18n %}
 {% load static %}
 {% block META_OG %}
     <meta property="og:title" content="{{ name }}">
@@ -18,15 +19,15 @@
         <i class="text-left"><img width="32" height="32" src="{% static 'sun-black.png' %}"></i>
         {{ 'Nouveautés' }}
     </a>
-    <a href="{% url 'popular_tv' 1 %}" class="list-group-item list-group-item-action">{{ 'Populaires' }}</a>
-    <a href="{% url 'donwload_tv_content' %}" class="list-group-item list-group-item-action">{{ 'Téléchargeables' }}</a>
+    <a href="{% url 'popular_tv' 1 %}" class="list-group-item list-group-item-action">{% trans 'Populaires' %}</a>
+    <a href="{% url 'donwload_tv_content' %}" class="list-group-item list-group-item-action">{% trans 'Téléchargeables' %}</a>
 {% endblock %}
 {% block details %}
     <div class="col-lg-12" style="margin-top: 20px;">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb dark-theme">
-            <li class="breadcrumb-item"><a class="text-dark" href="{% url 'home' %}">Accueil</a></li>
-            <li class="breadcrumb-item"><a class="text-dark" href="{% url 'home_tv' %}">Séries & animes</a></li>
+            <li class="breadcrumb-item"><a class="text-dark" href="{% url 'home' %}">{% trans 'Accueil' %}</a></li>
+            <li class="breadcrumb-item"><a class="text-dark" href="{% url 'home_tv' %}">{% trans 'Séries & animes' %}</a></li>
             <li class="breadcrumb-item active" aria-current="page">{{ name }}</li>
           </ol>
         </nav>
@@ -79,7 +80,7 @@
                         {% endfor %}
                     </p>
                     <p>
-                        Auteurs :
+                         {% trans 'Auteurs :' %}
                         {% for author in created_by %}
                             <a class="text-dark" href="#"><b>{{ author.1 }}</b></a>,
                         {% endfor %}
@@ -91,7 +92,7 @@
                         {% endfor %}
                     </span>
                     <p>
-                        <span>Sortie le : </span>
+                        <span>{% trans 'Sortie le :' %} </span>
                         {% if first_air_date != None %}
                             {{ first_air_date|date:'d M Y' }}
                         {% else %}
@@ -155,7 +156,7 @@
                                     <img width="75" height="75" alt="#" class="rounded-circle" src="{% static 'not_image_disponible.svg.png' %}">
                                 </a>
                                 <div>
-                                    <sub><a class="text-dark"  href="{% url 'actors_on_tv' id %}">Voir Plus</a></sub>
+                                    <sub><a class="text-dark"  href="{% url 'actors_on_tv' id %}">{% trans 'Voir Plus' %}</a></sub>
                                 </div>
                             </div>
 
@@ -164,7 +165,7 @@
                 </div>
                 <div class="card card-outline-secondary my-4">
                   <div class="card-header">
-                    Sociétés de Production
+                    {% trans 'Sociétés de Production' %}
                   </div>
                   <div class="card-body">
                     <div class="row">
@@ -191,7 +192,7 @@
                 </div>
                 <div class="card card-outline-secondary my-4">
                     <div class="card-header">
-                        Séries on Animes Similaires
+                        {% trans 'Séries on Animes Similaires' %}
                     </div>
                     <div class="card-body">
                         <div class="row">

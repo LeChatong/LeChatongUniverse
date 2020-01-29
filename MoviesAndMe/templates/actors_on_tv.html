@@ -1,13 +1,14 @@
 {% extends 'home_tv.html' %}
+{% load i18n %}
 {% load static %}
 {% block META_OG %}{% endblock %}
 {% block intitule_page %}{{ title }}{% endblock %}
 {% block link_menu %}
     <a href="{% url 'home_tv' %}" class="list-group-item list-group-item-action">
         <i class="text-left"><img width="32" height="32" src="{% static 'sun-black.png' %}"></i>
-        {{ 'Nouveautés' }}
+        {% trans 'Nouveautés' %}
     </a>
-    <a href="{% url 'popular_tv' 1 %}" class="list-group-item list-group-item-action">{{ 'Populaires' }}</a>
+    <a href="{% url 'popular_tv' 1 %}" class="list-group-item list-group-item-action">{% trans 'Populaires' %}</a>
 {% endblock %}
 {% block details %}
     <div class="row">
@@ -21,7 +22,7 @@
                     {% endif %}
                 </div>-->
                 <div class="col-lg-10">
-                    <h3>Acteurs de la série <b>{{ title }}</b></h3>(<i>{{ original_title }}</i>)
+                    <h3>{% trans 'Acteurs de la série'%} <b>{{ title }}</b></h3>(<i>{{ original_title }}</i>)
                 </div>
             </div>
             <hr/>

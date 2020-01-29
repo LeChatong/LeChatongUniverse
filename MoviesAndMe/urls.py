@@ -1,9 +1,12 @@
 from django.conf.urls import url
+from django.conf.urls.i18n import i18n_patterns
 from django.urls import path
 from . import views
-urlpatterns = [
+
+urlpatterns = (
 
     url(r'^$', views.home, name='home'),
+    url(r'^change_language/(?P<lang>[a-z]+)/$', views.change_language, name='change_language'),
     url(r'^home/$', views.home, name='home'),
     url(r'^research/$', views.search_movies, name='search_movies'),
     url(r'^movie/details/(?P<id>[0-9]+)/$', views.details_movie, name='details_movie'),
@@ -23,4 +26,4 @@ urlpatterns = [
     url(r'^page-error/', views.page_error, name='page_error'),
     url(r'^movies/downloadable/', views.donwload_movie_content, name='donwload_movie_content'),
     url(r'^tv/downloadable/', views.downloable_tv_content, name='donwload_tv_content')
-]
+)

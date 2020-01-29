@@ -17,10 +17,12 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls import url
 from MoviesAndMe import views
+from django.conf.urls.i18n import i18n_patterns
 
-urlpatterns = [
+urlpatterns = i18n_patterns(
 
     url(r'^lechatong/', admin.site.urls),
     url(r'^moviesandme/', include('MoviesAndMe.urls')),
-    path('', views.home),
-]
+    url(r'^i18n/', include('django.conf.urls.i18n')),
+    url(r'^$', views.home),
+)
