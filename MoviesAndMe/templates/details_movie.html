@@ -16,11 +16,11 @@
 {% block link_menu %}
     <a href="{% url 'home_movie' %}" class="list-group-item  list-group-item-action">
         <i class="text-left"><img width="32" height="32" src="{% static 'sun-black.png' %}"></i>
-        {{ 'Nouveautés' }}
+        {% trans 'Nouveautés' %}
     </a>
     <a href="{% url 'popular_movie' 1 %}" class="list-group-item list-group-item-action">{% trans 'Populaires' %} </a>
     <a href="{% url 'upcoming_movie' 1 %}" class="list-group-item list-group-item-action">{% trans 'A venir' %}</a>
-    <a href="{% url 'donwload_movie_content' %}" class="list-group-item list-group-item-action">{% trans 'Téléchargeable' %}</a>
+    <a href="{% url 'donwload_movie_content' %}" class="list-group-item list-group-item-action">{% trans 'Disponible' %}</a>
 {% endblock %}
 {% block details_page %}
     <div class="row">
@@ -74,7 +74,7 @@
                 </p>
                 {% if m_details != None %}
                     <p>
-                        <sup><a type="button" class="btn btn-success" data-toggle="modal" data-target="#downloadModal" href="">{{ 'Télécharger' }}</a> </sup>
+                        <sup><a type="button" class="btn btn-success" data-toggle="modal" data-target="#downloadModal" href="">{% trans 'Disponible' %}</a></sup>
                     </p>
                     <div class="modal fade" id="downloadModal" tabindex="-1" role="dialog" aria-labelledby="downloadModalLabel" aria-hidden="true">
                       <div class="modal-dialog modal-lg" role="document">
@@ -105,8 +105,7 @@
                                             <td>{{ elt.5 }} ({{ elt.6 }})</td>
                                             <td>
                                                 <a download="{{ elt.1 }}" target="_blank" href="{{ elt.2 }}">
-                                                    <i class="align-left"><img src="{% static 'download.png' %}"></i>
-                                                    Télécharger
+                                                    {% trans 'Voir' %}
                                                 </a>
                                             </td>
                                         </tr>
@@ -137,7 +136,7 @@
             <!-- /.card -->
             <div class="card card-outline-secondary my-4">
                 <div class="card-header">
-                    Acteurs
+                    {% trans 'Acteurs' %}
                 </div>
                 <div class="card-body">
                     <div class="row">

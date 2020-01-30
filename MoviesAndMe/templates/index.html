@@ -104,11 +104,11 @@
                                 <h4 class="card-title">
                                   <a class="text-dark" href="{% url 'details_movie' movie.0 %}">{{ movie.1 }}</a>
                                 </h4>
-                                <p>{{ 'Sortie le : ' }}{{ movie.5|date:'d M Y' }}</p>
+                                <p>{% trans 'Sortie le : ' %}{{ movie.5|date:'d M Y' }}</p>
                                 <p class="card-text">{{ movie.2|truncatechars:250 }}</p>
                               </div>
                               <div class="card-footer">
-                                  {{ 'Notes : ' }}{{ movie.6 }}{{ ' / 10' }}
+                                  {% trans 'Notes : ' %}{{ movie.6 }}{{ ' / 10' }}
                                 <!--<small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>-->
                               </div>
                             </div>
@@ -122,11 +122,11 @@
                                 <h4 class="card-title">
                                   <a class="text-dark" href="{% url 'details_tv' tv.0 %}">{{ tv.1 }}</a>
                                 </h4>
-                                <p>{{ 'Sortie le : ' }}{{ tv.5|date:'d M Y' }}</p>
+                                <p>{% trans 'Sortie le : ' %}{{ tv.5|date:'d M Y' }}</p>
                                 <p class="card-text">{{ tv.2|truncatechars:250 }}</p>
                               </div>
                               <div class="card-footer">
-                                  {{ 'Notes : ' }}{{ tv.6 }}{{ ' / 10' }}
+                                  {% trans 'Notes : ' %}{{ tv.6 }}{{ ' / 10' }}
                                 <!--<small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>-->
                               </div>
                             </div>

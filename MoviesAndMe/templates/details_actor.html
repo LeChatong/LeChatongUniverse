@@ -29,17 +29,17 @@
                         <p>
 
                             <div>
-                                Né(e) le : {% if birthday != None %}{{ birthday|date:'d M Y' }}{% else %}{{ 'Non Précisé' }}{% endif %}
+                                {% trans 'Né(e) le :' %} {% if birthday != None %}{{ birthday|date:'d M Y' }}{% else %}{% trans 'Non Précisé' %}{% endif %}
                             </div>
                             <div>
-                                Lieu de Naissance : {% if place_of_birth != None %}{{ place_of_birth }}{% else %}{{ 'Non Précisé' }}{% endif %}
+                                {% trans 'Lieu de Naissance :' %} {% if place_of_birth != None %}{{ place_of_birth }}{% else %}{% trans 'Non Précisé' %}{% endif %}
                             </div>
                             {% if deathday != None %}
-                                <div> Décédé(e) le : {{ deathday|date:'d M Y' }}</div>
+                                <div> {% trans 'Décédé(e) le : ' %}{{ deathday|date:'d M Y' }}</div>
                             {% endif %}
                         </p>
                         <div class="text-justify">
-                            <b>Biographie</b>
+                            <b>{% trans 'Biographie' %}</b>
                             <p>
                                 {{ biography }}
                             </p>
@@ -54,10 +54,10 @@
                 <nav>
                   <div class="nav nav-tabs" id="nav-tab" role="tablist">
                     <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">
-                        <b class="h3 text-dark">Films Majeurs</b>
+                        <b class="h3 text-dark">{% trans 'Films Majeurs' %}</b>
                     </a>
                     <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">
-                        <b class="h3 text-dark">Séries Majeures</b>
+                        <b class="h3 text-dark">{% trans 'Séries Majeures' %}</b>
                     </a>
                   </div>
                 </nav>
@@ -81,7 +81,7 @@
                         </div>
                        <a class="card-text dark-theme" href="{% url 'movies_on_actor' id %}">
                             <div>
-                                <p class="text-dark text-center"> Voir Plus</p>
+                                <p class="text-dark text-center">{% trans 'Voir Plus' %} </p>
                             </div>
                         </a>
                   </div>
@@ -104,7 +104,7 @@
                         </div>
                       <a class="card-text" href="{% url 'tvs_on_actor' id %}">
                             <div>
-                                <p class="text-dark text-center"> Voir Plus</p>
+                                <p class="text-dark text-center"> {% trans 'Voir Plus' %}</p>
                             </div>
                         </a>
                   </div>

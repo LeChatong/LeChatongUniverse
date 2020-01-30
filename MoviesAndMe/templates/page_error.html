@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
-{% block intitule_page %}erreur serveur{% endblock %}
+{% load i18n %}
+{% block intitule_page %}{% trans 'erreur serveur' %}{% endblock %}
 {% block content %}
     <div class="row" style="height: 100%;">
         <div class="col-md-12" style="padding-top: 30px; padding-bottom: 50px;">
-            <p class="h3">{{ 'Erreur Serveur survenue'|upper }}</p>
+            <p class="h3">{% trans 'Erreur Serveur survenue' %}</p>
         </div>
     </div>
 {% endblock %}

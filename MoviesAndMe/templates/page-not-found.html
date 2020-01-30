@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
-{% block intitule_page %}page non trouvée{% endblock %}
+{% load i18n %}
+{% block intitule_page %}{% trans 'page non trouvée' %}{% endblock %}
 {% block content %}
     <div class="row" style="height: 100%;">
         <div class="col-md-12" style="padding-top: 30px; padding-bottom: 50px;">
-            <p class="h3">{{ 'Page non trouvée'|upper }}</p>
+            <p class="h3">{% trans 'Page non trouvée' %}</p>
         </div>
     </div>
 {% endblock %}

@@ -5,7 +5,7 @@ from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.shortcuts import render, redirect
 from django.conf import settings
 from django.utils import translation
-from django.utils.translation import ugettext as _
+from django.utils.translation import ugettext_lazy as _
 
 from .models import movie_detail, tv_detail
 
@@ -20,20 +20,20 @@ def change_language(request, lang):
 
 def home(request):
     # La liste des films les plus populaires
-    response_top = requests.get('https://api.themoviedb.org/3/movie/popular?api_key=f972c58efb26ab0a5e82cda1f7352586&language=fr-FR&page=1')
+    response_top = requests.get('https://api.themoviedb.org/3/movie/popular?api_key=f972c58efb26ab0a5e82cda1f7352586&language='+translation.get_language()+'&page=1')
     list_movie_on_top = response_top.json()
     RESULT_ON_TOP = list_movie_on_top['results']
     TOP_MOVIES_4 = []
 
     # La liste des tendances Hebdomadaires
-    response_top_rated = requests.get('https://api.themoviedb.org/3/trending/movie/week?api_key=f972c58efb26ab0a5e82cda1f7352586&language=fr-FR&page=1')
+    response_top_rated = requests.get('https://api.themoviedb.org/3/trending/movie/week?api_key=f972c58efb26ab0a5e82cda1f7352586&language='+translation.get_language()+'&page=1')
 
     list_movie_top_rated = response_top_rated.json()
     RESULT_TOP_RATED = list_movie_top_rated['results']
     TOP_MOVIES_6 = []
 
     # La liste des séries du moment
-    response_top_tv = requests.get('https://api.themoviedb.org/3/tv/on_the_air?api_key=f972c58efb26ab0a5e82cda1f7352586&language=fr-FR&page=1')
+    response_top_tv = requests.get('https://api.themoviedb.org/3/tv/on_the_air?api_key=f972c58efb26ab0a5e82cda1f7352586&language='+translation.get_language()+'&page=1')
 
     list_tv_top = response_top_tv.json()
     RESULT_TOP_TV = list_tv_top['results']
@@ -88,7 +88,7 @@ def search_movies(request):
     if search == '':
         return redirect(page_error)
     else:
-        response_search = requests.get('https://api.themoviedb.org/3/search/multi?api_key=f972c58efb26ab0a5e82cda1f7352586&language=fr-FR&query='+search+'&&include_adult=false')
+        response_search = requests.get('https://api.themoviedb.org/3/search/multi?api_key=f972c58efb26ab0a5e82cda1f7352586&language='+translation.get_language()+'&query='+search+'&&include_adult=false')
         list_movie_elt_search = response_search.json()
 
         RESULT_AFTER_SEARCH = []
@@ -155,7 +155,7 @@ def page_error(request):
 
 def details_movie(request, id):
 
-    response_movie = requests.get('https://api.themoviedb.org/3/movie/'+id+'?api_key=f972c58efb26ab0a5e82cda1f7352586&language=fr-FR')
+    response_movie = requests.get('https://api.themoviedb.org/3/movie/'+id+'?api_key=f972c58efb26ab0a5e82cda1f7352586&language='+translation.get_language()+'')
     movie = response_movie.json()
 
     response_actors = requests.get('https://api.themoviedb.org/3/movie/'+id+'/credits?api_key=f972c58efb26ab0a5e82cda1f7352586')
@@ -163,7 +163,7 @@ def details_movie(request, id):
     LIST_ACTORS_CREDIT = []
     LIST_SIMILAR_MOVIES = []
 
-    response_similar_movie = requests.get('https://api.themoviedb.org/3/movie/'+id+'/similar?api_key=f972c58efb26ab0a5e82cda1f7352586&language=fr-FR&page=1')
+    response_similar_movie = requests.get('https://api.themoviedb.org/3/movie/'+id+'/similar?api_key=f972c58efb26ab0a5e82cda1f7352586&language='+translation.get_language()+'&page=1')
     list_similar_movies = response_similar_movie.json()
     L_SIMILAR_MOVIES = list_similar_movies['results']
     b = len(list_similar_movies['results'])
@@ -247,15 +247,15 @@ def details_movie(request, id):
 
 def details_actor(request, id):
     response_actor = requests.get(
-        'https://api.themoviedb.org/3/person/' + id + '?api_key=f972c58efb26ab0a5e82cda1f7352586&language=fr-FR')
+        'https://api.themoviedb.org/3/person/' + id + '?api_key=f972c58efb26ab0a5e82cda1f7352586&language='+translation.get_language()+'')
     actor = response_actor.json()
 
     response_actor_movies = requests.get(
-        'https://api.themoviedb.org/3/person/'+ id + '/movie_credits?api_key=f972c58efb26ab0a5e82cda1f7352586&language=fr-FR')
+        'https://api.themoviedb.org/3/person/'+ id + '/movie_credits?api_key=f972c58efb26ab0a5e82cda1f7352586&language='+translation.get_language()+'')
     actor_movies = response_actor_movies.json()
 
     response_actor_tvs = requests.get(
-        'https://api.themoviedb.org/3/person/'+ id + '/tv_credits?api_key=f972c58efb26ab0a5e82cda1f7352586&language=fr-FR')
+        'https://api.themoviedb.org/3/person/'+ id + '/tv_credits?api_key=f972c58efb26ab0a5e82cda1f7352586&language='+translation.get_language()+'')
     actor_tvs = response_actor_tvs.json()
 
     LIST_MOVIES_ACTOR = []
@@ -333,11 +333,11 @@ def details_actor(request, id):
 
 def movies_on_actor(request, id):
     response_actor = requests.get(
-        'https://api.themoviedb.org/3/person/' + id + '?api_key=f972c58efb26ab0a5e82cda1f7352586&language=fr-FR')
+        'https://api.themoviedb.org/3/person/' + id + '?api_key=f972c58efb26ab0a5e82cda1f7352586&language='+translation.get_language()+'')
     actor = response_actor.json()
 
     response_actor_movies = requests.get(
-        'https://api.themoviedb.org/3/person/' + id + '/movie_credits?api_key=f972c58efb26ab0a5e82cda1f7352586&language=fr-FR')
+        'https://api.themoviedb.org/3/person/' + id + '/movie_credits?api_key=f972c58efb26ab0a5e82cda1f7352586&language='+translation.get_language()+'')
     actor_movies = response_actor_movies.json()
 
     LIST_MOVIES_ACTOR = []
@@ -377,11 +377,11 @@ def movies_on_actor(request, id):
 
 def tvs_on_actor(request, id):
     response_actor = requests.get(
-        'https://api.themoviedb.org/3/person/' + id + '?api_key=f972c58efb26ab0a5e82cda1f7352586&language=fr-FR')
+        'https://api.themoviedb.org/3/person/' + id + '?api_key=f972c58efb26ab0a5e82cda1f7352586&language='+translation.get_language()+'')
     actor = response_actor.json()
 
     response_actor_tvs = requests.get(
-        'https://api.themoviedb.org/3/person/'+ id + '/tv_credits?api_key=f972c58efb26ab0a5e82cda1f7352586&language=fr-FR')
+        'https://api.themoviedb.org/3/person/'+ id + '/tv_credits?api_key=f972c58efb26ab0a5e82cda1f7352586&language='+translation.get_language()+'')
     actor_tvs = response_actor_tvs.json()
 
     LIST_TVS_ACTOR = []
@@ -420,7 +420,7 @@ def tvs_on_actor(request, id):
 
 def actors_on_movie(request, id):
     response_genre = requests.get(
-        'https://api.themoviedb.org/3/genre/movie/list?api_key=f972c58efb26ab0a5e82cda1f7352586&language=fr-FR')
+        'https://api.themoviedb.org/3/genre/movie/list?api_key=f972c58efb26ab0a5e82cda1f7352586&language='+translation.get_language()+'')
     list_genre = response_genre.json()
     LIST_GENDER = []
     for elt in list_genre['genres']:
@@ -431,7 +431,7 @@ def actors_on_movie(request, id):
             ]
         )
     response_movie = requests.get(
-        'https://api.themoviedb.org/3/movie/' + id + '?api_key=f972c58efb26ab0a5e82cda1f7352586&language=fr-FR')
+        'https://api.themoviedb.org/3/movie/' + id + '?api_key=f972c58efb26ab0a5e82cda1f7352586&language='+translation.get_language()+'')
     movie = response_movie.json()
     response_actors = requests.get(
         'https://api.themoviedb.org/3/movie/' + id + '/credits?api_key=f972c58efb26ab0a5e82cda1f7352586')
@@ -458,7 +458,7 @@ def actors_on_movie(request, id):
 
 def actors_on_tv(request, id):
     response_tv = requests.get(
-        'https://api.themoviedb.org/3/tv/' + id + '?api_key=f972c58efb26ab0a5e82cda1f7352586&language=fr-FR')
+        'https://api.themoviedb.org/3/tv/' + id + '?api_key=f972c58efb26ab0a5e82cda1f7352586&language='+translation.get_language()+'')
     tv = response_tv.json()
     response_actors = requests.get(
         'https://api.themoviedb.org/3/tv/' + id + '/credits?api_key=f972c58efb26ab0a5e82cda1f7352586')
@@ -485,7 +485,7 @@ def actors_on_tv(request, id):
 def home_tv(request):
     # La liste des séries & animes les plus populaires du moment
     response_pop = requests.get(
-        'https://api.themoviedb.org/3/tv/airing_today?api_key=f972c58efb26ab0a5e82cda1f7352586&language=fr-FR&page=1')
+        'https://api.themoviedb.org/3/tv/airing_today?api_key=f972c58efb26ab0a5e82cda1f7352586&language='+translation.get_language()+'&page=1')
     list_tv_pop = response_pop.json()
     RESULT_POPULAR_ON_TV = list_tv_pop['results']
     POPULAR_ON_TV = []
@@ -510,7 +510,7 @@ def home_tv(request):
 def popular_tv(request, page=1):
     # La liste des séries & animes les plus populaires du moment
     response_pop = requests.get(
-        'https://api.themoviedb.org/3/tv/popular?api_key=f972c58efb26ab0a5e82cda1f7352586&language=fr-FR&page='+page)
+        'https://api.themoviedb.org/3/tv/popular?api_key=f972c58efb26ab0a5e82cda1f7352586&language='+translation.get_language()+'&page='+page)
     list_tv_pop = response_pop.json()
     RESULT_POPULAR_ON_TV = list_tv_pop['results']
     TOTAL_PAGES = int(list_tv_pop['total_pages'])
@@ -555,7 +555,7 @@ def popular_tv(request, page=1):
 def home_movie(request):
     # La liste des séries & animes les plus récent du moment
     response_top = requests.get(
-        'https://api.themoviedb.org/3/movie/now_playing?api_key=f972c58efb26ab0a5e82cda1f7352586&language=fr-FR&page=1')
+        'https://api.themoviedb.org/3/movie/now_playing?api_key=f972c58efb26ab0a5e82cda1f7352586&language='+translation.get_language()+'&page=1')
     list_movie_top = response_top.json()
     RESULT_TOP_MOVIES = list_movie_top['results']
     TOP_MOVIES = []
@@ -580,7 +580,7 @@ def home_movie(request):
 def popular_movie(request, page=1):
     # La liste des films les plus populaires du moment
     response_pop = requests.get(
-        'https://api.themoviedb.org/3/movie/popular?api_key=f972c58efb26ab0a5e82cda1f7352586&language=fr-FR&page='+page)
+        'https://api.themoviedb.org/3/movie/popular?api_key=f972c58efb26ab0a5e82cda1f7352586&language='+translation.get_language()+'&page='+page)
     list_movie_pop = response_pop.json()
     RESULT_POPULAR_MOVIES = list_movie_pop['results']
     TOTAL_PAGES = int(list_movie_pop['total_pages'])
@@ -623,7 +623,7 @@ def popular_movie(request, page=1):
 def upcoming_movie(request, page=1):
     # La liste des séries & animes les plus populaires du moment
     response_upcoming = requests.get(
-        'https://api.themoviedb.org/3/movie/upcoming?api_key=f972c58efb26ab0a5e82cda1f7352586&language=fr-FR&page='+page+'&region=FR')
+        'https://api.themoviedb.org/3/movie/upcoming?api_key=f972c58efb26ab0a5e82cda1f7352586&language='+translation.get_language()+'&page='+page+'&region=FR')
     list_movie_upcoming = response_upcoming.json()
     RESULT_UPCOMING_MOVIES = list_movie_upcoming['results']
     TOTAL_PAGES = int(list_movie_upcoming['total_pages'])
@@ -665,11 +665,11 @@ def upcoming_movie(request, page=1):
 
 def details_tv(request, id):
     response_tv = requests.get(
-        'https://api.themoviedb.org/3/tv/'+id+'?api_key=f972c58efb26ab0a5e82cda1f7352586&language=fr-FR')
+        'https://api.themoviedb.org/3/tv/'+id+'?api_key=f972c58efb26ab0a5e82cda1f7352586&language='+translation.get_language()+'')
     tv = response_tv.json()
 
     response_actors = requests.get(
-        'https://api.themoviedb.org/3/tv/'+id+'/credits?api_key=f972c58efb26ab0a5e82cda1f7352586&language=fr-FR')
+        'https://api.themoviedb.org/3/tv/'+id+'/credits?api_key=f972c58efb26ab0a5e82cda1f7352586&language='+translation.get_language()+'')
     list_actors = response_actors.json()
 
     LIST_ACTORS_CREDIT = []
@@ -699,7 +699,7 @@ def details_tv(request, id):
             )
 
     response_similar_tv = requests.get(
-        'https://api.themoviedb.org/3/tv/'+id+'/similar?api_key=f972c58efb26ab0a5e82cda1f7352586&language=fr-Fr&page=1')
+        'https://api.themoviedb.org/3/tv/'+id+'/similar?api_key=f972c58efb26ab0a5e82cda1f7352586&language='+translation.get_language()+'&page=1')
     list_similar_tv = response_similar_tv.json()
     L_SIMILAR_TV = list_similar_tv['results']
     b = len(list_similar_tv['results'])
@@ -763,11 +763,11 @@ def details_tv(request, id):
 
 def details_season_tv(request, id, season):
     response_tv = requests.get(
-        'https://api.themoviedb.org/3/tv/' + id + '?api_key=f972c58efb26ab0a5e82cda1f7352586&language=fr-FR')
+        'https://api.themoviedb.org/3/tv/' + id + '?api_key=f972c58efb26ab0a5e82cda1f7352586&language='+translation.get_language()+'')
     tv = response_tv.json()
 
     response_season = requests.get(
-        'https://api.themoviedb.org/3/tv/' + id + '/season/' + season + '?api_key=f972c58efb26ab0a5e82cda1f7352586&language=fr-FR')
+        'https://api.themoviedb.org/3/tv/' + id + '/season/' + season + '?api_key=f972c58efb26ab0a5e82cda1f7352586&language='+translation.get_language()+'')
     saison = response_season.json()
     EPISODES = []
     for eps in saison['episodes']:
@@ -813,7 +813,8 @@ def details_season_tv(request, id, season):
         'overview':         saison['overview'],
         'air_date':         saison['air_date'],
         'EPISODES':         EPISODES,
-        'season_number':    saison['season_number']
+        'season_number':    saison['season_number'],
+        'nb_episode':       len(EPISODES)
     }
     return render(request, 'details_tv_season.html', context)
 
@@ -823,7 +824,7 @@ def donwload_movie_content(request):
     for elt in movies:
         id = str(elt.id_movie)
         response_movie = requests.get(
-            'https://api.themoviedb.org/3/movie/' + id + '?api_key=f972c58efb26ab0a5e82cda1f7352586&language=fr-FR')
+            'https://api.themoviedb.org/3/movie/' + id + '?api_key=f972c58efb26ab0a5e82cda1f7352586&language='+translation.get_language()+'')
         movie = response_movie.json()
 
         try:
@@ -845,7 +846,7 @@ def donwload_movie_content(request):
     context = {
         'list_movie': list_movie,
         'nb_movie'  : len(list_movie),
-        'descrption' : ' films disponibles en téléchargement gratuit sur LeChatongUniverse'
+        'descrption' : _(' films disponibles en téléchargement gratuit sur LeChatongUniverse')
     }
     return render(request, 'donwload_movie_content.html', context)
 
@@ -857,7 +858,7 @@ def downloable_tv_content(request):
     for elt in tvs:
         id = str(elt.id_tv)
         response_tv = requests.get(
-            'https://api.themoviedb.org/3/tv/' + id + '?api_key=f972c58efb26ab0a5e82cda1f7352586&language=fr-FR')
+            'https://api.themoviedb.org/3/tv/' + id + '?api_key=f972c58efb26ab0a5e82cda1f7352586&language='+translation.get_language()+'')
         tv = response_tv.json()
         try:
             overview = tv['overview'],
@@ -877,6 +878,6 @@ def downloable_tv_content(request):
     context = {
         'list_tvs': list_tvs,
         'nb_tv': len(list_tvs),
-        'descrption': ' Séries et animes disponibles en téléchargement gratuit sur LeChatongUniverse'
+        'descrption': _(' Séries et animes disponibles en téléchargement gratuit sur LeChatongUniverse')
     }
     return render(request, 'download_tv_content.html', context)
