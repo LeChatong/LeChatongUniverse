@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load i18n %}
+{% load static %}
 {% block META_OG %}{% endblock %}
 {% block title %}LeChatongUniverse - {% block intitule_page %}{% trans 'Acceuil' %}{% endblock %}{% endblock %}
 {% block navigation %}
@@ -42,7 +43,11 @@
                                     name="language"
                                     value="{{ language.code }}"
                                     class="{% if language.code == LANGUAGE_CODE %}selected{% endif %}">
-                                <sup title="{{ language.name_local }}">{{ language.code | upper }}</sup>
+                                <sup title="{{ language.name_local }}">
+                                    <i><img src="{% if language.code == 'fr' %}{% static 'france.png' %}{% else %}{% static 'uk.png' %}{% endif %}"></i>
+                                    {# language.code | upper #}
+                                </sup>
+
                             </button>
                         </li>
                     {% endfor %}
