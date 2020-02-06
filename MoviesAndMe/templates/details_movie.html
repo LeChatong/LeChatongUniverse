@@ -63,10 +63,14 @@
                             <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v3.3"></script>
                         </div>
                         <div class="col-lg-1">
-                            <a href="tg://msg_url?url={% url 'details_movie' id  %}&amp;text={{ overview|truncatechars:100 }}">Telegram</a>
+                            <a href="tg://msg_url?url=https://lechatonguniverse.herokuapp.com{% url 'details_movie' id  %}&amp;text={{ overview|truncatechars:250 }}">
+                                <img alt="{% trans 'partager sur telegram' %}" src="{% static 'telegram.png' %}">
+                            </a>
                         </div>
                         <div class="col-lg-1">
-                            <a href="whatsapp://send?text=text%20{% url 'details_movie' id  %}">Whatsapp</a>
+                            <a href="whatsapp://send?text=https://lechatonguniverse.herokuapp.com{% url 'details_movie' id  %}">
+                                <img alt="{% trans 'partager sur whatsapp' %}" src="{% static 'whatsapp.png' %}">
+                            </a>
                         </div>
                     </div>
                 </h3>

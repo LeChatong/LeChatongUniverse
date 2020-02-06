@@ -2,8 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="87406ce3-e5f6-4d08-b4ae-7129b8e07aa8" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/static/telegram.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/static/whatsapp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/telegram.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoviesAndMe/staticfiles/whatsapp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OnlyMe/static/telegram.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OnlyMe/static/whatsapp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OnlyMe/staticfiles/telegram.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OnlyMe/staticfiles/whatsapp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staticfiles/telegram.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staticfiles/whatsapp.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MoviesAndMe/locale/en/LC_MESSAGES/django.mo" beforeDir="false" afterPath="$PROJECT_DIR$/MoviesAndMe/locale/en/LC_MESSAGES/django.mo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MoviesAndMe/locale/en/LC_MESSAGES/django.po" beforeDir="false" afterPath="$PROJECT_DIR$/MoviesAndMe/locale/en/LC_MESSAGES/django.po" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MoviesAndMe/locale/fr/LC_MESSAGES/django.mo" beforeDir="false" afterPath="$PROJECT_DIR$/MoviesAndMe/locale/fr/LC_MESSAGES/django.mo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MoviesAndMe/locale/fr/LC_MESSAGES/django.po" beforeDir="false" afterPath="$PROJECT_DIR$/MoviesAndMe/locale/fr/LC_MESSAGES/django.po" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MoviesAndMe/templates/details_movie.html" beforeDir="false" afterPath="$PROJECT_DIR$/MoviesAndMe/templates/details_movie.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/locale/en/LC_MESSAGES/django.mo" beforeDir="false" afterPath="$PROJECT_DIR$/locale/en/LC_MESSAGES/django.mo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/locale/en/LC_MESSAGES/django.po" beforeDir="false" afterPath="$PROJECT_DIR$/locale/en/LC_MESSAGES/django.po" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/locale/fr/LC_MESSAGES/django.mo" beforeDir="false" afterPath="$PROJECT_DIR$/locale/fr/LC_MESSAGES/django.mo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/locale/fr/LC_MESSAGES/django.po" beforeDir="false" afterPath="$PROJECT_DIR$/locale/fr/LC_MESSAGES/django.po" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -41,6 +59,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="django.po" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MoviesAndMe/locale/fr/LC_MESSAGES/django.po">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="205">
+              <caret line="145" lean-forward="true" selection-start-line="145" selection-end-line="145" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/OnlyMe/settings.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -62,11 +89,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="requirements.txt" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <file leaf-file-name="details_movie.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/details_movie.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="54" column="12" selection-start-line="54" selection-start-column="12" selection-end-line="54" selection-end-column="12" />
+            <state relative-caret-position="102">
+              <caret line="63" column="30" lean-forward="true" selection-start-line="63" selection-start-column="30" selection-end-line="63" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -80,6 +107,15 @@
                 <element signature="e#0#629#1" />
                 <element signature="e#630#662#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="django.po" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/MoviesAndMe/locale/en/LC_MESSAGES/django.po">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="256">
+              <caret line="148" column="17" lean-forward="true" selection-start-line="148" selection-start-column="17" selection-end-line="148" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -207,7 +243,6 @@
         <option value="$PROJECT_DIR$/MoviesAndMe/templates/actors_on_tv.html" />
         <option value="$PROJECT_DIR$/MoviesAndMe/templates/tvs_on_actor.html" />
         <option value="$PROJECT_DIR$/MoviesAndMe/templates/details_actor.html" />
-        <option value="$PROJECT_DIR$/MoviesAndMe/templates/details_movie.html" />
         <option value="$PROJECT_DIR$/MoviesAndMe/templates/page-not-found.html" />
         <option value="$PROJECT_DIR$/MoviesAndMe/templates/donwload_movie_content.html" />
         <option value="$PROJECT_DIR$/MoviesAndMe/templates/download_tv_content.html" />
@@ -219,8 +254,6 @@
         <option value="$PROJECT_DIR$/MoviesAndMe/templates/home_movie.html" />
         <option value="$PROJECT_DIR$/MoviesAndMe/templates/details_tv_season.html" />
         <option value="$PROJECT_DIR$/MoviesAndMe/templates/search_result.html" />
-        <option value="$PROJECT_DIR$/MoviesAndMe/locale/fr/LC_MESSAGES/django.po" />
-        <option value="$PROJECT_DIR$/MoviesAndMe/locale/en/LC_MESSAGES/django.po" />
         <option value="$PROJECT_DIR$/MoviesAndMe/templates/index.html" />
         <option value="$PROJECT_DIR$/OnlyMe/urls.py" />
         <option value="$PROJECT_DIR$/MoviesAndMe/views.py" />
@@ -228,6 +261,9 @@
         <option value="$PROJECT_DIR$/OnlyMe/settings.py" />
         <option value="$PROJECT_DIR$/MoviesAndMe/serializers.py" />
         <option value="$PROJECT_DIR$/requirements.txt" />
+        <option value="$PROJECT_DIR$/MoviesAndMe/templates/details_movie.html" />
+        <option value="$PROJECT_DIR$/MoviesAndMe/locale/en/LC_MESSAGES/django.po" />
+        <option value="$PROJECT_DIR$/MoviesAndMe/locale/fr/LC_MESSAGES/django.po" />
       </list>
     </option>
   </component>
@@ -268,6 +304,42 @@
             <path>
               <item name="OnlyMe" type="b2602c69:ProjectViewProjectNode" />
               <item name="OnlyMe" type="462c0819:PsiDirectoryNode" />
+              <item name="MoviesAndMe" type="462c0819:PsiDirectoryNode" />
+              <item name="locale" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OnlyMe" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OnlyMe" type="462c0819:PsiDirectoryNode" />
+              <item name="MoviesAndMe" type="462c0819:PsiDirectoryNode" />
+              <item name="locale" type="462c0819:PsiDirectoryNode" />
+              <item name="en" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OnlyMe" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OnlyMe" type="462c0819:PsiDirectoryNode" />
+              <item name="MoviesAndMe" type="462c0819:PsiDirectoryNode" />
+              <item name="locale" type="462c0819:PsiDirectoryNode" />
+              <item name="en" type="462c0819:PsiDirectoryNode" />
+              <item name="LC_MESSAGES" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OnlyMe" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OnlyMe" type="462c0819:PsiDirectoryNode" />
+              <item name="MoviesAndMe" type="462c0819:PsiDirectoryNode" />
+              <item name="locale" type="462c0819:PsiDirectoryNode" />
+              <item name="fr" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OnlyMe" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OnlyMe" type="462c0819:PsiDirectoryNode" />
+              <item name="MoviesAndMe" type="462c0819:PsiDirectoryNode" />
+              <item name="locale" type="462c0819:PsiDirectoryNode" />
+              <item name="fr" type="462c0819:PsiDirectoryNode" />
+              <item name="LC_MESSAGES" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OnlyMe" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OnlyMe" type="462c0819:PsiDirectoryNode" />
               <item name="OnlyMe" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -292,19 +364,19 @@
     <key name="OPEN_URL_DIALOG">
       <recent name="https://github.com/Sanix-Darker/jeudiconfession.git" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\projet-d\OnlyMe\staticfiles" />
-      <recent name="D:\projet-d\OnlyMe\OnlyMe\staticfiles" />
-      <recent name="D:\projet-d\OnlyMe\OnlyMe\static" />
-      <recent name="D:\projet-d\OnlyMe\MoviesAndMe\staticfiles" />
-      <recent name="D:\projet-d\OnlyMe\MoviesAndMe\static" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\projet-d\OnlyMe\MoviesAndMe\static" />
       <recent name="D:\projet-d\OnlyMe\MoviesAndMe\staticfiles" />
       <recent name="D:\projet-d\OnlyMe\OnlyMe\static" />
       <recent name="D:\projet-d\OnlyMe\OnlyMe" />
       <recent name="D:\projet-d\OnlyMe\MoviesAndMe\templates" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\projet-d\OnlyMe\staticfiles" />
+      <recent name="D:\projet-d\OnlyMe\OnlyMe\staticfiles" />
+      <recent name="D:\projet-d\OnlyMe\OnlyMe\static" />
+      <recent name="D:\projet-d\OnlyMe\MoviesAndMe\staticfiles" />
+      <recent name="D:\projet-d\OnlyMe\MoviesAndMe\static" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -354,27 +426,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1557311815933</updated>
-    </task>
-    <task id="LOCAL-00042" summary="Amélioration de la recherche">
-      <created>1560437619004</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1560437619004</updated>
-    </task>
-    <task id="LOCAL-00043" summary="Amélioration de la recherche">
-      <created>1560438500896</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1560438500896</updated>
-    </task>
-    <task id="LOCAL-00044" summary="Amélioration de la recherche">
-      <created>1560439963882</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1560439963882</updated>
     </task>
     <task id="LOCAL-00045" summary="Amélioration de la recherche">
       <created>1560440303288</created>
@@ -698,19 +749,41 @@
       <option name="project" value="LOCAL" />
       <updated>1581005947842</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL-00091" summary="Début d'ajout de l'API">
+      <created>1581006234900</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1581006234904</updated>
+    </task>
+    <task id="LOCAL-00092" summary="Début d'ajout de l'API">
+      <created>1581006374906</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1581006374907</updated>
+    </task>
+    <task id="LOCAL-00093" summary="Début d'ajout de l'API + Partage Telegram, Whatsapp">
+      <created>1581007517627</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1581007517627</updated>
+    </task>
+    <option name="localTasksCounter" value="94" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.4826478" side_tool="true" weight="0.33287102" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4993573" weight="0.3293011" />
       <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.49871466" weight="0.32871014" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.44408742" weight="0.30651873" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="13" sideWeight="0.51735216" visible="true" weight="0.33287102" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.44408742" visible="true" weight="0.30651873" />
+      <window_info anchor="bottom" id="Terminal" order="13" sideWeight="0.51735216" weight="0.33287102" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21915168" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="4" weight="0.075835474" />
@@ -783,7 +856,8 @@
     <MESSAGE value="- MAJ de l'interface d'ajout d'une serie ou d'un anime qui ne prend plus de titre" />
     <MESSAGE value="Traduction Anglais / Français OK" />
     <MESSAGE value="Début d'ajout de l'API" />
-    <option name="LAST_COMMIT_MESSAGE" value="Début d'ajout de l'API" />
+    <MESSAGE value="Début d'ajout de l'API + Partage Telegram, Whatsapp" />
+    <option name="LAST_COMMIT_MESSAGE" value="Début d'ajout de l'API + Partage Telegram, Whatsapp" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -941,13 +1015,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/details_movie.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1819">
-          <caret line="107" column="70" lean-forward="true" selection-start-line="107" selection-start-column="52" selection-end-line="107" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/home_tv.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -1008,20 +1075,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1955">
           <caret line="115" column="55" selection-start-line="115" selection-start-column="54" selection-end-line="115" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MoviesAndMe/locale/fr/LC_MESSAGES/django.po">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1224">
-          <caret line="72" column="27" selection-start-line="72" selection-start-column="27" selection-end-line="72" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MoviesAndMe/locale/en/LC_MESSAGES/django.po">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4284">
-          <caret line="252" column="57" selection-start-line="252" selection-start-column="57" selection-end-line="252" selection-end-column="57" />
         </state>
       </provider>
     </entry>
@@ -1129,6 +1182,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="66" column="14" selection-start-line="66" selection-start-column="14" selection-end-line="66" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/MoviesAndMe/serializers.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -1139,10 +1199,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
+    <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/details_movie.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="54" column="12" selection-start-line="54" selection-start-column="12" selection-end-line="54" selection-end-column="12" />
+        <state relative-caret-position="102">
+          <caret line="63" column="30" lean-forward="true" selection-start-line="63" selection-start-column="30" selection-end-line="63" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MoviesAndMe/locale/fr/LC_MESSAGES/django.po">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="145" lean-forward="true" selection-start-line="145" selection-end-line="145" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MoviesAndMe/locale/en/LC_MESSAGES/django.po">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="148" column="17" lean-forward="true" selection-start-line="148" selection-start-column="17" selection-end-line="148" selection-end-column="17" />
         </state>
       </provider>
     </entry>
