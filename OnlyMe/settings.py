@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'corsheaders',
     'MoviesAndMe.apps.MoviesandmeConfig',
 ]
 
@@ -56,7 +58,16 @@ MIDDLEWARE = [
     'django.middleware.locale.LocaleMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.locale.LocaleMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
+
+#REST_FRAMEWORK = {
+#    'DEFAULT_PERMISSION_CLASSES' : [
+#        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+#    ]
+#}
+
+CORS_ORIGIN_ALLOW_ALL = True
 
 ROOT_URLCONF = 'OnlyMe.urls'
 
