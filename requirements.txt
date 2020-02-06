@@ -38,7 +38,7 @@ parse==1.14.0
 parse-type==0.5.2
 parsel==1.5.2
 pathtools==0.1.2
-Pillow==5.4.1
+Pillow==6.2.0
 plumbum==1.6.8
 portalocker==1.5.2
 Protego==0.1.16
