@@ -62,7 +62,12 @@
                             <div id="fb-root"></div>
                             <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v3.3"></script>
                         </div>
-
+                        <div class="col-lg-1">
+                            <a href="tg://msg_url?url={% url 'details_movie' id  %}&amp;text={{ overview|truncatechars:100 }}">Telegram</a>
+                        </div>
+                        <div class="col-lg-1">
+                            <a href="whatsapp://send?text=text%20{% url 'details_movie' id  %}">Whatsapp</a>
+                        </div>
                     </div>
                 </h3>
 
