@@ -6,11 +6,7 @@ from django.shortcuts import render, redirect
 from django.conf import settings
 from django.utils import translation
 from django.utils.translation import ugettext_lazy as _
-from rest_framework.decorators import api_view
-from rest_framework import status
-from rest_framework.response import Response
-from .models import movie_detail
-from .serializers import *
+
 
 from .models import movie_detail, tv_detail
 
@@ -887,11 +883,3 @@ def downloable_tv_content(request):
     }
     return render(request, 'download_tv_content.html', context)
 
-
-#FUNCTIONS FOR THE API BY TCHATONG ULRICH ARMEL
-
-@api_view(['GET',])
-def list_all_movies_avaible(request):
-    data = movie_detail.objects.all()
-    serializer = MovieSerializer(data, context={'request': request}, many=True)
-    return Response(serializer.data)

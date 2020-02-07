@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-06 17:59+0100\n"
+"POT-Creation-Date: 2020-02-07 16:27+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\OnlyMe\settings.py:148
+#: .\OnlyMe\settings.py:149
 msgid "French"
 msgstr "French"
 
-#: .\OnlyMe\settings.py:149
+#: .\OnlyMe\settings.py:150
 msgid "English"
 msgstr "English"
 

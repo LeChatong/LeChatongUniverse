@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import movie_detail, tv_detail
+from MoviesAndMe.models import movie_detail, tv_detail
 
 
 class MovieSerializer(serializers.ModelSerializer):

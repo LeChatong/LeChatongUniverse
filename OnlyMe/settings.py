@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'MoviesAndMe.apps.MoviesandmeConfig',
+    'LeChApi.apps.LechapiConfig',
 ]
 
 MIDDLEWARE = [
