@@ -70,7 +70,7 @@ telegram==0.0.1
 tornado==6.0.3
 Twisted==19.10.0
 twython==3.7.0
-updater==0.1.24
+#updater==0.1.24
 urllib3==1.24.2
 w3lib==1.21.0
 watchdog==0.9.0

@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="87406ce3-e5f6-4d08-b4ae-7129b8e07aa8" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/LeChApi/telegrambot.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LeChApi/bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/LeChApi/bot.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LeChApi/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/LeChApi/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LeChApi/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/LeChApi/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MoviesAndMe/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/MoviesAndMe/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlyMe/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/OnlyMe/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlyMe/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/OnlyMe/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -122,7 +115,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MoviesAndMe/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
@@ -130,6 +123,15 @@
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="requirements.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/requirements.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="59" column="1" selection-start-line="59" selection-start-column="1" selection-end-line="59" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -219,7 +221,6 @@
         <option value="$PROJECT_DIR$/LeChApi/models.py" />
         <option value="$PROJECT_DIR$/LeChApi/templates/user_data.html" />
         <option value="$PROJECT_DIR$/LeChApi/templates/auth.html" />
-        <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/LeChApi/views.py" />
         <option value="$PROJECT_DIR$/LeChApi/urls.py" />
         <option value="$PROJECT_DIR$/LeChApi/bot.py" />
@@ -228,6 +229,7 @@
         <option value="$PROJECT_DIR$/OnlyMe/urls.py" />
         <option value="$PROJECT_DIR$/OnlyMe/settings.py" />
         <option value="$PROJECT_DIR$/MoviesAndMe/views.py" />
+        <option value="$PROJECT_DIR$/requirements.txt" />
       </list>
     </option>
   </component>
@@ -438,13 +440,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1557311815933</updated>
-    </task>
-    <task id="LOCAL-00052" summary="Amelioration du design de l'administration et des détails">
-      <created>1561123708230</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1561123708232</updated>
     </task>
     <task id="LOCAL-00053" summary="Amelioration du design de l'administration et des détails">
       <created>1561123918159</created>
@@ -782,7 +777,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581505627060</updated>
     </task>
-    <option name="localTasksCounter" value="101" />
+    <task id="LOCAL-00101" summary="Début d'ajout de l'API + Partage Telegram, Whatsapp">
+      <created>1581699299056</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1581699299057</updated>
+    </task>
+    <option name="localTasksCounter" value="102" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -794,8 +796,8 @@
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4993573" weight="0.3293011" />
       <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.49871466" weight="0.32871014" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.44408742" weight="0.30651873" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="13" sideWeight="0.51735216" visible="true" weight="0.33287102" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24228792" />
+      <window_info anchor="bottom" id="Terminal" order="13" sideWeight="0.51735216" visible="true" weight="0.33287102" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24228792" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="4" weight="0.075835474" />
       <window_info anchor="right" id="SciView" order="3" weight="0.32969153" />
@@ -965,13 +967,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="69" column="1" selection-start-line="69" selection-start-column="1" selection-end-line="69" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -1206,6 +1201,13 @@
           <folding>
             <element signature="e#0#29#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="59" column="1" selection-start-line="59" selection-start-column="1" selection-end-line="59" selection-end-column="1" />
         </state>
       </provider>
     </entry>
