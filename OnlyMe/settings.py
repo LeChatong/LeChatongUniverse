@@ -202,7 +202,7 @@ DJANGO_TELEGRAMBOT = {
         {
            'TOKEN': '914995992:AAFPpnVKjnG6lFcmF5FUctkjN7HtKVQrugA', #Your bot token.
 
-           'ALLOWED_UPDATES':["127.0.0.1"] #(Optional[list[str]]), # List the types of
+           'ALLOWED_UPDATES':["https://ac5b77c5.ngrok.io"] #(Optional[list[str]]), # List the types of
                                                    #updates you want your bot to receive. For example, specify
                                                    #``["message", "edited_channel_post", "callback_query"]`` to
                                                    #only receive updates of these types. See ``telegram.Update``
