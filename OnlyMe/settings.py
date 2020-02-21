@@ -47,9 +47,8 @@ INSTALLED_APPS = [
     'corsheaders',
     'MoviesAndMe.apps.MoviesandmeConfig',
     'LeChApi.apps.LechapiConfig',
-    'django_telegrambot',
 ]
-#
+#'django_telegrambot',
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
