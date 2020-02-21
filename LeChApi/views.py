@@ -6,6 +6,26 @@ from .serializers import *
 
 #FUNCTIONS FOR THE API BY TCHATONG ULRICH ARMEL
 
+#Displays a user in accordance with their username and email
+@api_view(['POST','GET'],)
+def user_by_username_mail(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        mail = request.POST['email']
+    elif request.method == 'GET':
+        username = request.GET.get('username')
+        mail = request.GET.get('email')
+    data = User.objects.filter(username=username, email=mail)
+    serializer = UserSerializer(data, context={'request': request}, many=True)
+    return Response(serializer.data)
+
+#List the user
+@api_view(['GET',])
+def list_all_user(request):
+    data = User.objects.all()
+    serializer = UserSerializer(data, context={'request': request}, many=True)
+    return Response(serializer.data)
+
 @api_view(['GET',])
 def list_all_movies_avaible(request):
     data = movie_detail.objects.all()

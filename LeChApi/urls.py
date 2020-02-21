@@ -3,6 +3,8 @@ from django.conf.urls import url
 from LeChApi import views, bot
 
 urlpatterns = (
+    url(r'^user/authentificate$', views.user_by_username_mail),
+    url(r'^users/$', views.list_all_user),
     url(r'^movies/$', views.list_all_movies_avaible),
     url(r'^series/$', views.list_all_series_avaible),
     url(r'^search_movies/$', views.seach_movies),

@@ -3,6 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="87406ce3-e5f6-4d08-b4ae-7129b8e07aa8" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LeChApi/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/LeChApi/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LeChApi/telegrambot.py" beforeDir="false" afterPath="$PROJECT_DIR$/LeChApi/telegrambot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LeChApi/templates/auth.html" beforeDir="false" afterPath="$PROJECT_DIR$/LeChApi/templates/auth.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LeChApi/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/LeChApi/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LeChApi/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/LeChApi/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MoviesAndMe/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/MoviesAndMe/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MoviesAndMe/templates/tvs_on_actor.html" beforeDir="false" afterPath="$PROJECT_DIR$/MoviesAndMe/templates/tvs_on_actor.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlyMe/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/OnlyMe/settings.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -48,20 +55,28 @@
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/OnlyMe/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="195" lean-forward="true" selection-start-line="195" selection-end-line="195" />
+            <state relative-caret-position="170">
+              <caret line="40" column="19" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MoviesAndMe/admin.py">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://C:/Python/Lib/site-packages/django_telegrambot/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="187">
+              <caret line="13" selection-start-line="13" selection-end-line="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="telegrambot.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LeChApi/telegrambot.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="43" selection-start-line="43" selection-end-line="43" />
               <folding>
-                <element signature="e#0#32#0" expanded="true" />
-                <element signature="e#243#1029#0" />
-                <element signature="e#1077#1918#0" />
+                <element signature="e#63#127#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -70,8 +85,8 @@
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/LeChApi/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="44" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
+            <state relative-caret-position="85">
+              <caret line="5" column="30" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -82,22 +97,10 @@
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MoviesAndMe/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="42" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
+            <state relative-caret-position="153">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bot.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LeChApi/bot.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-452">
-              <caret line="27" column="81" selection-start-line="27" selection-start-column="81" selection-end-line="27" selection-end-column="81" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -106,8 +109,8 @@
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/OnlyMe/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="39" column="56" selection-start-line="39" selection-start-column="56" selection-end-line="39" selection-end-column="56" />
+            <state relative-caret-position="205">
+              <caret line="40" selection-start-line="40" selection-end-line="40" />
               <folding>
                 <element signature="e#0#629#1" />
                 <element signature="e#630#662#0" expanded="true" />
@@ -116,23 +119,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MoviesAndMe/views.py">
+      <file leaf-file-name="auth.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LeChApi/templates/auth.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="861" column="90" selection-start-line="861" selection-start-column="90" selection-end-line="861" selection-end-column="90" />
+            <state relative-caret-position="136">
+              <caret line="8" column="62" selection-start-line="8" selection-start-column="62" selection-end-line="8" selection-end-column="62" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LeChApi/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
               <folding>
-                <element signature="e#0#29#0" expanded="true" />
+                <element signature="e#0#35#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="requirements.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <file leaf-file-name="tvs_on_actor.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/tvs_on_actor.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="438">
-              <caret line="71" column="1" selection-start-line="71" selection-start-column="1" selection-end-line="71" selection-end-column="1" />
+            <state relative-caret-position="357">
+              <caret line="21" column="45" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="popular_tv.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/popular_tv.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -180,14 +201,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/templates/404.html" />
         <option value="$PROJECT_DIR$/templates/500.html" />
         <option value="$PROJECT_DIR$/OnlyMe/storage.py" />
         <option value="$PROJECT_DIR$/MoviesAndMe/tests.py" />
         <option value="$PROJECT_DIR$/MoviesAndMe/templates/404.html" />
         <option value="$PROJECT_DIR$/MoviesAndMe/templates/500.html" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/bac7b837-e95f-4933-beb4-646baf8c02a9/console_1.sql" />
-        <option value="$PROJECT_DIR$/MoviesAndMe/models.py" />
         <option value="$PROJECT_DIR$/OnlyMe/static/css/shop-homepage.css" />
         <option value="$PROJECT_DIR$/OnlyMe/staticfiles/css/shop-homepage.css" />
         <option value="$PROJECT_DIR$/MoviesAndMe/static/css/shop-homepage.css" />
@@ -199,7 +218,6 @@
         <option value="$PROJECT_DIR$/MoviesAndMe/templates/details_tv.html" />
         <option value="$PROJECT_DIR$/MoviesAndMe/templates/home_tv.html" />
         <option value="$PROJECT_DIR$/MoviesAndMe/templates/actors_on_tv.html" />
-        <option value="$PROJECT_DIR$/MoviesAndMe/templates/tvs_on_actor.html" />
         <option value="$PROJECT_DIR$/MoviesAndMe/templates/details_actor.html" />
         <option value="$PROJECT_DIR$/MoviesAndMe/templates/donwload_movie_content.html" />
         <option value="$PROJECT_DIR$/MoviesAndMe/templates/download_tv_content.html" />
@@ -214,23 +232,26 @@
         <option value="$PROJECT_DIR$/MoviesAndMe/serializers.py" />
         <option value="$PROJECT_DIR$/MoviesAndMe/templates/page_error.html" />
         <option value="$PROJECT_DIR$/MoviesAndMe/templates/page-not-found.html" />
-        <option value="$PROJECT_DIR$/LeChApi/serializers.py" />
         <option value="$PROJECT_DIR$/MoviesAndMe/urls.py" />
         <option value="$PROJECT_DIR$/MoviesAndMe/locale/fr/LC_MESSAGES/django.po" />
         <option value="$PROJECT_DIR$/MoviesAndMe/locale/en/LC_MESSAGES/django.po" />
         <option value="$PROJECT_DIR$/MoviesAndMe/templates/details_movie.html" />
         <option value="$PROJECT_DIR$/LeChApi/models.py" />
         <option value="$PROJECT_DIR$/LeChApi/templates/user_data.html" />
-        <option value="$PROJECT_DIR$/LeChApi/templates/auth.html" />
-        <option value="$PROJECT_DIR$/LeChApi/views.py" />
-        <option value="$PROJECT_DIR$/LeChApi/urls.py" />
         <option value="$PROJECT_DIR$/LeChApi/bot.py" />
         <option value="C:/Python/Lib/site-packages/django_telegrambot/apps.py" />
-        <option value="$PROJECT_DIR$/LeChApi/telegrambot.py" />
-        <option value="$PROJECT_DIR$/OnlyMe/urls.py" />
         <option value="$PROJECT_DIR$/MoviesAndMe/views.py" />
         <option value="$PROJECT_DIR$/requirements.txt" />
+        <option value="$PROJECT_DIR$/LeChApi/telegrambot.py" />
+        <option value="C:/Python/Lib/site-packages/django_telegrambot/urls.py" />
+        <option value="$PROJECT_DIR$/OnlyMe/urls.py" />
         <option value="$PROJECT_DIR$/OnlyMe/settings.py" />
+        <option value="$PROJECT_DIR$/LeChApi/templates/auth.html" />
+        <option value="$PROJECT_DIR$/MoviesAndMe/models.py" />
+        <option value="$PROJECT_DIR$/LeChApi/serializers.py" />
+        <option value="$PROJECT_DIR$/LeChApi/urls.py" />
+        <option value="$PROJECT_DIR$/LeChApi/views.py" />
+        <option value="$PROJECT_DIR$/MoviesAndMe/templates/tvs_on_actor.html" />
       </list>
     </option>
   </component>
@@ -269,42 +290,14 @@
             </path>
             <path>
               <item name="OnlyMe" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="OnlyMe" type="462c0819:PsiDirectoryNode" />
+              <item name="MoviesAndMe" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="OnlyMe" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; Python 3.7 &gt;" type="70bed36:NamedLibraryElementNode" />
-            </path>
-            <path>
-              <item name="OnlyMe" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; Python 3.7 &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="Python" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OnlyMe" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; Python 3.7 &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="Python" type="462c0819:PsiDirectoryNode" />
-              <item name="Lib" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OnlyMe" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; Python 3.7 &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="Python" type="462c0819:PsiDirectoryNode" />
-              <item name="Lib" type="462c0819:PsiDirectoryNode" />
-              <item name="site-packages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OnlyMe" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; Python 3.7 &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="Python" type="462c0819:PsiDirectoryNode" />
-              <item name="Lib" type="462c0819:PsiDirectoryNode" />
-              <item name="site-packages" type="462c0819:PsiDirectoryNode" />
-              <item name="django_telegrambot" type="462c0819:PsiDirectoryNode" />
+              <item name="OnlyMe" type="462c0819:PsiDirectoryNode" />
+              <item name="MoviesAndMe" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -441,20 +434,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1557311815933</updated>
-    </task>
-    <task id="LOCAL-00055" summary="Amelioration du design de l'administration et des détails">
-      <created>1562082347661</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1562082347661</updated>
-    </task>
-    <task id="LOCAL-00056" summary="- Ajout des pages d'erreurs&#10;- Ajout de la page de consultation des acteurs d'une série">
-      <created>1567683677437</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1567683677438</updated>
     </task>
     <task id="LOCAL-00057" summary="- Ajout du contenu pour les films téléchargeable">
       <created>1568285937607</created>
@@ -785,21 +764,34 @@
       <option name="project" value="LOCAL" />
       <updated>1581699798596</updated>
     </task>
-    <option name="localTasksCounter" value="104" />
+    <task id="LOCAL-00104" summary="Début d'ajout de l'API + Partage Telegram, Whatsapp">
+      <created>1581700444056</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1581700444056</updated>
+    </task>
+    <task id="LOCAL-00105" summary="Début d'ajout de l'API + Partage Telegram, Whatsapp">
+      <created>1581700669517</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1581700669517</updated>
+    </task>
+    <option name="localTasksCounter" value="106" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.4826478" side_tool="true" weight="0.33287102" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4993573" weight="0.3293011" />
       <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.49871466" weight="0.32871014" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.44408742" visible="true" weight="0.30651873" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.44408742" visible="true" weight="0.30651873" />
       <window_info anchor="bottom" id="Terminal" order="13" sideWeight="0.51735216" weight="0.33287102" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24228792" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12789203" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="4" weight="0.075835474" />
       <window_info anchor="right" id="SciView" order="3" weight="0.32969153" />
@@ -883,61 +875,10 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="66" />
+      <option name="time" value="70" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/MoviesAndMe/migrations/0004_auto_20190614_1506.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-408" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MoviesAndMe/migrations/0001_initial.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-63" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/requirement.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MoviesAndMe/tests.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="47" column="17" selection-start-line="47" selection-start-column="13" selection-end-line="47" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="144" selection-start-line="144" selection-end-line="144" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/page-not-found.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/page_error.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MoviesAndMe/apps.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/OnlyMe/staticfiles/whatsapp.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -972,20 +913,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LeChApi/templates/auth.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MoviesAndMe/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/LeChApi/templates/user_data.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -1010,13 +937,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LeChApi/serializers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="21" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Python/Lib/site-packages/django_telegrambot/management/commands/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1029,13 +949,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python/Lib/site-packages/telegram/ext/messagehandler.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="130" selection-start-line="130" selection-end-line="130" />
         </state>
       </provider>
     </entry>
@@ -1087,56 +1000,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Python/Lib/site-packages/django_telegrambot/apps.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2890">
-          <caret line="181" column="36" selection-start-line="181" selection-start-column="36" selection-end-line="181" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LeChApi/telegrambot.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="44" selection-start-line="44" selection-end-line="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LeChApi/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python/Lib/site-packages/django_telegrambot/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/MoviesAndMe/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-            <element signature="e#243#1029#0" />
-            <element signature="e#1077#1918#0" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://C:/Python/Lib/site-packages/django_telegrambot/admin.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LeChApi/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="44" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/LeChApi/tests.py">
       <provider selected="true" editor-type-id="text-editor" />
@@ -1151,54 +1019,119 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Python/Lib/site-packages/django_telegrambot/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="13" column="66" lean-forward="true" selection-start-line="13" selection-start-column="66" selection-end-line="13" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MoviesAndMe/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="42" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MoviesAndMe/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
+        <state relative-caret-position="14467">
           <caret line="861" column="90" selection-start-line="861" selection-start-column="90" selection-end-line="861" selection-end-column="90" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/requirements.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="438">
+        <state relative-caret-position="1207">
           <caret line="71" column="1" selection-start-line="71" selection-start-column="1" selection-end-line="71" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/LeChApi/bot.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-452">
+        <state relative-caret-position="442">
           <caret line="27" column="81" selection-start-line="27" selection-start-column="81" selection-end-line="27" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python/Lib/site-packages/telegram/ext/messagehandler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="87" selection-start-line="87" selection-end-line="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python/Lib/site-packages/telegram/ext/filters.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="85" column="6" selection-start-line="85" selection-start-column="6" selection-end-line="85" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python/Lib/site-packages/django_telegrambot/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MoviesAndMe/migrations/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LeChApi/serializers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
           <folding>
-            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#0#38#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MoviesAndMe/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+          <folding>
+            <element signature="e#1345#2703#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LeChApi/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="30" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LeChApi/templates/auth.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="62" selection-start-line="8" selection-start-column="62" selection-end-line="8" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python/Lib/logging/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="1330" selection-start-line="1330" selection-end-line="1330" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python/Lib/site-packages/django_telegrambot/apps.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LeChApi/telegrambot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
+          <folding>
+            <element signature="e#63#127#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python/Lib/site-packages/django_telegrambot/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/OnlyMe/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="39" column="56" selection-start-line="39" selection-start-column="56" selection-end-line="39" selection-end-column="56" />
+        <state relative-caret-position="205">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
           <folding>
             <element signature="e#0#629#1" />
             <element signature="e#630#662#0" expanded="true" />
@@ -1206,10 +1139,72 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/MoviesAndMe/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python/Lib/site-packages/rest_framework/utils/serializer_helpers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="39" selection-start-line="39" selection-end-line="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python/Lib/site-packages/rest_framework/serializers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="760" selection-start-line="760" selection-end-line="760" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python/Lib/site-packages/rest_framework/decorators.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="49" selection-start-line="49" selection-end-line="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python/Lib/site-packages/rest_framework/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="215" selection-start-line="215" selection-end-line="215" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LeChApi/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/popular_tv.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/tvs_on_actor.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="45" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/OnlyMe/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="195" lean-forward="true" selection-start-line="195" selection-end-line="195" />
+        <state relative-caret-position="170">
+          <caret line="40" column="19" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="19" />
         </state>
       </provider>
     </entry>

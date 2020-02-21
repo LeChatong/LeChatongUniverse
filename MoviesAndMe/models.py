@@ -68,3 +68,9 @@ class tv_detail(models.Model):
         ordering        = ['title_tv']
     def __str__(self):
         return self.title_tv
+
+#class comment(models.Model):
+#    id_media = models.IntegerField(null=True) #Id du média provenant de l'API
+#    id_movie = models.IntegerField(null=True)
+#    id_tv = models.IntegerField(null=True)
+#    author = models.CharField()

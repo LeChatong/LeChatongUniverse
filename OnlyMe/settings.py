@@ -31,7 +31,8 @@ else:
 
 ALLOWED_HOSTS = [
         'lechatonguniverse.herokuapp.com',
-        '127.0.0.1'
+        '127.0.0.1',
+        'c6c37f80.ngrok.io'
 ]
 # Application definition
 
@@ -46,8 +47,9 @@ INSTALLED_APPS = [
     'corsheaders',
     'MoviesAndMe.apps.MoviesandmeConfig',
     'LeChApi.apps.LechapiConfig',
+    'django_telegrambot',
 ]
-#'django_telegrambot',
+#
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -189,8 +191,8 @@ DJANGO_TELEGRAMBOT = {
                         # NB: if use polling you must provide to run
                         # a management command that starts a worker
 
-    'WEBHOOK_SITE' : 'https://ac5b77c5.ngrok.io',
-    #'WEBHOOK_PREFIX' : '/prefix', # (Optional[str]) # If this value is specified,
+    'WEBHOOK_SITE' : 'https://c6c37f80.ngrok.io',
+    'WEBHOOK_PREFIX' : 'https://c6c37f80.ngrok.io', # (Optional[str]) # If this value is specified,
                                   # a prefix is added to webhook url
 
     #'WEBHOOK_CERTIFICATE' : 'cert.pem', # If your site use self-signed
@@ -201,7 +203,7 @@ DJANGO_TELEGRAMBOT = {
         {
            'TOKEN': '914995992:AAFPpnVKjnG6lFcmF5FUctkjN7HtKVQrugA', #Your bot token.
 
-           'ALLOWED_UPDATES':["https://ac5b77c5.ngrok.io"] #(Optional[list[str]]), # List the types of
+           'ALLOWED_UPDATES':['*',] #(Optional[list[str]]), # List the types of
                                                    #updates you want your bot to receive. For example, specify
                                                    #``["message", "edited_channel_post", "callback_query"]`` to
                                                    #only receive updates of these types. See ``telegram.Update``
