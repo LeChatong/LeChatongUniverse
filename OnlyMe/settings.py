@@ -32,7 +32,7 @@ else:
 ALLOWED_HOSTS = [
         'lechatonguniverse.herokuapp.com',
         '127.0.0.1',
-        'c6c37f80.ngrok.io'
+        '172.16.145.118'
 ]
 # Application definition
 
@@ -129,6 +129,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+TELEGRAM_API_ID = 1315849
+
+TELEGRAM_HASH_ID = 'e61ce3f911e5123e2cd8ec2b4e713935'
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
