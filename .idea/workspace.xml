@@ -3,35 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="87406ce3-e5f6-4d08-b4ae-7129b8e07aa8" name="Default" comment="">
       <change afterPath="$PROJECT_DIR$/LeChApi/ngrok.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MoviesAndMe/@LeChatong.session" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MoviesAndMe/LeChatong.session" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MoviesAndMe/migrations/0005_auto_20200214_1730.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lcu/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lcu/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lcu/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lcu/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lcu/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lcu/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lcu/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lcu/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/avatar/s200_tchatong.ulrich.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/bac7b837-e95f-4933-beb4-646baf8c02a9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/bac7b837-e95f-4933-beb4-646baf8c02a9.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lcu/migrations/0002_auto_20200311_1705.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LeChApi/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/LeChApi/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LeChApi/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/LeChApi/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LeChApi/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/LeChApi/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LeChApi/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/LeChApi/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MoviesAndMe/locale/en/LC_MESSAGES/django.mo" beforeDir="false" afterPath="$PROJECT_DIR$/MoviesAndMe/locale/en/LC_MESSAGES/django.mo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MoviesAndMe/locale/en/LC_MESSAGES/django.po" beforeDir="false" afterPath="$PROJECT_DIR$/MoviesAndMe/locale/en/LC_MESSAGES/django.po" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MoviesAndMe/locale/fr/LC_MESSAGES/django.mo" beforeDir="false" afterPath="$PROJECT_DIR$/MoviesAndMe/locale/fr/LC_MESSAGES/django.mo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MoviesAndMe/locale/fr/LC_MESSAGES/django.po" beforeDir="false" afterPath="$PROJECT_DIR$/MoviesAndMe/locale/fr/LC_MESSAGES/django.po" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MoviesAndMe/templates/details_tv_season.html" beforeDir="false" afterPath="$PROJECT_DIR$/MoviesAndMe/templates/details_tv_season.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlyMe/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/OnlyMe/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlyMe/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/OnlyMe/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/locale/en/LC_MESSAGES/django.mo" beforeDir="false" afterPath="$PROJECT_DIR$/locale/en/LC_MESSAGES/django.mo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/locale/en/LC_MESSAGES/django.po" beforeDir="false" afterPath="$PROJECT_DIR$/locale/en/LC_MESSAGES/django.po" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/locale/fr/LC_MESSAGES/django.mo" beforeDir="false" afterPath="$PROJECT_DIR$/locale/fr/LC_MESSAGES/django.mo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/locale/fr/LC_MESSAGES/django.po" beforeDir="false" afterPath="$PROJECT_DIR$/locale/fr/LC_MESSAGES/django.po" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lcu/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/lcu/models.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -169,11 +143,32 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/LeChApi/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
               <caret line="10" column="46" lean-forward="true" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lcu/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="821">
+              <caret line="99" column="22" lean-forward="true" selection-start-line="99" selection-start-column="22" selection-end-line="99" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="lcu_movie_detail" pinned="false" current-in-tab="false">
+        <entry file="das://bac7b837-e95f-4933-beb4-646baf8c02a9/database/lechatonguniverse/schema/public/table/lcu_movie_detail">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+              <column-attributes>
+                <column name="ctid" enabled="false" />
+              </column-attributes>
             </state>
           </provider>
         </entry>
@@ -272,7 +267,6 @@
         <option value="$PROJECT_DIR$/lcu/testCrypt.py" />
         <option value="$PROJECT_DIR$/locale/en/LC_MESSAGES/django.po" />
         <option value="$PROJECT_DIR$/locale/fr/LC_MESSAGES/django.po" />
-        <option value="$PROJECT_DIR$/lcu/models.py" />
         <option value="$PROJECT_DIR$/OnlyMe/urls.py" />
         <option value="$PROJECT_DIR$/lcu/admin.py" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/bac7b837-e95f-4933-beb4-646baf8c02a9/console_2.sql" />
@@ -281,6 +275,7 @@
         <option value="$PROJECT_DIR$/LeChApi/urls.py" />
         <option value="$PROJECT_DIR$/LeChApi/views.py" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/bac7b837-e95f-4933-beb4-646baf8c02a9/console_1.sql" />
+        <option value="$PROJECT_DIR$/lcu/models.py" />
       </list>
     </option>
   </component>
@@ -316,6 +311,11 @@
             <path>
               <item name="OnlyMe" type="b2602c69:ProjectViewProjectNode" />
               <item name="OnlyMe" type="462c0819:PsiDirectoryNode" />
+              <item name="lcu" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OnlyMe" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OnlyMe" type="462c0819:PsiDirectoryNode" />
               <item name="LeChApi" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -330,7 +330,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="PostgreSQL" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/Change SQL Dialect" value="PostgreSQL" />
-    <property name="database.console.LAST_STATE" value="true" />
+    <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="D:/LeChatonGram" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -515,13 +515,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1557311815933</updated>
-    </task>
-    <task id="LOCAL-00060" summary="- Ajout du contenu pour les films téléchargeable">
-      <created>1568287961331</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1568287961331</updated>
     </task>
     <task id="LOCAL-00061" summary="- Ajout du contenu pour les films téléchargeable et correction des bugs">
       <created>1568720948829</created>
@@ -859,7 +852,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583488498005</updated>
     </task>
-    <option name="localTasksCounter" value="109" />
+    <task id="LOCAL-00109" summary="Ajout de l'application &quot;lcu&quot;">
+      <created>1583939251577</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1583939251578</updated>
+    </task>
+    <option name="localTasksCounter" value="110" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -871,11 +871,11 @@
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.44408742" weight="0.35783634" />
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4993573" weight="0.3293011" />
       <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.49871466" weight="0.32871014" />
-      <window_info anchor="bottom" id="Terminal" order="13" sideWeight="0.51735216" weight="0.33287102" />
-      <window_info anchor="bottom" id="Database Console" order="11" sideWeight="0.49421594" visible="true" weight="0.23439667" />
+      <window_info anchor="bottom" id="Terminal" order="13" sideWeight="0.51735216" visible="true" weight="0.33287102" />
+      <window_info anchor="bottom" id="Database Console" order="11" sideWeight="0.49421594" weight="0.23439667" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1407455" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="right" id="Database" order="4" weight="0.23714653" />
+      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.23714653" />
       <window_info anchor="right" id="SciView" order="3" weight="0.32969153" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4877892" weight="0.36199722" />
@@ -947,7 +947,8 @@
     <MESSAGE value="Début d'ajout de l'API" />
     <MESSAGE value="Début d'ajout de l'API + Partage Telegram, Whatsapp" />
     <MESSAGE value="MAJ sur l'API" />
-    <option name="LAST_COMMIT_MESSAGE" value="MAJ sur l'API" />
+    <MESSAGE value="Ajout de l'application &quot;lcu&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout de l'application &quot;lcu&quot;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1182,6 +1183,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" selection-start-line="5" selection-end-line="5" selection-end-column="32" />
+          <folding>
+            <element signature="e#556#3073#0" />
+            <element signature="e#3107#5596#0" />
+            <element signature="e#5631#5676#0" />
+            <element signature="e#5707#5748#0" />
+            <element signature="e#5787#9162#0" />
+            <element signature="e#9200#12460#0" />
+            <element signature="e#12500#14017#0" />
+            <element signature="e#14054#15454#0" />
+            <element signature="e#15494#16817#0" />
+            <element signature="e#16854#17727#0" />
+            <element signature="e#17755#18560#0" />
+            <element signature="e#18599#20211#0" />
+            <element signature="e#20242#21034#0" />
+            <element signature="e#21076#22695#0" />
+            <element signature="e#22738#24413#0" />
+            <element signature="e#24448#27777#0" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1208,13 +1227,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lcu/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -1256,16 +1268,6 @@
     <entry file="file://$PROJECT_DIR$/lcu/migrations/0001_initial.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-823" />
-      </provider>
-    </entry>
-    <entry file="das://bac7b837-e95f-4933-beb4-646baf8c02a9/database/lechatonguniverse/schema/public/table/lcu_movie_detail">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-          <column-attributes>
-            <column name="ctid" enabled="false" />
-          </column-attributes>
-        </state>
       </provider>
     </entry>
     <entry file="das://bac7b837-e95f-4933-beb4-646baf8c02a9/database/lechatonguniverse/schema/public/table/auth_user">
@@ -1312,6 +1314,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="10" column="46" lean-forward="true" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://bac7b837-e95f-4933-beb4-646baf8c02a9/database/lechatonguniverse/schema/public/table/lcu_movie_detail">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+          <column-attributes>
+            <column name="ctid" enabled="false" />
+          </column-attributes>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lcu/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="821">
+          <caret line="99" column="22" lean-forward="true" selection-start-line="99" selection-start-column="22" selection-end-line="99" selection-end-column="22" />
         </state>
       </provider>
     </entry>

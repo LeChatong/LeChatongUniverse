@@ -52,8 +52,8 @@ class movie_detail(models.Model):
     subtitle = models.CharField(verbose_name=_('est_soustitre'),max_length=3, choices=YES_OR_NO)
     subtitle_language = models.CharField(verbose_name=_('langue_du_soustitre'),max_length=10, choices=LANGUAGE)
     member = models.ForeignKey(member, on_delete=models.DO_NOTHING, null=True, default=1)
-    created_at = models.DateTimeField(verbose_name=_('created_at'), default=timezone.now)
-    updated_at = models.DateTimeField(verbose_name=_('updated_at'), default=timezone.now)
+    created_at = models.DateTimeField(verbose_name=_('created_at'), null=True, default=timezone.now)
+    updated_at = models.DateTimeField(verbose_name=_('updated_at'), null=True, default=timezone.now)
     class Meta:
         verbose_name    = _('Film')
         verbose_name_plural = _('Films')
@@ -91,8 +91,8 @@ class tv_detail(models.Model):
     subtitle = models.CharField(verbose_name=_('est_soustitre'),max_length=3, choices=YES_OR_NO)
     subtitle_language = models.CharField(verbose_name=_('langue_du_soustitre'),max_length=10, choices=LANGUAGE)
     member = models.ForeignKey(member, on_delete=models.DO_NOTHING, null=True, default=1)
-    created_at = models.DateTimeField(verbose_name=_('created_at'), default=timezone.now)
-    updated_at = models.DateTimeField(verbose_name=_('updated_at'), default=timezone.now)
+    created_at = models.DateTimeField(verbose_name=_('created_at'), null=True, default=timezone.now)
+    updated_at = models.DateTimeField(verbose_name=_('updated_at'), null=True, default=timezone.now)
     class Meta:
         verbose_name    = _('serie_anime')
         verbose_name_plural = _('series_animes')
