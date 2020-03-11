@@ -8,7 +8,7 @@ from django.utils import translation
 from django.utils.translation import ugettext_lazy as _
 
 
-from .models import movie_detail, tv_detail
+from lcu.models import movie_detail, tv_detail
 
 language = settings.LANGUAGE_CODE
 # Create your views here.
@@ -838,7 +838,7 @@ def donwload_movie_content(request):
         list_movie.append(
             [
                 elt.id_movie,
-                elt.link_telegram,
+                elt.link_download,
                 elt.title_movie,
                 overview
             ]
