@@ -8,60 +8,65 @@
       <ObjectId>16393</ObjectId>
       <Comment>Base de données de l&apos;Application LeChatong</Comment>
     </database>
-    <database id="3" parent="1" name="lechatonguniverse">
+    <database id="3" parent="1" name="lechatonglife">
+      <ObjectId>57561</ObjectId>
+      <Comment>Base de données pour mes applications personnelles.
+Par TCHATONG Ulrich Armel.</Comment>
+    </database>
+    <database id="4" parent="1" name="lechatonguniverse">
       <ObjectId>40979</ObjectId>
       <IntrospectionStateNumber>123</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </database>
-    <database id="4" parent="1" name="morpheus_doc">
+    <database id="5" parent="1" name="morpheus_doc">
       <ObjectId>16589</ObjectId>
     </database>
-    <database id="5" parent="1" name="postgres">
+    <database id="6" parent="1" name="postgres">
       <ObjectId>13012</ObjectId>
       <Comment>default administrative connection database</Comment>
     </database>
-    <role id="6" parent="1" name="pg_execute_server_program">
+    <role id="7" parent="1" name="pg_execute_server_program">
       <ObjectId>4571</ObjectId>
       <Inherit>1</Inherit>
       <ConnectionLimit>-1</ConnectionLimit>
     </role>
-    <role id="7" parent="1" name="pg_monitor">
+    <role id="8" parent="1" name="pg_monitor">
       <ObjectId>3373</ObjectId>
       <Inherit>1</Inherit>
       <ConnectionLimit>-1</ConnectionLimit>
     </role>
-    <role id="8" parent="1" name="pg_read_all_settings">
+    <role id="9" parent="1" name="pg_read_all_settings">
       <ObjectId>3374</ObjectId>
       <Inherit>1</Inherit>
       <ConnectionLimit>-1</ConnectionLimit>
     </role>
-    <role id="9" parent="1" name="pg_read_all_stats">
+    <role id="10" parent="1" name="pg_read_all_stats">
       <ObjectId>3375</ObjectId>
       <Inherit>1</Inherit>
       <ConnectionLimit>-1</ConnectionLimit>
     </role>
-    <role id="10" parent="1" name="pg_read_server_files">
+    <role id="11" parent="1" name="pg_read_server_files">
       <ObjectId>4569</ObjectId>
       <Inherit>1</Inherit>
       <ConnectionLimit>-1</ConnectionLimit>
     </role>
-    <role id="11" parent="1" name="pg_signal_backend">
+    <role id="12" parent="1" name="pg_signal_backend">
       <ObjectId>4200</ObjectId>
       <Inherit>1</Inherit>
       <ConnectionLimit>-1</ConnectionLimit>
     </role>
-    <role id="12" parent="1" name="pg_stat_scan_tables">
+    <role id="13" parent="1" name="pg_stat_scan_tables">
       <ObjectId>3377</ObjectId>
       <Inherit>1</Inherit>
       <ConnectionLimit>-1</ConnectionLimit>
     </role>
-    <role id="13" parent="1" name="pg_write_server_files">
+    <role id="14" parent="1" name="pg_write_server_files">
       <ObjectId>4570</ObjectId>
       <Inherit>1</Inherit>
       <ConnectionLimit>-1</ConnectionLimit>
     </role>
-    <role id="14" parent="1" name="postgres">
+    <role id="15" parent="1" name="postgres">
       <ObjectId>10</ObjectId>
       <SuperRole>1</SuperRole>
       <Inherit>1</Inherit>
@@ -72,195 +77,228 @@
       <ConnectionLimit>-1</ConnectionLimit>
       <BypassRls>1</BypassRls>
     </role>
-    <schema id="15" parent="3" name="information_schema">
+    <schema id="16" parent="4" name="information_schema">
       <ObjectId>12716</ObjectId>
     </schema>
-    <schema id="16" parent="3" name="pg_catalog">
+    <schema id="17" parent="4" name="pg_catalog">
       <ObjectId>11</ObjectId>
       <Comment>system catalog schema</Comment>
     </schema>
-    <schema id="17" parent="3" name="pg_temp_1">
+    <schema id="18" parent="4" name="pg_temp_1">
       <ObjectId>11804</ObjectId>
     </schema>
-    <schema id="18" parent="3" name="pg_toast">
+    <schema id="19" parent="4" name="pg_toast">
       <ObjectId>99</ObjectId>
       <Comment>reserved schema for TOAST tables</Comment>
     </schema>
-    <schema id="19" parent="3" name="pg_toast_temp_1">
+    <schema id="20" parent="4" name="pg_toast_temp_1">
       <ObjectId>11805</ObjectId>
     </schema>
-    <schema id="20" parent="3" name="public">
+    <schema id="21" parent="4" name="public">
       <ObjectId>2200</ObjectId>
       <Comment>standard public schema</Comment>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
-    <access-method id="21" parent="3" name="btree">
+    <access-method id="22" parent="4" name="btree">
       <ObjectId>403</ObjectId>
       <Comment>b-tree index access method</Comment>
       <Handler>pg_catalog.bthandler</Handler>
       <HandlerId>330</HandlerId>
       <Type>index</Type>
     </access-method>
-    <access-method id="22" parent="3" name="hash">
+    <access-method id="23" parent="4" name="hash">
       <ObjectId>405</ObjectId>
       <Comment>hash index access method</Comment>
       <Handler>pg_catalog.hashhandler</Handler>
       <HandlerId>331</HandlerId>
       <Type>index</Type>
     </access-method>
-    <access-method id="23" parent="3" name="gist">
+    <access-method id="24" parent="4" name="gist">
       <ObjectId>783</ObjectId>
       <Comment>GiST index access method</Comment>
       <Handler>pg_catalog.gisthandler</Handler>
       <HandlerId>332</HandlerId>
       <Type>index</Type>
     </access-method>
-    <access-method id="24" parent="3" name="gin">
+    <access-method id="25" parent="4" name="gin">
       <ObjectId>2742</ObjectId>
       <Comment>GIN index access method</Comment>
       <Handler>pg_catalog.ginhandler</Handler>
       <HandlerId>333</HandlerId>
       <Type>index</Type>
     </access-method>
-    <access-method id="25" parent="3" name="spgist">
+    <access-method id="26" parent="4" name="spgist">
       <ObjectId>4000</ObjectId>
       <Comment>SP-GiST index access method</Comment>
       <Handler>pg_catalog.spghandler</Handler>
       <HandlerId>334</HandlerId>
       <Type>index</Type>
     </access-method>
-    <access-method id="26" parent="3" name="brin">
+    <access-method id="27" parent="4" name="brin">
       <ObjectId>3580</ObjectId>
       <Comment>block range index (BRIN) access method</Comment>
       <Handler>pg_catalog.brinhandler</Handler>
       <HandlerId>335</HandlerId>
       <Type>index</Type>
     </access-method>
-    <sequence id="27" parent="20" name="MoviesAndMe_movie_detail_id_seq">
+    <sequence id="28" parent="21" name="MoviesAndMe_movie_detail_id_seq">
       <ObjectId>41153</ObjectId>
       <StateNumber>1475</StateNumber>
       <SequenceIdentity>1..2147483647</SequenceIdentity>
       <CacheSize>1</CacheSize>
       <DataType>integer</DataType>
     </sequence>
-    <sequence id="28" parent="20" name="MoviesAndMe_tv_detail_id_seq">
+    <sequence id="29" parent="21" name="MoviesAndMe_tv_detail_id_seq">
       <ObjectId>41161</ObjectId>
       <StateNumber>1484</StateNumber>
       <SequenceIdentity>1..2147483647</SequenceIdentity>
       <CacheSize>1</CacheSize>
       <DataType>integer</DataType>
     </sequence>
-    <sequence id="29" parent="20" name="auth_group_id_seq">
+    <sequence id="30" parent="21" name="auth_group_id_seq">
       <ObjectId>41009</ObjectId>
       <StateNumber>1425</StateNumber>
       <SequenceIdentity>1..2147483647</SequenceIdentity>
       <CacheSize>1</CacheSize>
       <DataType>integer</DataType>
     </sequence>
-    <sequence id="30" parent="20" name="auth_group_permissions_id_seq">
+    <sequence id="31" parent="21" name="auth_group_permissions_id_seq">
       <ObjectId>41019</ObjectId>
       <StateNumber>1425</StateNumber>
       <SequenceIdentity>1..2147483647</SequenceIdentity>
       <CacheSize>1</CacheSize>
       <DataType>integer</DataType>
     </sequence>
-    <sequence id="31" parent="20" name="auth_permission_id_seq">
+    <sequence id="32" parent="21" name="auth_permission_id_seq">
       <ObjectId>41001</ObjectId>
       <StateNumber>1425</StateNumber>
       <SequenceIdentity>1..2147483647</SequenceIdentity>
       <CacheSize>1</CacheSize>
       <DataType>integer</DataType>
     </sequence>
-    <sequence id="32" parent="20" name="auth_user_groups_id_seq">
+    <sequence id="33" parent="21" name="auth_user_groups_id_seq">
       <ObjectId>41037</ObjectId>
       <StateNumber>1425</StateNumber>
       <SequenceIdentity>1..2147483647</SequenceIdentity>
       <CacheSize>1</CacheSize>
       <DataType>integer</DataType>
     </sequence>
-    <sequence id="33" parent="20" name="auth_user_id_seq">
+    <sequence id="34" parent="21" name="auth_user_id_seq">
       <ObjectId>41027</ObjectId>
       <StateNumber>1425</StateNumber>
       <SequenceIdentity>1..2147483647</SequenceIdentity>
       <CacheSize>1</CacheSize>
       <DataType>integer</DataType>
     </sequence>
-    <sequence id="34" parent="20" name="auth_user_user_permissions_id_seq">
+    <sequence id="35" parent="21" name="auth_user_user_permissions_id_seq">
       <ObjectId>41045</ObjectId>
       <StateNumber>1425</StateNumber>
       <SequenceIdentity>1..2147483647</SequenceIdentity>
       <CacheSize>1</CacheSize>
       <DataType>integer</DataType>
     </sequence>
-    <sequence id="35" parent="20" name="django_admin_log_id_seq">
+    <sequence id="36" parent="21" name="django_admin_log_id_seq">
       <ObjectId>41105</ObjectId>
       <StateNumber>1427</StateNumber>
       <SequenceIdentity>1..2147483647</SequenceIdentity>
       <CacheSize>1</CacheSize>
       <DataType>integer</DataType>
     </sequence>
-    <sequence id="36" parent="20" name="django_content_type_id_seq">
+    <sequence id="37" parent="21" name="django_content_type_id_seq">
       <ObjectId>40991</ObjectId>
       <StateNumber>1423</StateNumber>
       <SequenceIdentity>1..2147483647</SequenceIdentity>
       <CacheSize>1</CacheSize>
       <DataType>integer</DataType>
     </sequence>
-    <sequence id="37" parent="20" name="django_migrations_id_seq">
+    <sequence id="38" parent="21" name="django_migrations_id_seq">
       <ObjectId>40980</ObjectId>
       <StateNumber>1422</StateNumber>
       <SequenceIdentity>1..2147483647</SequenceIdentity>
       <CacheSize>1</CacheSize>
       <DataType>integer</DataType>
     </sequence>
-    <table id="38" parent="20" name="MoviesAndMe_movie_detail">
+    <sequence id="39" parent="21" name="lcu_member_id_seq">
+      <ObjectId>57580</ObjectId>
+      <StateNumber>1713</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="40" parent="21" name="lcu_movie_detail_id_seq">
+      <ObjectId>57595</ObjectId>
+      <StateNumber>1713</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="41" parent="21" name="lcu_tv_detail_id_seq">
+      <ObjectId>57606</ObjectId>
+      <StateNumber>1713</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <table id="42" parent="21" name="MoviesAndMe_movie_detail">
       <ObjectId>41155</ObjectId>
       <StateNumber>1484</StateNumber>
     </table>
-    <table id="39" parent="20" name="MoviesAndMe_tv_detail">
+    <table id="43" parent="21" name="MoviesAndMe_tv_detail">
       <ObjectId>41163</ObjectId>
       <StateNumber>1489</StateNumber>
     </table>
-    <table id="40" parent="20" name="auth_group">
+    <table id="44" parent="21" name="auth_group">
       <ObjectId>41011</ObjectId>
       <StateNumber>1425</StateNumber>
     </table>
-    <table id="41" parent="20" name="auth_group_permissions">
+    <table id="45" parent="21" name="auth_group_permissions">
       <ObjectId>41021</ObjectId>
       <StateNumber>1425</StateNumber>
     </table>
-    <table id="42" parent="20" name="auth_permission">
+    <table id="46" parent="21" name="auth_permission">
       <ObjectId>41003</ObjectId>
       <StateNumber>1425</StateNumber>
     </table>
-    <table id="43" parent="20" name="auth_user">
+    <table id="47" parent="21" name="auth_user">
       <ObjectId>41029</ObjectId>
       <StateNumber>1442</StateNumber>
     </table>
-    <table id="44" parent="20" name="auth_user_groups">
+    <table id="48" parent="21" name="auth_user_groups">
       <ObjectId>41039</ObjectId>
       <StateNumber>1425</StateNumber>
     </table>
-    <table id="45" parent="20" name="auth_user_user_permissions">
+    <table id="49" parent="21" name="auth_user_user_permissions">
       <ObjectId>41047</ObjectId>
       <StateNumber>1425</StateNumber>
     </table>
-    <table id="46" parent="20" name="django_admin_log">
+    <table id="50" parent="21" name="django_admin_log">
       <ObjectId>41107</ObjectId>
       <StateNumber>1427</StateNumber>
     </table>
-    <table id="47" parent="20" name="django_content_type">
+    <table id="51" parent="21" name="django_content_type">
       <ObjectId>40993</ObjectId>
       <StateNumber>1425</StateNumber>
     </table>
-    <table id="48" parent="20" name="django_migrations">
+    <table id="52" parent="21" name="django_migrations">
       <ObjectId>40982</ObjectId>
       <StateNumber>1422</StateNumber>
     </table>
-    <table id="49" parent="20" name="django_session">
+    <table id="53" parent="21" name="django_session">
       <ObjectId>41135</ObjectId>
       <StateNumber>1446</StateNumber>
+    </table>
+    <table id="54" parent="21" name="lcu_member">
+      <ObjectId>57582</ObjectId>
+      <StateNumber>1713</StateNumber>
+    </table>
+    <table id="55" parent="21" name="lcu_movie_detail">
+      <ObjectId>57597</ObjectId>
+      <StateNumber>1713</StateNumber>
+    </table>
+    <table id="56" parent="21" name="lcu_tv_detail">
+      <ObjectId>57608</ObjectId>
+      <StateNumber>1713</StateNumber>
     </table>
   </database-model>
 </dataSource>

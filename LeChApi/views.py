@@ -1,8 +1,10 @@
 from django.shortcuts import render
 from rest_framework.decorators import api_view
 from rest_framework import status
+from django.utils.datastructures import MultiValueDictKeyError
 from rest_framework.response import Response
 from .serializers import *
+import hashlib
 
 #FUNCTIONS FOR THE API BY TCHATONG ULRICH ARMEL
 
@@ -50,6 +52,27 @@ def seach_tvs(request):
     search = request.GET.get('query')
     data = tv_detail.objects.filter(title_tv__contains=search).order_by('title_tv')
     serializer = SerieSerializer(data, context={'request': request}, many=True)
+    return Response(serializer.data)
+
+@api_view(['POST', 'GET'])
+def login_member(request):
+    if request.method == 'POST':
+        try:
+            username = request.POST['username']
+            password_crypt = hashlib.sha1(request.POST['password'].encode('utf-8')).hexdigest()
+        except MultiValueDictKeyError:
+            username = None
+            password_crypt = None
+        password = password_crypt
+    elif request.method == 'GET':
+        username = request.GET.get('username')
+        try:
+            password_crypt = hashlib.sha1(request.GET.get('password').encode('utf-8')).hexdigest()
+        except MultiValueDictKeyError:
+            password_crypt = None
+        password = password_crypt
+    data = member.objects.filter(username=username, password=password)
+    serializer = MembeSerializer(data, context={'request': request}, many=True)
     return Response(serializer.data)
 
 def authentification(request):

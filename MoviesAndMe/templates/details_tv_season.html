@@ -33,147 +33,144 @@
               </ol>
             </nav>
         <div class="row">
-                <div class="col-lg-4">
-                    <div class="card mt-4">
-                        {% if poster_path != None %}
-                            <img width="100" height="110" class="card-img-top img-fluid" src="https://image.tmdb.org/t/p/w1280{{ poster_path }}" alt="{{ name_tv }}-{{ name_season }}">
-                        {% else %}
-                            <img width="100" height="110" class="card-img-top" src="{% static 'not_image_disponible.svg.png' %}" alt="{{ name_tv }}-{{ name_season }}">
-                        {% endif %}
-                    </div>
-                </div>
-                <div class="col-lg-8">
-                    <div class="mt-4">
-                        <div class="h2">
-                            {{ name_tv }}-{{ name_season }}
-                        </div>
-                        <p>
-
-                            <div>
-                                {% trans 'Sortie le : ' %} {% if air_date != None %}{{ air_date|date:'d M Y' }}{% else %}{% trans 'Non Précisé' %}{% endif %}
-                            </div>
-                        </p>
-                        <div class="text-justify">
-                            <b>{% trans 'Description' %}</b>
-                            <p>
-                                {{ overview }}
-                            </p>
-
-                        </div>
-                    </div>
-                    <div class="mt-4">
-                        <span>
-                            <a class="twitter-share-button" data-size="large" href="https://twitter.com/intent/tweet">
-                                @LeChatong
-                            </a>
-                            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                        </span>
-                        <span>
-                            <div id="fb-root" class="text-justify"></div>
-                              <script>(function(d, s, id) {
-                                var js, fjs = d.getElementsByTagName(s)[0];
-                                if (d.getElementById(id)) return;
-                                js = d.createElement(s); js.id = id;
-                                js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
-                                fjs.parentNode.insertBefore(js, fjs);
-                              }(document, 'script', 'facebook-jssdk'));</script>
-                            <div class="fb-share-button"
-                                data-href="{% url 'details_tv' id %}"
-                                 data-size="large"
-                                data-layout="button_count">
-                                Partager
-                            </div>
-                        </span>
-                    </div>
+            <div class="col-lg-4">
+                <div class="card mt-4">
+                    {% if poster_path != None %}
+                        <img width="100" height="110" class="card-img-top img-fluid" src="https://image.tmdb.org/t/p/w1280{{ poster_path }}" alt="{{ name_tv }}-{{ name_season }}">
+                    {% else %}
+                        <img width="100" height="110" class="card-img-top" src="{% static 'not_image_disponible.svg.png' %}" alt="{{ name_tv }}-{{ name_season }}">
+                    {% endif %}
                 </div>
             </div>
+            <div class="col-lg-8">
+                <div class="mt-4">
+                    <div class="h2">
+                        {{ name_tv }}-{{ name_season }}
+                    </div>
+                    <p>
+
+                        <div>
+                            {% trans 'Sortie le : ' %} {% if air_date != None %}{{ air_date|date:'d M Y' }}{% else %}{% trans 'Non Précisé' %}{% endif %}
+                        </div>
+                    </p>
+                    <div class="text-justify">
+                        <b>{% trans 'Description' %}</b>
+                        <p>
+                            {{ overview }}
+                        </p>
+
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <span>
+                        <a class="twitter-share-button" data-size="large" href="https://twitter.com/intent/tweet">
+                            @LeChatong
+                        </a>
+                        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    </span>
+                    <span>
+                        <div id="fb-root" class="text-justify"></div>
+                          <script>(function(d, s, id) {
+                            var js, fjs = d.getElementsByTagName(s)[0];
+                            if (d.getElementById(id)) return;
+                            js = d.createElement(s); js.id = id;
+                            js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+                            fjs.parentNode.insertBefore(js, fjs);
+                          }(document, 'script', 'facebook-jssdk'));</script>
+                        <div class="fb-share-button"
+                            data-href="{% url 'details_tv' id %}"
+                             data-size="large"
+                            data-layout="button_count">
+                            Partager
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
         <hr/>
         <div class="row">
-                <div class="col-lg-12">
-                    <div class="h2"><b>{{ nb_episode }}{% trans 'Episodes' %}</b></div>
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col">{% trans 'Affiche' %}</th>
-                                <th scope="col">{% trans 'Description' %}</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for episode in EPISODES %}
-                                <tr>
-                                    <td style="width: 200px;">
-                                        {% if episode.5 != None %}
-                                            <img width="150" height="150" src="https://image.tmdb.org/t/p/w1280{{ episode.5 }}">
-                                        {% else %}
-                                            <img width="150" height="150" src="{% static 'not_image_disponible.svg.png' %}">
-                                        {% endif %}
+            <div class="col-lg-12">
+                <div class="h2"><b>{{ nb_episode }}{% trans 'Episodes' %}</b></div>
+            </div>
+        </div>
+        <div class="row">
+            {% for episode in EPISODES %}
+            <div class="col-lg-3 col-md-4 mb-3">
+                <div class="card h-auto">
+                  <a href="#" title="{{ episode.4 }}" data-toggle="modal" data-target="#downloadModal-{{ episode.3 }}">
+                      {% if episode.5 != None %}
+                        <img  class="card-img-top" src="https://image.tmdb.org/t/p/w500{{ episode.5 }}">
+                      {% else %}
+                        <img  class="card-img-top" src="{% static 'not_image_disponible.svg.png' %}">
+                      {% endif %}
+                  </a>
+                  <div class="card-body">
+                    <h5 class="card-title">
+                        <a href="#" title="{{ episode.4 }}" class="text-dark" data-toggle="modal" data-target="#downloadModal-{{ episode.3 }}">{{ episode.1 }}</a>
+                    </h5>
+                    <div class="card-text">
+                        <div><sup>{{ episode.2|date:'d M Y' }}</sup></div>
+                    </div>
 
-                                    </td>
-                                    <td class="text-justify">
-                                        <a class="h4 text-dark" href="#">{{ episode.1 }}</a>
-                                        <div><sup>{{ episode.2|date:'d M Y' }}</sup></div>
-                                        <div>{{ episode.4 }}</div>
-                                        {% if episode.6 != None %}
-                                            <div class="">
-                                                <a class="badge badge-success" data-toggle="modal" data-target="#downloadModal-{{ episode.3 }}" href="">
-                                                    {% trans 'Disponible' %}
-                                                </a>
-                                            </div>
-                                            <div class="modal fade" id="downloadModal-{{ episode.3 }}" tabindex="-1" role="dialog" aria-labelledby="downloadModalLabel-{{ episode.3 }}" aria-hidden="true">
-                                              <div class="modal-dialog modal-lg" role="document">
-                                                <div class="modal-content">
-                                                  <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLabel">{% trans 'Lien de Téléchargement' %}</h5>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                      <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                  </div>
-                                                  <div class="modal-body">
-                                                      <div class="container-fluid">
-                                                          <table class="table-responsive-xl table thead-light">
-                                                            <thead>
-                                                                <tr>
-                                                                    <th scope="col">{% trans 'Langue' %}</th>
-                                                                    <th scope="col">{% trans 'Vidéo' %}</th>
-                                                                    <th scope="col">{% trans 'Audio' %}</th>
-                                                                    <th scope="col">{% trans 'SousTitré' %}</th>
-                                                                    <th scope="col">{% trans 'Lien' %}</th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                {% for elt in episode.6 %}
-                                                                    <tr>
-                                                                        <td>{{ elt.1 }}</td>
-                                                                        <td>{{ elt.3 }}</td>
-                                                                        <td>{{ elt.4 }}</td>
-                                                                        <td>{{ elt.5 }} ({{ elt.6 }})</td>
-                                                                        <td>
-                                                                            <a target="_blank" href="{{ elt.2 }}">
-                                                                                <i class="align-left"><img src="{% static 'download.png' %}"></i>
-                                                                            </a>
-                                                                        </td>
-                                                                    </tr>
-                                                                {% endfor %}
-                                                            </tbody>
-                                                        </table>
-                                                      </div>
-
-                                                  </div>
-                                                    <div class="modal-footer">
-                                                        <p><a class="bold" href="https://desktop.telegram.org/" target="_blank">{{ '*Telegram' }}</a> {{ ' requis' }}</p>
-                                                    </div>
-                                                </div>
-                                              </div>
-                                            </div>
-                                        {% endif %}
-                                    </td>
-                                </tr>
-
-                            {% endfor %}
-                        </tbody>
-
-                    </table>
+                  </div>
                 </div>
             </div>
+            <div class="modal fade" id="downloadModal-{{ episode.3 }}" tabindex="-1" role="dialog" aria-labelledby="downloadModalLabel-{{ episode.3 }}" aria-hidden="true">
+              <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">{{ name_tv }} / {{ name_season}} / {{ episode.1 }}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                      <div class="container-fluid">
+                          <div class="text-left">
+                              <span class="h5">{% trans 'synopsys' %}</span>
+                              <p>{{ episode.4 }}</p>
+                          </div>
+                            <hr/>
+                          {% if episode.6 != None %}
+                              <table class="table-responsive-xl table thead-light">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">{% trans 'Langue' %}</th>
+                                        <th scope="col">{% trans 'Vidéo' %}</th>
+                                        <th scope="col">{% trans 'Audio' %}</th>
+                                        <th scope="col">{% trans 'SousTitré' %}</th>
+                                        <th scope="col">{% trans 'Lien' %}</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for elt in episode.6 %}
+                                        <tr>
+                                            <td>{{ elt.1 }}</td>
+                                            <td>{{ elt.3 }}</td>
+                                            <td>{{ elt.4 }}</td>
+                                            <td>{{ elt.5 }} ({{ elt.6 }})</td>
+                                            <td>
+                                                <a target="_blank" href="{{ elt.2 }}">
+                                                    <i class="align-left"><img src="{% static 'download.png' %}"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                          {% else %}
+                              <p class="h3">{% trans 'Pas de contenu disponible' %}</p>
+                          {% endif %}
+                      </div>
+
+                  </div>
+                    <div class="modal-footer">
+
+                    </div>
+                </div>
+              </div>
+            </div>
+        {% endfor %}
+        </div>
     </div>
 {% endblock %}

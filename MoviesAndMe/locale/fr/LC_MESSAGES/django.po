@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-07 16:27+0100\n"
+"POT-Creation-Date: 2020-03-09 13:40+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,7 +32,7 @@ msgstr "Acteurs du film"
 #: .\MoviesAndMe\templates\movies_on_actor.html:9
 #: .\MoviesAndMe\templates\popular_movie.html:8
 #: .\MoviesAndMe\templates\popular_tv.html:8
-#: .\MoviesAndMe\templates\tvs_on_actor.html:6
+#: .\MoviesAndMe\templates\tvs_on_actor.html:7
 msgid "Nouveautés"
 msgstr "Nouveautés"
 
@@ -47,14 +47,14 @@ msgstr "Nouveautés"
 #: .\MoviesAndMe\templates\movies_on_actor.html:11
 #: .\MoviesAndMe\templates\popular_movie.html:10
 #: .\MoviesAndMe\templates\popular_tv.html:10
-#: .\MoviesAndMe\templates\tvs_on_actor.html:7
+#: .\MoviesAndMe\templates\tvs_on_actor.html:8
 #: .\MoviesAndMe\templates\upcoming_movie.html:9
 msgid "Populaires"
 msgstr "Populaires"
 
 #: .\MoviesAndMe\templates\actors_on_tv.html:12
 #: .\MoviesAndMe\templates\details_movie.html:23
-#: .\MoviesAndMe\templates\details_movie.html:89
+#: .\MoviesAndMe\templates\details_movie.html:86
 #: .\MoviesAndMe\templates\details_tv.html:23
 #: .\MoviesAndMe\templates\details_tv_season.html:23
 #: .\MoviesAndMe\templates\details_tv_season.html:119
@@ -64,7 +64,7 @@ msgstr "Populaires"
 #: .\MoviesAndMe\templates\movies_on_actor.html:13
 #: .\MoviesAndMe\templates\popular_movie.html:12
 #: .\MoviesAndMe\templates\popular_tv.html:11
-#: .\MoviesAndMe\templates\tvs_on_actor.html:8
+#: .\MoviesAndMe\templates\tvs_on_actor.html:9
 #: .\MoviesAndMe\templates\upcoming_movie.html:11
 msgid "Disponible"
 msgstr "Disponible"
@@ -109,7 +109,7 @@ msgstr "Séries / Animés"
 
 #: .\MoviesAndMe\templates\details_actor.html:84
 #: .\MoviesAndMe\templates\details_actor.html:107
-#: .\MoviesAndMe\templates\details_movie.html:176
+#: .\MoviesAndMe\templates\details_movie.html:173
 #: .\MoviesAndMe\templates\details_tv.html:159
 msgid "Voir Plus"
 msgstr "Voir Plus"
@@ -136,90 +136,78 @@ msgstr "Accueil"
 msgid "Films"
 msgstr "Menu Films"
 
-#: .\MoviesAndMe\templates\details_movie.html:55
-#, fuzzy
-#| msgid "partager sur telegram"
-msgid "partager sur twitter"
-msgstr "Partager sur Twitter"
-
-#: .\MoviesAndMe\templates\details_movie.html:62
-#, fuzzy
-#| msgid "partager sur telegram"
-msgid "partager sur facebook"
-msgstr "Partager sur Facebook"
-
-#: .\MoviesAndMe\templates\details_movie.html:69
-#: .\MoviesAndMe\templates\details_movie.html:70
+#: .\MoviesAndMe\templates\details_movie.html:66
+#: .\MoviesAndMe\templates\details_movie.html:67
 msgid "partager sur telegram"
 msgstr "Partager sur Telegram"
 
-#: .\MoviesAndMe\templates\details_movie.html:74
-#: .\MoviesAndMe\templates\details_movie.html:75
+#: .\MoviesAndMe\templates\details_movie.html:71
+#: .\MoviesAndMe\templates\details_movie.html:72
 msgid "partager sur whatsapp"
 msgstr "Partager sur WhatsApp"
 
-#: .\MoviesAndMe\templates\details_movie.html:82
+#: .\MoviesAndMe\templates\details_movie.html:79
 msgid "Genres :"
 msgstr "Genres :"
 
-#: .\MoviesAndMe\templates\details_movie.html:95
+#: .\MoviesAndMe\templates\details_movie.html:92
 #: .\MoviesAndMe\templates\details_tv_season.html:126
 #, fuzzy
 #| msgid "Téléchargeable"
 msgid "Lien de Téléchargement"
 msgstr "Lien de Téléchargement"
 
-#: .\MoviesAndMe\templates\details_movie.html:104
+#: .\MoviesAndMe\templates\details_movie.html:101
 #: .\MoviesAndMe\templates\details_tv_season.html:136
 msgid "Langue"
 msgstr "Langue"
 
-#: .\MoviesAndMe\templates\details_movie.html:105
+#: .\MoviesAndMe\templates\details_movie.html:102
 #: .\MoviesAndMe\templates\details_tv_season.html:137
 msgid "Vidéo"
 msgstr "Vidéo"
 
-#: .\MoviesAndMe\templates\details_movie.html:106
+#: .\MoviesAndMe\templates\details_movie.html:103
 #: .\MoviesAndMe\templates\details_tv_season.html:138
 msgid "Audio"
 msgstr "Audio"
 
-#: .\MoviesAndMe\templates\details_movie.html:107
+#: .\MoviesAndMe\templates\details_movie.html:104
 #: .\MoviesAndMe\templates\details_tv_season.html:139
 msgid "SousTitré"
 msgstr "Sous-titré ?"
 
-#: .\MoviesAndMe\templates\details_movie.html:108
+#: .\MoviesAndMe\templates\details_movie.html:105
 #: .\MoviesAndMe\templates\details_tv_season.html:140
 msgid "Lien"
 msgstr "Lien"
 
-#: .\MoviesAndMe\templates\details_movie.html:120
+#: .\MoviesAndMe\templates\details_movie.html:117
 #: .\MoviesAndMe\templates\donwload_movie_content.html:50
 #, fuzzy
 #| msgid "Voir Plus"
 msgid "Voir"
 msgstr "Voir le contenu"
 
-#: .\MoviesAndMe\templates\details_movie.html:143
+#: .\MoviesAndMe\templates\details_movie.html:140
 #: .\MoviesAndMe\templates\details_tv.html:95
 #, fuzzy
 #| msgid "Sortie le : "
 msgid "Sortie le :"
 msgstr "Sortie le : "
 
-#: .\MoviesAndMe\templates\details_movie.html:151
+#: .\MoviesAndMe\templates\details_movie.html:148
 #, fuzzy
 #| msgid "Auteurs :"
 msgid "Acteurs"
 msgstr "Acteurs"
 
-#: .\MoviesAndMe\templates\details_movie.html:185
+#: .\MoviesAndMe\templates\details_movie.html:182
 #: .\MoviesAndMe\templates\details_tv.html:168
 msgid "Sociétés de Production"
 msgstr "Sociétés de Production"
 
-#: .\MoviesAndMe\templates\details_movie.html:212
+#: .\MoviesAndMe\templates\details_movie.html:209
 msgid "Films Similaires"
 msgstr "Films Similaires"
 
@@ -248,7 +236,7 @@ msgstr "Séries on Animes Similaires"
 #: .\MoviesAndMe\templates\movies_on_actor.html:35
 #: .\MoviesAndMe\templates\popular_movie.html:65
 #: .\MoviesAndMe\templates\popular_tv.html:64
-#: .\MoviesAndMe\templates\tvs_on_actor.html:30
+#: .\MoviesAndMe\templates\tvs_on_actor.html:31
 #: .\MoviesAndMe\templates\upcoming_movie.html:64
 msgid "Sortie le : "
 msgstr "Sortie le : "
@@ -393,7 +381,7 @@ msgstr "Précédent"
 msgid "Suivant"
 msgstr "Suivant"
 
-#: .\MoviesAndMe\templates\tvs_on_actor.html:15
+#: .\MoviesAndMe\templates\tvs_on_actor.html:16
 #, fuzzy
 #| msgid "Menu Séries"
 msgid "Séries avec "
@@ -411,6 +399,16 @@ msgstr " films disponibles gratuitement sur LeChatongUniverse"
 msgid ""
 " Séries et animes disponibles en téléchargement gratuit sur LeChatongUniverse"
 msgstr " séries et animes disponibles gratuitement sur LeChatongUniverse"
+
+#, fuzzy
+#~| msgid "partager sur telegram"
+#~ msgid "partager sur twitter"
+#~ msgstr "Partager sur Twitter"
+
+#, fuzzy
+#~| msgid "partager sur telegram"
+#~ msgid "partager sur facebook"
+#~ msgstr "Partager sur Facebook"
 
 #~ msgid "Téléchargeable"
 #~ msgstr "Téléchargeable"

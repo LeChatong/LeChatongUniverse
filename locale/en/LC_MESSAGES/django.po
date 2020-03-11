@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-07 16:27+0100\n"
+"POT-Creation-Date: 2020-03-09 13:40+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,22 +17,163 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\OnlyMe\settings.py:149
+#: .\OnlyMe\settings.py:154
 msgid "French"
 msgstr "French"
 
-#: .\OnlyMe\settings.py:150
+#: .\OnlyMe\settings.py:155
 msgid "English"
 msgstr "English"
+
+#: .\lcu\models.py:10
+msgid "first_name"
+msgstr "Name"
+
+#: .\lcu\models.py:11
+msgid "username"
+msgstr "Username"
+
+#: .\lcu\models.py:12
+msgid "password"
+msgstr "Password"
+
+#: .\lcu\models.py:13
+msgid "email"
+msgstr "Mail"
+
+#: .\lcu\models.py:14 .\lcu\models.py:55 .\lcu\models.py:94
+msgid "created_at"
+msgstr " Created At"
+
+#: .\lcu\models.py:15
+msgid "last_connexion"
+msgstr "Last Connexion"
+
+#: .\lcu\models.py:16
+msgid "is_active"
+msgstr " Is Active"
+
+#: .\lcu\models.py:17
+msgid "is_delete"
+msgstr "Is Delete"
+
+#: .\lcu\models.py:18
+msgid "is_modarator"
+msgstr "Is Modarator"
+
+#: .\lcu\models.py:21
+msgid "member"
+msgstr "Member"
+
+#: .\lcu\models.py:22
+msgid "members"
+msgstr "Members"
+
+#: .\lcu\models.py:29 .\lcu\models.py:68
+msgid "titre"
+msgstr "Title"
+
+#: .\lcu\models.py:30 .\lcu\models.py:69
+msgid "lien_telechargement"
+msgstr "Download Link"
+
+#: .\lcu\models.py:32 .\lcu\models.py:71
+msgid "FRANÇAIS"
+msgstr "French"
+
+#: .\lcu\models.py:33 .\lcu\models.py:72
+msgid "ANGLAIS"
+msgstr "English"
+
+#: .\lcu\models.py:34 .\lcu\models.py:73
+msgid "JAPONAIS"
+msgstr "Japanese"
+
+#: .\lcu\models.py:35 .\lcu\models.py:74
+msgid "AUTRE"
+msgstr "Orther"
+
+#: .\lcu\models.py:36 .\lcu\models.py:42 .\lcu\models.py:75 .\lcu\models.py:81
+msgid "AUCUN"
+msgstr "None"
+
+#: .\lcu\models.py:39 .\lcu\models.py:78
+msgid "BONNE"
+msgstr "Good"
+
+#: .\lcu\models.py:40 .\lcu\models.py:79
+msgid "MOYENNE"
+msgstr "Fair"
+
+#: .\lcu\models.py:41 .\lcu\models.py:80
+msgid "MAUVAISE"
+msgstr "Bad"
+
+#: .\lcu\models.py:45 .\lcu\models.py:84
+msgid "OUI"
+msgstr "YES"
+
+#: .\lcu\models.py:46 .\lcu\models.py:85
+msgid "NON"
+msgstr "NO"
+
+#: .\lcu\models.py:49 .\lcu\models.py:88
+msgid "langue"
+msgstr "Language"
+
+#: .\lcu\models.py:50 .\lcu\models.py:89
+msgid "qualite_video"
+msgstr "Video Quality"
+
+#: .\lcu\models.py:51 .\lcu\models.py:90
+msgid "qualite_audio"
+msgstr "Audio Quality"
+
+#: .\lcu\models.py:52 .\lcu\models.py:91
+msgid "est_soustitre"
+msgstr "Is Subtitle"
+
+#: .\lcu\models.py:53 .\lcu\models.py:92
+msgid "langue_du_soustitre"
+msgstr "Subtitle Language"
+
+#: .\lcu\models.py:56 .\lcu\models.py:95
+msgid "updated_at"
+msgstr "Updated At"
+
+#: .\lcu\models.py:58
+#, fuzzy
+#| msgid "Films"
+msgid "Film"
+msgstr "Movie"
+
+#: .\lcu\models.py:59
+msgid "Films"
+msgstr "Movies"
+
+#: .\lcu\models.py:66
+msgid "saison"
+msgstr "Season"
+
+#: .\lcu\models.py:67
+msgid "episode"
+msgstr "Episode"
+
+#: .\lcu\models.py:97
+msgid "serie_anime"
+msgstr "Serie / Animated"
+
+#: .\lcu\models.py:98
+#, fuzzy
+#| msgid "serie_anime"
+msgid "series_animes"
+msgstr "Serie / Animated"
 
 #~ msgid "Rechercher"
 #~ msgstr "Search"
 
 #~ msgid "Acceuil"
 #~ msgstr "Home"
-
-#~ msgid "Films"
-#~ msgstr "Movies"
 
 #~ msgid "Séries"
 #~ msgstr "Series"

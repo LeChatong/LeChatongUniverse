@@ -11,4 +11,5 @@ urlpatterns = (
     url(r'^search_series/$', views.seach_tvs),
     url(r'^auth/$', views.authentification),
     url(r'^user_data', views.user_data, name='user_data'),
+    url(r'^member/login$', views.login_member)
 )
