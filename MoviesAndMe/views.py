@@ -217,7 +217,7 @@ def details_movie(request, id):
                     [
                         elt.id,
                         elt.voice_language,
-                        elt.link_telegram,
+                        elt.link_download,
                         elt.quality_video,
                         elt.quality_audio,
                         elt.subtitle,
@@ -782,7 +782,7 @@ def details_season_tv(request, id, season):
                     [
                         elt.id,
                         elt.voice_language,
-                        elt.link_telegram,
+                        elt.link_download,
                         elt.quality_video,
                         elt.quality_audio,
                         elt.subtitle,
