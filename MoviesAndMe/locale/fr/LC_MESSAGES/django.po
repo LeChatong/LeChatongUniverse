@@ -37,7 +37,7 @@ msgstr "Message"
 #: .\MoviesAndMe\forms.py:27
 msgid "save_name_and_mail_in_broswer_for_next_comment"
 msgstr ""
-"Enregistrer le nom et l'email dans le navigateur pour vos prochains "
+"Enregistrer votre nom dans le navigateur pour vos prochains "
 "commentaires"
 
 #: .\MoviesAndMe\templates\actors_on_movie.html:18

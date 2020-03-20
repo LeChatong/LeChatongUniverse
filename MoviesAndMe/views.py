@@ -195,7 +195,7 @@ def details_movie(request, id):
         try:
             if request.POST['save_in_browser']:
                 request.session['NAME_USER']=NAME
-                request.session['EMAIL_USER'] = EMAIL
+                #request.session['EMAIL_USER'] = EMAIL
 
         except MultiValueDictKeyError:
             pass
