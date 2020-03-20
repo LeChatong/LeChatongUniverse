@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_social_share',
     'rest_framework',
     'corsheaders',
     'MoviesAndMe.apps.MoviesandmeConfig',
