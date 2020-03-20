@@ -66,14 +66,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="details_movie.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="details_movie.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/details_movie.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="81" column="69" lean-forward="true" selection-start-line="81" selection-start-column="69" selection-end-line="81" selection-end-column="69" />
+            <state relative-caret-position="-160">
+              <caret line="70" column="54" lean-forward="true" selection-start-line="70" selection-start-column="54" selection-end-line="70" selection-end-column="54" />
               <folding>
                 <element signature="e#19540#24355#0#HTML" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="requirements.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/requirements.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="215">
+              <caret line="74" column="14" selection-start-line="74" selection-start-column="14" selection-end-line="74" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -82,7 +91,7 @@
         <entry file="file://$PROJECT_DIR$/OnlyMe/settings.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="17">
-              <caret line="45" column="26" selection-start-line="45" selection-start-column="26" selection-end-line="45" selection-end-column="26" />
+              <caret line="44" column="33" selection-start-line="44" selection-start-column="33" selection-end-line="44" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -209,7 +218,6 @@
         <option value="$PROJECT_DIR$/LeChApi/templates/user_data.html" />
         <option value="$PROJECT_DIR$/LeChApi/bot.py" />
         <option value="C:/Python/Lib/site-packages/django_telegrambot/apps.py" />
-        <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/LeChApi/telegrambot.py" />
         <option value="C:/Python/Lib/site-packages/django_telegrambot/urls.py" />
         <option value="$PROJECT_DIR$/LeChApi/templates/auth.html" />
@@ -231,7 +239,6 @@
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/bac7b837-e95f-4933-beb4-646baf8c02a9/console_3.sql" />
         <option value="$PROJECT_DIR$/lcu/models.py" />
         <option value="$PROJECT_DIR$/MoviesAndMe/templates/details_tv_season.html" />
-        <option value="$PROJECT_DIR$/OnlyMe/settings.py" />
         <option value="$PROJECT_DIR$/MoviesAndMe/views.py" />
         <option value="$PROJECT_DIR$/MoviesAndMe/forms.py" />
         <option value="$PROJECT_DIR$/MoviesAndMe/locale/en/LC_MESSAGES/django.po" />
@@ -241,6 +248,8 @@
         <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/MoviesAndMe/static/css/for_comment.css" />
         <option value="$PROJECT_DIR$/MoviesAndMe/templates/details_movie.html" />
+        <option value="$PROJECT_DIR$/OnlyMe/settings.py" />
+        <option value="$PROJECT_DIR$/requirements.txt" />
       </list>
     </option>
   </component>
@@ -571,27 +580,6 @@
       <option name="presentableId" value="Default" />
       <updated>1557311815933</updated>
     </task>
-    <task id="LOCAL-00066" summary="- Ajout du contenu pour les films téléchargeable et correction des bugs">
-      <created>1568979938899</created>
-      <option name="number" value="00066" />
-      <option name="presentableId" value="LOCAL-00066" />
-      <option name="project" value="LOCAL" />
-      <updated>1568979938899</updated>
-    </task>
-    <task id="LOCAL-00067" summary="- Ajout du contenu pour les films téléchargeable et correction des bugs">
-      <created>1568980275754</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
-      <option name="project" value="LOCAL" />
-      <updated>1568980275754</updated>
-    </task>
-    <task id="LOCAL-00068" summary="- Ajout du contenu pour les series et animés téléchargeable et correction des bugs">
-      <created>1574763977589</created>
-      <option name="number" value="00068" />
-      <option name="presentableId" value="LOCAL-00068" />
-      <option name="project" value="LOCAL" />
-      <updated>1574763977590</updated>
-    </task>
     <task id="LOCAL-00069" summary="- Ajout du contenu pour les series et animés téléchargeable et correction des bugs">
       <created>1574770704753</created>
       <option name="number" value="00069" />
@@ -914,7 +902,28 @@
       <option name="project" value="LOCAL" />
       <updated>1584723189102</updated>
     </task>
-    <option name="localTasksCounter" value="115" />
+    <task id="LOCAL-00115" summary="- Add Comment in movie details">
+      <created>1584723881945</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1584723881945</updated>
+    </task>
+    <task id="LOCAL-00116" summary="- Add Comment in movie details">
+      <created>1584723994966</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1584723994966</updated>
+    </task>
+    <task id="LOCAL-00117" summary="- Add Comment in movie details">
+      <created>1584724068934</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1584724068934</updated>
+    </task>
+    <option name="localTasksCounter" value="118" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1019,13 +1028,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/LeChApi/tests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="uml://DATABASE/bac7b837-e95f-4933-beb4-646baf8c02a9.TABLE:lechatonguniverse.public.MoviesAndMe_movie_detail">
       <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
@@ -1348,13 +1350,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/OnlyMe/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="45" column="26" selection-start-line="45" selection-start-column="26" selection-end-line="45" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-306">
@@ -1378,11 +1373,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/details_movie.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="81" column="69" lean-forward="true" selection-start-line="81" selection-start-column="69" selection-end-line="81" selection-end-column="69" />
+        <state relative-caret-position="-160">
+          <caret line="70" column="54" lean-forward="true" selection-start-line="70" selection-start-column="54" selection-end-line="70" selection-end-column="54" />
           <folding>
             <element signature="e#19540#24355#0#HTML" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OnlyMe/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="44" column="33" selection-start-line="44" selection-start-column="33" selection-end-line="44" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="74" column="14" selection-start-line="74" selection-start-column="14" selection-end-line="74" selection-end-column="14" />
         </state>
       </provider>
     </entry>
