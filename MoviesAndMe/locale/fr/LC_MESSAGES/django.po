@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-09 13:40+0100\n"
+"POT-Creation-Date: 2020-03-20 16:09+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,12 +17,35 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
+#: .\MoviesAndMe\forms.py:9 .\MoviesAndMe\forms.py:12
+#: .\MoviesAndMe\templates\details_movie.html:280
+msgid "Votre nom"
+msgstr "Votre nom"
+
+#: .\MoviesAndMe\forms.py:15
+msgid "Votre Email"
+msgstr "Votre Email"
+
+#: .\MoviesAndMe\forms.py:21
+msgid "Votre Commentaire"
+msgstr "Votre Commentaire"
+
+#: .\MoviesAndMe\forms.py:24
+msgid "Message"
+msgstr "Message"
+
+#: .\MoviesAndMe\forms.py:27
+msgid "save_name_and_mail_in_broswer_for_next_comment"
+msgstr ""
+"Enregistrer le nom et l'email dans le navigateur pour vos prochains "
+"commentaires"
+
 #: .\MoviesAndMe\templates\actors_on_movie.html:18
 msgid "Acteurs du film"
 msgstr "Acteurs du film"
 
 #: .\MoviesAndMe\templates\actors_on_tv.html:9
-#: .\MoviesAndMe\templates\details_movie.html:19
+#: .\MoviesAndMe\templates\details_movie.html:22
 #: .\MoviesAndMe\templates\details_tv.html:20
 #: .\MoviesAndMe\templates\details_tv_season.html:20
 #: .\MoviesAndMe\templates\donwload_movie_content.html:19
@@ -37,7 +60,7 @@ msgid "Nouveautés"
 msgstr "Nouveautés"
 
 #: .\MoviesAndMe\templates\actors_on_tv.html:11
-#: .\MoviesAndMe\templates\details_movie.html:21
+#: .\MoviesAndMe\templates\details_movie.html:24
 #: .\MoviesAndMe\templates\details_tv.html:22
 #: .\MoviesAndMe\templates\details_tv_season.html:22
 #: .\MoviesAndMe\templates\donwload_movie_content.html:21
@@ -53,11 +76,10 @@ msgid "Populaires"
 msgstr "Populaires"
 
 #: .\MoviesAndMe\templates\actors_on_tv.html:12
-#: .\MoviesAndMe\templates\details_movie.html:23
-#: .\MoviesAndMe\templates\details_movie.html:86
+#: .\MoviesAndMe\templates\details_movie.html:26
+#: .\MoviesAndMe\templates\details_movie.html:101
 #: .\MoviesAndMe\templates\details_tv.html:23
 #: .\MoviesAndMe\templates\details_tv_season.html:23
-#: .\MoviesAndMe\templates\details_tv_season.html:119
 #: .\MoviesAndMe\templates\donwload_movie_content.html:23
 #: .\MoviesAndMe\templates\home_movie.html:21
 #: .\MoviesAndMe\templates\home_tv.html:20
@@ -109,12 +131,12 @@ msgstr "Séries / Animés"
 
 #: .\MoviesAndMe\templates\details_actor.html:84
 #: .\MoviesAndMe\templates\details_actor.html:107
-#: .\MoviesAndMe\templates\details_movie.html:173
+#: .\MoviesAndMe\templates\details_movie.html:188
 #: .\MoviesAndMe\templates\details_tv.html:159
 msgid "Voir Plus"
 msgstr "Voir Plus"
 
-#: .\MoviesAndMe\templates\details_movie.html:22
+#: .\MoviesAndMe\templates\details_movie.html:25
 #: .\MoviesAndMe\templates\donwload_movie_content.html:22
 #: .\MoviesAndMe\templates\home_movie.html:20
 #: .\MoviesAndMe\templates\movies_on_actor.html:12
@@ -123,93 +145,117 @@ msgstr "Voir Plus"
 msgid "A venir"
 msgstr "A venir"
 
-#: .\MoviesAndMe\templates\details_movie.html:30
+#: .\MoviesAndMe\templates\details_movie.html:33
 #: .\MoviesAndMe\templates\details_tv.html:29
 #: .\MoviesAndMe\templates\details_tv_season.html:29
 msgid "Accueil"
 msgstr "Accueil"
 
-#: .\MoviesAndMe\templates\details_movie.html:31
+#: .\MoviesAndMe\templates\details_movie.html:34
 #: .\MoviesAndMe\templates\index.html:23
 #, fuzzy
 #| msgid "Menu Films"
 msgid "Films"
 msgstr "Menu Films"
 
-#: .\MoviesAndMe\templates\details_movie.html:66
-#: .\MoviesAndMe\templates\details_movie.html:67
-msgid "partager sur telegram"
-msgstr "Partager sur Telegram"
-
-#: .\MoviesAndMe\templates\details_movie.html:71
-#: .\MoviesAndMe\templates\details_movie.html:72
+#: .\MoviesAndMe\templates\details_movie.html:78
 msgid "partager sur whatsapp"
 msgstr "Partager sur WhatsApp"
 
-#: .\MoviesAndMe\templates\details_movie.html:79
+#: .\MoviesAndMe\templates\details_movie.html:81
+msgid "partager sur telegram"
+msgstr "Partager sur Telegram"
+
+#: .\MoviesAndMe\templates\details_movie.html:94
 msgid "Genres :"
 msgstr "Genres :"
 
-#: .\MoviesAndMe\templates\details_movie.html:92
-#: .\MoviesAndMe\templates\details_tv_season.html:126
+#: .\MoviesAndMe\templates\details_movie.html:107
 #, fuzzy
 #| msgid "Téléchargeable"
 msgid "Lien de Téléchargement"
 msgstr "Lien de Téléchargement"
 
-#: .\MoviesAndMe\templates\details_movie.html:101
-#: .\MoviesAndMe\templates\details_tv_season.html:136
+#: .\MoviesAndMe\templates\details_movie.html:116
+#: .\MoviesAndMe\templates\details_tv_season.html:143
 msgid "Langue"
 msgstr "Langue"
 
-#: .\MoviesAndMe\templates\details_movie.html:102
-#: .\MoviesAndMe\templates\details_tv_season.html:137
+#: .\MoviesAndMe\templates\details_movie.html:117
+#: .\MoviesAndMe\templates\details_tv_season.html:144
 msgid "Vidéo"
 msgstr "Vidéo"
 
-#: .\MoviesAndMe\templates\details_movie.html:103
-#: .\MoviesAndMe\templates\details_tv_season.html:138
+#: .\MoviesAndMe\templates\details_movie.html:118
+#: .\MoviesAndMe\templates\details_tv_season.html:145
 msgid "Audio"
 msgstr "Audio"
 
-#: .\MoviesAndMe\templates\details_movie.html:104
-#: .\MoviesAndMe\templates\details_tv_season.html:139
+#: .\MoviesAndMe\templates\details_movie.html:119
+#: .\MoviesAndMe\templates\details_tv_season.html:146
 msgid "SousTitré"
 msgstr "Sous-titré ?"
 
-#: .\MoviesAndMe\templates\details_movie.html:105
-#: .\MoviesAndMe\templates\details_tv_season.html:140
+#: .\MoviesAndMe\templates\details_movie.html:120
+#: .\MoviesAndMe\templates\details_tv_season.html:147
 msgid "Lien"
 msgstr "Lien"
 
-#: .\MoviesAndMe\templates\details_movie.html:117
+#: .\MoviesAndMe\templates\details_movie.html:132
 #: .\MoviesAndMe\templates\donwload_movie_content.html:50
 #, fuzzy
 #| msgid "Voir Plus"
 msgid "Voir"
 msgstr "Voir le contenu"
 
-#: .\MoviesAndMe\templates\details_movie.html:140
+#: .\MoviesAndMe\templates\details_movie.html:155
 #: .\MoviesAndMe\templates\details_tv.html:95
 #, fuzzy
 #| msgid "Sortie le : "
 msgid "Sortie le :"
 msgstr "Sortie le : "
 
-#: .\MoviesAndMe\templates\details_movie.html:148
+#: .\MoviesAndMe\templates\details_movie.html:163
 #, fuzzy
 #| msgid "Auteurs :"
 msgid "Acteurs"
 msgstr "Acteurs"
 
-#: .\MoviesAndMe\templates\details_movie.html:182
+#: .\MoviesAndMe\templates\details_movie.html:197
 #: .\MoviesAndMe\templates\details_tv.html:168
 msgid "Sociétés de Production"
 msgstr "Sociétés de Production"
 
-#: .\MoviesAndMe\templates\details_movie.html:209
+#: .\MoviesAndMe\templates\details_movie.html:225
 msgid "Films Similaires"
 msgstr "Films Similaires"
+
+#: .\MoviesAndMe\templates\details_movie.html:258
+msgid "Comments"
+msgstr "Commentaires"
+
+#: .\MoviesAndMe\templates\details_movie.html:261
+msgid "add_comment"
+msgstr "Ajouter un commentaire"
+
+#: .\MoviesAndMe\templates\details_movie.html:268
+#: .\MoviesAndMe\templates\details_movie.html:354
+msgid "leave_your_comment"
+msgstr "Laisser votre commentaire"
+
+#: .\MoviesAndMe\templates\details_movie.html:313
+#: .\MoviesAndMe\templates\details_movie.html:400
+msgid "send"
+msgstr "Envoyer"
+
+#: .\MoviesAndMe\templates\details_movie.html:345
+#: .\MoviesAndMe\templates\details_movie.html:420
+msgid "reply"
+msgstr "Répondre"
+
+#: .\MoviesAndMe\templates\details_movie.html:433
+msgid "not_comment"
+msgstr "Pas de commentaire"
 
 #: .\MoviesAndMe\templates\details_tv.html:30
 #: .\MoviesAndMe\templates\details_tv_season.html:30
@@ -242,7 +288,6 @@ msgid "Sortie le : "
 msgstr "Sortie le : "
 
 #: .\MoviesAndMe\templates\details_tv_season.html:57
-#: .\MoviesAndMe\templates\details_tv_season.html:98
 msgid "Description"
 msgstr "Description"
 
@@ -250,9 +295,15 @@ msgstr "Description"
 msgid "Episodes"
 msgstr " Episodes"
 
-#: .\MoviesAndMe\templates\details_tv_season.html:97
-msgid "Affiche"
-msgstr "Affiche"
+#: .\MoviesAndMe\templates\details_tv_season.html:135
+msgid "synopsys"
+msgstr "Overview"
+
+#: .\MoviesAndMe\templates\details_tv_season.html:167
+#, fuzzy
+#| msgid "Séries / Animés"
+msgid "Pas de contenu disponible"
+msgstr "Séries et animes disponibles"
 
 #: .\MoviesAndMe\templates\donwload_movie_content.html:15
 #, fuzzy
@@ -391,14 +442,21 @@ msgstr "Séries avec "
 msgid "Films à venir"
 msgstr "Films à venir"
 
-#: .\MoviesAndMe\views.py:850
+#: .\MoviesAndMe\views.py:194
+msgid "enregistrement_effectue_avec_succes"
+msgstr "Enregistrement effectué avec succès !"
+
+#: .\MoviesAndMe\views.py:927
 msgid " films disponibles en téléchargement gratuit sur LeChatongUniverse"
 msgstr " films disponibles gratuitement sur LeChatongUniverse"
 
-#: .\MoviesAndMe\views.py:882
+#: .\MoviesAndMe\views.py:959
 msgid ""
 " Séries et animes disponibles en téléchargement gratuit sur LeChatongUniverse"
 msgstr " séries et animes disponibles gratuitement sur LeChatongUniverse"
+
+#~ msgid "Affiche"
+#~ msgstr "Affiche"
 
 #, fuzzy
 #~| msgid "partager sur telegram"

@@ -2,10 +2,15 @@ from datetime import datetime
 
 import requests
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.conf import settings
 from django.utils import translation
+from django.utils.datastructures import MultiValueDictKeyError
 from django.utils.translation import ugettext_lazy as _
+
+from .forms import CommentForm
+from lcu.models import comment as Comment
 
 
 from lcu.models import movie_detail, tv_detail
@@ -155,7 +160,48 @@ def page_error(request):
     return render(request, 'page_error.html')
 
 def details_movie(request, id):
+    message_return = None
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+        NAME = None
+        EMAIL = None
+        MESSAGE = None
+        try:
+            NAME = request.POST['name_sender']
+            MESSAGE = request.POST['message']
+        except MultiValueDictKeyError:
+            NAME = None
+            EMAIL = None
+            MESSAGE = None
 
+        IS_REPLY = False
+        try:
+            COMMENT_PARENT_ID = request.POST['comment_parent_id']
+            IS_REPLY = True
+        except MultiValueDictKeyError:
+            COMMENT_PARENT_ID = None
+            IS_REPLY = False
+
+        CREATED_AT = datetime.now()
+        UPDATED_AT = datetime.now()
+
+        comment = Comment(
+            message=MESSAGE, email_sender=EMAIL, name_sender=NAME, is_delete=False, is_locked=False, is_reply=IS_REPLY,
+            id_tv=None, comment_parent_id=COMMENT_PARENT_ID,
+            member_id=None, id_movie=id, created_at = CREATED_AT, updated_at=UPDATED_AT
+        )
+        comment.save()
+        message_return = _('enregistrement_effectue_avec_succes')
+        try:
+            if request.POST['save_in_browser']:
+                request.session['NAME_USER']=NAME
+                request.session['EMAIL_USER'] = EMAIL
+
+        except MultiValueDictKeyError:
+            pass
+        form = CommentForm
+    else:
+        form = CommentForm
     response_movie = requests.get('https://api.themoviedb.org/3/movie/'+id+'?api_key='+settings.API_KEY_MOVIE+'&language='+translation.get_language()+'')
     movie = response_movie.json()
 
@@ -181,7 +227,6 @@ def details_movie(request, id):
             )
             if (b - 1) == i:
                 break
-
 
     a = len(list_actors['cast'])
     LIST_ACTORS = list_actors['cast']
@@ -227,6 +272,33 @@ def details_movie(request, id):
     except movie_detail.DoesNotExist:
         m_details = None
 
+    L_COMMENTS = []
+
+    try:
+        comments = Comment.objects.filter(id_movie = id, is_reply=False)
+        if not comments.exists():
+            L_COMMENTS = None
+        else:
+            for elt in comments:
+                L_COMMENTS.append(
+                    [
+                        elt.id,
+                        elt.message,
+                        elt.name_sender,
+                        elt.email_sender,
+                        elt.created_at,
+                        Comment.objects.filter(id_movie=id, is_reply=True, comment_parent_id=elt.id)
+                    ]
+                )
+    except Comment.DoesNotExist:
+        comments = None
+    try:
+        name_cookie = request.session['NAME_USER']
+        email_cookie = request.session['EMAIL_USER']
+    except KeyError :
+        name_cookie = None
+        email_cookie =  None
+
     context = {
         'id':                   movie['id'],
         'title':                movie['title'],
@@ -242,7 +314,12 @@ def details_movie(request, id):
         'list_actor':           LIST_ACTORS_CREDIT,
         'LIST_SIMILAR_MOVIES':  LIST_SIMILAR_MOVIES,
         'COUNTEUR':             [1,2,3,4,5,6,7,8,9,10],
-        'm_details':             M_DETAILS
+        'm_details':             M_DETAILS,
+        'form':                 form,
+        'comments':             L_COMMENTS,
+        'message_return':       message_return,
+        'name_cookie':          name_cookie,
+        'email_cookie':         email_cookie,
     }
     return render(request, 'details_movie.html', context)
 

@@ -219,84 +219,95 @@ Par TCHATONG Ulrich Armel.</Comment>
       <CacheSize>1</CacheSize>
       <DataType>integer</DataType>
     </sequence>
-    <sequence id="39" parent="21" name="lcu_member_id_seq">
+    <sequence id="39" parent="21" name="lcu_comment_id_seq">
+      <ObjectId>65772</ObjectId>
+      <StateNumber>1732</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="40" parent="21" name="lcu_member_id_seq">
       <ObjectId>57580</ObjectId>
       <StateNumber>1713</StateNumber>
       <SequenceIdentity>1..2147483647</SequenceIdentity>
       <CacheSize>1</CacheSize>
       <DataType>integer</DataType>
     </sequence>
-    <sequence id="40" parent="21" name="lcu_movie_detail_id_seq">
+    <sequence id="41" parent="21" name="lcu_movie_detail_id_seq">
       <ObjectId>57595</ObjectId>
       <StateNumber>1713</StateNumber>
       <SequenceIdentity>1..2147483647</SequenceIdentity>
       <CacheSize>1</CacheSize>
       <DataType>integer</DataType>
     </sequence>
-    <sequence id="41" parent="21" name="lcu_tv_detail_id_seq">
+    <sequence id="42" parent="21" name="lcu_tv_detail_id_seq">
       <ObjectId>57606</ObjectId>
       <StateNumber>1713</StateNumber>
       <SequenceIdentity>1..2147483647</SequenceIdentity>
       <CacheSize>1</CacheSize>
       <DataType>integer</DataType>
     </sequence>
-    <table id="42" parent="21" name="MoviesAndMe_movie_detail">
+    <table id="43" parent="21" name="MoviesAndMe_movie_detail">
       <ObjectId>41155</ObjectId>
       <StateNumber>1484</StateNumber>
     </table>
-    <table id="43" parent="21" name="MoviesAndMe_tv_detail">
+    <table id="44" parent="21" name="MoviesAndMe_tv_detail">
       <ObjectId>41163</ObjectId>
       <StateNumber>1489</StateNumber>
     </table>
-    <table id="44" parent="21" name="auth_group">
+    <table id="45" parent="21" name="auth_group">
       <ObjectId>41011</ObjectId>
       <StateNumber>1425</StateNumber>
     </table>
-    <table id="45" parent="21" name="auth_group_permissions">
+    <table id="46" parent="21" name="auth_group_permissions">
       <ObjectId>41021</ObjectId>
       <StateNumber>1425</StateNumber>
     </table>
-    <table id="46" parent="21" name="auth_permission">
+    <table id="47" parent="21" name="auth_permission">
       <ObjectId>41003</ObjectId>
       <StateNumber>1425</StateNumber>
     </table>
-    <table id="47" parent="21" name="auth_user">
+    <table id="48" parent="21" name="auth_user">
       <ObjectId>41029</ObjectId>
       <StateNumber>1442</StateNumber>
     </table>
-    <table id="48" parent="21" name="auth_user_groups">
+    <table id="49" parent="21" name="auth_user_groups">
       <ObjectId>41039</ObjectId>
       <StateNumber>1425</StateNumber>
     </table>
-    <table id="49" parent="21" name="auth_user_user_permissions">
+    <table id="50" parent="21" name="auth_user_user_permissions">
       <ObjectId>41047</ObjectId>
       <StateNumber>1425</StateNumber>
     </table>
-    <table id="50" parent="21" name="django_admin_log">
+    <table id="51" parent="21" name="django_admin_log">
       <ObjectId>41107</ObjectId>
       <StateNumber>1427</StateNumber>
     </table>
-    <table id="51" parent="21" name="django_content_type">
+    <table id="52" parent="21" name="django_content_type">
       <ObjectId>40993</ObjectId>
       <StateNumber>1425</StateNumber>
     </table>
-    <table id="52" parent="21" name="django_migrations">
+    <table id="53" parent="21" name="django_migrations">
       <ObjectId>40982</ObjectId>
       <StateNumber>1422</StateNumber>
     </table>
-    <table id="53" parent="21" name="django_session">
+    <table id="54" parent="21" name="django_session">
       <ObjectId>41135</ObjectId>
       <StateNumber>1446</StateNumber>
     </table>
-    <table id="54" parent="21" name="lcu_member">
-      <ObjectId>57582</ObjectId>
-      <StateNumber>1713</StateNumber>
+    <table id="55" parent="21" name="lcu_comment">
+      <ObjectId>65774</ObjectId>
+      <StateNumber>1732</StateNumber>
     </table>
-    <table id="55" parent="21" name="lcu_movie_detail">
+    <table id="56" parent="21" name="lcu_member">
+      <ObjectId>57582</ObjectId>
+      <StateNumber>1732</StateNumber>
+    </table>
+    <table id="57" parent="21" name="lcu_movie_detail">
       <ObjectId>57597</ObjectId>
       <StateNumber>1713</StateNumber>
     </table>
-    <table id="56" parent="21" name="lcu_tv_detail">
+    <table id="58" parent="21" name="lcu_tv_detail">
       <ObjectId>57608</ObjectId>
       <StateNumber>1713</StateNumber>
     </table>

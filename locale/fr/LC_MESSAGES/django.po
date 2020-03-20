@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-09 13:40+0100\n"
+"POT-Creation-Date: 2020-03-20 16:09+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: .\OnlyMe\settings.py:154
+#: .\OnlyMe\settings.py:155
 msgid "French"
 msgstr "Français"
 
-#: .\OnlyMe\settings.py:155
+#: .\OnlyMe\settings.py:156
 msgid "English"
 msgstr "Anglais"
 
@@ -41,7 +41,8 @@ msgstr "Mot de Passe"
 msgid "email"
 msgstr "Email"
 
-#: .\lcu\models.py:14 .\lcu\models.py:55 .\lcu\models.py:94
+#: .\lcu\models.py:14 .\lcu\models.py:56 .\lcu\models.py:95
+#: .\lcu\models.py:115
 msgid "created_at"
 msgstr "Crée le"
 
@@ -53,119 +54,147 @@ msgstr "Dernière Connexion"
 msgid "is_active"
 msgstr " Actif"
 
-#: .\lcu\models.py:17
+#: .\lcu\models.py:17 .\lcu\models.py:111
 msgid "is_delete"
 msgstr "Supprimé"
 
-#: .\lcu\models.py:18
+#: .\lcu\models.py:18 .\lcu\models.py:112
+msgid "is_locked"
+msgstr "Locked"
+
+#: .\lcu\models.py:19
 msgid "is_modarator"
 msgstr "Moderateur"
 
-#: .\lcu\models.py:21
+#: .\lcu\models.py:22
 msgid "member"
 msgstr "Membre"
 
-#: .\lcu\models.py:22
+#: .\lcu\models.py:23
 msgid "members"
 msgstr "Membres"
 
-#: .\lcu\models.py:29 .\lcu\models.py:68
+#: .\lcu\models.py:30 .\lcu\models.py:69
 msgid "titre"
 msgstr "Titre"
 
-#: .\lcu\models.py:30 .\lcu\models.py:69
+#: .\lcu\models.py:31 .\lcu\models.py:70
 msgid "lien_telechargement"
 msgstr "Lien de Téléchargement"
 
-#: .\lcu\models.py:32 .\lcu\models.py:71
+#: .\lcu\models.py:33 .\lcu\models.py:72
 msgid "FRANÇAIS"
 msgstr "Français"
 
-#: .\lcu\models.py:33 .\lcu\models.py:72
+#: .\lcu\models.py:34 .\lcu\models.py:73
 msgid "ANGLAIS"
 msgstr "Anglais"
 
-#: .\lcu\models.py:34 .\lcu\models.py:73
+#: .\lcu\models.py:35 .\lcu\models.py:74
 msgid "JAPONAIS"
 msgstr "Japonais"
 
-#: .\lcu\models.py:35 .\lcu\models.py:74
+#: .\lcu\models.py:36 .\lcu\models.py:75
 msgid "AUTRE"
 msgstr "Autre"
 
-#: .\lcu\models.py:36 .\lcu\models.py:42 .\lcu\models.py:75 .\lcu\models.py:81
+#: .\lcu\models.py:37 .\lcu\models.py:43 .\lcu\models.py:76 .\lcu\models.py:82
 msgid "AUCUN"
 msgstr "Aucun"
 
-#: .\lcu\models.py:39 .\lcu\models.py:78
+#: .\lcu\models.py:40 .\lcu\models.py:79
 msgid "BONNE"
 msgstr "Bonne"
 
-#: .\lcu\models.py:40 .\lcu\models.py:79
+#: .\lcu\models.py:41 .\lcu\models.py:80
 msgid "MOYENNE"
 msgstr "Passable"
 
-#: .\lcu\models.py:41 .\lcu\models.py:80
+#: .\lcu\models.py:42 .\lcu\models.py:81
 msgid "MAUVAISE"
 msgstr "Mauvaise"
 
-#: .\lcu\models.py:45 .\lcu\models.py:84
+#: .\lcu\models.py:46 .\lcu\models.py:85
 msgid "OUI"
 msgstr "OUI"
 
-#: .\lcu\models.py:46 .\lcu\models.py:85
+#: .\lcu\models.py:47 .\lcu\models.py:86
 msgid "NON"
 msgstr "NON"
 
-#: .\lcu\models.py:49 .\lcu\models.py:88
+#: .\lcu\models.py:50 .\lcu\models.py:89
 msgid "langue"
 msgstr "Langue"
 
-#: .\lcu\models.py:50 .\lcu\models.py:89
+#: .\lcu\models.py:51 .\lcu\models.py:90
 msgid "qualite_video"
 msgstr "Qualité Vidéo"
 
-#: .\lcu\models.py:51 .\lcu\models.py:90
+#: .\lcu\models.py:52 .\lcu\models.py:91
 msgid "qualite_audio"
 msgstr "Qualité Audio"
 
-#: .\lcu\models.py:52 .\lcu\models.py:91
+#: .\lcu\models.py:53 .\lcu\models.py:92
 msgid "est_soustitre"
 msgstr "Sous Titré"
 
-#: .\lcu\models.py:53 .\lcu\models.py:92
+#: .\lcu\models.py:54 .\lcu\models.py:93
 msgid "langue_du_soustitre"
 msgstr "Langue du sous titre"
 
-#: .\lcu\models.py:56 .\lcu\models.py:95
+#: .\lcu\models.py:57 .\lcu\models.py:96 .\lcu\models.py:116
 msgid "updated_at"
 msgstr "Mise à jour le"
 
-#: .\lcu\models.py:58
+#: .\lcu\models.py:59
 #, fuzzy
 #| msgid "Films"
 msgid "Film"
 msgstr "Film"
 
-#: .\lcu\models.py:59
+#: .\lcu\models.py:60
 msgid "Films"
 msgstr "Films"
 
-#: .\lcu\models.py:66
+#: .\lcu\models.py:67
 msgid "saison"
 msgstr "Saison"
 
-#: .\lcu\models.py:67
+#: .\lcu\models.py:68
 msgid "episode"
 msgstr "Episode"
 
-#: .\lcu\models.py:97
+#: .\lcu\models.py:98
 msgid "serie_anime"
 msgstr "Série / Anime"
 
-#: .\lcu\models.py:98
+#: .\lcu\models.py:99
 msgid "series_animes"
 msgstr "Séries / Animes"
+
+#: .\lcu\models.py:105
+msgid "name_sender"
+msgstr "Nom de l'envoyeur"
+
+#: .\lcu\models.py:106
+msgid "message"
+msgstr "Message"
+
+#: .\lcu\models.py:107
+msgid "email_sender"
+msgstr "Email de l'envoyeur"
+
+#: .\lcu\models.py:110
+msgid "is_reply"
+msgstr "Est une réponse"
+
+#: .\lcu\models.py:118
+msgid "comment"
+msgstr "Commentaire"
+
+#: .\lcu\models.py:119
+msgid "comments"
+msgstr "Commentaires"
 
 #~ msgid "Rechercher"
 #~ msgstr "Rechercher"

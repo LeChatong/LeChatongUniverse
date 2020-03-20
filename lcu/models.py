@@ -15,6 +15,7 @@ class member(models.Model):
     last_connexion = models.DateTimeField(verbose_name=_('last_connexion'), null=True)
     is_active = models.BooleanField(verbose_name=_('is_active'), default=True)
     is_delete = models.BooleanField(verbose_name=_('is_delete'), default=False)
+    is_locked = models.BooleanField(verbose_name=_('is_locked'), default=False, null=True)
     is_modarator =  models.BooleanField(verbose_name=_('is_modarator'), default=False)
     avatar = models.ImageField(upload_to="avatar/")
     class Meta:
@@ -99,3 +100,23 @@ class tv_detail(models.Model):
         ordering        = ['title_tv']
     def __str__(self):
         return self.title_tv
+
+class comment(models.Model):
+    name_sender = models.CharField(verbose_name=_('name_sender'),max_length=150, null=False)
+    message = models.CharField(verbose_name=_('message'), max_length=250, null=False)
+    email_sender = models.EmailField(verbose_name=_('email_sender'), max_length=150, null=True)
+    id_movie = models.IntegerField(null=True)
+    id_tv = models.IntegerField(null=True)
+    is_reply = models.BooleanField(verbose_name=_('is_reply'), default=False)
+    is_delete = models.BooleanField(verbose_name=_('is_delete'), default=False)
+    is_locked = models.BooleanField(verbose_name=_('is_locked'), default=False)
+    comment_parent_id = models.IntegerField(null=True)
+    member = models.ForeignKey(member, on_delete=models.DO_NOTHING, null=True, default=1)
+    created_at = models.DateTimeField(verbose_name=_('created_at'), null=True, default=timezone.now)
+    updated_at = models.DateTimeField(verbose_name=_('updated_at'), null=True, default=timezone.now)
+    class Meta:
+        verbose_name    = _('comment')
+        verbose_name_plural = _('comments')
+        ordering        = ['name_sender']
+    def __str__(self):
+        return self.name_sender

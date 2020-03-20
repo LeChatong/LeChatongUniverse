@@ -106,7 +106,12 @@
                   </a>
                   <div class="card-body">
                     <h5 class="card-title">
-                        <a href="#" title="{{ episode.4 }}" class="text-dark" data-toggle="modal" data-target="#downloadModal-{{ episode.3 }}">{{ episode.1 }}</a>
+                        <a href="#" title="{{ episode.4 }}" class="text-dark" data-toggle="modal" data-target="#downloadModal-{{ episode.3 }}">
+                            {{ episode.1 }}
+                            {% if episode.6 != None %}
+                                <i class="text-left"><img width="16" height="16" src="{% static 'shield.png' %}"></i>
+                            {% endif %}
+                        </a>
                     </h5>
                     <div class="card-text">
                         <div><sup>{{ episode.2|date:'d M Y' }}</sup></div>
