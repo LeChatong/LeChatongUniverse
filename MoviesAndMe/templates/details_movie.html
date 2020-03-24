@@ -12,7 +12,8 @@
     <meta property="fb:app_id" content="{{ '285736978971421' }}">
     <meta property="twitter:card" content="summary">
     <link href="{% static 'css/for_comment.css' %}" rel="stylesheet">
-
+    <link rel="canonical" href="https://lechatonguniverse.herokuapp.com{% url 'details_movie' id  %}">
+    <link rel="me"  href="https://twitter.com/LeChatong">
 {% endblock %}
 {% block intitule_page %} {{ title }}{% endblock %}
 {% block link_menu %}
@@ -66,7 +67,7 @@
 
                     </div>-->
                     <div class="row">
-                        <div class="col-sm-6">
+                        <div class="col-sm-8">
                             <p class="h3  float-left">
                                 {% if homepage != None %}
                                     <a class="text-dark" href="{{ homepage }}" target="_blank">{{ title }}</a>
@@ -75,19 +76,20 @@
                                 {% endif %}
                             </p>
                         </div>
-                        <div class="social col-sm-6">
+                        <div class="social col-sm-4">
                             <p class="float-right text-dark">
-                               <a  title="{% trans 'partager sur whatsapp' %}" href="whatsapp://send?text=https://lechatonguniverse.herokuapp.com{% url 'details_movie' id  %}" data-actions="share/whatsapp/share" id="share-wa" class="sharer button">
-                                    <i class="fa fa fa-whatsapp"></i>
+                               <a  title="{% trans 'partager sur whatsapp' %}" href="whatsapp://send?text=https://lechatonguniverse.herokuapp.com{% url 'details_movie' id  %}" data-actions="share/whatsapp/share" id="share-wa" class="text-dark">
+                                    <i class="fa fa-whatsapp"></i>
                                 </a>
-                                <a title="{% trans 'partager sur telegram' %}" href="tg://msg_url?url=https://lechatonguniverse.herokuapp.com{% url 'details_movie' id  %}&amp;text={{ overview|truncatechars:250 }}">
-                                    <i class="fa fa fa-paper-plane"></i>
+                                <a title="{% trans 'partager sur telegram' %}" href="tg://msg_url?url=https://lechatonguniverse.herokuapp.com{% url 'details_movie' id  %}&amp;text={{ overview|truncatechars:250 }}" class="text-dark">
+                                    <i class="fa fa-paper-plane"></i>
                                 </a>
-                                <a  target="_blank" href="http://www.facebook.com/sharer/sharer.php?u={% url 'details_movie' id %}" id="share-fb" class="sharer button">
+                                <a title="{% trans 'partager sur facebook' %}"  target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=https://lechatonguniverse.herokuapp.com{% url 'details_movie' id  %}" id="share-fb" class="text-dark">
                                   <i class="fa fa-facebook-square"></i>
                                 </a>
-
-                                <a href="#" id="share-tw" class="sharer button"><i class="fa fa fa-twitter-square"></i></a>
+                                <a title="{% trans 'partager sur twitter' %}" target="_blank" href="https://twitter.com/intent/tweet?original_referer=https://lechatonguniverse.herokuapp.com/&text=LeChatongUniverse - {{ title }}&url=https://lechatonguniverse.herokuapp.com{% url 'details_movie' id  %}&via=LeChatong" id="share-tw" class="text-dark">
+                                    <i class="fa fa-twitter-square"></i>
+                                </a>
                             </p>
 
                         </div>
