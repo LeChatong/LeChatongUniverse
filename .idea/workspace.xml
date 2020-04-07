@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="87406ce3-e5f6-4d08-b4ae-7129b8e07aa8" name="Default" comment="- Add Comment in movie details">
+    <list default="true" id="87406ce3-e5f6-4d08-b4ae-7129b8e07aa8" name="Default" comment="">
       <change afterPath="$PROJECT_DIR$/LeChApi/ngrok.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LeChApi/bot.py" beforeDir="false" />
@@ -122,7 +122,7 @@
       <file leaf-file-name="requirements.txt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/requirements.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
+            <state relative-caret-position="357">
               <caret line="70" column="1" selection-start-line="70" selection-start-column="1" selection-end-line="70" selection-end-column="1" />
             </state>
           </provider>
@@ -548,13 +548,6 @@
       <option name="presentableId" value="Default" />
       <updated>1557311815933</updated>
     </task>
-    <task id="LOCAL-00073" summary="- Ajout du contenu pour les series et animés téléchargeable et correction des bugs">
-      <created>1575447927052</created>
-      <option name="number" value="00073" />
-      <option name="presentableId" value="LOCAL-00073" />
-      <option name="project" value="LOCAL" />
-      <updated>1575447927053</updated>
-    </task>
     <task id="LOCAL-00074" summary="- Ajout du contenu pour les series et animés téléchargeable et correction des bugs">
       <created>1575451430224</created>
       <option name="number" value="00074" />
@@ -891,20 +884,27 @@
       <option name="project" value="LOCAL" />
       <updated>1586276417369</updated>
     </task>
-    <option name="localTasksCounter" value="122" />
+    <task id="LOCAL-00122" summary="- Add Comment in movie details">
+      <created>1586277596437</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
+      <option name="project" value="LOCAL" />
+      <updated>1586277596437</updated>
+    </task>
+    <option name="localTasksCounter" value="123" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="7" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50578403" side_tool="true" weight="0.7115118" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4993573" weight="0.32871014" />
       <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.49871466" weight="0.32871014" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.44408742" visible="true" weight="0.35783634" />
-      <window_info anchor="bottom" id="Terminal" order="13" sideWeight="0.51735216" weight="0.32454923" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13881747" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.44408742" weight="0.35783634" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="13" sideWeight="0.51735216" visible="true" weight="0.32454923" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13881747" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="4" weight="0.23714653" />
       <window_info anchor="right" id="SciView" order="3" weight="0.32969153" />
@@ -1396,7 +1396,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/requirements.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
+        <state relative-caret-position="357">
           <caret line="70" column="1" selection-start-line="70" selection-start-column="1" selection-end-line="70" selection-end-column="1" />
         </state>
       </provider>
