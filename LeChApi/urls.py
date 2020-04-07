@@ -1,6 +1,6 @@
 from django.conf.urls import url
 
-from LeChApi import views, bot
+from LeChApi import views
 
 urlpatterns = (
     url(r'^user/authentificate$', views.user_by_username_mail),

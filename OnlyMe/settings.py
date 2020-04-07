@@ -130,9 +130,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-TELEGRAM_API_ID = 1315849
+#TELEGRAM_API_ID = 1315849
 
-TELEGRAM_HASH_ID = 'e61ce3f911e5123e2cd8ec2b4e713935'
+#TELEGRAM_HASH_ID = 'e61ce3f911e5123e2cd8ec2b4e713935'
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
