@@ -11,6 +11,7 @@
     <meta property="og:description" content="{{ overview|truncatechars:250 }}">
     <meta property="fb:app_id" content="{{ '285736978971421' }}">
     <meta property="twitter:card" content="summary">
+    <link href="{% static 'css/for_comment.css' %}" rel="stylesheet">
 {% endblock %}
 
 {% block intitule_page %}{{ name }}{% endblock %}
@@ -41,34 +42,29 @@
                     <div class="card-body">
                     <h3 class="card-title">
                         <div class="row">
-                            <div class="col-lg-8">
+                            <div class="col-sm-8">
                                 {% if homepage != None %}
                                     <a class="text-dark" href="{{ homepage }}" target="_blank">{{ name }}</a>
                                 {% else %}
                                     <a href="#">{{ name }}</a>
                                 {% endif %}
                             </div>
-                            <div class="col-lg-1">
-                                <a class="twitter-share-button" data-size="large" href="https://twitter.com/intent/tweet">
-                                    @LeChatong
-                                </a>
-                                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                            </div>
-                            <div class="col-lg-1">
-                                <div id="fb-root" class="text-justify"></div>
-                                  <script>(function(d, s, id) {
-                                    var js, fjs = d.getElementsByTagName(s)[0];
-                                    if (d.getElementById(id)) return;
-                                    js = d.createElement(s); js.id = id;
-                                    js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
-                                    fjs.parentNode.insertBefore(js, fjs);
-                                  }(document, 'script', 'facebook-jssdk'));</script>
-                                <div class="fb-share-button"
-                                    data-href="{% url 'details_tv' id %}"
-                                     data-size="large"
-                                    data-layout="button_count">
-                                    Partager
-                                </div>
+                            <div class="social col-sm-4">
+                                <p class="float-right text-dark">
+                                   <a  title="{% trans 'partager sur whatsapp' %}" href="whatsapp://send?text=https://lechatonguniverse.herokuapp.com{% url 'details_tv' id  %}" data-actions="share/whatsapp/share" id="share-wa" class="text-dark">
+                                        <i class="fa fa-whatsapp"></i>
+                                    </a>
+                                    <a title="{% trans 'partager sur telegram' %}" href="tg://msg_url?url=https://lechatonguniverse.herokuapp.com{% url 'details_tv' id  %}&amp;text={{ overview|truncatechars:250 }}" class="text-dark">
+                                        <i class="fa fa-paper-plane"></i>
+                                    </a>
+                                    <a title="{% trans 'partager sur facebook' %}"  target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=https://lechatonguniverse.herokuapp.com{% url 'details_tv' id  %}" id="share-fb" class="text-dark">
+                                      <i class="fa fa-facebook-square"></i>
+                                    </a>
+                                    <a title="{% trans 'partager sur twitter' %}" target="_blank" href="https://twitter.com/intent/tweet?original_referer=https://lechatonguniverse.herokuapp.com/&text=LeChatongUniverse - {{ name }}&url=https://lechatonguniverse.herokuapp.com{% url 'details_tv' id  %}&via=LeChatong" id="share-tw" class="text-dark">
+                                        <i class="fa fa-twitter-square"></i>
+                                    </a>
+                                </p>
+
                             </div>
 
                         </div>
@@ -220,4 +216,192 @@
 
 
             </div>
+
+    <div class="col-sm-12 col-sm-offset-1">
+        <div class="page-header">
+            <h3 class="reviews">{% trans 'Comments' %}</h3>
+            <div>
+                <button class="btn btn-dark btn_comment" type="button" data-toggle="modal" data-target="#commentModal" >
+                    <span class="glyphicon glyphicon-comment"></span> {% trans 'add_comment' %}
+                </button>
+            </div>
+            <div class="modal fade" id="commentModal" tabindex="-1" role="dialog" aria-hidden="true">
+              <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">{% trans 'leave_your_comment' %}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                      <form action="{% url 'details_tv' id %}" method="post" class="form-horizontal" role="form">
+                          {% csrf_token %}
+                          <div class="form-group">
+                              <label for="{{ form.name_sender.id_for_label }}">{{ form.name_sender.label }}</label>
+                              <div class="col-sm-10">
+                                  {% if name_cookie != None %}
+                                      <input placeholder="{% trans 'Votre nom' %}" maxlength="150" class="form-control" id = "{{ form.name_sender.id_for_label }}" value="{{ name_cookie }}" name="{{ form.name_sender.html_name }}" readonly/>
+                                  {% else %}
+                                {{ form.name_sender }}
+                                  {% endif %}
+                              </div>
+                          </div>
+                          <!--<div class="form-group">
+                              <label for="{{ form.email_sender.id_for_label }}">{{ form.email_sender.label }}</label>
+                              <div class="col-sm-10">
+                                  {% if name_cookie != None %}
+                                      <input maxlength="150" class="form-control" id = "{{ form.email_sender.id_for_label }}" value="{{ email_cookie }}" name="{{ form.email_sender.html_name }}" readonly/>
+                                  {% else %}
+                                {{ form.email_sender }}
+                                  {% endif %}
+                              </div>
+                          </div>-->
+                          <div class="form-group">
+                            <label for="{{ form.message.id_for_label }}">{{ form.message.label }}</label>
+                            <div class="col-sm-10">
+                              {{ form.message }}
+                            </div>
+                        </div>
+                          {% if name_cookie == None %}
+                        <div class="form-group">
+                            <label for="{{ form.save_in_browser.id_for_label }}">{{ form.save_in_browser.label }}</label>
+                            <div class="col-sm-1">
+                                {{ form.save_in_browser }}
+                            </div>
+                        </div>
+                          {% endif %}
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button class="btn btn-info btn-circle text-uppercase" type="submit">
+                                    <span class="glyphicon glyphicon-send"></span> {% trans 'send' %}
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        {% if message_return != None %}
+            <div class="alert alert-info alert-dismissible" role="alert">
+              <button type="button" class="close" data-dismiss="alert">
+                <span aria-hidden="true">×</span><span class="sr-only">Close</span>
+              </button>
+                <i>{{ message_return }}</i>
+            </div>
+        {% endif %}
+        {% if comments != None %}
+            <div class="container">
+                {% for comment in comments  %}
+                    <div class="card card-parent">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p>
+                                        <a class="text-black h5 float-left">{{ comment.2 }}</a>
+                                        <span class="float-right">{{ comment.4 |date:'d M Y' }}</span>
+                                    </p>
+                                    <div class="clearfix"></div>
+                                    <p>{{ comment.1 }}</p>
+                                    <p>
+                                        <a href="" class="float-right btn btn-outline-dark ml-2"  data-toggle="modal" data-target="#commentModal{{ comment.0 }}"  id="reply">
+                                            <i class="fa fa-reply"></i> {% trans 'reply' %}
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="modal fade" id="commentModal{{ comment.0 }}" tabindex="-1" role="dialog" aria-hidden="true">
+                                  <div class="modal-dialog modal-lg" role="document">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <h5 class="modal-title">{% trans 'leave_your_comment' %}</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                          <span aria-hidden="true">&times;</span>
+                                        </button>
+                                      </div>
+                                      <div class="modal-body">
+                                          <form action="{% url 'details_tv' id %}" method="post" class="form-horizontal" role="form">
+                                              {% csrf_token %}
+                                              <div class="form-group">
+                                                    <input type="hidden" id="{{ form.comment_parent_id.id_for_label }}" value="{{ comment.0 }}" name="{{ form.comment_parent_id.html_name }}">
+                                                  <label for="{{ form.name_sender.id_for_label }}">{{ form.name_sender.label }}</label>
+                                                  <div class="col-sm-10">
+                                                      {% if name_cookie != None %}
+                                                          <input maxlength="150" class="form-control" id = "{{ form.name_sender.id_for_label }}" value="{{ name_cookie }}" name="{{ form.name_sender.html_name }}" readonly/>
+                                                      {% else %}
+                                                    {{ form.name_sender }}
+                                                      {% endif %}
+                                                  </div>
+                                              </div>
+                                              <!--<div class="form-group">
+                                                  <label for="{{ form.email_sender.id_for_label }}">{{ form.email_sender.label }}</label>
+                                                  <div class="col-sm-10">
+                                                      {% if name_cookie != None %}
+                                                          <input maxlength="150" class="form-control" id = "{{ form.email_sender.id_for_label }}" value="{{ email_cookie }}" name="{{ form.email_sender.html_name }}" readonly/>
+                                                      {% else %}
+                                                    {{ form.email_sender }}
+                                                      {% endif %}
+                                                  </div>
+                                              </div>-->
+                                              <div class="form-group">
+                                                <label for="{{ form.message.id_for_label }}">{{ form.message.label }}</label>
+                                                <div class="col-sm-10">
+                                                  {{ form.message }}
+                                                </div>
+                                            </div>
+                                              {% if name_cookie == None %}
+                                            <div class="form-group">
+                                                <label for="{{ form.save_in_browser.id_for_label }}">{{ form.save_in_browser.label }}</label>
+                                                <div class="col-sm-1">
+                                                    {{ form.save_in_browser }}
+                                                </div>
+                                            </div>
+                                              {% endif %}
+                                            <div class="form-group">
+                                                <div class="col-sm-offset-2 col-sm-10">
+                                                    <button class="btn btn-info btn-circle text-uppercase" type="submit">
+                                                        <span class="glyphicon glyphicon-send"></span> {% trans 'send' %}
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                            {% for reply in comment.5 %}
+                                <div class="card card-inner">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <p>
+                                                    <a class="text-black h5 float-left">{{ reply.name_sender }}</a>
+                                                    <span class="float-right">{{ reply.created_at |date:'d M y' }}</span>
+                                                </p>
+                                                <div class="clearfix"></div>
+                                                <p>{{ reply.message }}</p>
+                                                <p>
+                                                    <a href="" class="float-right btn btn-outline-dark ml-2"  data-toggle="modal" data-target="#commentModal{{ comment.0 }}"  id="reply">
+                                                        <i class="fa fa-reply"></i> {% trans 'reply' %}
+                                                    </a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="media-comment">
+                {% trans 'not_comment' %}
+            </div>
+        {% endif %}
+
+    </div>
 {% endblock %}

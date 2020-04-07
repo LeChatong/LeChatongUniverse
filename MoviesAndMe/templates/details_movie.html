@@ -44,37 +44,13 @@
 
                 <div class="card-body">
                 <h3 class="card-title">
-                    <!--<div class="row">
-                        <div class="col-sm-6">
-
-                        </div>
-                        <div class="col-sm-2">
-                            <div class="fb-share-button">
-                                <a class="twitter-share-button" data-size="large" href="https://twitter.com/intent/tweet">
-                                    @LeChatong
-                                </a>
-                            </div>
-
-                            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                        </div>
-                        <div class="col-sm-2">
-                            <div class="fb-share-button" data-href="{% url 'details_movie' id %}" data-layout="button" data-size="large">
-                                <a target="_blank" href="{% url 'details_movie' id %}" class="fb-xfbml-parse-ignore">Partager</a>
-                            </div>
-                            <div id="fb-root"></div>
-                            <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v3.3"></script>
-                        </div>
-
-                    </div>-->
                     <div class="row">
                         <div class="col-sm-8">
-                            <p class="h3  float-left">
-                                {% if homepage != None %}
-                                    <a class="text-dark" href="{{ homepage }}" target="_blank">{{ title }}</a>
-                                {% else %}
-                                    <a href="#">{{ title }}</a>
-                                {% endif %}
-                            </p>
+                            {% if homepage != None %}
+                                <a class="text-dark" href="{{ homepage }}" target="_blank">{{ title }}</a>
+                            {% else %}
+                                <a href="#">{{ title }}</a>
+                            {% endif %}
                         </div>
                         <div class="social col-sm-4">
                             <p class="float-right text-dark">
@@ -198,6 +174,20 @@
                     </div>
                 </div>
             </div>
+            {% if VIDEOS != None %}
+                <div class="card  card-outline-secondary my-4">
+                    <div class="card-header">
+                        {% trans 'bande_annonce' %}
+                    </div>
+                    <div class="card-body">
+                        {% for elt in VIDEOS %}
+                            <iframe id="player" type="text/html" width="640" height="360" allowfullscreen
+                              src="http://www.youtube.com/embed/{{ elt.2 }}"
+                              frameborder="0"></iframe>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
             <div class="card card-outline-secondary my-4">
               <div class="card-header">
                 {% trans 'Sociétés de Production' %}

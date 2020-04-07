@@ -62,6 +62,30 @@
                   </div>
                 </nav>
                 <div class="tab-content" id="nav-tabContent">
+
+                  <div style="margin-top: 20px; margin-bottom: 20px;" class="tab-pane fade show" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                      <div class="col-md-12 col-lg-12">
+                            {% for tv in LIST_TV_ACTOR %}
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <img width="100" height="150" src="https://image.tmdb.org/t/p/w1280{{ tv.2 }}">
+                                    </div>
+                                    <div class="col-md-10">
+                                        <a class="h4 text-dark" href="{% url 'details_tv' tv.0 %}">{{ tv.1 }}</a>
+                                        <div><sup><b>{{ tv.3 }}</b></sup></div>
+                                        <div><sup>{{ tv.5|date:'d M Y' }}</sup></div>
+                                        <div>{{ tv.4|truncatechars_html:250 }}</div>
+                                    </div>
+                                </div>
+                                <hr/>
+                            {% endfor %}
+                        </div>
+                      <a class="card-text dark-theme" href="{% url 'tvs_on_actor' id %}">
+                            <div>
+                                <p class="text-dark text-center"> {% trans 'Voir Plus' %}</p>
+                            </div>
+                        </a>
+                  </div>
                   <div style="margin-top: 20px; margin-bottom: 20px;" class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                       <div class="col-md-12 col-lg-12">
                             {% for movie in LIST_MOVIES_ACTOR %}
@@ -85,29 +109,7 @@
                             </div>
                         </a>
                   </div>
-                  <div style="margin-top: 20px; margin-bottom: 20px;" class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                      <div class="col-md-12 col-lg-12">
-                            {% for tv in LIST_TV_ACTOR %}
-                                <div class="row">
-                                    <div class="col-md-2">
-                                        <img width="100" height="150" src="https://image.tmdb.org/t/p/w1280{{ tv.2 }}">
-                                    </div>
-                                    <div class="col-md-10">
-                                        <a class="h4 text-dark" href="{% url 'details_tv' tv.0 %}">{{ tv.1 }}</a>
-                                        <div><sup><b>{{ tv.3 }}</b></sup></div>
-                                        <div><sup>{{ tv.5|date:'d M Y' }}</sup></div>
-                                        <div>{{ tv.4|truncatechars_html:250 }}</div>
-                                    </div>
-                                </div>
-                                <hr/>
-                            {% endfor %}
-                        </div>
-                      <a class="card-text" href="{% url 'tvs_on_actor' id %}">
-                            <div>
-                                <p class="text-dark text-center"> {% trans 'Voir Plus' %}</p>
-                            </div>
-                        </a>
-                  </div>
+
             </div>
             </div>
         </div>

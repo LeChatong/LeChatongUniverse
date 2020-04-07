@@ -62,6 +62,7 @@ def home(request):
             )
 
     for i in (0,1,2,3,4,5):
+        movie = movie_detail.objects.filter(id_movie=RESULT_TOP_RATED[i]['id']).exists();
         TOP_MOVIES_6.append(
             [
                 RESULT_TOP_RATED[i]['id'],
@@ -70,11 +71,13 @@ def home(request):
                 RESULT_TOP_RATED[i]['poster_path'],
                 RESULT_TOP_RATED[i]['backdrop_path'],
                 datetime.strptime(RESULT_TOP_RATED[i]['release_date'], "%Y-%m-%d").date(),
-                RESULT_TOP_RATED[i]['vote_average']
+                RESULT_TOP_RATED[i]['vote_average'],
+                movie
             ]
         )
 
     for i in (0,1,2,3,4,5):
+        tv = tv_detail.objects.filter(id_tv=RESULT_TOP_TV[i]['id']).exists();
         TOP_TVS_6.append(
             [
                 RESULT_TOP_TV[i]['id'],
@@ -83,7 +86,8 @@ def home(request):
                 RESULT_TOP_TV[i]['poster_path'],
                 RESULT_TOP_TV[i]['backdrop_path'],
                 datetime.strptime(RESULT_TOP_TV[i]['first_air_date'], "%Y-%m-%d").date(),
-                RESULT_TOP_TV[i]['vote_average']
+                RESULT_TOP_TV[i]['vote_average'],
+                tv
             ]
         )
 
@@ -205,10 +209,26 @@ def details_movie(request, id):
     response_movie = requests.get('https://api.themoviedb.org/3/movie/'+id+'?api_key='+settings.API_KEY_MOVIE+'&language='+translation.get_language()+'')
     movie = response_movie.json()
 
+    resp_video_movie = requests.get('https://api.themoviedb.org/3/movie/'+id+'/videos?api_key='+settings.API_KEY_MOVIE+'&language='+translation.get_language()+'')
+    list_videos = resp_video_movie.json()
+    VIDEOS = []
+    LIST_VIDEOS = list_videos['results']
+    if LIST_VIDEOS != None:
+        for elt in LIST_VIDEOS:
+            VIDEOS.append(
+                [
+                    elt['site'],
+                    elt['name'],
+                    elt['key'],
+                    elt['size'],
+                    elt['type']
+                ]
+            )
     response_actors = requests.get('https://api.themoviedb.org/3/movie/'+id+'/credits?api_key='+settings.API_KEY_MOVIE+'')
     list_actors = response_actors.json()
     LIST_ACTORS_CREDIT = []
     LIST_SIMILAR_MOVIES = []
+
 
     response_similar_movie = requests.get('https://api.themoviedb.org/3/movie/'+id+'/similar?api_key='+settings.API_KEY_MOVIE+'&language='+translation.get_language()+'&page=1')
     list_similar_movies = response_similar_movie.json()
@@ -313,6 +333,7 @@ def details_movie(request, id):
         'genres':               movie['genres'],
         'list_actor':           LIST_ACTORS_CREDIT,
         'LIST_SIMILAR_MOVIES':  LIST_SIMILAR_MOVIES,
+        'VIDEOS':               VIDEOS,
         'COUNTEUR':             [1,2,3,4,5,6,7,8,9,10],
         'm_details':             M_DETAILS,
         'form':                 form,
@@ -742,6 +763,49 @@ def upcoming_movie(request, page=1):
     return render(request, 'upcoming_movie.html', context)
 
 def details_tv(request, id):
+    message_return = None
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+        NAME = None
+        EMAIL = None
+        MESSAGE = None
+        try:
+            NAME = request.POST['name_sender']
+            MESSAGE = request.POST['message']
+        except MultiValueDictKeyError:
+            NAME = None
+            EMAIL = None
+            MESSAGE = None
+
+        IS_REPLY = False
+        try:
+            COMMENT_PARENT_ID = request.POST['comment_parent_id']
+            IS_REPLY = True
+        except MultiValueDictKeyError:
+            COMMENT_PARENT_ID = None
+            IS_REPLY = False
+
+        CREATED_AT = datetime.now()
+        UPDATED_AT = datetime.now()
+
+        comment = Comment(
+            message=MESSAGE, email_sender=EMAIL, name_sender=NAME, is_delete=False, is_locked=False, is_reply=IS_REPLY,
+            id_tv=id, comment_parent_id=COMMENT_PARENT_ID,
+            member_id=None, id_movie=None, created_at=CREATED_AT, updated_at=UPDATED_AT
+        )
+        comment.save()
+        message_return = _('enregistrement_effectue_avec_succes')
+        try:
+            if request.POST['save_in_browser']:
+                request.session['NAME_USER'] = NAME
+                # request.session['EMAIL_USER'] = EMAIL
+
+        except MultiValueDictKeyError:
+            pass
+        form = CommentForm
+    else:
+        form = CommentForm
+
     response_tv = requests.get(
         'https://api.themoviedb.org/3/tv/'+id+'?api_key='+settings.API_KEY_MOVIE+'&language='+translation.get_language()+'')
     tv = response_tv.json()
@@ -819,6 +883,34 @@ def details_tv(request, id):
         fad = datetime.strptime(tv['first_air_date'], "%Y-%m-%d").date()
     except TypeError:
         fad = None
+
+    L_COMMENTS = []
+
+    try:
+        comments = Comment.objects.filter(id_movie=id, is_reply=False)
+        if not comments.exists():
+            L_COMMENTS = None
+        else:
+            for elt in comments:
+                L_COMMENTS.append(
+                    [
+                        elt.id,
+                        elt.message,
+                        elt.name_sender,
+                        elt.email_sender,
+                        elt.created_at,
+                        Comment.objects.filter(id_tv=id, is_reply=True, comment_parent_id=elt.id)
+                    ]
+                )
+    except Comment.DoesNotExist:
+        comments = None
+    try:
+        name_cookie = request.session['NAME_USER']
+        email_cookie = request.session['EMAIL_USER']
+    except KeyError:
+        name_cookie = None
+        email_cookie = None
+
     context = {
         'id':                   tv['id'],
         'name':                 tv['name'],

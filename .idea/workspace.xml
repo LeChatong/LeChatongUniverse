@@ -4,15 +4,12 @@
     <list default="true" id="87406ce3-e5f6-4d08-b4ae-7129b8e07aa8" name="Default" comment="">
       <change afterPath="$PROJECT_DIR$/LeChApi/ngrok.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MoviesAndMe/locale/en/LC_MESSAGES/django.mo" beforeDir="false" afterPath="$PROJECT_DIR$/MoviesAndMe/locale/en/LC_MESSAGES/django.mo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MoviesAndMe/locale/en/LC_MESSAGES/django.po" beforeDir="false" afterPath="$PROJECT_DIR$/MoviesAndMe/locale/en/LC_MESSAGES/django.po" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MoviesAndMe/locale/fr/LC_MESSAGES/django.mo" beforeDir="false" afterPath="$PROJECT_DIR$/MoviesAndMe/locale/fr/LC_MESSAGES/django.mo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MoviesAndMe/locale/fr/LC_MESSAGES/django.po" beforeDir="false" afterPath="$PROJECT_DIR$/MoviesAndMe/locale/fr/LC_MESSAGES/django.po" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MoviesAndMe/templates/details_actor.html" beforeDir="false" afterPath="$PROJECT_DIR$/MoviesAndMe/templates/details_actor.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MoviesAndMe/templates/details_movie.html" beforeDir="false" afterPath="$PROJECT_DIR$/MoviesAndMe/templates/details_movie.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/locale/en/LC_MESSAGES/django.mo" beforeDir="false" afterPath="$PROJECT_DIR$/locale/en/LC_MESSAGES/django.mo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/locale/en/LC_MESSAGES/django.po" beforeDir="false" afterPath="$PROJECT_DIR$/locale/en/LC_MESSAGES/django.po" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/locale/fr/LC_MESSAGES/django.mo" beforeDir="false" afterPath="$PROJECT_DIR$/locale/fr/LC_MESSAGES/django.mo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/locale/fr/LC_MESSAGES/django.po" beforeDir="false" afterPath="$PROJECT_DIR$/locale/fr/LC_MESSAGES/django.po" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MoviesAndMe/templates/details_tv.html" beforeDir="false" afterPath="$PROJECT_DIR$/MoviesAndMe/templates/details_tv.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MoviesAndMe/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/MoviesAndMe/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MoviesAndMe/templates/movies_on_actor.html" beforeDir="false" afterPath="$PROJECT_DIR$/MoviesAndMe/templates/movies_on_actor.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MoviesAndMe/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/MoviesAndMe/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -62,42 +59,92 @@
         <entry file="file://$PROJECT_DIR$/MoviesAndMe/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="17">
-              <caret line="201" column="21" selection-start-line="201" selection-start-column="21" selection-end-line="201" selection-end-column="21" />
+              <caret line="216" selection-start-line="216" selection-end-line="216" />
               <folding>
-                <element signature="e#0#29#0" expanded="true" />
-                <element signature="e#618#708#0" />
-                <element signature="e#733#3250#0" />
+                <element signature="e#733#3353#0" />
                 <element signature="e#3284#5773#0" />
-                <element signature="e#5808#5853#0" />
-                <element signature="e#5884#5925#0" />
+                <element signature="e#6148#6228#0" />
+                <element signature="e#6280#6343#0" />
+                <element signature="e#6395#6476#0" />
+                <element signature="e#6528#6581#0" />
+                <element signature="e#8586#8883#0" />
+                <element signature="e#8902#9157#0" />
+                <element signature="e#9195#9746#0" />
+                <element signature="e#9849#10414#0" />
+                <element signature="e#10489#10584#0" />
+                <element signature="e#11829#15089#0" />
+                <element signature="e#15129#16646#0" />
+                <element signature="e#16683#18083#0" />
+                <element signature="e#18123#19446#0" />
+                <element signature="e#19483#20356#0" />
+                <element signature="e#20384#21189#0" />
+                <element signature="e#21228#22840#0" />
+                <element signature="e#22871#23663#0" />
+                <element signature="e#23705#25324#0" />
+                <element signature="e#25367#27042#0" />
+                <element signature="e#27077#32634#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="details_movie.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="movies_on_actor.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/movies_on_actor.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="30" column="146" selection-start-line="30" selection-start-column="146" selection-end-line="30" selection-end-column="146" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="230">
+              <caret line="134" column="46" selection-start-line="134" selection-start-column="46" selection-end-line="134" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="details_actor.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/details_actor.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-33">
+              <caret line="89" column="54" lean-forward="true" selection-start-line="89" selection-start-column="54" selection-end-line="89" selection-end-column="54" />
+              <folding>
+                <element signature="e#3141#3187#0#HTML" expanded="true" />
+                <element signature="e#4315#4574#0#HTML" />
+                <element signature="e#3132#3178#0#HTML" expanded="true" />
+                <element signature="e#4329#4591#0#HTML" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="details_tv_season.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/details_tv_season.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="163">
+              <caret line="103" column="99" selection-start-line="103" selection-start-column="56" selection-end-line="103" selection-end-column="99" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="search_result.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/search_result.html">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="details_movie.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/details_movie.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="86" column="69" selection-start-line="86" selection-start-column="69" selection-end-line="86" selection-end-column="69" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="django.po" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MoviesAndMe/locale/en/LC_MESSAGES/django.po">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2026">
-              <caret line="38" column="22" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="django.po" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/MoviesAndMe/locale/fr/LC_MESSAGES/django.po">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4270">
-              <caret line="39" column="18" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="18" />
+            <state relative-caret-position="225">
+              <caret line="176" column="18" selection-start-line="176" selection-start-column="18" selection-end-line="176" selection-end-column="18" />
+              <folding>
+                <element signature="e#4821#5050#0#HTML" />
+                <element signature="e#5067#5093#0#DjangoTemplate" />
+                <element signature="e#8582#10560#0#HTML" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -105,26 +152,8 @@
       <file leaf-file-name="details_tv.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/details_tv.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="918">
-              <caret line="54" column="80" selection-start-line="54" selection-start-column="80" selection-end-line="54" selection-end-column="80" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="for_comment.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MoviesAndMe/static/css/for_comment.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1292">
-              <caret line="76" column="12" selection-start-line="76" selection-start-column="12" selection-end-line="76" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home_movie.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/home_movie.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="16" selection-start-column="16" selection-end-column="16" />
+            <state relative-caret-position="5236">
+              <caret line="308" column="113" selection-start-line="308" selection-start-column="113" selection-end-line="308" selection-end-column="113" />
             </state>
           </provider>
         </entry>
@@ -169,9 +198,10 @@
       <find>sen</find>
       <find>sys</find>
       <find>sy</find>
-      <find>&quot;&quot;</find>
       <find>enregistrement_effectue_avec_succes</find>
       <find>save_name_and_mail_in_broswer_for_next_comment</find>
+      <find>&quot;&quot;</find>
+      <find>TOP_MOVIES_6</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -189,18 +219,14 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/MoviesAndMe/templates/home_tv.html" />
         <option value="$PROJECT_DIR$/MoviesAndMe/templates/actors_on_tv.html" />
-        <option value="$PROJECT_DIR$/MoviesAndMe/templates/details_actor.html" />
         <option value="$PROJECT_DIR$/MoviesAndMe/templates/donwload_movie_content.html" />
         <option value="$PROJECT_DIR$/MoviesAndMe/templates/download_tv_content.html" />
-        <option value="$PROJECT_DIR$/MoviesAndMe/templates/movies_on_actor.html" />
         <option value="$PROJECT_DIR$/MoviesAndMe/templates/popular_movie.html" />
         <option value="$PROJECT_DIR$/MoviesAndMe/templates/popular_tv.html" />
         <option value="$PROJECT_DIR$/MoviesAndMe/templates/actors_on_movie.html" />
         <option value="$PROJECT_DIR$/MoviesAndMe/templates/home_movie.html" />
         <option value="$PROJECT_DIR$/MoviesAndMe/templates/search_result.html" />
-        <option value="$PROJECT_DIR$/MoviesAndMe/templates/index.html" />
         <option value="$PROJECT_DIR$/MoviesAndMe/serializers.py" />
         <option value="$PROJECT_DIR$/MoviesAndMe/templates/page_error.html" />
         <option value="$PROJECT_DIR$/MoviesAndMe/templates/page-not-found.html" />
@@ -236,9 +262,13 @@
         <option value="$PROJECT_DIR$/MoviesAndMe/static/css/for_comment.css" />
         <option value="$PROJECT_DIR$/OnlyMe/settings.py" />
         <option value="$PROJECT_DIR$/requirements.txt" />
-        <option value="$PROJECT_DIR$/MoviesAndMe/views.py" />
         <option value="$PROJECT_DIR$/MoviesAndMe/locale/en/LC_MESSAGES/django.po" />
         <option value="$PROJECT_DIR$/MoviesAndMe/locale/fr/LC_MESSAGES/django.po" />
+        <option value="$PROJECT_DIR$/MoviesAndMe/templates/details_tv.html" />
+        <option value="$PROJECT_DIR$/MoviesAndMe/templates/index.html" />
+        <option value="$PROJECT_DIR$/MoviesAndMe/templates/details_actor.html" />
+        <option value="$PROJECT_DIR$/MoviesAndMe/templates/movies_on_actor.html" />
+        <option value="$PROJECT_DIR$/MoviesAndMe/views.py" />
         <option value="$PROJECT_DIR$/MoviesAndMe/templates/details_movie.html" />
       </list>
     </option>
@@ -264,6 +294,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -274,96 +305,13 @@
             <path>
               <item name="OnlyMe" type="b2602c69:ProjectViewProjectNode" />
               <item name="OnlyMe" type="462c0819:PsiDirectoryNode" />
-              <item name="lcu" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OnlyMe" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OnlyMe" type="462c0819:PsiDirectoryNode" />
-              <item name="lcu" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OnlyMe" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OnlyMe" type="462c0819:PsiDirectoryNode" />
-              <item name="locale" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OnlyMe" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OnlyMe" type="462c0819:PsiDirectoryNode" />
-              <item name="locale" type="462c0819:PsiDirectoryNode" />
-              <item name="en" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OnlyMe" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OnlyMe" type="462c0819:PsiDirectoryNode" />
-              <item name="locale" type="462c0819:PsiDirectoryNode" />
-              <item name="en" type="462c0819:PsiDirectoryNode" />
-              <item name="LC_MESSAGES" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OnlyMe" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OnlyMe" type="462c0819:PsiDirectoryNode" />
-              <item name="locale" type="462c0819:PsiDirectoryNode" />
-              <item name="fr" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OnlyMe" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OnlyMe" type="462c0819:PsiDirectoryNode" />
-              <item name="locale" type="462c0819:PsiDirectoryNode" />
-              <item name="fr" type="462c0819:PsiDirectoryNode" />
-              <item name="LC_MESSAGES" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OnlyMe" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OnlyMe" type="462c0819:PsiDirectoryNode" />
               <item name="MoviesAndMe" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OnlyMe" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OnlyMe" type="462c0819:PsiDirectoryNode" />
-              <item name="MoviesAndMe" type="462c0819:PsiDirectoryNode" />
-              <item name="locale" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OnlyMe" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OnlyMe" type="462c0819:PsiDirectoryNode" />
-              <item name="MoviesAndMe" type="462c0819:PsiDirectoryNode" />
-              <item name="locale" type="462c0819:PsiDirectoryNode" />
-              <item name="en" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OnlyMe" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OnlyMe" type="462c0819:PsiDirectoryNode" />
-              <item name="MoviesAndMe" type="462c0819:PsiDirectoryNode" />
-              <item name="locale" type="462c0819:PsiDirectoryNode" />
-              <item name="en" type="462c0819:PsiDirectoryNode" />
-              <item name="LC_MESSAGES" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OnlyMe" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OnlyMe" type="462c0819:PsiDirectoryNode" />
-              <item name="MoviesAndMe" type="462c0819:PsiDirectoryNode" />
-              <item name="locale" type="462c0819:PsiDirectoryNode" />
-              <item name="fr" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OnlyMe" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OnlyMe" type="462c0819:PsiDirectoryNode" />
-              <item name="MoviesAndMe" type="462c0819:PsiDirectoryNode" />
-              <item name="locale" type="462c0819:PsiDirectoryNode" />
-              <item name="fr" type="462c0819:PsiDirectoryNode" />
-              <item name="LC_MESSAGES" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="OnlyMe" type="b2602c69:ProjectViewProjectNode" />
               <item name="OnlyMe" type="462c0819:PsiDirectoryNode" />
               <item name="MoviesAndMe" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OnlyMe" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OnlyMe" type="462c0819:PsiDirectoryNode" />
-              <item name="OnlyMe" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="OnlyMe" type="b2602c69:ProjectViewProjectNode" />
@@ -374,7 +322,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -569,13 +516,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1557311815933</updated>
-    </task>
-    <task id="LOCAL-00071" summary="- Ajout du contenu pour les series et animés téléchargeable et correction des bugs">
-      <created>1574771199613</created>
-      <option name="number" value="00071" />
-      <option name="presentableId" value="LOCAL-00071" />
-      <option name="project" value="LOCAL" />
-      <updated>1574771199613</updated>
     </task>
     <task id="LOCAL-00072" summary="- Ajout du contenu pour les series et animés téléchargeable et correction des bugs">
       <created>1574953331397</created>
@@ -913,7 +853,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584724753294</updated>
     </task>
-    <option name="localTasksCounter" value="120" />
+    <task id="LOCAL-00120" summary="- Add Comment in movie details">
+      <created>1585064023905</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
+      <option name="project" value="LOCAL" />
+      <updated>1585064023918</updated>
+    </task>
+    <option name="localTasksCounter" value="121" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -924,18 +871,18 @@
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4993573" weight="0.32871014" />
       <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.49871466" weight="0.32871014" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.44408742" weight="0.35783634" />
-      <window_info anchor="bottom" id="Terminal" order="13" sideWeight="0.51735216" visible="true" weight="0.32871014" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14010283" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.44408742" visible="true" weight="0.35783634" />
+      <window_info anchor="bottom" id="Terminal" order="13" sideWeight="0.51735216" weight="0.32454923" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13881747" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="4" weight="0.23714653" />
       <window_info anchor="right" id="SciView" order="3" weight="0.32969153" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4877892" weight="0.36199722" />
+      <window_info anchor="bottom" id="Anonymous Apex" order="13" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Log Viewer" order="13" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="SQL Generator" order="14" weight="0.32871014" />
@@ -944,7 +891,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Database Console" order="11" sideWeight="0.49421594" weight="0.23439667" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4993573" weight="0.32871014" />
-      <window_info anchor="bottom" id="Anonymous Apex" order="13" />
+      <window_info anchor="bottom" id="Log Viewer" order="13" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1007,6 +954,13 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/MoviesAndMe/views.py</url>
+          <line>211</line>
+          <option name="timeStamp" value="80" />
+        </line-breakpoint>
+      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
@@ -1014,45 +968,10 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="79" />
+      <option name="time" value="81" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/MoviesAndMe/migrations/0002_auto_20190614_1241.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-255" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MoviesAndMe/migrations/0004_auto_20190614_1506.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="das://bac7b837-e95f-4933-beb4-646baf8c02a9/database/lechatonguniverse/schema/public/table/MoviesAndMe_movie_detail">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://bac7b837-e95f-4933-beb4-646baf8c02a9/database/lechatonguniverse/schema/public/table/django_session">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-          <column-attributes>
-            <column name="ctid" enabled="false" />
-          </column-attributes>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MoviesAndMe/api.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="54" selection-start-line="54" selection-end-line="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manage.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/MoviesAndMe/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="25">
@@ -1246,13 +1165,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/details_tv_season.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2295">
-          <caret line="135" column="32" selection-start-line="135" selection-start-column="32" selection-end-line="135" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://bac7b837-e95f-4933-beb4-646baf8c02a9/database/lechatonguniverse/schema/public/table/lcu_comment">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -1260,13 +1172,6 @@
           <column-attributes>
             <column name="ctid" enabled="false" />
           </column-attributes>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/locale/fr/LC_MESSAGES/django.po">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="9" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -1281,13 +1186,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-306">
           <caret line="30" column="42" lean-forward="true" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="35" lean-forward="true" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="52" />
         </state>
       </provider>
     </entry>
@@ -1312,13 +1210,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/locale/en/LC_MESSAGES/django.po">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="9" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MoviesAndMe/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -1326,46 +1217,139 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MoviesAndMe/views.py">
+    <entry file="file://$PROJECT_DIR$/MoviesAndMe/locale/fr/LC_MESSAGES/django.po">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
-          <caret line="201" column="21" selection-start-line="201" selection-start-column="21" selection-end-line="201" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-            <element signature="e#618#708#0" />
-            <element signature="e#733#3250#0" />
-            <element signature="e#3284#5773#0" />
-            <element signature="e#5808#5853#0" />
-            <element signature="e#5884#5925#0" />
-          </folding>
+          <caret line="39" column="18" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/details_tv.html">
+    <entry file="file://$PROJECT_DIR$/locale/fr/LC_MESSAGES/django.po">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="54" column="80" selection-start-line="54" selection-start-column="80" selection-end-line="54" selection-end-column="80" />
+        <state relative-caret-position="-340">
+          <caret line="7" column="9" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/details_movie.html">
+    <entry file="file://$PROJECT_DIR$/locale/en/LC_MESSAGES/django.po">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="86" column="69" selection-start-line="86" selection-start-column="69" selection-end-line="86" selection-end-column="69" />
+        <state relative-caret-position="119">
+          <caret line="7" column="9" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MoviesAndMe/locale/en/LC_MESSAGES/django.po">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2026">
-          <caret line="38" column="22" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
+        <state relative-caret-position="102">
+          <caret line="6" column="8" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MoviesAndMe/locale/fr/LC_MESSAGES/django.po">
+    <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/details_tv.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4270">
-          <caret line="39" column="18" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="18" />
+        <state relative-caret-position="5236">
+          <caret line="308" column="113" selection-start-line="308" selection-start-column="113" selection-end-line="308" selection-end-column="113" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/search_result.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="134" column="46" selection-start-line="134" selection-start-column="46" selection-end-line="134" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/details_actor.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-33">
+          <caret line="89" column="54" lean-forward="true" selection-start-line="89" selection-start-column="54" selection-end-line="89" selection-end-column="54" />
+          <folding>
+            <element signature="e#3141#3187#0#HTML" expanded="true" />
+            <element signature="e#4315#4574#0#HTML" />
+            <element signature="e#3132#3178#0#HTML" expanded="true" />
+            <element signature="e#4329#4591#0#HTML" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/details_tv_season.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="103" column="99" selection-start-line="103" selection-start-column="56" selection-end-line="103" selection-end-column="99" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/movies_on_actor.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="30" column="146" selection-start-line="30" selection-start-column="146" selection-end-line="30" selection-end-column="146" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python/Lib/site-packages/django/utils/translation/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="184" selection-start-line="184" selection-end-line="184" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python/Lib/site-packages/django/core/handlers/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="123" selection-start-line="123" selection-end-line="123" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python/Lib/site-packages/django/core/handlers/exception.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MoviesAndMe/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="216" selection-start-line="216" selection-end-line="216" />
+          <folding>
+            <element signature="e#733#3353#0" />
+            <element signature="e#3284#5773#0" />
+            <element signature="e#6148#6228#0" />
+            <element signature="e#6280#6343#0" />
+            <element signature="e#6395#6476#0" />
+            <element signature="e#6528#6581#0" />
+            <element signature="e#8586#8883#0" />
+            <element signature="e#8902#9157#0" />
+            <element signature="e#9195#9746#0" />
+            <element signature="e#9849#10414#0" />
+            <element signature="e#10489#10584#0" />
+            <element signature="e#11829#15089#0" />
+            <element signature="e#15129#16646#0" />
+            <element signature="e#16683#18083#0" />
+            <element signature="e#18123#19446#0" />
+            <element signature="e#19483#20356#0" />
+            <element signature="e#20384#21189#0" />
+            <element signature="e#21228#22840#0" />
+            <element signature="e#22871#23663#0" />
+            <element signature="e#23705#25324#0" />
+            <element signature="e#25367#27042#0" />
+            <element signature="e#27077#32634#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/details_movie.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="176" column="18" selection-start-line="176" selection-start-column="18" selection-end-line="176" selection-end-column="18" />
+          <folding>
+            <element signature="e#4821#5050#0#HTML" />
+            <element signature="e#5067#5093#0#DjangoTemplate" />
+            <element signature="e#8582#10560#0#HTML" />
+          </folding>
         </state>
       </provider>
     </entry>

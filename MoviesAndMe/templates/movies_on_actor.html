@@ -25,8 +25,12 @@
                 {% for movie in LIST_MOVIES_ACTOR %}
                     <div class="col-lg-3 col-md-4 mb-3">
                         <div class="card h-auto">
+                        {% if movie.2 != None %}
                           <a href="{% url 'details_movie' movie.0 %}"><img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{ movie.2 }}" alt="{{ movie.1 }}"></a>
-                          <div class="card-body">
+                          {% else %}
+                            <a href="{% url 'details_movie' movie.0 %}"><img class="card-img-top" src="{% static 'not_image_disponible.svg.png' %}" alt="{{ movie.1 }}"></a>
+                        {% endif %}
+                            <div class="card-body">
                             <h5 class="card-title">
                               <a class="text-dark" href="{% url 'details_movie' movie.0 %}">{{ movie.1 }}</a>
                             </h5>
