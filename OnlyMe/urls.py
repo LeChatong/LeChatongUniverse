@@ -37,7 +37,7 @@ router.register(r'users', UserViewSet)
 urlpatterns = i18n_patterns(
 
     url(r'^lechatong/', admin.site.urls),
-    url(r'^lechatongbot/', include('django_telegrambot.urls')),
+    #url(r'^lechatongbot/', include('django_telegrambot.urls')),
     url(r'^', include('MoviesAndMe.urls')),
     url(r'^lechapi/', include('LeChApi.urls')),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
