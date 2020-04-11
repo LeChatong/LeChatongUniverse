@@ -115,28 +115,44 @@ def search_movies(request):
         if pagination.object_list:
             for elt in pagination.object_list:
                 if elt['media_type'] == 'movie':
-                    RESULT_AFTER_SEARCH.append(
-                        [
-                            elt['media_type'],
-                            elt['id'],
-                            elt['title'],
-                            elt['poster_path'],
-                            elt['overview'],
-                            elt['vote_average'],
-                        ]
-                    )
+                    try:
+                        try:
+                            movie = movie_detail.objects.filter(id_movie=elt['id']).exists();
+                            RESULT_AFTER_SEARCH.append(
+                                [
+                                    elt['media_type'],
+                                    elt['id'],
+                                    elt['title'],
+                                    elt['poster_path'],
+                                    elt['overview'],
+                                    elt['vote_average'],
+                                    movie
+                                ]
+                            )
+                        except ValueError:
+                            pass
+                    except KeyError:
+                        pass
                 else:
                     if elt['media_type'] == 'tv':
-                        RESULT_AFTER_SEARCH.append(
-                            [
-                                elt['media_type'],
-                                elt['id'],
-                                elt['name'],
-                                elt['poster_path'],
-                                elt['overview'],
-                                elt['vote_average'],
-                            ]
-                        )
+                        try:
+                            try:
+                                tv = tv_detail.objects.filter(id_tv=elt['id']).exists();
+                                RESULT_AFTER_SEARCH.append(
+                                    [
+                                        elt['media_type'],
+                                        elt['id'],
+                                        elt['name'],
+                                        elt['poster_path'],
+                                        elt['overview'],
+                                        elt['vote_average'],
+                                        tv
+                                    ]
+                                )
+                            except ValueError:
+                                pass
+                        except KeyError:
+                            pass
                     else:
                         if elt['media_type'] == 'person':
                             RESULT_AFTER_SEARCH.append(
@@ -927,7 +943,12 @@ def details_tv(request, id):
         'production_companies': tv['production_companies'],
         'list_actor':           LIST_ACTORS_CREDIT,
         'LIST_SIMILAR_TV':      LIST_SIMILAR_TV,
-        'COUNTEUR':             [1,2,3,4,5,6,7,8,9,10]
+        'COUNTEUR':             [1,2,3,4,5,6,7,8,9,10],
+        'form':                 form,
+        'comments':             L_COMMENTS,
+        'message_return':       message_return,
+        'name_cookie':          name_cookie,
+        'email_cookie':         email_cookie,
     }
     return render(request, 'details_tv.html', context)
 

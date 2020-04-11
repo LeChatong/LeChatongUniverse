@@ -28,7 +28,12 @@
                                     <div class="row">
                                         <div class="col-lg-11">
                                             <h3 class="text-justify">
-                                                <a class="text-dark" href="{% url 'details_movie' elt.1 %}">{{ elt.2 }}</a>
+                                                <a class="text-dark" href="{% url 'details_movie' elt.1 %}">
+                                                    {{ elt.2 }}
+                                                    {% if elt.6 != False %}
+                                                        <i class="text-left"><img width="16" height="16" src="{% static 'shield.png' %}"></i>
+                                                    {% endif %}
+                                                </a>
                                             </h3>
                                             <span><sup class="text-info">{{ elt.0 }}</sup></span>
                                         </div>
@@ -59,7 +64,12 @@
                                     <div class="row">
                                         <div class="col-lg-11">
                                             <h3 class="text-justify">
-                                                <a class="text-dark" href="{% url 'details_tv' elt.1 %}">{{ elt.2 }}</a>
+                                                <a class="text-dark" href="{% url 'details_tv' elt.1 %}">
+                                                    {{ elt.2 }}
+                                                    {% if elt.6 != False %}
+                                                        <i class="text-left"><img width="16" height="16" src="{% static 'shield.png' %}"></i>
+                                                    {% endif %}
+                                                </a>
                                             </h3>
                                             <span><sup class="text-warning">{{ elt.0 }}</sup></span>
                                         </div>
