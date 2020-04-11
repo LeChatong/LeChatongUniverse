@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /lechatong
+Disallow: /fr/lechatong
+Disallow: /en/lechatong
