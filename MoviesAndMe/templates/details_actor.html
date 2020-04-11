@@ -68,7 +68,11 @@
                             {% for tv in LIST_TV_ACTOR %}
                                 <div class="row">
                                     <div class="col-md-2">
-                                        <img width="100" height="150" src="https://image.tmdb.org/t/p/w1280{{ tv.2 }}">
+                                        {% if tv.2 != None %}
+                                            <a href="{% url 'details_tv' tv.0 %}"><img class="card-img-top" width="100" height="150" src="https://image.tmdb.org/t/p/w500{{ tv.2 }}" alt="{{ tv.1 }}"></a>
+                                        {% else %}
+                                            <a href="{% url 'details_tv' tv.0 %}"><img class="card-img-top" width="100" height="150" src="{% static 'not_image_disponible.svg.png' %}" alt="{{ tv.1 }}"></a>
+                                        {% endif %}
                                     </div>
                                     <div class="col-md-10">
                                         <a class="h4 text-dark" href="{% url 'details_tv' tv.0 %}">{{ tv.1 }}</a>
@@ -91,7 +95,11 @@
                             {% for movie in LIST_MOVIES_ACTOR %}
                                 <div class="row">
                                     <div class="col-md-2">
-                                        <img width="100" height="150" src="https://image.tmdb.org/t/p/w1280{{ movie.2 }}">
+                                        {% if movie.2 != None %}
+                                          <a href="{% url 'details_movie' movie.0 %}"><img class="card-img-top" width="100" height="150" src="https://image.tmdb.org/t/p/w500{{ movie.2 }}" alt="{{ movie.1 }}"></a>
+                                          {% else %}
+                                            <a href="{% url 'details_movie' movie.0 %}"><img class="card-img-top" width="100" height="150" src="{% static 'not_image_disponible.svg.png' %}" alt="{{ movie.1 }}"></a>
+                                        {% endif %}
                                     </div>
                                     <div class="col-md-10">
                                         <a class="h4 text-dark" href="{% url 'details_movie' movie.0 %}">{{ movie.1 }}</a>

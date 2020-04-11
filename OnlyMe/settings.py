@@ -31,6 +31,7 @@ else:
 
 ALLOWED_HOSTS = [
         'lechatonguniverse.herokuapp.com',
+        'lechatonguniverse.com',
         '127.0.0.1',
         '172.16.145.118'
 ]

@@ -230,14 +230,14 @@ def details_movie(request, id):
     VIDEOS = []
     LIST_VIDEOS = list_videos['results']
     if LIST_VIDEOS != None:
-        for elt in LIST_VIDEOS:
+        for i in (0,1):
             VIDEOS.append(
                 [
-                    elt['site'],
-                    elt['name'],
-                    elt['key'],
-                    elt['size'],
-                    elt['type']
+                    LIST_VIDEOS[i]['site'],
+                    LIST_VIDEOS[i]['name'],
+                    LIST_VIDEOS[i]['key'],
+                    LIST_VIDEOS[i]['size'],
+                    LIST_VIDEOS[i]['type']
                 ]
             )
     response_actors = requests.get('https://api.themoviedb.org/3/movie/'+id+'/credits?api_key='+settings.API_KEY_MOVIE+'')
