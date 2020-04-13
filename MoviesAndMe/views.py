@@ -225,21 +225,6 @@ def details_movie(request, id):
     response_movie = requests.get('https://api.themoviedb.org/3/movie/'+id+'?api_key='+settings.API_KEY_MOVIE+'&language='+translation.get_language()+'')
     movie = response_movie.json()
 
-    resp_video_movie = requests.get('https://api.themoviedb.org/3/movie/'+id+'/videos?api_key='+settings.API_KEY_MOVIE+'&language='+translation.get_language()+'')
-    list_videos = resp_video_movie.json()
-    VIDEOS = []
-    LIST_VIDEOS = list_videos['results']
-    if LIST_VIDEOS != None:
-        for i in (0,1):
-            VIDEOS.append(
-                [
-                    LIST_VIDEOS[i]['site'],
-                    LIST_VIDEOS[i]['name'],
-                    LIST_VIDEOS[i]['key'],
-                    LIST_VIDEOS[i]['size'],
-                    LIST_VIDEOS[i]['type']
-                ]
-            )
     response_actors = requests.get('https://api.themoviedb.org/3/movie/'+id+'/credits?api_key='+settings.API_KEY_MOVIE+'')
     list_actors = response_actors.json()
     LIST_ACTORS_CREDIT = []
@@ -349,7 +334,6 @@ def details_movie(request, id):
         'genres':               movie['genres'],
         'list_actor':           LIST_ACTORS_CREDIT,
         'LIST_SIMILAR_MOVIES':  LIST_SIMILAR_MOVIES,
-        'VIDEOS':               VIDEOS,
         'COUNTEUR':             [1,2,3,4,5,6,7,8,9,10],
         'm_details':             M_DETAILS,
         'form':                 form,
@@ -1010,7 +994,7 @@ def details_season_tv(request, id, season):
     return render(request, 'details_tv_season.html', context)
 
 def donwload_movie_content(request):
-    movies = movie_detail.objects.all().order_by('id_movie','title_movie').distinct('id_movie')
+    movies = movie_detail.objects.all().order_by('title_movie', 'id_movie').distinct('title_movie')
     list_movie = []
     for elt in movies:
         id = str(elt.id_movie)

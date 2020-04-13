@@ -174,20 +174,6 @@
                     </div>
                 </div>
             </div>
-            {% if VIDEOS != None %}
-                <div class="card  card-outline-secondary my-4">
-                    <div class="card-header">
-                        {% trans 'bande_annonce' %}
-                    </div>
-                    <div class="card-body">
-                        {% for elt in VIDEOS %}
-                            <iframe id="player" type="text/html" width="640" height="360" allowfullscreen
-                              src="http://www.youtube.com/watch?v={{ elt.2 }}"
-                              frameborder="0"></iframe>
-                        {% endfor %}
-                    </div>
-                </div>
-            {% endif %}
             <div class="card card-outline-secondary my-4">
               <div class="card-header">
                 {% trans 'Sociétés de Production' %}

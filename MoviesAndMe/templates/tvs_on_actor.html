@@ -21,7 +21,11 @@
                 {% for tv in LIST_TVS_ACTOR %}
                     <div class="col-lg-3 col-md-4 mb-3">
                         <div class="card h-auto">
+                        {% if tv.2 != None %}
                           <a href="{% url 'details_tv' tv.0 %}"><img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{ tv.2 }}" alt="{{ tv.1 }}"></a>
+                        {% else %}
+                            <a href="{% url 'details_tv' tv.0 %}"><img class="card-img-top" src="{% static 'not_image_disponible.svg.png' %}" alt="{{ tv.1 }}"></a>
+                        {% endif %}
                           <div class="card-body">
                             <h5 class="card-title">
                               <a class="text-dark" href="{% url 'details_tv' tv.0 %}">{{ tv.1 }}</a>
