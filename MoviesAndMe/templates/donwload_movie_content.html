@@ -28,30 +28,58 @@
             <div class="row">
                 <div class="col-lg-12 col-md-10 mb-12">
                     <h3>{{ nb_movie }}{% trans ' films disponibles' %}</h3>
-                    <span>
-                        <a class="twitter-share-button" data-size="large" href="https://twitter.com/intent/tweet">
-                            @LeChatong
+                    <span class="text-dark">
+                        <a  title="{% trans 'partager sur whatsapp' %}" href="whatsapp://send?text=https://lechatonguniverse.herokuapp.com{% url 'donwload_movie_content' %}" data-actions="share/whatsapp/share" id="share-wa" class="text-dark">
+                            <i class="fa fa-whatsapp"></i>
                         </a>
-                            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                        <a title="{% trans 'partager sur telegram' %}" href="tg://msg_url?url=https://lechatonguniverse.herokuapp.com{% url 'donwload_movie_content' %}&amp;text={{ nb_movie }}{% trans ' films disponibles' %}" class="text-dark">
+                            <i class="fa fa-paper-plane"></i>
+                        </a>
+                        <a title="{% trans 'partager sur facebook' %}"  target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=https://lechatonguniverse.herokuapp.com{% url 'donwload_movie_content' %}" id="share-fb" class="text-dark">
+                          <i class="fa fa-facebook-square"></i>
+                        </a>
+                        <a title="{% trans 'partager sur twitter' %}" target="_blank" href="https://twitter.com/intent/tweet?original_referer=https://lechatonguniverse.herokuapp.com/&text=LeChatongUniverse - {{ nb_movie }}{% trans ' films disponibles' %}&url=https://lechatonguniverse.herokuapp.com{% url 'donwload_movie_content' %}&via=LeChatong" id="share-tw" class="text-dark">
+                            <i class="fa fa-twitter-square"></i>
+                        </a>
                     </span>
                 </div>
             </div>
             <hr/>
             <div class="row">
-            <table class="table table-hover table-responsive">
-                {% for elt in list_movie %}
-                    <tr>
-                        <td>
-                            <h4 class="text-dark">
-                              <a class="text-dark" title="{{ elt.3 }}" href="{% url 'details_movie' elt.0 %}">{{ elt.2 }}</a>
-                            </h4>
-                        </td>
-                        <td>
-                            <a target="_blank" href="{{ elt.1 }}">{% trans 'Voir' %}</a>
-                        </td>
-                    </tr>
+                {% for movie in list_movie %}
+                    <div class="col-lg-2 col-md-2 mb-3">
+                        <div class="card h-auto">
+                          <a title="{{ movie.3 }}"  data-toggle="modal" data-target="#downloadModal{{ movie.0 }}" href="#"><img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{ movie.4 }}" alt="{{ movie.3 }}"></a>
+                          <div class="card-body">
+                            <div class="card-text">
+                                <div><sup><a class="text-dark" title="{{ movie.2 }}" data-toggle="modal" data-target="#downloadModal{{ movie.0 }}" href="#">{{ movie.2 | truncatechars:25 }}</a></sup></div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="modal fade" id="downloadModal{{ movie.0 }}" tabindex="-1" role="dialog" aria-labelledby="downloadModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">{{ movie.2 }}</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <h5>{% trans 'overview' %}</h5>
+                                <p class="text-justify">{{ movie.3 }}</p>
+                                <div class="text-justify">
+                                    <p class="text-dark">{% trans 'langue' %} : <span>{{ movie.8 }}</span></p>
+                                </div>
+                                <a class="btn btn-success" target="_blank" href="{{ movie.1 }}">
+                                    {% trans 'Voir' %}
+                                </a>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
                 {% endfor %}
-            </table>
             </div>
 
         </div>

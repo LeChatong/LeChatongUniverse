@@ -40,6 +40,37 @@
             </div>
             <hr/>
             <div class="row">
+            {% for tv in list_tvs %}
+                    <div class="col-lg-2 col-md-2 mb-3">
+                        <div class="card h-auto">
+                          <a title="{{ tv.2 }}"  data-toggle="modal" data-target="#downloadModal{{ movie.0 }}" href="#"><img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{ tv.4 }}" alt="{{ tv.3 }}"></a>
+                          <div class="card-body">
+                            <div class="card-text">
+                                <div><sup><a class="text-dark" title="{{ tv.2 }}" data-toggle="modal" data-target="#downloadModal{{ tv.0 }}" href="#">{{ tv.3 | truncatechars:25 }}</a></sup></div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="modal fade" id="downloadModal{{ tv.0 }}" tabindex="-1" role="dialog" aria-labelledby="downloadModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">{{ tv.3 }}</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <h5>{% trans 'overview' %}</h5>
+                                <p class="text-justify">{{ tv.2 }}</p>
+                                <div class="text-justify">
+                                    <p class="text-dark">{% trans 'langue' %} : <span>{{ tv.8 }}</span></p>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                {% endfor %}
             <table class="table table-hover table-responsive">
                 {% for elt in list_tvs %}
                     <tr>

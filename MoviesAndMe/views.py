@@ -102,6 +102,8 @@ def search_movies(request):
         list_movie_elt_search = response_search.json()
 
         RESULT_AFTER_SEARCH = []
+        TOTAL_RESULT = []
+        TOTAL_PAGE = []
         paginator = Paginator(list_movie_elt_search['results'], 15)
         page = request.GET.get('page')
 
@@ -1014,7 +1016,12 @@ def donwload_movie_content(request):
                 elt.id_movie,
                 elt.link_download,
                 elt.title_movie,
-                overview
+                overview,
+                movie['poster_path'],
+                movie['backdrop_path'],
+                elt.subtitle,
+                elt.subtitle_language,
+                elt.voice_language
             ]
         )
 
@@ -1047,7 +1054,12 @@ def downloable_tv_content(request):
                 elt.id_tv,
                 elt.title_tv,
                 overview,
-                name
+                name,
+                tv['poster_path'],
+                tv['backdrop_path'],
+                elt.subtitle,
+                elt.subtitle_language,
+                elt.voice_language
             ]
         )
     context = {
