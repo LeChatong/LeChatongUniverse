@@ -71,17 +71,6 @@
                         </div>
                     </div>
                 {% endfor %}
-            <table class="table table-hover table-responsive">
-                {% for elt in list_tvs %}
-                    <tr>
-                        <td>
-                            <h4 class="text-dark">
-                              <a class="text-dark" title="{{ elt.2 }}" href="{% url 'details_tv' elt.0 %}">{{ elt.3 }}</a>
-                            </h4>
-                        </td>
-                    </tr>
-                {% endfor %}
-            </table>
             </div>
 
         </div>
