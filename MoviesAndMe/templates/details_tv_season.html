@@ -62,28 +62,20 @@
                     </div>
                 </div>
                 <div class="mt-4">
-                    <span>
-                        <a class="twitter-share-button" data-size="large" href="https://twitter.com/intent/tweet">
-                            @LeChatong
+                    <p class="float-right text-dark">
+                       <a  title="{% trans 'partager sur whatsapp' %}" href="whatsapp://send?text=https://lechatonguniverse.herokuapp.com{% url 'details_tv_season' id season_number %}" data-actions="share/whatsapp/share" id="share-wa" class="text-dark">
+                            <i class="fa fa-whatsapp"></i>
                         </a>
-                        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                    </span>
-                    <span>
-                        <div id="fb-root" class="text-justify"></div>
-                          <script>(function(d, s, id) {
-                            var js, fjs = d.getElementsByTagName(s)[0];
-                            if (d.getElementById(id)) return;
-                            js = d.createElement(s); js.id = id;
-                            js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
-                            fjs.parentNode.insertBefore(js, fjs);
-                          }(document, 'script', 'facebook-jssdk'));</script>
-                        <div class="fb-share-button"
-                            data-href="{% url 'details_tv' id %}"
-                             data-size="large"
-                            data-layout="button_count">
-                            Partager
-                        </div>
-                    </span>
+                        <a title="{% trans 'partager sur telegram' %}" href="tg://msg_url?url=https://lechatonguniverse.herokuapp.com{% url 'details_tv_season' id season_number %}&amp;text={{ overview|truncatechars:250 }}" class="text-dark">
+                            <i class="fa fa-paper-plane"></i>
+                        </a>
+                        <a title="{% trans 'partager sur facebook' %}"  target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=https://lechatonguniverse.herokuapp.com{% url 'details_tv_season' id season_number %}" id="share-fb" class="text-dark">
+                          <i class="fa fa-facebook-square"></i>
+                        </a>
+                        <a title="{% trans 'partager sur twitter' %}" target="_blank" href="https://twitter.com/intent/tweet?original_referer=https://lechatonguniverse.herokuapp.com/&text=LeChatongUniverse - {{ name_tv }}&url=https://lechatonguniverse.herokuapp.com{% url 'details_tv_season' id season_number %}&via=LeChatong" id="share-tw" class="text-dark">
+                            <i class="fa fa-twitter-square"></i>
+                        </a>
+                    </p>
                 </div>
             </div>
         </div>

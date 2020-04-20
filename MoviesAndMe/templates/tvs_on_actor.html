@@ -28,7 +28,9 @@
                         {% endif %}
                           <div class="card-body">
                             <h5 class="card-title">
-                              <a class="text-dark" href="{% url 'details_tv' tv.0 %}">{{ tv.1 }}</a>
+                              <a class="text-dark" href="{% url 'details_tv' tv.0 %}">
+                                  {{ tv.1 }}{% if tv.6 != False %}<i class="text-left"><img width="16" height="16" src="{% static 'shield.png' %}"></i>{% endif %}
+                              </a>
                             </h5>
                             <div class="card-text">
                                 {% if tv.5 != None %}

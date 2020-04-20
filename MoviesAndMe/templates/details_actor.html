@@ -75,7 +75,9 @@
                                         {% endif %}
                                     </div>
                                     <div class="col-md-10">
-                                        <a class="h4 text-dark" href="{% url 'details_tv' tv.0 %}">{{ tv.1 }}</a>
+                                        <a class="h4 text-dark" href="{% url 'details_tv' tv.0 %}">
+                                            {{ tv.1 }}{% if tv.6 != False %}<i class="text-left"><img width="16" height="16" src="{% static 'shield.png' %}"></i>{% endif %}
+                                        </a>
                                         <div><sup><b>{{ tv.3 }}</b></sup></div>
                                         <div><sup>{{ tv.5|date:'d M Y' }}</sup></div>
                                         <div>{{ tv.4|truncatechars_html:250 }}</div>

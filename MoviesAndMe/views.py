@@ -239,13 +239,15 @@ def details_movie(request, id):
     b = len(list_similar_movies['results'])
     if b != 0:
         for i in (0, 1, 2, 3, 4, 5):
+            movie = movie_detail.objects.filter(id_movie=L_SIMILAR_MOVIES[i]['id']).exists();
             if not L_SIMILAR_MOVIES[i]['id']:
                 pass
             LIST_SIMILAR_MOVIES.append(
                 [
                     L_SIMILAR_MOVIES[i]['id'],
                     L_SIMILAR_MOVIES[i]['title'],
-                    L_SIMILAR_MOVIES[i]['poster_path']
+                    L_SIMILAR_MOVIES[i]['poster_path'],
+                    movie
                 ]
             )
             if (b - 1) == i:
@@ -400,6 +402,7 @@ def details_actor(request, id):
                 first_air_date = datetime.strptime(L_TV_ACTOR[i]['first_air_date'], "%Y-%m-%d").date()
             except ValueError:
                 first_air_date = '...'
+            tv = tv_detail.objects.filter(id_tv=L_TV_ACTOR[i]['id']).exists();
             LIST_TV_ACTOR.append(
                 [
                     L_TV_ACTOR[i]['id'],
@@ -408,6 +411,7 @@ def details_actor(request, id):
                     L_TV_ACTOR[i]['character'],
                     L_TV_ACTOR[i]['overview'],
                     first_air_date,
+                    tv
                 ]
             )
             if (b-1) == i:
@@ -500,7 +504,7 @@ def tvs_on_actor(request, id):
             character = elt['character']
         except TypeError:
             character = None
-
+        tv = tv_detail.objects.filter(id_tv=L_TVS_ACTOR['id']).exists();
         LIST_TVS_ACTOR.append(
             [
                 elt['id'],
@@ -509,6 +513,7 @@ def tvs_on_actor(request, id):
                 character,
                 elt['overview'],
                 first_air_date,
+                tv
             ]
         )
     context = {
@@ -592,6 +597,7 @@ def home_tv(request):
     POPULAR_ON_TV = []
 
     for elt in RESULT_POPULAR_ON_TV:
+        tv = tv_detail.objects.filter(id_tv=elt['id']).exists();
         POPULAR_ON_TV.append(
             [
                 elt['id'],
@@ -600,6 +606,7 @@ def home_tv(request):
                 elt['poster_path'],
                 datetime.strptime(elt['first_air_date'], "%Y-%m-%d").date(),
                 elt['vote_average'],
+                tv,
             ]
         )
 
@@ -622,6 +629,7 @@ def popular_tv(request, page=1):
     page_prev = page - 1
 
     for elt in RESULT_POPULAR_ON_TV:
+        tv = tv_detail.objects.filter(id_tv=elt['id']).exists();
         POPULAR_ON_TV.append(
             [
                 elt['id'],
@@ -630,6 +638,7 @@ def popular_tv(request, page=1):
                 elt['poster_path'],
                 datetime.strptime(elt['first_air_date'], "%Y-%m-%d").date(),
                 elt['vote_average'],
+                tv
             ]
         )
 
@@ -662,6 +671,7 @@ def home_movie(request):
     TOP_MOVIES = []
 
     for elt in RESULT_TOP_MOVIES:
+        movie = movie_detail.objects.filter(id_movie=elt['id']).exists();
         TOP_MOVIES.append(
             [
                 elt['id'],
@@ -670,6 +680,7 @@ def home_movie(request):
                 elt['poster_path'],
                 datetime.strptime(elt['release_date'], "%Y-%m-%d").date(),
                 elt['vote_average'],
+                movie,
             ]
         )
 
@@ -691,6 +702,7 @@ def popular_movie(request, page=1):
     page_next = page + 1
     page_prev = page - 1
     for elt in RESULT_POPULAR_MOVIES:
+        movie = movie_detail.objects.filter(id_movie=RESULT_POPULAR_MOVIES['id']).exists();
         POPULAR_MOVIES.append(
             [
                 elt['id'],
@@ -699,6 +711,7 @@ def popular_movie(request, page=1):
                 elt['poster_path'],
                 datetime.strptime(elt['release_date'], "%Y-%m-%d").date(),
                 elt['vote_average'],
+                movie
             ]
         )
     TOTAL_PAGES = TOTAL_PAGES - 1
@@ -849,13 +862,15 @@ def details_tv(request, id):
     b = len(list_similar_tv['results'])
     if b != 0:
         for i in (0, 1, 2, 3, 4, 5):
+            tv = tv_detail.objects.filter(id_tv=L_SIMILAR_TV[i]['id']).exists();
             if not L_SIMILAR_TV[i]['id']:
                 pass
             LIST_SIMILAR_TV.append(
                 [
                     L_SIMILAR_TV[i]['id'],
                     L_SIMILAR_TV[i]['name'],
-                    L_SIMILAR_TV[i]['poster_path']
+                    L_SIMILAR_TV[i]['poster_path'],
+                    tv
                 ]
             )
             if (b - 1) == i:

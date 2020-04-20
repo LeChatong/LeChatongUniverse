@@ -39,10 +39,17 @@
                             {% for movie in TOP_MOVIES %}
                                 <div class="col-lg-3 col-md-4 mb-3">
                                     <div class="card h-auto">
-                                      <a href="{% url 'details_movie' movie.0 %}"><img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{ movie.3 }}" alt="{{ movie.1 }}"></a>
+                                      <a href="{% url 'details_movie' movie.0 %}">
+                                            {% if movie.3 != None %}
+                                                <img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{ movie.3 }}" alt="{{ movie.1 }}"></a>
+                                            {% else %}
+                                                <img class="card-img-top" src="{% static 'not_image_disponible.svg.png' %}" alt="{{ movie.1 }}"></a>
+                                            {% endif %}
                                       <div class="card-body">
                                         <h5 class="card-title">
-                                          <a class="text-dark" title="{{ movie.2 }}" href="{% url 'details_movie' movie.0 %}">{{ movie.1 }}</a>
+                                          <a class="text-dark" title="{{ movie.2 }}" href="{% url 'details_movie' movie.0 %}">
+                                              {{ movie.1 }}{% if movie.6 != False %}<i class="text-left"><img width="16" height="16" src="{% static 'shield.png' %}"></i>{% endif %}
+                                          </a>
                                         </h5>
                                         <div class="card-text">
                                             <div><sup>{% trans 'Sortie le : ' %}{{ movie.4|date:'d M Y' }}</sup></div>

@@ -204,7 +204,10 @@
 
                                       </a>
                                         <p class="card-title text-center">
-                                          <a class="text-dark" href="{% url 'details_tv' similar_tv.0 %}">{{ similar_tv.1 }}</a>
+                                          <a class="text-dark" href="{% url 'details_tv' similar_tv.0 %}">
+                                              {{ similar_tv.1 }}
+                                                {% if similar_tv.3 != False %}<i class="text-left"><img width="16" height="16" src="{% static 'shield.png' %}"></i>{% endif %}
+                                          </a>
                                         </p>
                                     </div>
                               </div>
