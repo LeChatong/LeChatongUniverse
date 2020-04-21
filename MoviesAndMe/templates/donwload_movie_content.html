@@ -24,25 +24,36 @@
 {% endblock %}
 {% block details_page %}
     <div class="row">
-        <div class="col-lg-12 col-md-10 mb-12"  style="margin-top: 20px;">
+        <div class="col-lg-12"  style="margin-top: 20px;">
             <div class="row">
-                <div class="col-lg-12 col-md-10 mb-12">
+                <div class="col-lg-8">
                     <h3>{{ nb_movie }}{% trans ' films disponibles' %}</h3>
+                </div>
+                <div class="col-lg-4 right">
                     <span class="text-dark">
                         <a  title="{% trans 'partager sur whatsapp' %}" href="whatsapp://send?text=https://lechatonguniverse.herokuapp.com{% url 'donwload_movie_content' %}" data-actions="share/whatsapp/share" id="share-wa" class="text-dark">
-                            <i class="fa fa-whatsapp"></i>
+                            <i class="fa fa-2x fa-whatsapp"></i>
                         </a>
                         <a title="{% trans 'partager sur telegram' %}" href="tg://msg_url?url=https://lechatonguniverse.herokuapp.com{% url 'donwload_movie_content' %}&amp;text={{ nb_movie }}{% trans ' films disponibles' %}" class="text-dark">
-                            <i class="fa fa-paper-plane"></i>
+                            <i class="fa fa-2x fa-paper-plane"></i>
                         </a>
                         <a title="{% trans 'partager sur facebook' %}"  target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=https://lechatonguniverse.herokuapp.com{% url 'donwload_movie_content' %}" id="share-fb" class="text-dark">
-                          <i class="fa fa-facebook-square"></i>
+                          <i class="fa fa-2x fa-facebook-square"></i>
                         </a>
                         <a title="{% trans 'partager sur twitter' %}" target="_blank" href="https://twitter.com/intent/tweet?original_referer=https://lechatonguniverse.herokuapp.com/&text=LeChatongUniverse - {{ nb_movie }}{% trans ' films disponibles' %}&url=https://lechatonguniverse.herokuapp.com{% url 'donwload_movie_content' %}&via=LeChatong" id="share-tw" class="text-dark">
-                            <i class="fa fa-twitter-square"></i>
+                            <i class="fa fa-2x fa-twitter-square"></i>
                         </a>
                     </span>
                 </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <form class="form-inline dark-theme" action="{% url 'donwload_movie_content' %}" method="post">
+                            <input class="form-control" name="query" type="search" placeholder="{% trans 'Search' %}" aria-label="Search">
+                            <button class="btn btn-outline-dark" type="submit"><i class="fa fa-search"></i></button>
+                        </form>
+                    </div>
+                </div>
+
             </div>
             <hr/>
             <div class="row">

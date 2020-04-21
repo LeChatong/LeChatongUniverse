@@ -239,7 +239,7 @@ def details_movie(request, id):
     b = len(list_similar_movies['results'])
     if b != 0:
         for i in (0, 1, 2, 3, 4, 5):
-            movie = movie_detail.objects.filter(id_movie=L_SIMILAR_MOVIES[i]['id']).exists();
+            movie_is_save = movie_detail.objects.filter(id_movie=L_SIMILAR_MOVIES[i]['id']).exists();
             if not L_SIMILAR_MOVIES[i]['id']:
                 pass
             LIST_SIMILAR_MOVIES.append(
@@ -247,7 +247,7 @@ def details_movie(request, id):
                     L_SIMILAR_MOVIES[i]['id'],
                     L_SIMILAR_MOVIES[i]['title'],
                     L_SIMILAR_MOVIES[i]['poster_path'],
-                    movie
+                    movie_is_save
                 ]
             )
             if (b - 1) == i:
@@ -381,6 +381,7 @@ def details_actor(request, id):
                     release_date = datetime.strptime(L_MOVIES_ACTOR[i]['release_date'], "%Y-%m-%d").date()
             else:
                 pass
+            movie_is_save = movie_detail.objects.filter(id_movie=L_MOVIES_ACTOR[i]['id']).exists();
             LIST_MOVIES_ACTOR.append(
                 [
                     L_MOVIES_ACTOR[i]['id'],
@@ -389,6 +390,7 @@ def details_actor(request, id):
                     L_MOVIES_ACTOR[i]['character'],
                     L_MOVIES_ACTOR[i]['overview'],
                     release_date,
+                    movie_is_save
                 ]
             )
             if (a-1) == i:
@@ -463,13 +465,15 @@ def movies_on_actor(request, id):
 
         if elt['id'] == None or elt['title'] == None or not elt['character'] or elt['release_date'] == None:
             pass
+        movie_is_save = movie_detail.objects.filter(id_movie=elt['id']).exists();
         LIST_MOVIES_ACTOR.append(
             [
                 elt['id'],
                 elt['title'],
                 elt['poster_path'],
                 character,
-                release_date
+                release_date,
+                movie_is_save
             ]
         )
     context = {
@@ -702,7 +706,7 @@ def popular_movie(request, page=1):
     page_next = page + 1
     page_prev = page - 1
     for elt in RESULT_POPULAR_MOVIES:
-        movie = movie_detail.objects.filter(id_movie=RESULT_POPULAR_MOVIES['id']).exists();
+        movie_is_save = movie_detail.objects.filter(id_movie=RESULT_POPULAR_MOVIES['id']).exists();
         POPULAR_MOVIES.append(
             [
                 elt['id'],
@@ -711,7 +715,7 @@ def popular_movie(request, page=1):
                 elt['poster_path'],
                 datetime.strptime(elt['release_date'], "%Y-%m-%d").date(),
                 elt['vote_average'],
-                movie
+                movie_is_save
             ]
         )
     TOTAL_PAGES = TOTAL_PAGES - 1

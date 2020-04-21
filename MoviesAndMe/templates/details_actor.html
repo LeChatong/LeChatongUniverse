@@ -64,7 +64,8 @@
                 <div class="tab-content" id="nav-tabContent">
 
                   <div style="margin-top: 20px; margin-bottom: 20px;" class="tab-pane fade show" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                      <div class="col-md-12 col-lg-12">
+                      {% if LIST_TV_ACTOR %}
+                        <div class="col-md-12 col-lg-12">
                             {% for tv in LIST_TV_ACTOR %}
                                 <div class="row">
                                     <div class="col-md-2">
@@ -86,13 +87,24 @@
                                 <hr/>
                             {% endfor %}
                         </div>
-                      <a class="card-text dark-theme" href="{% url 'tvs_on_actor' id %}">
+                        <a class="card-text dark-theme" href="{% url 'tvs_on_actor' id %}">
                             <div>
                                 <p class="text-dark text-center"> {% trans 'Voir Plus' %}</p>
                             </div>
                         </a>
+                      {% else %}
+                          <div class="col-md-12 col-lg-12">
+                              <div class="row">
+                                  <div class="col-md-2"></div>
+                                  <div class="col-md-10">
+                                      <h3 class="text-dark text-center">{% trans 'no_items_found' %}</h3>
+                                  </div>
+                              </div>
+                          </div>
+                      {% endif %}
                   </div>
                   <div style="margin-top: 20px; margin-bottom: 20px;" class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                      {% if LIST_MOVIES_ACTOR %}
                       <div class="col-md-12 col-lg-12">
                             {% for movie in LIST_MOVIES_ACTOR %}
                                 <div class="row">
@@ -104,7 +116,9 @@
                                         {% endif %}
                                     </div>
                                     <div class="col-md-10">
-                                        <a class="h4 text-dark" href="{% url 'details_movie' movie.0 %}">{{ movie.1 }}</a>
+                                        <a class="h4 text-dark" href="{% url 'details_movie' movie.0 %}">
+                                            {{ movie.1 }}{% if movie.6 != False %}<i class="text-left"><img width="16" height="16" src="{% static 'shield.png' %}"></i>{% endif %}
+                                        </a>
                                         <div><sup><b>{{ movie.3 }}</b></sup></div>
                                         <div><sup>{{ movie.5|date:'d M Y' }}</sup></div>
                                         <div>{{ movie.4|truncatechars_html:250 }}</div>
@@ -112,12 +126,23 @@
                                 </div>
                                 <hr/>
                             {% endfor %}
+
                         </div>
                        <a class="card-text dark-theme" href="{% url 'movies_on_actor' id %}">
                             <div>
                                 <p class="text-dark text-center">{% trans 'Voir Plus' %} </p>
                             </div>
                         </a>
+                       {% else %}
+                            <div class="col-md-12 col-lg-12">
+                              <div class="row">
+                                  <div class="col-md-2"></div>
+                                  <div class="col-md-10">
+                                      <h3 class="text-dark text-center">{% trans 'no_items_found' %}</h3>
+                                  </div>
+                              </div>
+                          </div>
+                       {% endif %}
                   </div>
 
             </div>
