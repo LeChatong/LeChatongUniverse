@@ -706,7 +706,7 @@ def popular_movie(request, page=1):
     page_next = page + 1
     page_prev = page - 1
     for elt in RESULT_POPULAR_MOVIES:
-        movie_is_save = movie_detail.objects.filter(id_movie=RESULT_POPULAR_MOVIES['id']).exists();
+        movie_is_save = movie_detail.objects.filter(id_movie=elt['id']).exists();
         POPULAR_MOVIES.append(
             [
                 elt['id'],
@@ -1017,7 +1017,14 @@ def details_season_tv(request, id, season):
     return render(request, 'details_tv_season.html', context)
 
 def donwload_movie_content(request):
-    movies = movie_detail.objects.all().order_by('title_movie', 'id_movie').distinct('title_movie')
+    if request.method == 'POST':
+        search = request.POST['query']
+        if search == '':
+            movies = movie_detail.objects.all().order_by('title_movie', 'id_movie').distinct('title_movie')
+        else:
+            movies = movie_detail.objects.filter(title_movie__contains=search).order_by('title_movie', 'id_movie').distinct('title_movie')
+    else:
+        movies = movie_detail.objects.all().order_by('title_movie', 'id_movie').distinct('title_movie')
     list_movie = []
     for elt in movies:
         id = str(elt.id_movie)
@@ -1054,9 +1061,9 @@ def donwload_movie_content(request):
     return render(request, 'donwload_movie_content.html', context)
 
 def downloable_tv_content(request):
-    #name_map = {'id_tv':'id'}
+
     tvs = tv_detail.objects.all().order_by('id_tv', 'title_tv').distinct('id_tv')
-    #tvs = tv_detail.objects.raw('SELECT DISTINCT tv.id_tv, (SELECT COUNT( DISTINCT t.nb_season) FROM "MoviesAndMe_tv_detail" t WHERE t.id_tv = tv.id_tv) as nb_season, tv.title_tv FROM "MoviesAndMe_tv_detail" tv ORDER BY tv.title_tv', name_map)
+
     list_tvs = []
     for elt in tvs:
         id = str(elt.id_tv)

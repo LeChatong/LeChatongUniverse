@@ -48,6 +48,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <form class="form-inline dark-theme" action="{% url 'donwload_movie_content' %}" method="post">
+                            {% csrf_token %}
                             <input class="form-control" name="query" type="search" placeholder="{% trans 'Search' %}" aria-label="Search">
                             <button class="btn btn-outline-dark" type="submit"><i class="fa fa-search"></i></button>
                         </form>
@@ -57,6 +58,7 @@
             </div>
             <hr/>
             <div class="row">
+                {% if list_movie %}
                 {% for movie in list_movie %}
                     <div class="col-lg-2 col-md-2 mb-3">
                         <div class="card h-auto">
@@ -91,6 +93,9 @@
                         </div>
                     </div>
                 {% endfor %}
+                {% else %}
+                    <h3 class="text-dark text-center">{% trans 'no_items_found' %}</h3>
+                {% endif %}
             </div>
 
         </div>
