@@ -116,7 +116,9 @@
 
                                       </a>
                                         <p class="card-title text-center">
-                                          <a  class="text-dark" href="{% url 'details_tv_season' id season.3%}">{{ season.1 }}</a>
+                                          <a  class="text-dark" href="{% url 'details_tv_season' id season.3%}">
+                                              {{ season.1 }}{% if season.4 != False %}<i class="text-left"><img width="16" height="16" src="{% static 'shield.png' %}"></i>{% endif %}
+                                          </a>
                                         </p>
                                     </div>
                                 </div>

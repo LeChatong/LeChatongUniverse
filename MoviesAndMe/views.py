@@ -866,7 +866,7 @@ def details_tv(request, id):
     b = len(list_similar_tv['results'])
     if b != 0:
         for i in (0, 1, 2, 3, 4, 5):
-            tv = tv_detail.objects.filter(id_tv=L_SIMILAR_TV[i]['id']).exists();
+            tv_is_save = tv_detail.objects.filter(id_tv=L_SIMILAR_TV[i]['id']).exists();
             if not L_SIMILAR_TV[i]['id']:
                 pass
             LIST_SIMILAR_TV.append(
@@ -874,7 +874,7 @@ def details_tv(request, id):
                     L_SIMILAR_TV[i]['id'],
                     L_SIMILAR_TV[i]['name'],
                     L_SIMILAR_TV[i]['poster_path'],
-                    tv
+                    tv_is_save
                 ]
             )
             if (b - 1) == i:
@@ -884,12 +884,14 @@ def details_tv(request, id):
     for season in tv['seasons']:
         if season['season_number'] == 0:
             pass
+        season_is_save = tv_detail.objects.filter(id_tv=tv['id'], nb_season=season['season_number']).exists();
         SEASONS.append(
             [
                 season['id'],
                 season['name'],
                 season['poster_path'],
-                season['season_number']
+                season['season_number'],
+                season_is_save
             ]
         )
     for author in tv['created_by']:
@@ -1052,7 +1054,7 @@ def donwload_movie_content(request):
     return render(request, 'donwload_movie_content.html', context)
 
 def downloable_tv_content(request):
-    name_map = {'id_tv':'id'}
+    #name_map = {'id_tv':'id'}
     tvs = tv_detail.objects.all().order_by('id_tv', 'title_tv').distinct('id_tv')
     #tvs = tv_detail.objects.raw('SELECT DISTINCT tv.id_tv, (SELECT COUNT( DISTINCT t.nb_season) FROM "MoviesAndMe_tv_detail" t WHERE t.id_tv = tv.id_tv) as nb_season, tv.title_tv FROM "MoviesAndMe_tv_detail" tv ORDER BY tv.title_tv', name_map)
     list_tvs = []
