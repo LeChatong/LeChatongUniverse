@@ -43,14 +43,21 @@ def list_all_series_avaible(request):
 @api_view(['GET',])
 def seach_movies(request):
     search = request.GET.get('query')
-    data = movie_detail.objects.filter(title_movie__contains=search).order_by('title_movie')
+    data = movie_detail.objects.filter(title_movie__icontains=search).order_by('title_movie')
     serializer = MovieSerializer(data, context={'request': request}, many=True)
     return Response(serializer.data)
 
 @api_view(['GET',])
 def seach_tvs(request):
     search = request.GET.get('query')
-    data = tv_detail.objects.filter(title_tv__contains=search).order_by('title_tv')
+    data = tv_detail.objects.filter(title_tv__icontains=search).distinct('id_tv').order_by('id_tv','title_tv')
+    serializer = SerieSerializer(data, context={'request': request}, many=True)
+    return Response(serializer.data)
+
+@api_view(['GET',])
+def all_tv_episode(request):
+    idTV = request.GET.get('id_tv')
+    data = tv_detail.objects.filter(id_tv=idTV).order_by('title_tv')
     serializer = SerieSerializer(data, context={'request': request}, many=True)
     return Response(serializer.data)
 
