@@ -324,6 +324,20 @@ def details_movie(request, id):
         name_cookie = None
         email_cookie =  None
 
+    response_videos = requests.get('https://api.themoviedb.org/3/movie/'+id+'/videos?api_key='+settings.API_KEY_MOVIE+'&language='+translation.get_language()+'')
+    list_video = response_videos.json()
+    L_VIDEOS = list_video['results']
+    VIDEOS = []
+    for i in (0, len(L_VIDEOS)-1):
+        VIDEOS.append(
+            [
+                L_VIDEOS[i]['key'],
+                L_VIDEOS[i]['name'],
+                L_VIDEOS[i]['site'],
+                L_VIDEOS[i]['type'],
+                i
+            ]
+        )
     context = {
         'id':                   movie['id'],
         'title':                movie['title'],
@@ -338,6 +352,7 @@ def details_movie(request, id):
         'genres':               movie['genres'],
         'list_actor':           LIST_ACTORS_CREDIT,
         'LIST_SIMILAR_MOVIES':  LIST_SIMILAR_MOVIES,
+        'VIDEOS':               VIDEOS,
         'COUNTEUR':             [1,2,3,4,5,6,7,8,9,10],
         'm_details':             M_DETAILS,
         'form':                 form,
