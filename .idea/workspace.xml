@@ -53,8 +53,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MoviesAndMe/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="330" column="32" selection-start-line="330" selection-start-column="32" selection-end-line="330" selection-end-column="32" />
+            <state relative-caret-position="154">
+              <caret line="330" column="16" lean-forward="true" selection-start-line="330" selection-start-column="16" selection-end-line="330" selection-end-column="16" />
               <folding>
                 <element signature="e#733#3461#0" />
                 <element signature="e#3495#6878#0" />
@@ -65,18 +65,6 @@
                 <element signature="e#10181#10400#0" />
                 <element signature="e#10438#10989#0" />
                 <element signature="e#11092#11657#0" />
-                <element signature="e#13072#16568#0" />
-                <element signature="e#16608#18238#0" />
-                <element signature="e#18275#19766#0" />
-                <element signature="e#19806#21129#0" />
-                <element signature="e#21166#22039#0" />
-                <element signature="e#22067#22957#0" />
-                <element signature="e#22996#24692#0" />
-                <element signature="e#24723#25612#0" />
-                <element signature="e#25654#27385#0" />
-                <element signature="e#27428#29103#0" />
-                <element signature="e#29138#35181#0" />
-                <element signature="e#37268#38820#0" />
               </folding>
             </state>
           </provider>
@@ -112,7 +100,7 @@
       <file leaf-file-name="details_tv.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/details_tv.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
+            <state relative-caret-position="1802">
               <caret line="106" column="49" selection-start-line="106" selection-start-column="49" selection-end-line="106" selection-end-column="49" />
             </state>
           </provider>
@@ -121,8 +109,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="78" column="90" selection-start-line="78" selection-start-column="52" selection-end-line="78" selection-end-column="90" />
+            <state relative-caret-position="51">
+              <caret line="80" column="107" selection-start-line="80" selection-start-column="103" selection-end-line="80" selection-end-column="107" />
             </state>
           </provider>
         </entry>
@@ -130,10 +118,13 @@
       <file leaf-file-name="details_movie.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/details_movie.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="228" column="22" lean-forward="true" selection-start-line="228" selection-start-column="22" selection-end-line="228" selection-end-column="22" />
+            <state relative-caret-position="174">
+              <caret line="143" column="91" selection-start-line="143" selection-start-column="91" selection-end-line="143" selection-end-column="91" />
               <folding>
-                <element signature="e#12109#13572#0#HTML" />
+                <element signature="e#5113#5303#0#HTML" />
+                <element signature="e#5324#7993#0#HTML" />
+                <element signature="e#10572#11915#0#HTML" />
+                <element signature="e#11929#13590#0#HTML" />
               </folding>
             </state>
           </provider>
@@ -552,13 +543,6 @@
       <option name="presentableId" value="Default" />
       <updated>1557311815933</updated>
     </task>
-    <task id="LOCAL-00089" summary="Début d'ajout de l'API">
-      <created>1581005211925</created>
-      <option name="number" value="00089" />
-      <option name="presentableId" value="LOCAL-00089" />
-      <option name="project" value="LOCAL" />
-      <updated>1581005212011</updated>
-    </task>
     <task id="LOCAL-00090" summary="Début d'ajout de l'API">
       <created>1581005947842</created>
       <option name="number" value="00090" />
@@ -895,26 +879,33 @@
       <option name="project" value="LOCAL" />
       <updated>1587747617912</updated>
     </task>
-    <option name="localTasksCounter" value="138" />
+    <task id="LOCAL-00138" summary="MAJ du design des pages">
+      <created>1589388957315</created>
+      <option name="number" value="00138" />
+      <option name="presentableId" value="LOCAL-00138" />
+      <option name="project" value="LOCAL" />
+      <updated>1589388957398</updated>
+    </task>
+    <option name="localTasksCounter" value="139" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5706941" side_tool="true" visible="true" weight="0.35783634" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.57133675" side_tool="true" visible="true" weight="0.35783634" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4293059" visible="true" weight="0.35783634" />
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4993573" weight="0.32871014" />
       <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.49871466" weight="0.32871014" />
-      <window_info anchor="bottom" id="Terminal" order="16" sideWeight="0.4807198" weight="0.31622747" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.10732648" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.42866325" visible="true" weight="0.35783634" />
+      <window_info anchor="bottom" id="Terminal" order="16" sideWeight="0.47879177" weight="0.31622747" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.109897174" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="4" weight="0.23714653" />
       <window_info anchor="right" id="SciView" order="3" weight="0.32969153" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.48586118" weight="0.36199722" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.48586118" weight="0.36199722" />
       <window_info anchor="bottom" id="Anonymous Apex" order="15" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1112,13 +1103,6 @@
     <entry file="file://$USER_HOME$/Desktop/startbootstrap-sb-admin-2-gh-pages/vendor/datatables/jquery.dataTables.min.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/OnlyMe/static/css/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="4658" column="1" selection-start-line="4658" selection-start-column="1" selection-end-line="4658" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MoviesAndMe/static/css/bootstrap.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="145">
@@ -1304,32 +1288,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/details_tv.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
+        <state relative-caret-position="1802">
           <caret line="106" column="49" selection-start-line="106" selection-start-column="49" selection-end-line="106" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OnlyMe/static/css/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="6230" column="1" selection-start-line="6230" selection-start-column="1" selection-end-line="6230" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="78" column="90" selection-start-line="78" selection-start-column="52" selection-end-line="78" selection-end-column="90" />
+        <state relative-caret-position="51">
+          <caret line="80" column="107" selection-start-line="80" selection-start-column="103" selection-end-line="80" selection-end-column="107" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MoviesAndMe/templates/details_movie.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="228" column="22" lean-forward="true" selection-start-line="228" selection-start-column="22" selection-end-line="228" selection-end-column="22" />
+        <state relative-caret-position="174">
+          <caret line="143" column="91" selection-start-line="143" selection-start-column="91" selection-end-line="143" selection-end-column="91" />
           <folding>
-            <element signature="e#12109#13572#0#HTML" />
+            <element signature="e#5113#5303#0#HTML" />
+            <element signature="e#5324#7993#0#HTML" />
+            <element signature="e#10572#11915#0#HTML" />
+            <element signature="e#11929#13590#0#HTML" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MoviesAndMe/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="330" column="32" selection-start-line="330" selection-start-column="32" selection-end-line="330" selection-end-column="32" />
+        <state relative-caret-position="154">
+          <caret line="330" column="16" lean-forward="true" selection-start-line="330" selection-start-column="16" selection-end-line="330" selection-end-column="16" />
           <folding>
             <element signature="e#733#3461#0" />
             <element signature="e#3495#6878#0" />
@@ -1340,18 +1334,6 @@
             <element signature="e#10181#10400#0" />
             <element signature="e#10438#10989#0" />
             <element signature="e#11092#11657#0" />
-            <element signature="e#13072#16568#0" />
-            <element signature="e#16608#18238#0" />
-            <element signature="e#18275#19766#0" />
-            <element signature="e#19806#21129#0" />
-            <element signature="e#21166#22039#0" />
-            <element signature="e#22067#22957#0" />
-            <element signature="e#22996#24692#0" />
-            <element signature="e#24723#25612#0" />
-            <element signature="e#25654#27385#0" />
-            <element signature="e#27428#29103#0" />
-            <element signature="e#29138#35181#0" />
-            <element signature="e#37268#38820#0" />
           </folding>
         </state>
       </provider>

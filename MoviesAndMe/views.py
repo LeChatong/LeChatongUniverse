@@ -328,16 +328,18 @@ def details_movie(request, id):
     list_video = response_videos.json()
     L_VIDEOS = list_video['results']
     VIDEOS = []
-    for i in (0, len(L_VIDEOS)-1):
-        VIDEOS.append(
-            [
-                L_VIDEOS[i]['key'],
-                L_VIDEOS[i]['name'],
-                L_VIDEOS[i]['site'],
-                L_VIDEOS[i]['type'],
-                i
-            ]
-        )
+    if L_VIDEOS:
+        for i in range(0, len(L_VIDEOS)-1):
+            VIDEOS.append(
+                [
+                    L_VIDEOS[i]['key'],
+                    L_VIDEOS[i]['name'],
+                    L_VIDEOS[i]['site'],
+                    L_VIDEOS[i]['type'],
+                    i,
+                    L_VIDEOS[i]['size'],
+                ]
+            )
     context = {
         'id':                   movie['id'],
         'title':                movie['title'],
