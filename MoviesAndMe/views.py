@@ -525,7 +525,7 @@ def tvs_on_actor(request, id):
             character = elt['character']
         except TypeError:
             character = None
-        tv = tv_detail.objects.filter(id_tv=L_TVS_ACTOR['id']).exists();
+        tv = tv_detail.objects.filter(id_tv=elt['id']).exists();
         LIST_TVS_ACTOR.append(
             [
                 elt['id'],
@@ -927,7 +927,7 @@ def details_tv(request, id):
     L_COMMENTS = []
 
     try:
-        comments = Comment.objects.filter(id_movie=id, is_reply=False)
+        comments = Comment.objects.filter(id_tv=id, is_reply=False)
         if not comments.exists():
             L_COMMENTS = None
         else:
@@ -950,7 +950,23 @@ def details_tv(request, id):
     except KeyError:
         name_cookie = None
         email_cookie = None
-
+    response_videos = requests.get(
+        'https://api.themoviedb.org/3/tv/' + id + '/videos?api_key=' + settings.API_KEY_MOVIE + '&language=' + translation.get_language() + '')
+    list_video = response_videos.json()
+    L_VIDEOS = list_video['results']
+    VIDEOS = []
+    if L_VIDEOS:
+        for i in range(0, len(L_VIDEOS) - 1):
+            VIDEOS.append(
+                [
+                    L_VIDEOS[i]['key'],
+                    L_VIDEOS[i]['name'],
+                    L_VIDEOS[i]['site'],
+                    L_VIDEOS[i]['type'],
+                    i,
+                    L_VIDEOS[i]['size'],
+                ]
+            )
     context = {
         'id':                   tv['id'],
         'name':                 tv['name'],
@@ -967,6 +983,7 @@ def details_tv(request, id):
         'production_companies': tv['production_companies'],
         'list_actor':           LIST_ACTORS_CREDIT,
         'LIST_SIMILAR_TV':      LIST_SIMILAR_TV,
+        'VIDEOS':               VIDEOS,
         'COUNTEUR':             [1,2,3,4,5,6,7,8,9,10],
         'form':                 form,
         'comments':             L_COMMENTS,

@@ -95,6 +95,27 @@
                             {{ '...' }}
                         {% endif %}
                     </p>
+                    <div>
+                    <p>{% trans 'Bandes Annonce' %}</p>
+                    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+                        <div class="carousel-inner" role="listitem">
+                            {% for video in VIDEOS %}
+                                <div class="carousel-item {% if video.4 == 0 %}active{% endif %}">
+                                    <iframe class="d-block w-100" width="100%" height="350"
+                                            src="https://www.youtube.com/embed/{{ video.0 }}"></iframe>
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
                   </div>
                 </div>
                 <!-- /.card -->
