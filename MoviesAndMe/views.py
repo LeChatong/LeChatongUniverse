@@ -469,7 +469,10 @@ def movies_on_actor(request, id):
     for elt in L_MOVIES_ACTOR:
         try:
             try:
-                release_date = datetime.strptime(elt['release_date'], "%Y-%m-%d").date()
+                try:
+                    release_date = datetime.strptime(elt['release_date'], "%Y-%m-%d").date()
+                except KeyError:
+                    release_date = None
             except ValueError:
                 release_date = None
         except TypeError:
@@ -480,7 +483,7 @@ def movies_on_actor(request, id):
         except TypeError:
             character = None
 
-        if elt['id'] == None or elt['title'] == None or not elt['character'] or elt['release_date'] == None:
+        if elt['id'] == None or elt['title'] == None or not elt['character'] == None:
             pass
         movie_is_save = movie_detail.objects.filter(id_movie=elt['id']).exists();
         LIST_MOVIES_ACTOR.append(
@@ -515,7 +518,10 @@ def tvs_on_actor(request, id):
     for elt in L_TVS_ACTOR:
         try:
             try:
-                first_air_date = datetime.strptime(elt['first_air_date'], "%Y-%m-%d").date()
+                try:
+                    first_air_date = datetime.strptime(elt['first_air_date'], "%Y-%m-%d").date()
+                except KeyError:
+                    first_air_date = None
             except ValueError:
                 first_air_date = None
         except TypeError:
