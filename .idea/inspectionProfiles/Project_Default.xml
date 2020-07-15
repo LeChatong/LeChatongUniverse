@@ -5,6 +5,7 @@
       <option name="ignoredIdentifiers">
         <list>
           <option value="lcu.models.comment" />
+          <option value="django.forms.utils.ModelForm" />
         </list>
       </option>
     </inspection_tool>

@@ -10,7 +10,7 @@ urlpatterns = (
     url(r'^series/id/$', views.all_tv_episode),
     url(r'^search_movies/$', views.seach_movies),
     url(r'^search_series/$', views.seach_tvs),
-    url(r'^auth/$', views.authentification),
+    url(r'^authentification/$', views.authentification),
     url(r'^user_data', views.user_data, name='user_data'),
     url(r'^member/login$', views.login_member)
 )

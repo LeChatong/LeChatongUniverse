@@ -11,20 +11,50 @@ from django.utils.translation import ugettext_lazy as _
 
 from .forms import CommentForm
 from lcu.models import comment as Comment
-
+#from client import client
 
 from lcu.models import movie_detail, tv_detail
 
 language = settings.LANGUAGE_CODE
 # Create your views here.
 
+#bot = telebot.TeleBot('914995992:AAFPpnVKjnG6lFcmF5FUctkjN7HtKVQrugA')
+#client = TelegramClient('+237697548444', 1315849, 'e61ce3f911e5123e2cd8ec2b4e713935')
+#async def main():
+    # Now you can use all client methods listed below, like for example...
+#    await client.send_message('me', 'Hello to myself!')
+
+#with client:
+#    client.loop.run_until_complete(main())
 
 def change_language(request, lang):
     translation.activate(lang)
     print(translation.get_language())
     return redirect(home)
+#async def channel_message():
+#    loop = asyncio.new_event_loop()
+#    client = TelegramClient('+237697548444', 1315849, 'e61ce3f911e5123e2cd8ec2b4e713935', loop=loop)
+#    data = await client.download_file(file='https://t.me/lechatonguniverse/2034', input_location='D:\FFOutput')
+#    print(data[:16])
+    #try:
+    #    with client:
+    #        result = client(functions.upload.GetWebFileRequest(
+    #            location=types.InputWebFileLocation(
+    #                url='https://t.me/lechatonguniverse/2034',
+    #                access_hash=-12398745604826
+    #            ),
+    #            offset=42,
+    #            limit=100
+    #        ))
+    #        print(result.stringify())
+    #except:
+    #    None
+    #loop.close(
 
 def home(request):
+    #loop = asyncio.get_event_loop()
+    #loop.create_task(channel_message())
+    #print(client.get_me().stringify())
     # La liste des films les plus populaires
     response_top = requests.get('https://api.themoviedb.org/3/movie/popular?api_key='+settings.API_KEY_MOVIE+'&language='+translation.get_language()+'&page=1')
     list_movie_on_top = response_top.json()
@@ -90,6 +120,7 @@ def home(request):
                 tv
             ]
         )
+
 
     return render(request, 'index.html', locals())
 
