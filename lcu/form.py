@@ -37,12 +37,6 @@ class MovieForm(forms.Form):
         ('MEDIUM', _('MEDIUM')),
         ('LOW', _('LOW'))
     )
-    id_movie = forms.IntegerField(
-        label=_('id_movie'),
-        required=True,
-        widget=forms.NumberInput(
-            attrs={'class': 'form-control form-control-user', 'required': 'true', 'placeholder': _('id_movie')}, )
-    )
     link_download = forms.URLField(
         label=_('link_download'),
         required=True,

@@ -1,0 +1,46 @@
+{% extends 'dashboard/dashboard.html' %}
+{% load i18n %}
+{% load static %}
+{% block intitule_page %}{% trans 'search' %}{% endblock %}
+{% block content %}
+    <div class="container-fluid">
+        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h3 class="h6 mb-0 text-gray">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb dark-theme">
+                <li class="breadcrumb-item"><a class="text-dark" href="{% url 'dashboard' %}">{% trans 'dashboard' %}</a></li>
+                <li class="breadcrumb-item active" aria-current="page">{% trans 'search' %}</li>
+              </ol>
+            </nav>
+        </h3>
+        <!--<a href="{% url 'add_movie' %}" class="btn btn-sm btn-dark shadow-sm"><i class="fas fa-plus fa-sm text-white-50"></i>{% trans 'add_movie' %}</a>-->
+      </div>
+        <div class="row">
+                {% for result in RESULT_AFTER_SEARCH %}
+                    <div class="col-lg-1 col-xs-1 col-md-3 mb-1">
+                        <div class="card h-auto">
+                          <a href="{% if result.0 == 'movie' %}
+                                    {% url 'detail_movie' result.1 %}
+                                {% endif %}">
+                              {% if result.3 != None %}
+                                <img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{ result.3 }}" alt="{{ result.2 }}">
+                              {% else %}
+                                <img class="card-img-top" src="{% static 'not_image_disponible.svg.png' %}" alt="{{ result.2 }}"></a>
+                              {% endif %}
+                          </a>
+                          <div class="card-body">
+                            <h6 class="h6 card-title">
+                              <a class="text-dark" title="{{ result.2 }}" href="
+                                {% if result.0 == 'movie' %}
+                                    {% url 'detail_movie' result.1 %}
+                                {% endif %}">
+                                  {{ result.2 }}
+                              </a>
+                            </h6>
+                          </div>
+                        </div>
+                  </div>
+                {% endfor %}
+            </div>
+    </div>
+{% endblock %}

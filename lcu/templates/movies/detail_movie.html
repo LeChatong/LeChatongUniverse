@@ -1,0 +1,137 @@
+{% extends 'dashboard/dashboard.html' %}
+{% load i18n %}
+{% load static %}
+{% block intitule_page %}{{ title }}{% endblock %}
+{% block content %}
+    <div class="container-fluid">
+        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h3 class="h6 mb-0 text-gray">
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb dark-theme">
+                    <li class="breadcrumb-item"><a class="text-dark" href="{% url 'dashboard' %}">{% trans 'dashboard' %}</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">{{ title }}</li>
+                  </ol>
+                </nav>
+            </h3>
+        </div>
+        {% if message != None %}
+            <div class="alert alert-info alert-dismissible" role="alert">
+              <button type="button" class="close" data-dismiss="alert">
+                <span aria-hidden="true">×</span><span class="sr-only">Close</span>
+              </button>
+                <i>{{ message }}</i>
+            </div>
+        {% endif %}
+        <div class="row">
+            <div class="col-sm-4 col-md-2">
+                <img height="300" width="180" src="https://image.tmdb.org/t/p/w500{{ poster_path }}" alt="" class="img-rounded img-responsive" />
+            </div>
+            <div class="col-sm-6 col-md-8">
+                <h4>
+                    {{ title }}
+                </h4>
+                <small><cite title="{{ original_title }}">{{ original_title }} <i class="glyphicon glyphicon-map-marker">
+                </i></cite></small>
+                <p>{{ overview }}</p>
+                <p>
+                    <i class="fa fa-clock"></i>{% trans 'release_at' %}{{ release_date | date }}
+                </p>
+
+            </div>
+        </div>
+        <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <div class="row">
+                            <div class="col-md-10">
+                                <h6 class="m-0 font-weight-bold text-dark">{% trans 'link_on_movie' %}</h6>
+                            </div>
+                            <div class="col-md-2">
+                                <a href="#" data-toggle="modal" data-target="#addLinkModal" class="btn btn-sm btn-dark shadow-sm left">
+                                    <i class="fas fa-plus fa-sm text-white-50"></i>{% trans 'add_link' %}
+                                </a>
+                                <div class="modal fade" id="addLinkModal" tabindex="-1" role="dialog" aria-hidden="true">
+                                  <div class="modal-dialog modal-lg" role="document">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <h5 class="modal-title">{% trans 'add_link_on_movie' %}</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                          <span aria-hidden="true">&times;</span>
+                                        </button>
+                                      </div>
+                                      <div class="modal-body">
+                                          <form action="{% url 'save_movie' %}" method="post" class="form-horizontal" role="form">
+                                              {% csrf_token %}
+                                              <input type="hidden" name="id_movie" value="{{ id }}">
+                                              <div class="form-group">
+                                                <label class="" for="{{ form.link_download.id_for_label }}">{{ form.link_download.label }}</label>
+                                                {{ form.link_download }}
+                                              </div>
+                                              <div class="form-group">
+                                                    <label class="" for="{{ form.language.id_for_label }}">{{ form.language.label }}</label>
+                                                    {{ form.language }}
+                                              </div>
+                                              <div class="form-group">
+                                                    <label class="" for="{{ form.quality.id_for_label }}">{{ form.quality.label }}</label>
+                                                    {{ form.quality }}
+                                              </div>
+                                              <button type="submit" class="btn btn-primary btn-user btn-block">
+                                                  {% trans 'save' %}
+                                              </button>
+                                          </form>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        {% if list_link_movie %}
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                  <thead>
+                                    <tr>
+                                      <th>N°</th>
+                                      <th>{% trans 'title' %}</th>
+                                      <th>{% trans 'link_download' %}</th>
+                                      <th>{% trans 'language' %}</th>
+                                      <th>{% trans 'created_at' %}</th>
+                                      <th>{% trans 'created_by' %}</th>
+                                      <th>{% trans 'action' %}</th>
+                                    </tr>
+                                  </thead>
+                                  <tfoot>
+                                    <tr>
+                                      <th>N°</th>
+                                      <th>{% trans 'title' %}</th>
+                                      <th>{% trans 'link_download' %}</th>
+                                      <th>{% trans 'language' %}</th>
+                                      <th>{% trans 'created_at' %}</th>
+                                      <th>{% trans 'created_by' %}</th>
+                                      <th>{% trans 'action' %}</th>
+                                    </tr>
+                                  </tfoot>
+                                  <tbody>
+                                    {% for movie in list_link_movie %}
+                                      <tr>
+                                        <td>{{ movie.0 }}</td>
+                                        <td>{{movie.2}}</td>
+                                        <td>{{movie.3}}</td>
+                                        <td>{{movie.4}}</td>
+                                        <td>{{movie.5|date}}</td>
+                                        <td>{{ movie.6 }}</td>
+                                          <td>
+                                              <a href="#" class="btn btn-secondary">{% trans 'edit' %}</a>
+                                              <a href="#" class="btn btn-danger">{% trans 'delete' %}</a>
+                                          </td>
+                                      </tr>
+
+                                    {% endfor %}
+                                  </tbody>
+                                </table>
+                            </div>
+                        {% endif %}
+                    </div>
+              </div>
+    </div>
+{% endblock %}

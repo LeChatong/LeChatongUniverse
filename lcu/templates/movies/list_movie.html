@@ -55,7 +55,7 @@
                             {% for movie in all_movie %}
                               <tr>
                                 <td>{{ movie.0 }}</td>
-                                <td>{{movie.2}}</td>
+                                <td><a href="{% url 'edit_movie' movie.7 %}">{{movie.2}}</a></td>
                                 <td><a href="{{ movie.3 }}">{{movie.3}}</a> </td>
                                 <td>{{movie.4}}</td>
                                 <td>{{movie.5|date}}</td>
@@ -68,6 +68,6 @@
                     </div>
                 {% endif %}
             </div>
-          </div>
+      </div>
     </div>
 {% endblock %}

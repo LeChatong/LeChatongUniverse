@@ -1,8 +1,13 @@
+from datetime import datetime
+from django.views import View
+
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.urls import reverse
 from django.utils.translation import ugettext_lazy as _
 from django.utils import timezone
+from django.conf import settings
+from django.utils import translation
 import requests
 
 # Create your views here.
@@ -69,11 +74,83 @@ def init_all_movie():
                 elt.link_download,
                 elt.voice_language,
                 elt.created_at,
-                member.username
+                member.username,
+                elt.id
             ]
         )
     return list_movies
 
+def search(request):
+    search = request.POST['search']
+    response_search = requests.get(
+        'https://api.themoviedb.org/3/search/multi?api_key=' + settings.API_KEY_MOVIE + '&language=' + translation.get_language() + '&query=' + search + '&&include_adult=false')
+    list_elt_search = response_search.json()
+    RESULT_AFTER_SEARCH = []
+    for elt in list_elt_search['results']:
+        if elt['media_type'] == 'person':
+            pass
+        else:
+            title = ''
+            if elt['media_type'] == 'movie':
+                title = elt['title']
+            elif elt['media_type'] == 'tv':
+                title = elt['name']
+            RESULT_AFTER_SEARCH.append(
+                [
+                    elt['media_type'],
+                    elt['id'],
+                    title,
+                    elt['poster_path']
+                ]
+            )
+    context = {
+        'RESULT_AFTER_SEARCH': RESULT_AFTER_SEARCH,
+        'search': search,
+    }
+    return render(request, 'search/search.html', context)
+
+def detail_movie(request, id, message = None):
+    response_movie = requests.get(
+        'https://api.themoviedb.org/3/movie/' + id + '?api_key=' + settings.API_KEY_MOVIE + '&language=' + translation.get_language() + '')
+    movie = response_movie.json()
+
+    all_link_movie = Movie.objects.filter(id_movie=movie['id']).order_by('updated_at')
+    list_link_movie = []
+    counting = 0
+    for elt in all_link_movie:
+        counting = counting + 1
+        member = Member.objects.get(id=elt.member.id)
+        list_link_movie.append(
+            [
+                counting,
+                elt.id_movie,
+                elt.title_movie,
+                elt.link_download,
+                elt.voice_language,
+                elt.created_at,
+                member.username,
+                elt.id
+            ]
+        )
+    form = MovieForm()
+    context = {
+        'id'                : movie['id'],
+        'title'             : movie['title'],
+        'original_title'    : movie['original_title'],
+        'overview'          : movie['overview'],
+        'poster_path'       : movie['poster_path'],
+        'release_date'      : datetime.strptime(movie['release_date'], "%Y-%m-%d").date(),
+        'vote_average'      : movie['vote_average'],
+        'list_link_movie'   : list_link_movie,
+        'form'              : form,
+        'message'           : message
+    }
+    return render(request, 'movies/detail_movie.html', context)
+
+def detail_tv(request, id):
+    response_tv = requests.get(
+        'https://api.themoviedb.org/3/tv/' + id + '?api_key=' + settings.API_KEY_MOVIE + '&language=' + translation.get_language() + '')
+    tv = response_tv.json()
 
 def list_movie(request):
     list_movies = init_all_movie()
@@ -84,6 +161,36 @@ def list_movie(request):
 
 def add_movie(request):
     form = MovieForm()
+    return render(request, 'movies/edit_movie.html', locals())
+
+def modify_movie(request, id):
+    movie = Movie.objects.get(id=id)
+
+
+    LANGUAGE = ''
+    QUALITY = ''
+    if movie.voice_language == 'FR' and movie.subtitle == 'N' and movie.subtitle_language == 'N/A':
+        LANGUAGE = 'VF'
+    elif movie.voice_language == 'JP' and movie.subtitle == 'Y' and movie.subtitle_language == 'FR':
+        LANGUAGE = 'VOSTFRJA'
+    elif movie.voice_language == 'EN' and movie.subtitle == 'Y' and movie.subtitle_language == 'FR':
+        LANGUAGE = 'VOSTFREN'
+
+    if movie.quality_audio == 'GD' and movie.quality_video == 'GD':
+        QUALITY = 'HIGH'
+    elif movie.quality_audio == 'PASS' and movie.quality_video == 'PASS':
+        QUALITY = 'MEDIUM'
+    elif movie.quality_audio == 'BAD' and movie.quality_video == 'BAD':
+        QUALITY = 'LOW'
+
+    data = {
+       'link_download' : movie.link_download,
+        'id_movie': movie.id_movie,
+        'quality' : QUALITY,
+        'language': LANGUAGE
+    }
+    form = MovieForm(data)
+
     return render(request, 'movies/edit_movie.html', locals())
 
 def save_movie(request):
@@ -131,14 +238,8 @@ def save_movie(request):
                     movie.quality_audio = 'BAD'
                     movie.quality_video = 'BAD'
                 movie.save()
-                list_movies = init_all_movie()
-                success_message = _('movie_save_with_success')
-                context = {
-                    'all_movie': list_movies,
-                    'success_message': success_message
-                }
-                return render(request, 'movies/list_movie.html', context)
+                message_success = _('link_save_with_success')
+                return redirect(detail_movie,id=id_movie)
             except:
-                redirect(add_movie)
-        form = MovieForm()
-        return render(request, 'movies/edit_movie.html', locals())
+                redirect(detail_movie, id = request.POST['id_movie'])
+    return render(request, 'movies/list_movie.html')
