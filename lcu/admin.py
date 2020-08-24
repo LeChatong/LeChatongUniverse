@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib import admin
-from .models import movie_detail, tv_detail, member
+from .models import movie_detail, tv_detail, member, comment
 import requests
 from django.core import serializers
 from django.http import HttpResponse
@@ -66,6 +66,9 @@ class tv_detailAdmin(admin.ModelAdmin):
         obj.title_tv = tv['name']+' saison '+str(obj.nb_season)+' épisode '+str(obj.nb_episode)
         super().save_model(request, obj, form, change)
 
+class commentAdmin(admin.ModelAdmin):
+    list_per_page = 30
+
 def export_as_json(ModelAdmin, request, queryset):
     response = HttpResponse(content_type="application/json")
     serializers.serialize("json", queryset, stream=response)
@@ -74,4 +77,5 @@ def export_as_json(ModelAdmin, request, queryset):
 admin.site.register(member, memberAdmin)
 admin.site.register(movie_detail, movie_detailAdmin)
 admin.site.register(tv_detail, tv_detailAdmin)
+admin.site.register(comment, commentAdmin)
 admin.site.add_action(export_as_json)

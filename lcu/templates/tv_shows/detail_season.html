@@ -1,0 +1,80 @@
+{% extends 'dashboard/dashboard.html' %}
+{% load i18n %}
+{% load static %}
+{% block intitule_page %}{{ name }}{% endblock %}
+{% block content %}
+    <div class="container-fluid">
+        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h3 class="h6 mb-0 text-gray">
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb dark-theme">
+                    <li class="breadcrumb-item"><a class="text-dark" href="{% url 'dashboard' %}">{% trans 'dashboard' %}</a></li>
+                      <li class="breadcrumb-item"><a class="text-dark" href="{% url 'detail_tv' id %}">{{ name_tv }}</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">{{ name_season }}</li>
+                  </ol>
+                </nav>
+            </h3>
+        </div>
+        <div class="row">
+            <div class="col-sm-4 col-md-2">
+                <img height="300" width="180" src="https://image.tmdb.org/t/p/w500{{ poster_path }}" alt="" class="img-rounded img-responsive" />
+            </div>
+            <div class="col-sm-6 col-md-8">
+                <h4>
+                    {{ name_tv }}
+                </h4>
+                <small><cite title="{{ name_season }}">{{ name_season }} <i class="glyphicon glyphicon-map-marker">
+                </i></cite></small>
+                <p>{{ overview }}</p>
+                <p>
+                    <i class="fa fa-clock"></i>{% trans 'release_at' %}{{ air_date | date }}
+                </p>
+                <div>
+                    <a href="{% url 'add_tv_link' id season_number %}" class="btn btn-sm btn-dark shadow-sm left">
+                        <i class="fas fa-plus fa-sm text-white-50"></i>{% trans 'add_link' %}
+                    </a>
+                </div>
+                <hr/>
+                <div>
+                    {% for eps in EPISODES %}
+                        <div>
+                            <h5>{{ eps.1 }}</h5>
+                            <hr/>
+                        <div class="table-responsive">
+                        {% if eps.6 %}
+                            <table class="table" id="" width="100%" cellspacing="0">
+                              <thead>
+                                <tr>
+                                  <th>{% trans 'link_download' %}</th>
+                                  <th>{% trans 'language' %}</th>
+                                  <th>{% trans 'created_at' %}</th>
+                                  <th>{% trans 'created_by' %}</th>
+                                  <th>{% trans 'action' %}</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                              {% for link in eps.6 %}
+                                  <tr>
+                                      <td>{{ link.2 }}</td>
+                                      <td>{{ link.1 }}</td>
+                                      <td>{{ link.8 }}</td>
+                                      <td>{{ link.7 }}</td>
+                                      <td>
+                                          <a class="btn btn-info" href="{% url 'edit_tv_link' link.9 link.10 link.0 %}">{% trans 'edit' %}</a>
+                                      </td>
+                                  </tr>
+                              {% endfor %}
+                              </tbody>
+                            </table>
+                        {% else %}
+                        {% endif %}
+
+
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

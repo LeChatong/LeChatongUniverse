@@ -10,11 +10,11 @@
               <ol class="breadcrumb dark-theme">
                 <li class="breadcrumb-item"><a class="text-dark" href="{% url 'dashboard' %}">{% trans 'dashboard' %}</a></li>
                 <li class="breadcrumb-item"><a class="text-dark" href="{% url 'list_movie' %}">{% trans 'all_movies' %}</a></li>
-                <li class="breadcrumb-item active" aria-current="page">{% trans 'add_movie' %}</li>
+                <li class="breadcrumb-item active" aria-current="page">{% trans 'add_link_movie' %}</li>
               </ol>
             </nav>
         </h3>
-        <!--<a href="#" class="btn btn-sm btn-dark shadow-sm"><i class="fas fa-plus fa-sm text-white-50"></i>{% trans 'add_movie' %}</a>-->
+
       </div>
     <div class="card shadow mb-4">
         <div class="card-header py-3">
@@ -23,10 +23,8 @@
         <div class="card-body">
             <form class="user" method="post" action="{% url 'save_movie' %}">
                   {% csrf_token %}
-                <div class="form-group">
-                    <label class="" for="{{ form.id_movie.id_for_label }}">{{ form.id_movie.label }}</label>
-                    {{ form.id_movie }}
-                </div>
+                <input type="hidden" name="id_movie" value="{{ id_movie }}">
+
                 <div class="form-group">
                     <label class="" for="{{ form.link_download.id_for_label }}">{{ form.link_download.label }}</label>
                     {{ form.link_download }}

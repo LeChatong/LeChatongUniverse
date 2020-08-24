@@ -57,3 +57,48 @@ class MovieForm(forms.Form):
         widget=forms.Select(
             attrs={'class': 'form-control form-control-user', 'required': 'true', 'placeholder': _('quality')}, )
     )
+
+class TvForm(forms.Form):
+    LANGUAGE = (
+        ('VF', 'VF'),
+        ('VOSTFRJA', 'VOSTFR - JA'),
+        ('VOSTFREN', 'VOSTFR - EN')
+    )
+    QUALITY = (
+        ('HIGH', _('HIGH')),
+        ('MEDIUM', _('MEDIUM')),
+        ('LOW', _('LOW'))
+    )
+    number_episode = forms.IntegerField(
+        label=_('number_episode'),
+        required=True,
+        widget=forms.NumberInput(
+            attrs={'class': 'form-control form-control-user', 'required': 'true', 'placeholder': _('number_episode')}, )
+    )
+    link_download = forms.URLField(
+        label=_('link_download'),
+        required=True,
+        widget=forms.TextInput(
+            attrs={'class': 'form-control form-control-user', 'required': 'true', 'placeholder': _('link_download')}, )
+    )
+    language = forms.ChoiceField(
+        choices=LANGUAGE,
+        label=_('language'),
+        required=True,
+        widget=forms.Select(
+            attrs={'class': 'form-control form-control-user', 'required': 'true', 'placeholder': _('language')}, )
+    )
+    quality = forms.ChoiceField(
+        choices=QUALITY,
+        label=_('quality'),
+        required=True,
+        widget=forms.Select(
+            attrs={'class': 'form-control form-control-user', 'required': 'true', 'placeholder': _('quality')}, )
+    )
+
+class TvError(ErrorList):
+    def __str__(self):
+        return self.as_divs()
+    def as_divs(self):
+        if not self: return ''
+        return '<div class="error text-danger">%s</div>' % ''.join(['<p class="small error">%s</p>' % e for e in self])

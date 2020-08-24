@@ -33,6 +33,7 @@ def home(request):
     RESULT_ON_TOP = list_movie_on_top['results']
     TOP_MOVIES_4 = []
 
+    list_movie_new_add = movie_detail.objects.all().order_by('created_at')
     # La liste des tendances Hebdomadaires
     response_top_rated = requests.get('https://api.themoviedb.org/3/trending/movie/week?api_key='+settings.API_KEY_MOVIE+'&language='+translation.get_language()+'&page=1')
 
@@ -64,17 +65,22 @@ def home(request):
             )
 
     for i in (0,1,2,3,4,5):
-        movie = movie_detail.objects.filter(id_movie=RESULT_TOP_RATED[i]['id']).exists();
+        link_movie = list_movie_new_add.get(i)
+        response_movie = requests.get(
+            'https://api.themoviedb.org/3/movie/' + link_movie.id_movie + '?api_key=' + settings.API_KEY_MOVIE + '&language=' + translation.get_language() + '')
+        movie = response_movie.json()
+        #movie = movie_detail.objects.filter(id_movie=RESULT_TOP_RATED[i]['id']).exists();
         TOP_MOVIES_6.append(
             [
-                RESULT_TOP_RATED[i]['id'],
-                RESULT_TOP_RATED[i]['title'],
-                RESULT_TOP_RATED[i]['overview'],
-                RESULT_TOP_RATED[i]['poster_path'],
-                RESULT_TOP_RATED[i]['backdrop_path'],
+                movie['id'],
+                movie[i]['title'],
+                movie['overview'],
+                movie['poster_path'],
+                movie['backdrop_path'],
                 datetime.strptime(RESULT_TOP_RATED[i]['release_date'], "%Y-%m-%d").date(),
-                RESULT_TOP_RATED[i]['vote_average'],
-                movie
+                movie['vote_average'],
+                movie,
+                link_movie.voice_language
             ]
         )
 

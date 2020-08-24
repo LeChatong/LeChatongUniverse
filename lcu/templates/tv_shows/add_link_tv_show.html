@@ -1,0 +1,78 @@
+{% extends 'dashboard/dashboard.html' %}
+{% load i18n %}
+{% load static %}
+{% block intitule_page %}{% trans 'add_link_tv_show' %}{% endblock %}
+{% block content %}
+    <div class="container-fluid">
+        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h3 class="h6 mb-0 text-gray">
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb dark-theme">
+                    <li class="breadcrumb-item"><a class="text-dark" href="{% url 'dashboard' %}">{% trans 'dashboard' %}</a></li>
+                    <li class="breadcrumb-item"><a class="text-dark" href="{% url 'detail_tv' id_tv %}">{{ name_tv }}</a></li>
+                    <li class="breadcrumb-item"><a class="text-dark" href="{% url 'detail_season' id_tv number_season %}">{{ name_season }}</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">{% trans 'add_link_tv_show' %}</li>
+                  </ol>
+                </nav>
+            </h3>
+        </div>
+        {% if message != None %}
+            {% if message == 'success' %}
+                <div class="alert alert-success alert-dismissible" role="alert">
+                  <button type="button" class="close" data-dismiss="alert">
+                    <span aria-hidden="true">×</span><span class="sr-only">Close</span>
+                  </button>
+                  <i>{% trans 'link_save_with_succes' %}</i>
+                </div>
+            {% elif message == 'error' %}
+                <div class="alert alert-danger alert-dismissible" role="alert">
+                  <button type="button" class="close" data-dismiss="alert">
+                    <span aria-hidden="true">×</span><span class="sr-only">Close</span>
+                  </button>
+                  <i>{% trans 'error_occured' %}</i>
+                </div>
+            {% elif message == 'delete' %}
+                <div class="alert alert-info alert-dismissible" role="alert">
+                  <button type="button" class="close" data-dismiss="alert">
+                    <span aria-hidden="true">×</span><span class="sr-only">Close</span>
+                  </button>
+                  <i>{% trans 'link_delete_with_success' %}</i>
+                </div>
+            {% endif %}
+        {% endif %}
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-dark">{% trans 'add_tv_link' %}</h6>
+                </div>
+            <div class="card-body">
+                <form class="user" method="post" action="{% url 'save_link_tv' %}">
+                      {% csrf_token %}
+                    {% if id != None %}
+                           <input type="hidden" name="id" value="{{ id }}">
+                    {% endif %}
+                    <input type="hidden" name="id_tv" value="{{ id_tv }}">
+                    <input type="hidden" name="number_season" value="{{ number_season }}">
+                    <div class="form-group">
+                        <label class="" for="{{ form.number_episode.id_for_label }}">{{ form.number_episode.label }}</label>
+                        {{ form.number_episode }}
+                    </div>
+                    <div class="form-group">
+                        <label class="" for="{{ form.link_download.id_for_label }}">{{ form.link_download.label }}</label>
+                        {{ form.link_download }}
+                    </div>
+                    <div class="form-group">
+                        <label class="" for="{{ form.language.id_for_label }}">{{ form.language.label }}</label>
+                        {{ form.language }}
+                    </div>
+                    <div class="form-group">
+                        <label class="" for="{{ form.quality.id_for_label }}">{{ form.quality.label }}</label>
+                        {{ form.quality }}
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-user btn-block">
+                      {% trans 'save' %}
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
