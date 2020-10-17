@@ -79,7 +79,7 @@ def home(request):
                     movie['overview'],
                     movie['poster_path'],
                     movie['backdrop_path'],
-                    datetime.strptime(RESULT_TOP_RATED[i]['release_date'], "%Y-%m-%d").date(),
+                    datetime.strptime(movie[i]['release_date'], "%Y-%m-%d").date(),
                     movie['vote_average'],
                     movie,
                     link_movie.voice_language
