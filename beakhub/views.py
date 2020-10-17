@@ -64,7 +64,7 @@ def account_login(request):
             password_crypt = None
         password = password_crypt
 
-    data = BhAccount.objects.filter(username=username, password=password)
+    data = BhAccount.objects.get(username=username, password=password)
     serializer = AccountSerializer(data, many=True)
     return Response(serializer.data, status=status.HTTP_200_OK)
 
