@@ -32,8 +32,7 @@ else:
 ALLOWED_HOSTS = [
         'lechatonguniverse.herokuapp.com',
         'lechatonguniverse.com',
-        '127.0.0.1',
-        '172.16.145.118'
+        '127.0.0.1'
 ]
 # Application definition
 
@@ -49,6 +48,7 @@ INSTALLED_APPS = [
     'MoviesAndMe.apps.MoviesandmeConfig',
     'LeChApi.apps.LechapiConfig',
     'lcu.apps.LcuConfig',
+    'beakhub.apps.BeakhubConfig'
 ]
 
 MIDDLEWARE = [
@@ -115,20 +115,20 @@ DATABASES = {
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
 
-AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.authentification.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.authentification.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.authentification.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.authentification.password_validation.NumericPasswordValidator',
-    },
-]
+#AUTH_PASSWORD_VALIDATORS = [
+#    {
+#        'NAME': 'django.contrib.authentification.password_validation.UserAttributeSimilarityValidator',
+#    },
+#    {
+#        'NAME': 'django.contrib.authentification.password_validation.MinimumLengthValidator',
+#    },
+#    {
+#        'NAME': 'django.contrib.authentification.password_validation.CommonPasswordValidator',
+#    },
+#    {
+#        'NAME': 'django.contrib.authentification.password_validation.NumericPasswordValidator',
+#    },
+#]
 
 #TELEGRAM_API_ID = 1315849
 

@@ -64,25 +64,27 @@ def home(request):
                 ]
             )
 
-    for i in (0,1,2,3,4,5):
-        link_movie = list_movie_new_add.get(i)
-        response_movie = requests.get(
-            'https://api.themoviedb.org/3/movie/' + link_movie.id_movie + '?api_key=' + settings.API_KEY_MOVIE + '&language=' + translation.get_language() + '')
-        movie = response_movie.json()
-        #movie = movie_detail.objects.filter(id_movie=RESULT_TOP_RATED[i]['id']).exists();
-        TOP_MOVIES_6.append(
-            [
-                movie['id'],
-                movie[i]['title'],
-                movie['overview'],
-                movie['poster_path'],
-                movie['backdrop_path'],
-                datetime.strptime(RESULT_TOP_RATED[i]['release_date'], "%Y-%m-%d").date(),
-                movie['vote_average'],
-                movie,
-                link_movie.voice_language
-            ]
-        )
+    if len(list_movie_new_add) != 0:
+        i = 0
+        for link_movie in list_movie_new_add:
+            i = i + 1
+            response_movie = requests.get(
+                'https://api.themoviedb.org/3/movie/' + str(link_movie.id_movie) + '?api_key=' + settings.API_KEY_MOVIE + '&language=' + translation.get_language() + '')
+            movie = response_movie.json()
+            #movie = movie_detail.objects.filter(id_movie=RESULT_TOP_RATED[i]['id']).exists();
+            TOP_MOVIES_6.append(
+                [
+                    movie['id'],
+                    movie['title'],
+                    movie['overview'],
+                    movie['poster_path'],
+                    movie['backdrop_path'],
+                    datetime.strptime(RESULT_TOP_RATED[i]['release_date'], "%Y-%m-%d").date(),
+                    movie['vote_average'],
+                    movie,
+                    link_movie.voice_language
+                ]
+            )
 
     for i in (0,1,2,3,4,5):
         tv = tv_detail.objects.filter(id_tv=RESULT_TOP_TV[i]['id']).exists();

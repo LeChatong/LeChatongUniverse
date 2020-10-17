@@ -9,11 +9,10 @@
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb dark-theme">
                 <li class="breadcrumb-item"><a class="text-dark" href="{% url 'dashboard' %}">{% trans 'dashboard' %}</a></li>
-                <li class="breadcrumb-item active" aria-current="page">{% trans 'all_movies' %}</li>
+                <li class="breadcrumb-item active" aria-current="page">{% trans 'all_link_movies' %}</li>
               </ol>
             </nav>
         </h3>
-        <a href="{% url 'add_movie' %}" class="btn btn-sm btn-dark shadow-sm"><i class="fas fa-plus fa-sm text-white-50"></i>{% trans 'add_movie' %}</a>
       </div>
     {% if success_message %}
         <div class="alert alert-info alert-dismissible" role="alert">
@@ -25,7 +24,7 @@
     {% endif %}
       <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-dark">{% trans 'all_movie' %}</h6>
+              <h6 class="m-0 font-weight-bold text-dark">{% trans 'all_link_movies' %}</h6>
             </div>
             <div class="card-body">
                 {% if all_movie %}

@@ -403,7 +403,7 @@ def add_link_movie(request, id_movie=None):
         'id_movie'  : id_movie,
         'form'      : form
     }
-    return render(request, 'movies/edit_movie.html', context)
+    return render(request, 'movies/add_link_movie.html', context)
 
 def modify_movie(request, id):
     movie = Movie.objects.get(id=id)
@@ -483,8 +483,8 @@ def save_movie(request):
                 #message_success = _('link_save_with_success')
                 return redirect(detail_movie,id=id_movie, message = 'success')
             except:
-                redirect(detail_movie, id = request.POST['id_movie'])
-    return render(request, 'movies/list_movie.html')
+                redirect(detail_movie, id = request.POST['id_movie'], message = 'error')
+    return redirect(detail_movie,id=request.POST['id_movie'])
 
 def delete_link_movie(request):
     if request.method == "POST":

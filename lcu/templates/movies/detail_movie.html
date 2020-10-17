@@ -39,16 +39,16 @@
             {% endif %}
         {% endif %}
         <div class="row">
-            <div class="col-sm-4 col-md-2">
+            <div class="col-sm-3 col-md-3">
                 <img height="300" width="180" src="https://image.tmdb.org/t/p/w500{{ poster_path }}" alt="" class="img-rounded img-responsive" />
             </div>
-            <div class="col-sm-6 col-md-8">
+            <div class="col-sm-7 col-md-9">
                 <h4>
                     {{ title }}
                 </h4>
                 <small><cite title="{{ original_title }}">{{ original_title }} <i class="glyphicon glyphicon-map-marker">
                 </i></cite></small>
-                <p>{{ overview }}</p>
+                <div class="text-justify">{{ overview }}</div>
                 <p>
                     <i class="fa fa-clock"></i>{% trans 'release_at' %}{{ release_date | date }}
                 </p>

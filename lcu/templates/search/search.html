@@ -16,7 +16,7 @@
       </div>
         <div class="row">
                 {% for result in RESULT_AFTER_SEARCH %}
-                    <div class="col-lg-1 col-xs-1 col-md-3 mb-1">
+                    <div class="col-lg-3 col-xs-1 col-md-3 mb-1">
                         <div class="card h-auto">
                           <a href="{% if result.0 == 'movie' %}
                                         {% url 'detail_movie' result.1 %}
@@ -31,13 +31,13 @@
                           </a>
                           <div class="card-body">
                             <h6 class="h6 card-title">
-                              <a class="text-dark" title="{{ result.2 }}" href="
+                              <a class="text-dark " title="{{ result.2 }}" href="
                                 {% if result.0 == 'movie' %}
                                     {% url 'detail_movie' result.1 %}
                                 {% elif result.0 == 'tv' %}
                                     {% url 'detail_tv' result.1 %}
                                 {% endif %}">
-                                  {{ result.2 }}
+                                  {{ result.2 }}<div><i>{{ result.0 }}</i></div>
                               </a>
                             </h6>
                           </div>
