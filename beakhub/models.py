@@ -21,7 +21,7 @@ class BhUser(models.Model):
     email = models.EmailField(max_length=100, null=True)
     whatsapp_phone = models.CharField(max_length=25, null=True)
     phone_number = models.CharField(max_length=25)
-    profile_picture = models.URLField(null=True)
+    profile_picture = models.ImageField(upload_to="photo_user/",null=True)
     date_of_birth = models.DateField(max_length=250, null=True)
     account = models.OneToOneField(BhAccount, on_delete=models.CASCADE, primary_key=True)
     created_at = models.DateTimeField(auto_now_add=True)

@@ -64,7 +64,7 @@ def account_login(request):
             password_crypt = None
         password = password_crypt
 
-    data = BhAccount.objects.get(username=username, password=password)
+    data = BhAccount.objects.filter(username=username, password=password)
     serializer = AccountSerializer(data, many=True)
     return Response(serializer.data, status=status.HTTP_200_OK)
 
@@ -75,6 +75,11 @@ def user_list(request):
         serializer = UserSerializer(users, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
     elif request.method == 'POST':
+        try:
+            IMG = request.FILES['profile_picture']
+        except MultiValueDictKeyError:
+            IMG = None
+        request.data.profile_picture = IMG
         serializer = UserSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
@@ -96,6 +101,11 @@ def user_details(request, id):
             return Response(serializer.errors, status=status.HTTP_204_NO_CONTENT)
 
     elif request.method == 'PUT':
+        try:
+            IMG = request.FILES['profile_picture']
+        except MultiValueDictKeyError:
+            IMG = None
+        user.profile_picture = IMG
         serializer = UserSerializer(user, data=request.data)
         if serializer.is_valid():
             serializer.save()
