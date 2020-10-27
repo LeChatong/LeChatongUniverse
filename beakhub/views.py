@@ -75,11 +75,6 @@ def user_list(request):
         serializer = UserSerializer(users, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
     elif request.method == 'POST':
-        try:
-            IMG = request.FILES['profile_picture']
-        except MultiValueDictKeyError:
-            IMG = None
-        request.data.profile_picture = IMG
         serializer = UserSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
