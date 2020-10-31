@@ -13,13 +13,19 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls import url
 from django.contrib.auth.models import User
 from rest_framework import  routers, serializers, viewsets
+from win32com.server.localserver import serve
+
 from MoviesAndMe import views
 from django.conf.urls.i18n import i18n_patterns
+
+from OnlyMe import settings
+
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
@@ -44,5 +50,5 @@ urlpatterns = i18n_patterns(
     url(r'^lechatongram/', include('lcu.urls')),
     url(r'^api-authentification/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^i18n/', include('django.conf.urls.i18n')),
-    url(r'^$', views.home),
-)
+    url(r'^$', views.home)
+)+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
