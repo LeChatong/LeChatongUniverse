@@ -65,6 +65,10 @@ class BhAddress(models.Model):
     website = models.URLField(max_length=150, null=True)
     phone_number_1 = models.CharField(max_length=150)
     phone_number_2 = models.CharField(max_length=150, null=True)
+    job = models.ForeignKey(BhJob, on_delete=models.CASCADE)
+    is_active = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now_add=True)
     class Meta:
         verbose_name = 'Address'
         verbose_name_plural = 'Address'

@@ -192,3 +192,47 @@ def jobs_by_user(request, user_id):
     jobs = BhJob.objects.filter(user_id = user_id)
     serializer = JobSerializer(jobs, many=True)
     return Response(serializer.data, status=status.HTTP_200_OK)
+
+@api_view(['GET', 'POST'],)
+def address_list(request):
+    if request.method == 'GET':
+        address = BhAddress.objects.all()
+        serializer = AddressSerializer(address, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+    elif request.method == 'POST':
+        serializer = AddressSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(['PUT','DELETE', 'GET'],)
+def address_details(request, id):
+    try:
+        address = BhAddress.objects.get(pk=id)
+    except BhAddress.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+    if request.method == 'GET':
+        serializer = AddressSerializer(address)
+        if serializer.data != None:
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        else:
+            return Response(serializer.errors, status=status.HTTP_204_NO_CONTENT)
+
+    elif request.method == 'PUT':
+        serializer = AddressSerializer(address, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    elif request.method == 'DELETE':
+        address.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+@api_view(['GET'],)
+def address_by_job(request, job_id):
+    address = BhAddress.objects.filter(job_id = job_id)
+    serializer = AddressSerializer(address, many=True)
+    return Response(serializer.data, status=status.HTTP_200_OK)
