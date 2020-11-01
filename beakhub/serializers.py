@@ -20,13 +20,21 @@ class CategorySerializer(serializers.ModelSerializer):
 
 class JobSerializer(serializers.ModelSerializer):
     category = serializers.StringRelatedField()
+    user = serializers.StringRelatedField()
     class Meta:
         model = BhJob
-        fields = ['id', 'title', 'description', 'is_active', 'created_at', 'updated_at', 'category']
+        fields = ['id', 'title', 'description', 'is_active', 'created_at', 'updated_at', 'user', 'user_id', 'category', 'category_id']
+    def create(self, validated_data):
+        validated_data['category'] = BhCategory.objects.get(id=self.context['request'].data['category_id'])
+        validated_data['user'] = BhUser.objects.get(account_id=self.context['request'].data['user_id'])
+        return super(JobSerializer, self).create(validated_data)
 
 class AddressSerializer(serializers.ModelSerializer):
     job = serializers.StringRelatedField()
     class Meta:
         model = BhAddress
         fields = ['id', 'title', 'country', 'town', 'street', 'website', 'phone_number_1',
-                  'phone_number_2', 'job']
+                  'phone_number_2', 'job', 'job_id']
+    def create(self, validated_data):
+        validated_data['job'] = BhJob.objects.get(id=self.context['request'].data['job_id'])
+        return super(AddressSerializer, self).create(validated_data)

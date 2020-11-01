@@ -156,7 +156,7 @@ def job_list(request):
         serializer = JobSerializer(jobs, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
     elif request.method == 'POST':
-        serializer = JobSerializer(data=request.data)
+        serializer = JobSerializer(data=request.data, context={'request': request})
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
@@ -200,7 +200,8 @@ def address_list(request):
         serializer = AddressSerializer(address, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
     elif request.method == 'POST':
-        serializer = AddressSerializer(data=request.data)
+        print(request.data)
+        serializer = AddressSerializer(data=request.data, context={'request': request})
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
