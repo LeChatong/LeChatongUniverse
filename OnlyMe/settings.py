@@ -34,6 +34,11 @@ ALLOWED_HOSTS = [
         'lechatonguniverse.com',
         '127.0.0.1'
 ]
+
+if os.environ.get('ENV') == 'PRODUCTION':
+    SITE_URL = 'https://lechatonguniverse.herokuapp.com'
+else:
+    SITE_URL = 'http://127.0.0.1:8000'
 # Application definition
 
 INSTALLED_APPS = [

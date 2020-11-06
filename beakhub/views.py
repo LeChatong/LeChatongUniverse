@@ -156,6 +156,7 @@ def job_list(request):
         serializer = JobSerializer(jobs, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
     elif request.method == 'POST':
+        print(request.data)
         serializer = JobSerializer(data=request.data, context={'request': request})
         if serializer.is_valid():
             serializer.save()

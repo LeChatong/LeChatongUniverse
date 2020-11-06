@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from beakhub.models import BhAccount, BhUser, BhCategory, BhJob, BhAddress
+from django.conf import settings
 
 
 class AccountSerializer(serializers.ModelSerializer):
@@ -8,10 +9,15 @@ class AccountSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class UserSerializer(serializers.ModelSerializer):
+    url_picture = serializers.SerializerMethodField()
+
+    def get_url_picture(self, instance):
+        # returning image url if there is an image else blank string
+        return settings.SITE_URL+instance.profile_picture.url if instance.profile_picture else ''
     class Meta:
         model = BhUser
         fields = ['account', 'first_name', 'last_name', 'email', 'whatsapp_phone', 'phone_number',
-                  'profile_picture','created_at', 'updated_at']
+                  'url_picture','created_at', 'updated_at']
 
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
