@@ -10,14 +10,14 @@ class AccountSerializer(serializers.ModelSerializer):
 
 class UserSerializer(serializers.ModelSerializer):
     url_picture = serializers.SerializerMethodField()
-
+    account = AccountSerializer()
     def get_url_picture(self, instance):
         # returning image url if there is an image else blank string
         return settings.SITE_URL+instance.profile_picture.url if instance.profile_picture else ''
     class Meta:
         model = BhUser
-        fields = ['account', 'first_name', 'last_name', 'email', 'whatsapp_phone', 'phone_number',
-                  'url_picture','created_at', 'updated_at']
+        fields = ['account_id', 'first_name', 'last_name', 'email', 'whatsapp_phone', 'phone_number',
+                  'url_picture', 'account','created_at', 'updated_at']
 
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
