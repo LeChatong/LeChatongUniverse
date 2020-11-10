@@ -29,7 +29,7 @@ def account_list(request):
         if serializer.is_valid():
             serializer.save()
             return Response(get_api_response(status.HTTP_201_CREATED, "Account create with success !", serializer.data))
-        return Response(get_api_response(status.HTTP_400_BAD_REQUEST, "Error Encoured", serializer.errors))
+        return Response(get_api_response(status.HTTP_208_ALREADY_REPORTED, "Error Encoured", serializer.errors))
 
 @api_view(['PUT','DELETE', 'GET'],)
 def account_details(request, id):
@@ -76,13 +76,14 @@ def account_login(request):
         password = password_crypt
 
     data = BhAccount.objects.filter(username=username, password=password)
-    if data != None:
+    print(data)
+    try:
         data[0].last_login = datetime.now()
         print(data[0])
         data[0].save()
         serializer = AccountSerializer(data, many=True)
         return Response(get_api_response(status.HTTP_200_OK, None, serializer.data))
-    else:
+    except IndexError:
         return Response(get_api_response(status.HTTP_404_NOT_FOUND, "Username or password incorrect", None))
 
 @api_view(['GET', 'POST'],)
@@ -96,7 +97,7 @@ def user_list(request):
         if serializer.is_valid():
             serializer.save()
             return Response(get_api_response(status.HTTP_201_CREATED, "User create with success", serializer.data))
-        return Response(get_api_response(status.HTTP_400_BAD_REQUEST, "Error Encoured", serializer.data))
+        return Response(get_api_response(status.HTTP_400_BAD_REQUEST, "Error Encoured", serializer.errors))
 
 @api_view(['PUT','DELETE', 'GET'],)
 def user_details(request, id):
