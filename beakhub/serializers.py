@@ -44,3 +44,16 @@ class AddressSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         validated_data['job'] = BhJob.objects.get(id=self.context['request'].data['job_id'])
         return super(AddressSerializer, self).create(validated_data)
+
+
+class APIResponse:
+    def __init__(self, MESSAGE, DATA, CODE, ERRORS):
+        self.MESSAGE = MESSAGE
+        self.DATA = DATA
+        self.CODE = CODE
+        self.ERRORS = ERRORS
+
+class APIResponseSerialiser(serializers.Serializer):
+    MESSAGE = serializers.CharField()
+    DATA    = serializers.JSONField()
+    CODE    = serializers.IntegerField()
