@@ -18,7 +18,7 @@ def get_api_response(code, message, data):
     serializerAPI = APIResponseSerialiser(APIResponse)
     return serializerAPI.data
 
-@api_view(['GET','POST'],)
+@api_view(['GET','POST', 'PUT'],)
 def account_list(request):
     if request.method == 'GET':
         accounts = BhAccount.objects.all()
@@ -29,7 +29,13 @@ def account_list(request):
         if serializer.is_valid():
             serializer.save()
             return Response(get_api_response(status.HTTP_201_CREATED, "Account create with success !", serializer.data))
-        return Response(get_api_response(status.HTTP_208_ALREADY_REPORTED, "Error Encoured", serializer.errors))
+        return Response(get_api_response(status.HTTP_208_ALREADY_REPORTED, "This account already exist !", serializer.errors))
+    elif request.method == 'PUT':
+        serializer = AccountSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(get_api_response(status.HTTP_201_CREATED, "Account create with success !", serializer.data))
+        return Response(get_api_response(status.HTTP_208_ALREADY_REPORTED, "This account already exist !", serializer.errors))
 
 @api_view(['PUT','DELETE', 'GET'],)
 def account_details(request, id):

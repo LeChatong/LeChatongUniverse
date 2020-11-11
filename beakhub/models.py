@@ -17,7 +17,7 @@ class BhAccount(models.Model):
 
 class BhUser(models.Model):
     first_name = models.CharField(max_length=150)
-    last_name = models.CharField(max_length=10)
+    last_name = models.CharField(max_length=150)
     email = models.EmailField(max_length=100, null=True)
     whatsapp_phone = models.CharField(max_length=25, null=True)
     phone_number = models.CharField(max_length=25)
