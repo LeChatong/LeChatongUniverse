@@ -30,12 +30,6 @@ def account_list(request):
             serializer.save()
             return Response(get_api_response(status.HTTP_201_CREATED, "Account create with success !", serializer.data))
         return Response(get_api_response(status.HTTP_208_ALREADY_REPORTED, "This account already exist !", serializer.errors))
-    elif request.method == 'PUT':
-        serializer = AccountSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(get_api_response(status.HTTP_201_CREATED, "Account create with success !", serializer.data))
-        return Response(get_api_response(status.HTTP_208_ALREADY_REPORTED, "This account already exist !", serializer.errors))
 
 @api_view(['PUT','DELETE', 'GET'],)
 def account_details(request, id):
