@@ -10,7 +10,6 @@ class AccountSerializer(serializers.ModelSerializer):
 
 class UserSerializer(serializers.ModelSerializer):
     url_picture = serializers.SerializerMethodField()
-    #account = AccountSerializer()
     def get_url_picture(self, instance):
         # returning image url if there is an image else blank string
         return settings.SITE_URL+instance.profile_picture.url if instance.profile_picture else ''
@@ -40,7 +39,7 @@ class AddressSerializer(serializers.ModelSerializer):
     class Meta:
         model = BhAddress
         fields = ['id', 'title', 'country', 'town', 'street', 'website', 'phone_number_1',
-                  'phone_number_2', 'job', 'job_id']
+                  'phone_number_2', 'job', 'job_id', 'is_active', 'created_at', 'updated_at']
     def create(self, validated_data):
         validated_data['job'] = BhJob.objects.get(id=self.context['request'].data['job_id'])
         return super(AddressSerializer, self).create(validated_data)
