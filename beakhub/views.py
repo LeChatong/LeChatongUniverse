@@ -3,6 +3,7 @@ from datetime import datetime
 
 from django.shortcuts import render
 import requests
+from django.template.defaultfilters import title
 from django.utils.datastructures import MultiValueDictKeyError
 from rest_framework import status
 from rest_framework.decorators import api_view
@@ -252,4 +253,14 @@ def address_details(request, id):
 def address_by_job(request, job_id):
     address = BhAddress.objects.filter(job_id = job_id)
     serializer = AddressSerializer(address, many=True)
+    return Response(get_api_response(status.HTTP_200_OK, None, serializer.data))
+
+@api_view(['GET'],)
+def search_job(request):
+    search = request.GET.get('query')
+    jobs = BhJob.objects.filter(title__contains=search)
+    #jobs = BhJob.objects.raw('SELECT job FROM beakhub_bhjob as job where job.title like %s or job.description like %s'
+    #                            'or job.user_id = (select u.account_id from beakhub_bhuser as u where u.first_name like %s or u.last_name like %s)'
+    #                            'or job.category_id = (select cat.id from beakhub_bhcategory as cat where cat.title like %s)', search)
+    serializer = JobSerializer(jobs, many=True)
     return Response(get_api_response(status.HTTP_200_OK, None, serializer.data))

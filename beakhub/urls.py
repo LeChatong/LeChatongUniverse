@@ -12,6 +12,7 @@ urlpatterns = (
     url(r'^jobs$', views.job_list),
     url(r'^jobs/(?P<id>[0-9]+)$', views.job_details),
     url(r'^jobs/user/(?P<user_id>[0-9]+)$', views.jobs_by_user),
+    url(r'^jobs/search$', views.search_job),
     url(r'^address$', views.address_list),
     url(r'^address/(?P<id>[0-9]+)$', views.address_details),
     url(r'^address/job/(?P<job_id>[0-9]+)$', views.address_by_job),
