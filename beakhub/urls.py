@@ -18,5 +18,5 @@ urlpatterns = (
     url(r'^address/job/(?P<job_id>[0-9]+)$', views.address_by_job),
     url(r'^comments$', views.comment_add),
     url(r'^comments/(?P<id>[0-9]+)$', views.comment_id),
-    url(r'^comments/job/(?P<job_id>[0-9]+)$', views.comment_id),
+    url(r'^comments/job/(?P<job_id>[0-9]+)$', views.comment_job_id),
 )
