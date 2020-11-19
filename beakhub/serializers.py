@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from beakhub.models import BhAccount, BhUser, BhCategory, BhJob, BhAddress
+from beakhub.models import BhAccount, BhUser, BhCategory, BhJob, BhAddress, BhComment
 from django.conf import settings
 
 
@@ -43,6 +43,17 @@ class AddressSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         validated_data['job'] = BhJob.objects.get(id=self.context['request'].data['job_id'])
         return super(AddressSerializer, self).create(validated_data)
+
+class CommentSerializer(serializers.ModelSerializer):
+    user = serializers.StringRelatedField()
+    job = serializers.StringRelatedField()
+    class Meta:
+        model = BhComment
+        fields = ['id', 'commentary', 'user', 'user_id', 'job', 'job_id', 'is_active', 'created_at', 'updated_at']
+    def create(self, validated_data):
+        validated_data['job'] = BhJob.objects.get(id=self.context['request'].data['job_id'])
+        validated_data['user'] = BhUser.objects.get(account_id=self.context['request'].data['user_id'])
+        return super(CommentSerializer, self).create(validated_data)
 
 
 class APIResponse:

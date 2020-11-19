@@ -217,7 +217,6 @@ def address_list(request):
         serializer = AddressSerializer(address, many=True)
         return Response(get_api_response(status.HTTP_200_OK, None, serializer.data))
     elif request.method == 'POST':
-        print(request.data)
         serializer = AddressSerializer(data=request.data, context={'request': request})
         if serializer.is_valid():
             serializer.save()
@@ -263,4 +262,44 @@ def search_job(request):
     #                            'or job.user_id = (select u.account_id from beakhub_bhuser as u where u.first_name like %s or u.last_name like %s)'
     #                            'or job.category_id = (select cat.id from beakhub_bhcategory as cat where cat.title like %s)', search)
     serializer = JobSerializer(jobs, many=True)
+    return Response(get_api_response(status.HTTP_200_OK, None, serializer.data))
+
+@api_view(['POST'],)
+def comment_add(request):
+    print(request.data)
+    serializer = CommentSerializer(data=request.data, context={'request': request})
+    if serializer.is_valid():
+        serializer.save()
+        return Response(get_api_response(status.HTTP_201_CREATED, "The comment added with success", serializer.data))
+    return Response(get_api_response(status.HTTP_400_BAD_REQUEST, "Bad Request", serializer.errors))
+
+@api_view(['PUT','DELETE', 'GET'],)
+def comment_id(request, id):
+    try:
+        comment = BhComment.objects.get(pk=id)
+    except BhComment.DoesNotExist:
+        return Response(get_api_response(status.HTTP_404_NOT_FOUND, "Comment not found", None))
+
+    if request.method == 'GET':
+        serializer = CommentSerializer(comment)
+        if serializer.data != None:
+            return Response(get_api_response(status.HTTP_200_OK, None, serializer.data))
+        else:
+            return Response(get_api_response(status.HTTP_204_NO_CONTENT, "Error Encoured", serializer.errors))
+
+    elif request.method == 'PUT':
+        serializer = CommentSerializer(comment, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(get_api_response(status.HTTP_400_BAD_REQUEST, "Error Encoured", serializer.errors))
+
+    elif request.method == 'DELETE':
+        comment.delete()
+        return Response(get_api_response(status.HTTP_204_NO_CONTENT, "Comment deleted with success", None))
+
+@api_view(['GET'],)
+def comment_job_id(request, job_id):
+    comment = BhComment.objects.filter(job_id=job_id)
+    serializer = CommentSerializer(comment, many=True)
     return Response(get_api_response(status.HTTP_200_OK, None, serializer.data))

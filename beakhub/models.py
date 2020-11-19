@@ -75,3 +75,17 @@ class BhAddress(models.Model):
         ordering = ['title']
     def __str__(self):
         return self.title
+
+class BhComment(models.Model):
+    commentary = models.TextField(max_length=250)
+    is_active = models.BooleanField(default=True)
+    user = models.ForeignKey(BhUser, on_delete=models.CASCADE)
+    job = models.ForeignKey(BhJob, on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now_add=True)
+    class Meta:
+        verbose_name = 'Comment'
+        verbose_name_plural = 'Comments'
+        ordering = ['created_at']
+    def __str__(self):
+        return self.commentary
