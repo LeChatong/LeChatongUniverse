@@ -47,6 +47,8 @@ class AddressSerializer(serializers.ModelSerializer):
 class CommentSerializer(serializers.ModelSerializer):
     user = serializers.StringRelatedField()
     job = serializers.StringRelatedField()
+    created_at = serializers.DateTimeField(format='%a, %d %b %Y %H:%M:%S')
+    updated_at = serializers.DateTimeField(format='%a, %d %b %Y %H:%M:%S')
     class Meta:
         model = BhComment
         fields = ['id', 'commentary', 'user', 'user_id', 'job', 'job_id', 'is_active', 'created_at', 'updated_at']
