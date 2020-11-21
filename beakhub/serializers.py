@@ -26,13 +26,17 @@ class CategorySerializer(serializers.ModelSerializer):
 class JobSerializer(serializers.ModelSerializer):
     category = serializers.StringRelatedField()
     user = serializers.StringRelatedField()
+    number_comment = serializers.SerializerMethodField()
     class Meta:
         model = BhJob
-        fields = ['id', 'title', 'description', 'is_active', 'created_at', 'updated_at', 'user', 'user_id', 'category', 'category_id']
+        fields = ['id', 'title', 'description', 'is_active', 'created_at', 'updated_at', 'user', 'user_id', 'category', 'category_id', 'number_comment']
     def create(self, validated_data):
         validated_data['category'] = BhCategory.objects.get(id=self.context['request'].data['category_id'])
         validated_data['user'] = BhUser.objects.get(account_id=self.context['request'].data['user_id'])
         return super(JobSerializer, self).create(validated_data)
+    def get_number_comment(self, instance):
+        comments = BhComment.objects.filter(job_id=instance.id)
+        return len(comments)
 
 class AddressSerializer(serializers.ModelSerializer):
     job = serializers.StringRelatedField()
