@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from beakhub.models import BhAccount, BhUser, BhCategory, BhJob, BhAddress, BhComment
 from django.conf import settings
+from datetime import datetime
 
 
 class AccountSerializer(serializers.ModelSerializer):
@@ -51,8 +52,8 @@ class AddressSerializer(serializers.ModelSerializer):
 class CommentSerializer(serializers.ModelSerializer):
     user = serializers.StringRelatedField()
     job = serializers.StringRelatedField()
-    created_at = serializers.DateTimeField(format='%a, %d %b %Y %H:%M:%S')
-    updated_at = serializers.DateTimeField(format='%a, %d %b %Y %H:%M:%S')
+    created_at = serializers.DateTimeField(format='%a, %d %b %Y %H:%M:%S',default=datetime.now())
+    updated_at = serializers.DateTimeField(format='%a, %d %b %Y %H:%M:%S',default=datetime.now())
     class Meta:
         model = BhComment
         fields = ['id', 'commentary', 'user', 'user_id', 'job', 'job_id', 'is_active', 'created_at', 'updated_at']
