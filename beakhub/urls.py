@@ -19,4 +19,9 @@ urlpatterns = (
     url(r'^comments$', views.comment_add),
     url(r'^comments/(?P<id>[0-9]+)$', views.comment_id),
     url(r'^comments/job/(?P<job_id>[0-9]+)$', views.comment_job_id),
+    url(r'^likes/jobs/all$', views.like_all),
+    url(r'^likes/jobs/details/(?P<like_id>[0-9]+)$', views.like_detail),
+    url(r'^likes/job/(?P<job_id>[0-9]+)/user/(?P<user_id>[0-9]+)$', views.like_job_user),
+    url(r'^likes/job/(?P<job_id>[0-9]+)$', views.likes_job),
+    url(r'^likes/user/(?P<user_id>[0-9]+)$', views.likes_user)
 )

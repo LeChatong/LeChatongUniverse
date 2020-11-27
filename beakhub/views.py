@@ -19,7 +19,7 @@ def get_api_response(code, message, data):
     serializerAPI = APIResponseSerialiser(APIResponse)
     return serializerAPI.data
 
-@api_view(['GET','POST', 'PUT'],)
+@api_view(['GET','POST'],)
 def account_list(request):
     if request.method == 'GET':
         accounts = BhAccount.objects.all()
@@ -76,13 +76,12 @@ def account_login(request):
             password_crypt = None
         password = password_crypt
 
-    data = BhAccount.objects.filter(username=username, password=password)
+    data = BhAccount.objects.get(username=username, password=password)
     print(data)
     try:
-        data[0].last_login = datetime.now()
-        print(data[0])
-        data[0].save()
-        serializer = AccountSerializer(data, many=True)
+        data.last_login = datetime.now()
+        data.save()
+        serializer = AccountSerializer(data)
         return Response(get_api_response(status.HTTP_200_OK, None, serializer.data))
     except IndexError:
         return Response(get_api_response(status.HTTP_404_NOT_FOUND, "Username or password incorrect", None))
@@ -257,16 +256,13 @@ def address_by_job(request, job_id):
 @api_view(['GET'],)
 def search_job(request):
     search = request.GET.get('query')
-    jobs = BhJob.objects.filter(title__contains=search)
-    #jobs = BhJob.objects.raw('SELECT job FROM beakhub_bhjob as job where job.title like %s or job.description like %s'
-    #                            'or job.user_id = (select u.account_id from beakhub_bhuser as u where u.first_name like %s or u.last_name like %s)'
-    #                            'or job.category_id = (select cat.id from beakhub_bhcategory as cat where cat.title like %s)', search)
+    jobs = BhJob.objects.filter(title__unaccent__lower__trigram_similar=search)
+
     serializer = JobSerializer(jobs, many=True)
     return Response(get_api_response(status.HTTP_200_OK, None, serializer.data))
 
 @api_view(['POST'],)
 def comment_add(request):
-    print(request.data)
     serializer = CommentSerializer(data=request.data, context={'request': request})
     if serializer.is_valid():
         serializer.save()
@@ -303,3 +299,76 @@ def comment_job_id(request, job_id):
     comment = BhComment.objects.filter(job_id=job_id)
     serializer = CommentSerializer(comment, many=True)
     return Response(get_api_response(status.HTTP_200_OK, None, serializer.data))
+
+@api_view(['GET', 'POST'],)
+def like_all(request):
+    if request.method == 'GET':
+        userLikeJob = BhUserLikeJob.objects.all()
+        serializer = BhUserLikeJobSerializer(userLikeJob, many=True)
+        return Response(get_api_response(status.HTTP_200_OK, None, serializer.data))
+    elif request.method == 'POST':
+        serializer = BhUserLikeJobSerializer(data=request.data, context={'request': request})
+        if serializer.is_valid():
+            serializer.save()
+            return Response(get_api_response(status.HTTP_201_CREATED, "The like created with success", serializer.data))
+        return Response(get_api_response(status.HTTP_400_BAD_REQUEST, "Bad Request", serializer.errors))
+
+@api_view(['PUT','DELETE', 'GET'],)
+def like_detail(request, like_id):
+    try:
+        like_job = BhUserLikeJob.objects.get(pk=like_id)
+    except BhUserLikeJob.DoesNotExist:
+        return Response(get_api_response(status.HTTP_404_NOT_FOUND, "like not found", None))
+
+    if request.method == 'GET':
+        serializer = BhUserLikeJobSerializer(like_job)
+        if serializer.data != None:
+            return Response(get_api_response(status.HTTP_200_OK, None, serializer.data))
+        else:
+            return Response(get_api_response(status.HTTP_204_NO_CONTENT, "Error Encoured", serializer.errors))
+
+    elif request.method == 'PUT':
+        serializer = BhUserLikeJobSerializer(like_job, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(get_api_response(status.HTTP_400_BAD_REQUEST, "Error Encoured", serializer.errors))
+
+    elif request.method == 'DELETE':
+        like_job.delete()
+        return Response(get_api_response(status.HTTP_204_NO_CONTENT, "like deleted with success", None))
+
+@api_view(['GET'],)
+def like_job_user(request, job_id, user_id):
+    try:
+        like_job = BhUserLikeJob.objects.get(job_id=job_id, user_id=user_id)
+        serializer = BhUserLikeJobSerializer(like_job)
+        if serializer.data != None:
+            return Response(get_api_response(status.HTTP_200_OK, None, serializer.data))
+        else:
+            return Response(get_api_response(status.HTTP_204_NO_CONTENT, "Error Encoured", serializer.errors))
+    except BhUserLikeJob.DoesNotExist:
+        return Response(get_api_response(status.HTTP_404_NOT_FOUND, "like not found", None))
+@api_view(['GET'],)
+def likes_job(request, job_id):
+    try:
+        like_job = BhUserLikeJob.objects.filter(job_id=job_id)
+        serializer = BhUserLikeJobSerializer(like_job, many=True)
+        if serializer.data != None:
+            return Response(get_api_response(status.HTTP_200_OK, None, serializer.data))
+        else:
+            return Response(get_api_response(status.HTTP_204_NO_CONTENT, "Error Encoured", serializer.errors))
+    except BhUserLikeJob.DoesNotExist:
+        return Response(get_api_response(status.HTTP_404_NOT_FOUND, "like not found", None))
+
+@api_view(['GET'],)
+def likes_user(request, user_id):
+    try:
+        like_job = BhUserLikeJob.objects.filter(user_id=user_id)
+        serializer = BhUserLikeJobSerializer(like_job, many=True)
+        if serializer.data != None:
+            return Response(get_api_response(status.HTTP_200_OK, None, serializer.data))
+        else:
+            return Response(get_api_response(status.HTTP_204_NO_CONTENT, "Error Encoured", serializer.errors))
+    except BhUserLikeJob.DoesNotExist:
+        return Response(get_api_response(status.HTTP_404_NOT_FOUND, "like not found", None))
