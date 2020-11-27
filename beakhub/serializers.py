@@ -34,12 +34,14 @@ class JobSerializer(serializers.ModelSerializer):
     category = serializers.StringRelatedField()
     user = serializers.StringRelatedField()
     number_comment = serializers.SerializerMethodField()
+    number_like = serializers.SerializerMethodField()
     created_at = serializers.DateTimeField(format='%a, %d %b %Y %H:%M:%S', default=datetime.now())
     updated_at = serializers.DateTimeField(format='%a, %d %b %Y %H:%M:%S', default=datetime.now())
 
     class Meta:
         model = BhJob
-        fields = ['id', 'title', 'description', 'is_active', 'created_at', 'updated_at', 'user', 'user_id', 'category', 'category_id', 'number_comment']
+        fields = ['id', 'title', 'description', 'is_active', 'created_at', 'updated_at',
+                  'user', 'user_id', 'category', 'category_id', 'number_comment', 'number_like']
 
     def create(self, validated_data):
         validated_data['category'] = BhCategory.objects.get(id=self.context['request'].data['category_id'])
@@ -49,6 +51,10 @@ class JobSerializer(serializers.ModelSerializer):
     def get_number_comment(self, instance):
         comments = BhComment.objects.filter(job_id=instance.id)
         return len(comments)
+
+    def get_number_like(self, instance):
+        likes_job = BhUserLikeJob.objects.filter(job_id=instance.id)
+        return len(likes_job)
 
 class AddressSerializer(serializers.ModelSerializer):
     job = serializers.StringRelatedField()

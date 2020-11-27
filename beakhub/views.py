@@ -1,9 +1,4 @@
-import json
-from datetime import datetime
 
-from django.shortcuts import render
-import requests
-from django.template.defaultfilters import title
 from django.utils.datastructures import MultiValueDictKeyError
 from rest_framework import status
 from rest_framework.decorators import api_view
@@ -256,7 +251,7 @@ def address_by_job(request, job_id):
 @api_view(['GET'],)
 def search_job(request):
     search = request.GET.get('query')
-    jobs = BhJob.objects.filter(title__unaccent__lower__trigram_similar=search)
+    jobs = BhJob.objects.filter(title__contains=search)
 
     serializer = JobSerializer(jobs, many=True)
     return Response(get_api_response(status.HTTP_200_OK, None, serializer.data))
