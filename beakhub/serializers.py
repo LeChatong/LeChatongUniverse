@@ -53,7 +53,7 @@ class JobSerializer(serializers.ModelSerializer):
         return len(comments)
 
     def get_number_like(self, instance):
-        likes_job = BhUserLikeJob.objects.filter(job_id=instance.id)
+        likes_job = BhUserLikeJob.objects.filter(job_id=instance.id, is_like=True)
         return len(likes_job)
 
 class AddressSerializer(serializers.ModelSerializer):
