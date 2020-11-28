@@ -326,7 +326,7 @@ def like_detail(request, like_id):
         serializer = BhUserLikeJobSerializer(like_job, data=request.data)
         if serializer.is_valid():
             serializer.save()
-            return Response(serializer.data)
+            return Response(get_api_response(status.HTTP_200_OK, "Like updated with success",serializer.data))
         return Response(get_api_response(status.HTTP_400_BAD_REQUEST, "Error Encoured", serializer.errors))
 
     elif request.method == 'DELETE':
