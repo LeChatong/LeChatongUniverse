@@ -32,27 +32,16 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87406ce3-e5f6-4d08-b4ae-7129b8e07aa8" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/bac7b837-e95f-4933-beb4-646baf8c02a9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/bac7b837-e95f-4933-beb4-646baf8c02a9.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/bac7b837-e95f-4933-beb4-646baf8c02a9/storage_v2/_src_/database/lechatonguniverse.vKdBgQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/bac7b837-e95f-4933-beb4-646baf8c02a9/storage_v2/_src_/database/lechatonguniverse.vKdBgQ/schema/public.abK9xQ.meta" afterDir="false" />
+    <list default="true" id="87406ce3-e5f6-4d08-b4ae-7129b8e07aa8" name="Default" comment="Ajout de classe APIResponse ppour controler les éléments retournés">
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/beakhub/migrations/0011_bhevent.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MoviesAndMe/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/MoviesAndMe/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MoviesAndMe/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/MoviesAndMe/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlyMe/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/OnlyMe/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlyMe/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/OnlyMe/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/beakhub/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/beakhub/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/beakhub/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/beakhub/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/beakhub/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/beakhub/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/beakhub/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/beakhub/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lcu/templates/movies/add_link_movie.html" beforeDir="false" afterPath="$PROJECT_DIR$/lcu/templates/movies/add_link_movie.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lcu/templates/movies/detail_movie.html" beforeDir="false" afterPath="$PROJECT_DIR$/lcu/templates/movies/detail_movie.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lcu/templates/movies/list_movie.html" beforeDir="false" afterPath="$PROJECT_DIR$/lcu/templates/movies/list_movie.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lcu/templates/search/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/lcu/templates/search/search.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lcu/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/lcu/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,7 +136,7 @@
       <recent name="D:\projet-d\OnlyMe\OnlyMe\static" />
     </key>
   </component>
-  <component name="RunManager" selected="Unknown.OnlyMe86912805">
+  <component name="RunManager" selected="Python.tests">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="OnlyMe" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -363,202 +352,9 @@
       <workItem from="1602798842349" duration="262000" />
       <workItem from="1602800650707" duration="649000" />
       <workItem from="1602918685435" duration="678000" />
-    </task>
-    <task id="LOCAL-00095" summary="Début d'ajout de l'API + Partage Telegram, Whatsapp">
-      <created>1581092663111</created>
-      <option name="number" value="00095" />
-      <option name="presentableId" value="LOCAL-00095" />
-      <option name="project" value="LOCAL" />
-      <updated>1581092663111</updated>
-    </task>
-    <task id="LOCAL-00096" summary="Début d'ajout de l'API + Partage Telegram, Whatsapp">
-      <created>1581092779792</created>
-      <option name="number" value="00096" />
-      <option name="presentableId" value="LOCAL-00096" />
-      <option name="project" value="LOCAL" />
-      <updated>1581092779792</updated>
-    </task>
-    <task id="LOCAL-00097" summary="Début d'ajout de l'API + Partage Telegram, Whatsapp">
-      <created>1581169947221</created>
-      <option name="number" value="00097" />
-      <option name="presentableId" value="LOCAL-00097" />
-      <option name="project" value="LOCAL" />
-      <updated>1581169947222</updated>
-    </task>
-    <task id="LOCAL-00098" summary="Début d'ajout de l'API + Partage Telegram, Whatsapp">
-      <created>1581504719108</created>
-      <option name="number" value="00098" />
-      <option name="presentableId" value="LOCAL-00098" />
-      <option name="project" value="LOCAL" />
-      <updated>1581504719108</updated>
-    </task>
-    <task id="LOCAL-00099" summary="Début d'ajout de l'API + Partage Telegram, Whatsapp">
-      <created>1581505230163</created>
-      <option name="number" value="00099" />
-      <option name="presentableId" value="LOCAL-00099" />
-      <option name="project" value="LOCAL" />
-      <updated>1581505230164</updated>
-    </task>
-    <task id="LOCAL-00100" summary="Début d'ajout de l'API + Partage Telegram, Whatsapp">
-      <created>1581505627060</created>
-      <option name="number" value="00100" />
-      <option name="presentableId" value="LOCAL-00100" />
-      <option name="project" value="LOCAL" />
-      <updated>1581505627060</updated>
-    </task>
-    <task id="LOCAL-00101" summary="Début d'ajout de l'API + Partage Telegram, Whatsapp">
-      <created>1581699299056</created>
-      <option name="number" value="00101" />
-      <option name="presentableId" value="LOCAL-00101" />
-      <option name="project" value="LOCAL" />
-      <updated>1581699299057</updated>
-    </task>
-    <task id="LOCAL-00102" summary="Début d'ajout de l'API + Partage Telegram, Whatsapp">
-      <created>1581699571428</created>
-      <option name="number" value="00102" />
-      <option name="presentableId" value="LOCAL-00102" />
-      <option name="project" value="LOCAL" />
-      <updated>1581699571430</updated>
-    </task>
-    <task id="LOCAL-00103" summary="Début d'ajout de l'API + Partage Telegram, Whatsapp">
-      <created>1581699798596</created>
-      <option name="number" value="00103" />
-      <option name="presentableId" value="LOCAL-00103" />
-      <option name="project" value="LOCAL" />
-      <updated>1581699798596</updated>
-    </task>
-    <task id="LOCAL-00104" summary="Début d'ajout de l'API + Partage Telegram, Whatsapp">
-      <created>1581700444056</created>
-      <option name="number" value="00104" />
-      <option name="presentableId" value="LOCAL-00104" />
-      <option name="project" value="LOCAL" />
-      <updated>1581700444056</updated>
-    </task>
-    <task id="LOCAL-00105" summary="Début d'ajout de l'API + Partage Telegram, Whatsapp">
-      <created>1581700669517</created>
-      <option name="number" value="00105" />
-      <option name="presentableId" value="LOCAL-00105" />
-      <option name="project" value="LOCAL" />
-      <updated>1581700669517</updated>
-    </task>
-    <task id="LOCAL-00106" summary="Début d'ajout de l'API + Partage Telegram, Whatsapp">
-      <created>1582303945982</created>
-      <option name="number" value="00106" />
-      <option name="presentableId" value="LOCAL-00106" />
-      <option name="project" value="LOCAL" />
-      <updated>1582303945983</updated>
-    </task>
-    <task id="LOCAL-00107" summary="Début d'ajout de l'API + Partage Telegram, Whatsapp">
-      <created>1582305404628</created>
-      <option name="number" value="00107" />
-      <option name="presentableId" value="LOCAL-00107" />
-      <option name="project" value="LOCAL" />
-      <updated>1582305404628</updated>
-    </task>
-    <task id="LOCAL-00108" summary="MAJ sur l'API">
-      <created>1583488497985</created>
-      <option name="number" value="00108" />
-      <option name="presentableId" value="LOCAL-00108" />
-      <option name="project" value="LOCAL" />
-      <updated>1583488498005</updated>
-    </task>
-    <task id="LOCAL-00109" summary="Ajout de l'application &quot;lcu&quot;">
-      <created>1583939251577</created>
-      <option name="number" value="00109" />
-      <option name="presentableId" value="LOCAL-00109" />
-      <option name="project" value="LOCAL" />
-      <updated>1583939251578</updated>
-    </task>
-    <task id="LOCAL-00110" summary="Ajout de l'application &quot;lcu&quot;">
-      <created>1583942798289</created>
-      <option name="number" value="00110" />
-      <option name="presentableId" value="LOCAL-00110" />
-      <option name="project" value="LOCAL" />
-      <updated>1583942798289</updated>
-    </task>
-    <task id="LOCAL-00111" summary="Ajout de l'application &quot;lcu&quot;">
-      <created>1583947520356</created>
-      <option name="number" value="00111" />
-      <option name="presentableId" value="LOCAL-00111" />
-      <option name="project" value="LOCAL" />
-      <updated>1583947520356</updated>
-    </task>
-    <task id="LOCAL-00112" summary="Ajout de l'application &quot;lcu&quot;">
-      <created>1584033249815</created>
-      <option name="number" value="00112" />
-      <option name="presentableId" value="LOCAL-00112" />
-      <option name="project" value="LOCAL" />
-      <updated>1584033249815</updated>
-    </task>
-    <task id="LOCAL-00113" summary="- Add Comment in movie details">
-      <created>1584723002651</created>
-      <option name="number" value="00113" />
-      <option name="presentableId" value="LOCAL-00113" />
-      <option name="project" value="LOCAL" />
-      <updated>1584723002652</updated>
-    </task>
-    <task id="LOCAL-00114" summary="- Add Comment in movie details">
-      <created>1584723189102</created>
-      <option name="number" value="00114" />
-      <option name="presentableId" value="LOCAL-00114" />
-      <option name="project" value="LOCAL" />
-      <updated>1584723189102</updated>
-    </task>
-    <task id="LOCAL-00115" summary="- Add Comment in movie details">
-      <created>1584723881945</created>
-      <option name="number" value="00115" />
-      <option name="presentableId" value="LOCAL-00115" />
-      <option name="project" value="LOCAL" />
-      <updated>1584723881945</updated>
-    </task>
-    <task id="LOCAL-00116" summary="- Add Comment in movie details">
-      <created>1584723994966</created>
-      <option name="number" value="00116" />
-      <option name="presentableId" value="LOCAL-00116" />
-      <option name="project" value="LOCAL" />
-      <updated>1584723994966</updated>
-    </task>
-    <task id="LOCAL-00117" summary="- Add Comment in movie details">
-      <created>1584724068934</created>
-      <option name="number" value="00117" />
-      <option name="presentableId" value="LOCAL-00117" />
-      <option name="project" value="LOCAL" />
-      <updated>1584724068934</updated>
-    </task>
-    <task id="LOCAL-00118" summary="- Add Comment in movie details">
-      <created>1584724379172</created>
-      <option name="number" value="00118" />
-      <option name="presentableId" value="LOCAL-00118" />
-      <option name="project" value="LOCAL" />
-      <updated>1584724379172</updated>
-    </task>
-    <task id="LOCAL-00119" summary="- Add Comment in movie details">
-      <created>1584724753294</created>
-      <option name="number" value="00119" />
-      <option name="presentableId" value="LOCAL-00119" />
-      <option name="project" value="LOCAL" />
-      <updated>1584724753294</updated>
-    </task>
-    <task id="LOCAL-00120" summary="- Add Comment in movie details">
-      <created>1585064023905</created>
-      <option name="number" value="00120" />
-      <option name="presentableId" value="LOCAL-00120" />
-      <option name="project" value="LOCAL" />
-      <updated>1585064023918</updated>
-    </task>
-    <task id="LOCAL-00121" summary="- Add Comment in movie details">
-      <created>1586276417368</created>
-      <option name="number" value="00121" />
-      <option name="presentableId" value="LOCAL-00121" />
-      <option name="project" value="LOCAL" />
-      <updated>1586276417369</updated>
-    </task>
-    <task id="LOCAL-00122" summary="- Add Comment in movie details">
-      <created>1586277596437</created>
-      <option name="number" value="00122" />
-      <option name="presentableId" value="LOCAL-00122" />
-      <option name="project" value="LOCAL" />
-      <updated>1586277596437</updated>
+      <workItem from="1603492957976" duration="458000" />
+      <workItem from="1603743858226" duration="13000" />
+      <workItem from="1607767976040" duration="1776000" />
     </task>
     <task id="LOCAL-00123" summary="- Add Comment in movie details">
       <created>1586277995155</created>
@@ -707,7 +503,203 @@
       <option name="project" value="LOCAL" />
       <updated>1595076466102</updated>
     </task>
-    <option name="localTasksCounter" value="144" />
+    <task id="LOCAL-00144" summary="Ajout des Trailers et Bandes annonces pour les series">
+      <created>1602964630494</created>
+      <option name="number" value="00144" />
+      <option name="presentableId" value="LOCAL-00144" />
+      <option name="project" value="LOCAL" />
+      <updated>1602964630496</updated>
+    </task>
+    <task id="LOCAL-00145" summary="Ajout des Trailers et Bandes annonces pour les series">
+      <created>1602969551153</created>
+      <option name="number" value="00145" />
+      <option name="presentableId" value="LOCAL-00145" />
+      <option name="project" value="LOCAL" />
+      <updated>1602969551153</updated>
+    </task>
+    <task id="LOCAL-00146" summary="Ajout des Trailers et Bandes annonces pour les series">
+      <created>1602970614984</created>
+      <option name="number" value="00146" />
+      <option name="presentableId" value="LOCAL-00146" />
+      <option name="project" value="LOCAL" />
+      <updated>1602970614984</updated>
+    </task>
+    <task id="LOCAL-00147" summary="Traitement d'image">
+      <created>1603747958013</created>
+      <option name="number" value="00147" />
+      <option name="presentableId" value="LOCAL-00147" />
+      <option name="project" value="LOCAL" />
+      <updated>1603747958013</updated>
+    </task>
+    <task id="LOCAL-00148" summary="Traitement d'image pour l'API BeakHub">
+      <created>1603836342210</created>
+      <option name="number" value="00148" />
+      <option name="presentableId" value="LOCAL-00148" />
+      <option name="project" value="LOCAL" />
+      <updated>1603836342210</updated>
+    </task>
+    <task id="LOCAL-00149" summary="Traitement d'image pour l'API BeakHub">
+      <created>1604167474738</created>
+      <option name="number" value="00149" />
+      <option name="presentableId" value="LOCAL-00149" />
+      <option name="project" value="LOCAL" />
+      <updated>1604167474738</updated>
+    </task>
+    <task id="LOCAL-00150" summary="Traitement d'image pour l'API BeakHub">
+      <created>1604168079029</created>
+      <option name="number" value="00150" />
+      <option name="presentableId" value="LOCAL-00150" />
+      <option name="project" value="LOCAL" />
+      <updated>1604168079029</updated>
+    </task>
+    <task id="LOCAL-00151" summary="Traitement d'image pour l'API BeakHub">
+      <created>1604168288004</created>
+      <option name="number" value="00151" />
+      <option name="presentableId" value="LOCAL-00151" />
+      <option name="project" value="LOCAL" />
+      <updated>1604168288004</updated>
+    </task>
+    <task id="LOCAL-00152" summary="Traitement d'image pour l'API BeakHub">
+      <created>1604264168735</created>
+      <option name="number" value="00152" />
+      <option name="presentableId" value="LOCAL-00152" />
+      <option name="project" value="LOCAL" />
+      <updated>1604264168736</updated>
+    </task>
+    <task id="LOCAL-00153" summary="Traitement d'image pour l'API BeakHub">
+      <created>1604268444762</created>
+      <option name="number" value="00153" />
+      <option name="presentableId" value="LOCAL-00153" />
+      <option name="project" value="LOCAL" />
+      <updated>1604268444763</updated>
+    </task>
+    <task id="LOCAL-00154" summary="Traitement d'image pour l'API BeakHub">
+      <created>1604699852310</created>
+      <option name="number" value="00154" />
+      <option name="presentableId" value="LOCAL-00154" />
+      <option name="project" value="LOCAL" />
+      <updated>1604699852310</updated>
+    </task>
+    <task id="LOCAL-00155" summary="Traitement d'image pour l'API BeakHub">
+      <created>1604877187262</created>
+      <option name="number" value="00155" />
+      <option name="presentableId" value="LOCAL-00155" />
+      <option name="project" value="LOCAL" />
+      <updated>1604877187263</updated>
+    </task>
+    <task id="LOCAL-00156" summary="Ajout de classe APIResponse ppour controler les éléments retournés">
+      <created>1605039803720</created>
+      <option name="number" value="00156" />
+      <option name="presentableId" value="LOCAL-00156" />
+      <option name="project" value="LOCAL" />
+      <updated>1605039803721</updated>
+    </task>
+    <task id="LOCAL-00157" summary="Ajout de classe APIResponse ppour controler les éléments retournés">
+      <created>1605045828819</created>
+      <option name="number" value="00157" />
+      <option name="presentableId" value="LOCAL-00157" />
+      <option name="project" value="LOCAL" />
+      <updated>1605045828820</updated>
+    </task>
+    <task id="LOCAL-00158" summary="Ajout de classe APIResponse ppour controler les éléments retournés">
+      <created>1605135970833</created>
+      <option name="number" value="00158" />
+      <option name="presentableId" value="LOCAL-00158" />
+      <option name="project" value="LOCAL" />
+      <updated>1605135970833</updated>
+    </task>
+    <task id="LOCAL-00159" summary="Ajout de classe APIResponse ppour controler les éléments retournés">
+      <created>1605137671311</created>
+      <option name="number" value="00159" />
+      <option name="presentableId" value="LOCAL-00159" />
+      <option name="project" value="LOCAL" />
+      <updated>1605137671311</updated>
+    </task>
+    <task id="LOCAL-00160" summary="Ajout de classe APIResponse ppour controler les éléments retournés">
+      <created>1605137681623</created>
+      <option name="number" value="00160" />
+      <option name="presentableId" value="LOCAL-00160" />
+      <option name="project" value="LOCAL" />
+      <updated>1605137681623</updated>
+    </task>
+    <task id="LOCAL-00161" summary="Ajout de classe APIResponse ppour controler les éléments retournés">
+      <created>1605220543504</created>
+      <option name="number" value="00161" />
+      <option name="presentableId" value="LOCAL-00161" />
+      <option name="project" value="LOCAL" />
+      <updated>1605220543504</updated>
+    </task>
+    <task id="LOCAL-00162" summary="Recherche des jobs sur l'API Beakhub">
+      <created>1605439537011</created>
+      <option name="number" value="00162" />
+      <option name="presentableId" value="LOCAL-00162" />
+      <option name="project" value="LOCAL" />
+      <updated>1605439537012</updated>
+    </task>
+    <task id="LOCAL-00163" summary="Recherche des jobs sur l'API Beakhub">
+      <created>1605823148024</created>
+      <option name="number" value="00163" />
+      <option name="presentableId" value="LOCAL-00163" />
+      <option name="project" value="LOCAL" />
+      <updated>1605823148026</updated>
+    </task>
+    <task id="LOCAL-00164" summary="Recherche des jobs sur l'API Beakhub">
+      <created>1605826936739</created>
+      <option name="number" value="00164" />
+      <option name="presentableId" value="LOCAL-00164" />
+      <option name="project" value="LOCAL" />
+      <updated>1605826936740</updated>
+    </task>
+    <task id="LOCAL-00165" summary="Recherche des jobs sur l'API Beakhub">
+      <created>1605966639287</created>
+      <option name="number" value="00165" />
+      <option name="presentableId" value="LOCAL-00165" />
+      <option name="project" value="LOCAL" />
+      <updated>1605966639289</updated>
+    </task>
+    <task id="LOCAL-00166" summary="Recherche des jobs sur l'API Beakhub">
+      <created>1605983467926</created>
+      <option name="number" value="00166" />
+      <option name="presentableId" value="LOCAL-00166" />
+      <option name="project" value="LOCAL" />
+      <updated>1605983467928</updated>
+    </task>
+    <task id="LOCAL-00167" summary="Recherche des jobs sur l'API Beakhub">
+      <created>1606054731234</created>
+      <option name="number" value="00167" />
+      <option name="presentableId" value="LOCAL-00167" />
+      <option name="project" value="LOCAL" />
+      <updated>1606054731234</updated>
+    </task>
+    <task id="LOCAL-00168" summary="- Implémentation des services pour les likes">
+      <created>1606516168563</created>
+      <option name="number" value="00168" />
+      <option name="presentableId" value="LOCAL-00168" />
+      <option name="project" value="LOCAL" />
+      <updated>1606516168563</updated>
+    </task>
+    <task id="LOCAL-00169" summary="- Implémentation des services pour les likes">
+      <created>1606520316142</created>
+      <option name="number" value="00169" />
+      <option name="presentableId" value="LOCAL-00169" />
+      <option name="project" value="LOCAL" />
+      <updated>1606520316142</updated>
+    </task>
+    <task id="LOCAL-00170" summary="- Implémentation des services pour les likes">
+      <created>1606562784873</created>
+      <option name="number" value="00170" />
+      <option name="presentableId" value="LOCAL-00170" />
+      <option name="project" value="LOCAL" />
+      <updated>1606562784873</updated>
+    </task>
+    <task id="LOCAL-00171" summary="- Implémentation des services pour les likes">
+      <created>1606563418765</created>
+      <option name="number" value="00171" />
+      <option name="presentableId" value="LOCAL-00171" />
+      <option name="project" value="LOCAL" />
+      <updated>1606563418765</updated>
+    </task>
+    <option name="localTasksCounter" value="172" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -727,11 +719,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Première version du Projet OnlyMe, ne contenant que l'application MoviesAndMe/LechatongMovies&#10;(Ajout requirement and Runtime" />
-    <MESSAGE value="Track" />
-    <MESSAGE value="Ajout de requirements" />
-    <MESSAGE value="Ajout STATICROOT" />
-    <MESSAGE value="Edit setting.py" />
     <MESSAGE value="Ajout du partage FaceBook et amélioration de l'url d'acceuil" />
     <MESSAGE value="Ajout de l'espace pour série et animé" />
     <MESSAGE value="Design amélioré et application mieux structuré" />
@@ -752,29 +739,34 @@
     <MESSAGE value="MAJ du design des pages" />
     <MESSAGE value="Ajout des Trailers et Bandes annonces pour les films" />
     <MESSAGE value="Ajout des Trailers et Bandes annonces pour les series" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout des Trailers et Bandes annonces pour les series" />
+    <MESSAGE value="Traitement d'image" />
+    <MESSAGE value="Traitement d'image pour l'API BeakHub" />
+    <MESSAGE value="Ajout de classe APIResponse ppour controler les éléments retournés" />
+    <MESSAGE value="Recherche des jobs sur l'API Beakhub" />
+    <MESSAGE value="- Implémentation des services pour les likes" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Implémentation des services pour les likes" />
   </component>
   <component name="WindowStateProjectService">
     <state x="96" y="0" width="1086" height="690" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602929525199">
       <screen x="0" y="0" width="1280" height="690" />
     </state>
     <state x="96" y="0" width="1086" height="690" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.690@0.0.1280.690" timestamp="1602929525199" />
-    <state width="925" height="211" key="GridCell.Tab.0.bottom" timestamp="1602919205293">
+    <state width="925" height="211" key="GridCell.Tab.0.bottom" timestamp="1603149718480">
       <screen x="0" y="0" width="1280" height="690" />
     </state>
-    <state width="925" height="211" key="GridCell.Tab.0.bottom/0.0.1280.690@0.0.1280.690" timestamp="1602919205293" />
-    <state width="925" height="211" key="GridCell.Tab.0.center" timestamp="1602919205293">
+    <state width="925" height="211" key="GridCell.Tab.0.bottom/0.0.1280.690@0.0.1280.690" timestamp="1603149718480" />
+    <state width="925" height="211" key="GridCell.Tab.0.center" timestamp="1603149718480">
       <screen x="0" y="0" width="1280" height="690" />
     </state>
-    <state width="925" height="211" key="GridCell.Tab.0.center/0.0.1280.690@0.0.1280.690" timestamp="1602919205293" />
-    <state width="925" height="211" key="GridCell.Tab.0.left" timestamp="1602919205293">
+    <state width="925" height="211" key="GridCell.Tab.0.center/0.0.1280.690@0.0.1280.690" timestamp="1603149718480" />
+    <state width="925" height="211" key="GridCell.Tab.0.left" timestamp="1603149718477">
       <screen x="0" y="0" width="1280" height="690" />
     </state>
-    <state width="925" height="211" key="GridCell.Tab.0.left/0.0.1280.690@0.0.1280.690" timestamp="1602919205293" />
-    <state width="925" height="211" key="GridCell.Tab.0.right" timestamp="1602919205293">
+    <state width="925" height="211" key="GridCell.Tab.0.left/0.0.1280.690@0.0.1280.690" timestamp="1603149718477" />
+    <state width="925" height="211" key="GridCell.Tab.0.right" timestamp="1603149718480">
       <screen x="0" y="0" width="1280" height="690" />
     </state>
-    <state width="925" height="211" key="GridCell.Tab.0.right/0.0.1280.690@0.0.1280.690" timestamp="1602919205293" />
+    <state width="925" height="211" key="GridCell.Tab.0.right/0.0.1280.690@0.0.1280.690" timestamp="1603149718480" />
     <state width="1238" height="188" key="GridCell.Tab.1.bottom" timestamp="1598561204711">
       <screen x="0" y="0" width="1280" height="690" />
     </state>
@@ -791,5 +783,13 @@
       <screen x="0" y="0" width="1280" height="690" />
     </state>
     <state width="1238" height="188" key="GridCell.Tab.1.right/0.0.1280.690@0.0.1280.690" timestamp="1598561204711" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1604959205902">
+      <screen x="0" y="0" width="1280" height="690" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/0.0.1280.690@0.0.1280.690" timestamp="1604959205902" />
+    <state x="233" y="78" key="Vcs.Push.Dialog.v2" timestamp="1606563422172">
+      <screen x="0" y="0" width="1280" height="690" />
+    </state>
+    <state x="233" y="78" key="Vcs.Push.Dialog.v2/0.0.1280.690@0.0.1280.690" timestamp="1606563422172" />
   </component>
 </project>

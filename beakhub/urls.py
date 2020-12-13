@@ -23,5 +23,8 @@ urlpatterns = (
     url(r'^likes/jobs/details/(?P<like_id>[0-9]+)$', views.like_detail),
     url(r'^likes/job/(?P<job_id>[0-9]+)/user/(?P<user_id>[0-9]+)$', views.like_job_user),
     url(r'^likes/job/(?P<job_id>[0-9]+)$', views.likes_job),
-    url(r'^likes/user/(?P<user_id>[0-9]+)$', views.likes_user)
+    url(r'^likes/user/(?P<user_id>[0-9]+)$', views.likes_user),
+    url(r'^events/all$', views.all_event),
+    url(r'^events/user/(?P<user_id>[0-9]+)$', views.events_by_user),
+    url(r'^events/view/(?P<id>[0-9]+)$', views.do_event_in_view)
 )

@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from beakhub.models import BhAccount, BhUser, BhCategory, BhJob, BhAddress, BhComment, BhUserLikeJob
+from beakhub.models import BhAccount, BhUser, BhCategory, BhJob, BhAddress, BhComment, BhUserLikeJob, BhEvent
 from django.conf import settings
 from datetime import datetime
 
@@ -97,6 +97,13 @@ class BhUserLikeJobSerializer(serializers.ModelSerializer):
         validated_data['job'] = BhJob.objects.get(id=self.context['request'].data['job_id'])
         validated_data['user'] = BhUser.objects.get(account_id=self.context['request'].data['user_id'])
         return super(BhUserLikeJobSerializer, self).create(validated_data)
+
+class BhEventSerializer(serializers.ModelSerializer):
+    created_at = serializers.DateTimeField(format='%a, %d %b %Y %H:%M:%S', default=datetime.now())
+    updated_at = serializers.DateTimeField(format='%a, %d %b %Y %H:%M:%S', default=datetime.now())
+    class Meta:
+        model = BhEvent
+        fields = ['id', 'reciever_id', 'sender_id', 'action', 'is_view', 'job_id', 'created_at', 'updated_at']
 
 class APIResponse:
     def __init__(self, MESSAGE, DATA, CODE, ERRORS):

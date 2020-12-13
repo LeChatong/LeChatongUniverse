@@ -54,7 +54,8 @@ INSTALLED_APPS = [
     'MoviesAndMe.apps.MoviesandmeConfig',
     'LeChApi.apps.LechapiConfig',
     'lcu.apps.LcuConfig',
-    'beakhub.apps.BeakhubConfig'
+    'beakhub.apps.BeakhubConfig',
+    'rest_framework.authtoken'
 ]
 
 MIDDLEWARE = [
@@ -252,3 +253,10 @@ DJANGO_TELEGRAMBOT = {
     ],
 
 }
+
+PASSWORD_HASHERS = [
+    'django.contrib.auth.hashers.Argon2PasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
+    'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
+]

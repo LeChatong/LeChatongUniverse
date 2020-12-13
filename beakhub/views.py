@@ -5,6 +5,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .serializers import *
 from .models import *
+import hashlib
 # Create your views here.
 
 def get_api_response(code, message, data):
@@ -14,6 +15,12 @@ def get_api_response(code, message, data):
     serializerAPI = APIResponseSerialiser(APIResponse)
     return serializerAPI.data
 
+EVENT_TYPE = {
+    'COMMENT',
+    'LIKE',
+    'VIEW'
+}
+
 @api_view(['GET','POST'],)
 def account_list(request):
     if request.method == 'GET':
@@ -21,6 +28,11 @@ def account_list(request):
         serializer = AccountSerializer(accounts, many=True)
         return Response(get_api_response(status.HTTP_200_OK, None, serializer.data))
     elif request.method == 'POST':
+        try:
+            password_crypt = hashlib.sha1(request.data['password'].encode('utf-8')).hexdigest()
+        except MultiValueDictKeyError:
+            password_crypt = None
+        request.data['password']= password_crypt
         serializer = AccountSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
@@ -35,6 +47,11 @@ def account_details(request, id):
         return Response(get_api_response(status.HTTP_404_NOT_FOUND, "Account not found", None))
 
     if request.method == 'GET':
+        # A supprimer
+        password_crypt = hashlib.sha1(account.password.encode('utf-8')).hexdigest()
+        account.password = password_crypt
+        account.save()
+        ####################################################
         serializer = AccountSerializer(account)
         if serializer.data != None:
             return Response(get_api_response(status.HTTP_200_OK, None, serializer.data))
@@ -69,7 +86,7 @@ def account_login(request):
             password_crypt = request.GET.get('password')
         except MultiValueDictKeyError:
             password_crypt = None
-        password = password_crypt
+        password = hashlib.sha1(password_crypt.encode('utf-8')).hexdigest()
 
     data = BhAccount.objects.get(username=username, password=password)
     print(data)
@@ -260,6 +277,11 @@ def search_job(request):
 def comment_add(request):
     serializer = CommentSerializer(data=request.data, context={'request': request})
     if serializer.is_valid():
+        job = BhJob.objects.get(id = request.data['job_id'])
+        user = BhUser.objects.get(account_id=request.data['user_id'])
+        if job != None and user != None:
+            if job.user.account_id != user.account_id:
+                BhEvent(action='COMMENT', job_id=job.id, reciever_id=job.user.account_id, sender_id=user.account_id).save()
         serializer.save()
         return Response(get_api_response(status.HTTP_201_CREATED, "The comment added with success", serializer.data))
     return Response(get_api_response(status.HTTP_400_BAD_REQUEST, "Bad Request", serializer.errors))
@@ -304,6 +326,12 @@ def like_all(request):
     elif request.method == 'POST':
         serializer = BhUserLikeJobSerializer(data=request.data, context={'request': request})
         if serializer.is_valid():
+            job = BhJob.objects.get(id=request.data['job_id'])
+            user = BhUser.objects.get(account_id=request.data['user_id'])
+            if job != None and user != None:
+                if job.user.account_id != user.account_id:
+                    BhEvent(action='LIKE', job_id=job.id, reciever_id=job.user.account_id,
+                            sender_id=user.account_id).save()
             serializer.save()
             return Response(get_api_response(status.HTTP_201_CREATED, "The like created with success", serializer.data))
         return Response(get_api_response(status.HTTP_400_BAD_REQUEST, "Bad Request", serializer.errors))
@@ -344,6 +372,7 @@ def like_job_user(request, job_id, user_id):
             return Response(get_api_response(status.HTTP_204_NO_CONTENT, "Error Encoured", serializer.errors))
     except BhUserLikeJob.DoesNotExist:
         return Response(get_api_response(status.HTTP_404_NOT_FOUND, "like not found", None))
+
 @api_view(['GET'],)
 def likes_job(request, job_id):
     try:
@@ -367,3 +396,23 @@ def likes_user(request, user_id):
             return Response(get_api_response(status.HTTP_204_NO_CONTENT, "Error Encoured", serializer.errors))
     except BhUserLikeJob.DoesNotExist:
         return Response(get_api_response(status.HTTP_404_NOT_FOUND, "like not found", None))
+
+@api_view(['GET'],)
+def all_event(request):
+    events = BhEvent.objects.all()
+    serializer = BhEventSerializer(events, many=True)
+    return Response(get_api_response(status.HTTP_200_OK, None, serializer.data))
+
+@api_view(['GET'],)
+def events_by_user(request, user_id):
+    events = BhEvent.objects.filter(reciever_id = user_id).order_by('-created_at')
+    serializer = BhEventSerializer(events, many=True)
+    return Response(get_api_response(status.HTTP_200_OK, None, serializer.data))
+
+@api_view(['PUT'],)
+def do_event_in_view(request, id):
+    event = BhEvent.objects.get(id = id)
+    event.is_view = True
+    event.save()
+    serializer = BhEventSerializer(event)
+    return Response(get_api_response(status.HTTP_200_OK, None, serializer.data))
