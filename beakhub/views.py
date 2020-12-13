@@ -47,11 +47,10 @@ def account_details(request, id):
         return Response(get_api_response(status.HTTP_404_NOT_FOUND, "Account not found", None))
 
     if request.method == 'GET':
-        # A supprimer
-        password_crypt = hashlib.sha1(account.password.encode('utf-8')).hexdigest()
-        account.password = password_crypt
-        account.save()
-        ####################################################
+        #password_crypt = hashlib.sha1(account.password.encode('utf-8')).hexdigest()
+        #account.password = password_crypt
+        #account.save()
+
         serializer = AccountSerializer(account)
         if serializer.data != None:
             return Response(get_api_response(status.HTTP_200_OK, None, serializer.data))
