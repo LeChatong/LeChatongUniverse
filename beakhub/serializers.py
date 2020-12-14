@@ -3,7 +3,6 @@ from rest_framework import serializers
 from beakhub.models import BhAccount, BhUser, BhCategory, BhJob, BhAddress, BhComment, BhUserLikeJob, BhEvent
 from django.conf import settings
 from datetime import datetime
-from dateutil.relativedelta import relativedelta
 
 
 class AccountSerializer(serializers.ModelSerializer):
@@ -123,10 +122,6 @@ class BhEventSerializer(serializers.ModelSerializer):
     def get_how_hours(self, instance):
         FMT= "%H"
         diff_date = datetime.now(utc) - instance.created_at
-        start_date = datetime.strptime(str(datetime.now().time().hour), FMT)
-        end_date = datetime.strptime(str(instance.created_at.time().hour), FMT)
-        hhours = relativedelta(start_date, end_date)
-        #hhours = datetime.strptime(str(datetime.now().time()), FMT) - datetime.strptime(str(instance.created_at), FMT)
         return diff_date.days * 24 + diff_date.seconds // 3600
 
 class APIResponse:
