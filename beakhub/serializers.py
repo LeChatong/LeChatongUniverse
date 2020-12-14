@@ -1,7 +1,9 @@
+from django.utils.timezone import utc
 from rest_framework import serializers
 from beakhub.models import BhAccount, BhUser, BhCategory, BhJob, BhAddress, BhComment, BhUserLikeJob, BhEvent
 from django.conf import settings
 from datetime import datetime
+from dateutil.relativedelta import relativedelta
 
 
 class AccountSerializer(serializers.ModelSerializer):
@@ -99,11 +101,33 @@ class BhUserLikeJobSerializer(serializers.ModelSerializer):
         return super(BhUserLikeJobSerializer, self).create(validated_data)
 
 class BhEventSerializer(serializers.ModelSerializer):
-    created_at = serializers.DateTimeField(format='%a, %d %b %Y %H:%M:%S', default=datetime.now())
-    updated_at = serializers.DateTimeField(format='%a, %d %b %Y %H:%M:%S', default=datetime.now())
+    #created_at = serializers.DateTimeField(format='%a, %d %b %Y %H:%M:%S', default=datetime.now())
+    #updated_at = serializers.DateTimeField(format='%a, %d %b %Y %H:%M:%S', default=datetime.now())
+    job_title = serializers.SerializerMethodField()
+    name_sender = serializers.SerializerMethodField()
+    url_picture_sender = serializers.SerializerMethodField()
+    how_hours = serializers.SerializerMethodField()
     class Meta:
         model = BhEvent
-        fields = ['id', 'reciever_id', 'sender_id', 'action', 'is_view', 'job_id', 'created_at', 'updated_at']
+        fields = ['id', 'reciever_id', 'sender_id', 'action', 'is_view', 'job_id', 'created_at', 'updated_at',
+                  'job_title', 'name_sender', 'url_picture_sender', 'how_hours']
+    def get_job_title(self, instance):
+        job = BhJob.objects.get(id=instance.job_id)
+        return job.title
+    def get_name_sender(self, instance):
+        sender = BhUser.objects.get(account_id=instance.sender_id)
+        return sender.first_name + ' ' + sender.last_name
+    def get_url_picture_sender(self, instance):
+        sender = BhUser.objects.get(account_id=instance.sender_id)
+        return settings.SITE_URL+sender.profile_picture.url if sender.profile_picture else ''
+    def get_how_hours(self, instance):
+        FMT= "%H"
+        diff_date = datetime.now(utc) - instance.created_at
+        start_date = datetime.strptime(str(datetime.now().time().hour), FMT)
+        end_date = datetime.strptime(str(instance.created_at.time().hour), FMT)
+        hhours = relativedelta(start_date, end_date)
+        #hhours = datetime.strptime(str(datetime.now().time()), FMT) - datetime.strptime(str(instance.created_at), FMT)
+        return diff_date.days * 24 + diff_date.seconds // 3600
 
 class APIResponse:
     def __init__(self, MESSAGE, DATA, CODE, ERRORS):
