@@ -2,6 +2,7 @@ from django.conf.urls import url
 from beakhub import views
 
 urlpatterns = (
+    url(r'^init/password$', views.init_password),
     url(r'^accounts$', views.account_list),
     url(r'^accounts/(?P<id>[0-9]+)$', views.account_details),
     url(r'^accounts/login$', views.account_login),
@@ -24,7 +25,8 @@ urlpatterns = (
     url(r'^likes/job/(?P<job_id>[0-9]+)/user/(?P<user_id>[0-9]+)$', views.like_job_user),
     url(r'^likes/job/(?P<job_id>[0-9]+)$', views.likes_job),
     url(r'^likes/user/(?P<user_id>[0-9]+)$', views.likes_user),
-    url(r'^events/all$', views.all_event),
+    url(r'^events$', views.all_event),
+    url(r'^events/(?P<id>[0-9]+)$', views.event_by_id),
     url(r'^events/user/(?P<user_id>[0-9]+)$', views.events_by_user),
     url(r'^events/view/(?P<id>[0-9]+)$', views.do_event_in_view)
 )

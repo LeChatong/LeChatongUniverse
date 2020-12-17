@@ -1,4 +1,5 @@
-
+from django.core.mail import send_mail
+from django.shortcuts import render
 from django.utils.datastructures import MultiValueDictKeyError
 from rest_framework import status
 from rest_framework.decorators import api_view
@@ -8,6 +9,11 @@ from .models import *
 import hashlib
 # Create your views here.
 
+def init_password(request):
+    context = {}
+    return render(request, 'init-password.html', context)
+
+#View for API
 def get_api_response(code, message, data):
     APIResponse.CODE = code
     APIResponse.MESSAGE = message
@@ -267,7 +273,7 @@ def address_by_job(request, job_id):
 @api_view(['GET'],)
 def search_job(request):
     search = request.GET.get('query')
-    jobs = BhJob.objects.filter(title__contains=search)
+    jobs = BhJob.objects.filter(title__icontains=search, description__icontains=search)
 
     serializer = JobSerializer(jobs, many=True)
     return Response(get_api_response(status.HTTP_200_OK, None, serializer.data))
@@ -406,6 +412,12 @@ def all_event(request):
 def events_by_user(request, user_id):
     events = BhEvent.objects.filter(reciever_id = user_id).order_by('-created_at')
     serializer = BhEventSerializer(events, many=True)
+    return Response(get_api_response(status.HTTP_200_OK, None, serializer.data))
+
+@api_view(['GET'],)
+def event_by_id(request, id):
+    event = BhEvent.objects.get(id = id)
+    serializer = BhEventSerializer(event)
     return Response(get_api_response(status.HTTP_200_OK, None, serializer.data))
 
 @api_view(['PUT'],)

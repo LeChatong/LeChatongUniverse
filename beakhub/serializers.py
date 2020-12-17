@@ -100,7 +100,7 @@ class BhUserLikeJobSerializer(serializers.ModelSerializer):
         return super(BhUserLikeJobSerializer, self).create(validated_data)
 
 class BhEventSerializer(serializers.ModelSerializer):
-    #created_at = serializers.DateTimeField(format='%a, %d %b %Y %H:%M:%S', default=datetime.now())
+    created_at = serializers.DateTimeField(format='%d %b %Y %H:%M:%S', default=datetime.now())
     #updated_at = serializers.DateTimeField(format='%a, %d %b %Y %H:%M:%S', default=datetime.now())
     job_title = serializers.SerializerMethodField()
     name_sender = serializers.SerializerMethodField()
@@ -121,7 +121,7 @@ class BhEventSerializer(serializers.ModelSerializer):
         return settings.SITE_URL+sender.profile_picture.url if sender.profile_picture else ''
     def get_how_hours(self, instance):
         FMT= "%H"
-        diff_date = datetime.now(utc) - instance.created_at
+        diff_date = datetime.now(utc) - instance.updated_at
         return diff_date.days * 24 + diff_date.seconds // 3600
 
 class APIResponse:
