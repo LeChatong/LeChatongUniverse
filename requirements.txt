@@ -1,4 +1,7 @@
+aiocontextvars==0.2.2
+APScheduler==3.6.3
 argh==0.26.2
+asgiref==3.3.1
 attrs==19.3.0
 Automat==0.8.0
 behave==1.2.6
@@ -11,6 +14,7 @@ Click==7.0
 colorama==0.4.3
 configparser==4.0.2
 constantly==15.1.0
+contextvars==2.4
 cryptography==2.8
 cssselect==1.1.0
 decorator==4.4.1
@@ -29,12 +33,14 @@ googletrans==2.4.0
 gunicorn==19.9.0
 hyperlink==19.0.0
 idna==2.8
+immutables==0.14
 incremental==17.5.0
 itsdangerous==1.1.0
 Jinja2==2.10
 jsmin==2.2.2
 loguru==0.4.0
 lxml==4.4.2
+MarkupSafe==1.1.1
 oauthlib==3.0.1
 packaging==19.2
 parse==1.14.0
@@ -67,9 +73,11 @@ Scrapy==1.8.0
 scrapy-splash==0.7.2
 service-identity==18.1.0
 six==1.13.0
+sqlparse==0.4.1
 tornado==6.0.3
 Twisted==19.10.0
 twython==3.7.0
+tzlocal==2.1
 urllib3==1.24.2
 w3lib==1.21.0
 watchdog==0.9.0
