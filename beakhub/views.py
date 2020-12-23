@@ -103,6 +103,28 @@ def account_login(request):
     except IndexError:
         return Response(get_api_response(status.HTTP_404_NOT_FOUND, "Username or password incorrect", None))
 
+@api_view(['GET'])
+def send_mail_for_init_password(request):
+    user = BhUser.objects.get(email = request.GET.get('mail'))
+    print(settings.EMAIL_HOST_USER)
+    if user != None:
+        account = BhAccount.objects.get(id = user.account_id)
+
+        init_link = "http://127.0.0.1:8000/fr/beakhub/accounts/init/password/"+ account.username
+        message = "<b>BeakHub</b>" \
+                  "<p>Click on this link for init your password : </p>" + init_link
+        send_mail(
+            'Reconduction du mot de passe',
+            message,
+            settings.EMAIL_HOST_USER,
+            [user.email],
+            fail_silently=False,
+        )
+        return Response(get_api_response(status.HTTP_200_OK, "A mail youre sended", message))
+    else:
+        return Response(get_api_response(status.HTTP_404_NOT_FOUND, "This email does not belong to a user", None))
+
+
 @api_view(['GET', 'POST'],)
 def user_list(request):
     if request.method == 'GET':
@@ -415,10 +437,18 @@ def events_by_user(request, user_id):
     return Response(get_api_response(status.HTTP_200_OK, None, serializer.data))
 
 @api_view(['GET'],)
+def events_not_see_by_user(request, user_id):
+    events = BhEvent.objects.filter(reciever_id = user_id, is_view=False).order_by('-created_at')
+    serializer = BhEventSerializer(events, many=True)
+    return Response(get_api_response(status.HTTP_200_OK, None, serializer.data))
+
+
+@api_view(['GET'],)
 def event_by_id(request, id):
     event = BhEvent.objects.get(id = id)
     serializer = BhEventSerializer(event)
     return Response(get_api_response(status.HTTP_200_OK, None, serializer.data))
+
 
 @api_view(['PUT'],)
 def do_event_in_view(request, id):

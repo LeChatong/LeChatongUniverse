@@ -45,7 +45,7 @@ urlpatterns = i18n_patterns(
     #url(r'^lechatongbot/', include('django_telegrambot.urls')),
     url(r'^', include('MoviesAndMe.urls')),
     url(r'^lechapi/', include('LeChApi.urls')),
-    url(r'^beakhub/api/', include('beakhub.urls')),
+    url(r'^beakhub/', include('beakhub.urls')),
     url(r'^lechatongram/', include('lcu.urls')),
     url(r'^api-authentification/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^i18n/', include('django.conf.urls.i18n')),
