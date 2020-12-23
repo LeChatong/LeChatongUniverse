@@ -67,7 +67,6 @@ Scrapy==1.8.0
 scrapy-splash==0.7.2
 service-identity==18.1.0
 six==1.13.0
-telegram==0.0.1
 tornado==6.0.3
 Twisted==19.10.0
 twython==3.7.0
