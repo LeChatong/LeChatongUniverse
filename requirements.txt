@@ -66,6 +66,6 @@ tzlocal==2.1
 urllib3==1.24.2
 w3lib==1.21.0
 Werkzeug==0.14.1
-whitenoise==4.1
+whitenoise==5.2.0
 win32-setctime==1.0.1
 zope.interface==4.7.1
