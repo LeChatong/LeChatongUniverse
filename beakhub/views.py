@@ -118,7 +118,7 @@ def send_mail_for_init_password(request):
             message,
             settings.EMAIL_HOST_USER,
             [user.email],
-            fail_silently=False,
+            fail_silently=True,
         )
         return Response(get_api_response(status.HTTP_200_OK, "A mail youre sended", message))
     else:
