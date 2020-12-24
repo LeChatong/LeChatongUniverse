@@ -6,6 +6,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .serializers import *
 from .models import *
+from django.db.models import Q
 import hashlib
 # Create your views here.
 
@@ -123,7 +124,6 @@ def send_mail_for_init_password(request):
         return Response(get_api_response(status.HTTP_200_OK, "A mail youre sended", message))
     else:
         return Response(get_api_response(status.HTTP_404_NOT_FOUND, "This email does not belong to a user", None))
-
 
 @api_view(['GET', 'POST'],)
 def user_list(request):
@@ -248,6 +248,22 @@ def jobs_by_user(request, user_id):
     serializer = JobSerializer(jobs, many=True)
     return Response(get_api_response(status.HTTP_200_OK, None, serializer.data))
 
+@api_view(['GET'],)
+def jobs_by_category(request, category_id):
+    jobs = BhJob.objects.filter(category_id=category_id)
+    serializer = JobSerializer(jobs, many=True)
+    return Response(get_api_response(status.HTTP_200_OK, None, serializer.data))
+
+@api_view(['GET'],)
+def search_job(request):
+    search = request.GET.get('query')
+    jobs = BhJob.objects.filter(Q(title__contains=search) | Q(description__contains=search) |
+                                Q(user__account__username__contains=search) | Q(user__first_name__contains=search) |
+                                Q(user__last_name__contains=search) | Q(category__title__contains=search), is_active=True)
+
+    serializer = JobSerializer(jobs, many=True)
+    return Response(get_api_response(status.HTTP_200_OK, None, serializer.data))
+
 @api_view(['GET', 'POST'],)
 def address_list(request):
     if request.method == 'GET':
@@ -290,14 +306,6 @@ def address_details(request, id):
 def address_by_job(request, job_id):
     address = BhAddress.objects.filter(job_id = job_id)
     serializer = AddressSerializer(address, many=True)
-    return Response(get_api_response(status.HTTP_200_OK, None, serializer.data))
-
-@api_view(['GET'],)
-def search_job(request):
-    search = request.GET.get('query')
-    jobs = BhJob.objects.filter(title__icontains=search, description__icontains=search)
-
-    serializer = JobSerializer(jobs, many=True)
     return Response(get_api_response(status.HTTP_200_OK, None, serializer.data))
 
 @api_view(['POST'],)

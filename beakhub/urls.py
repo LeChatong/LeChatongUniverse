@@ -14,6 +14,7 @@ urlpatterns = (
     url(r'^api/v1/jobs$', views.job_list),
     url(r'^api/v1/jobs/(?P<id>[0-9]+)$', views.job_details),
     url(r'^api/v1/jobs/user/(?P<user_id>[0-9]+)$', views.jobs_by_user),
+    url(r'^api/v1/jobs/category/(?P<category_id>[0-9]+)$', views.jobs_by_category),
     url(r'^api/v1/jobs/search$', views.search_job),
     url(r'^api/v1/address$', views.address_list),
     url(r'^api/v1/address/(?P<id>[0-9]+)$', views.address_details),
