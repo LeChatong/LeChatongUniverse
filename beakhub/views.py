@@ -75,6 +75,21 @@ def account_details(request, id):
         account.delete()
         return Response(get_api_response(status.HTTP_204_NO_CONTENT, "Account deleted with success", None))
 
+def change_password(request, id):
+    try:
+        account = BhAccount.objects.get(pk=id)
+
+        password_crypt = hashlib.sha1(request.data['password'].encode('utf-8')).hexdigest()
+        request.data['password'] = password_crypt
+
+        serializer = AccountSerializer(account, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(get_api_response(status.HTTP_200_OK, "Password changed", serializer.data))
+        return Response(get_api_response(status.HTTP_400_BAD_REQUEST, None, serializer.errors))
+    except BhAccount.DoesNotExist:
+        return Response(get_api_response(status.HTTP_404_NOT_FOUND, "Account not found", None))
+
 @api_view(['GET', 'POST'],)
 def account_login(request):
     global username, password
@@ -263,8 +278,9 @@ def jobs_fav_by_user(request, user_id):
 @api_view(['GET'],)
 def jobs_most_sollicited(request):
     jobs = BhJob.objects.raw('SELECT job.*, '
-                             '(SELECT count(fav.id) FROM beakhub_bhuserlikejob as fav where fav.job_id = job.id) AS NB_FAV '
-                             'FROM beakhub_bhjob as job')
+                             '(SELECT count(fav.id) FROM beakhub_bhuserlikejob as fav where fav.job_id = job.id) AS NB_FAV,'
+                             '(SELECT count(cm.id) FROM beakhub_bhcomment as cm where cm.job_id = job.id) AS NB_CM  '
+                             'FROM beakhub_bhjob as job ORDER BY NB_FAV DESC, NB_CM DESC')
     serializer = JobSerializer(jobs, many=True)
     return Response(get_api_response(status.HTTP_200_OK, None, serializer.data))
 
