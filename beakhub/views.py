@@ -255,6 +255,26 @@ def jobs_by_category(request, category_id):
     return Response(get_api_response(status.HTTP_200_OK, None, serializer.data))
 
 @api_view(['GET'],)
+def jobs_fav_by_user(request, user_id):
+    jobs = BhJob.objects.filter(bhuserlikejob__user_id=user_id)
+    serializer = JobSerializer(jobs, many=True)
+    return Response(get_api_response(status.HTTP_200_OK, None, serializer.data))
+
+@api_view(['GET'],)
+def jobs_most_sollicited(request):
+    jobs = BhJob.objects.raw('SELECT job.*, '
+                             '(SELECT count(fav.id) FROM beakhub_bhuserlikejob as fav where fav.job_id = job.id) AS NB_FAV '
+                             'FROM beakhub_bhjob as job')
+    serializer = JobSerializer(jobs, many=True)
+    return Response(get_api_response(status.HTTP_200_OK, None, serializer.data))
+
+@api_view(['GET'],)
+def jobs_comment_by_user(request, user_id):
+    jobs = BhJob.objects.filter(bhcomment__user__account_id= user_id)
+    serializer = JobSerializer(jobs, many=True)
+    return Response(get_api_response(status.HTTP_200_OK, None, serializer.data))
+
+@api_view(['GET'],)
 def search_job(request):
     search = request.GET.get('query')
     jobs = BhJob.objects.filter(Q(title__contains=search) | Q(description__contains=search) |
