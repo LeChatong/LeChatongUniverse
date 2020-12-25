@@ -293,9 +293,9 @@ def jobs_comment_by_user(request, user_id):
 @api_view(['GET'],)
 def search_job(request):
     search = request.GET.get('query')
-    jobs = BhJob.objects.filter(Q(title__contains=search) | Q(description__contains=search) |
-                                Q(user__account__username__contains=search) | Q(user__first_name__contains=search) |
-                                Q(user__last_name__contains=search) | Q(category__title__contains=search), is_active=True)
+    jobs = BhJob.objects.filter(Q(title__icontains=search) | Q(description__icontains=search) |
+                                Q(user__account__username__icontains=search) | Q(user__first_name__icontains=search) |
+                                Q(user__last_name__icontains=search) | Q(category__title__icontains=search), is_active=True)
 
     serializer = JobSerializer(jobs, many=True)
     return Response(get_api_response(status.HTTP_200_OK, None, serializer.data))
