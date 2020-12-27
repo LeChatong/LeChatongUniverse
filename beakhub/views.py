@@ -1,3 +1,9 @@
+import html2text
+import base64
+import hashlib
+
+from .forms import InitPasswordForm, InitPasswordErrorList
+
 from django.core.mail import send_mail
 from django.shortcuts import render
 from django.utils.datastructures import MultiValueDictKeyError
@@ -7,14 +13,42 @@ from rest_framework.response import Response
 from .serializers import *
 from .models import *
 from django.db.models import Q
-import hashlib
+
+from django.utils.translation import ugettext_lazy as _
 # Create your views here.
 
 def init_password(request):
-    context = {}
+    global username_encrypt
+    #form = InitPasswordForm(request.GET, error_class=InitPasswordErrorList)
+    message = None
+    success = False
+    if request.method == 'POST':
+        username_decrypt = base64.b64decode(request.POST['username_encrypt'].encode('ascii')).decode('ascii')
+
+        if request.POST['password'] == request.POST['confirmPassword']:
+            account = BhAccount.objects.get(username=username_decrypt)
+            if account != None:
+                account.password = hashlib.sha1(request.POST['password'].encode('utf-8')).hexdigest()
+                account.save()
+                success = True
+                message = _('The password updated with success')
+
+        else:
+            success = False
+            message = _('The password is not conform')
+
+        username_encrypt = request.POST['username_encrypt']
+    elif request.method == 'GET':
+        username_encrypt = request.GET['u']
+
+    context = {
+        'username_encrypt': username_encrypt,
+        'success': success,
+        'message': message
+    }
     return render(request, 'init-password.html', context)
 
-#View for API
+#Methode for return data
 def get_api_response(code, message, data):
     APIResponse.CODE = code
     APIResponse.MESSAGE = message
@@ -27,6 +61,8 @@ EVENT_TYPE = {
     'LIKE',
     'VIEW'
 }
+
+#Service for API
 
 @api_view(['GET','POST'],)
 def account_list(request):
@@ -43,15 +79,15 @@ def account_list(request):
         serializer = AccountSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
-            return Response(get_api_response(status.HTTP_201_CREATED, "Account created with success !", serializer.data))
-        return Response(get_api_response(status.HTTP_208_ALREADY_REPORTED, "This account already exist !", serializer.errors))
+            return Response(get_api_response(status.HTTP_201_CREATED, _("Account created with success !"), serializer.data))
+        return Response(get_api_response(status.HTTP_208_ALREADY_REPORTED, _("This account already exist !"), serializer.errors))
 
 @api_view(['PUT','DELETE', 'GET'],)
 def account_details(request, id):
     try:
         account = BhAccount.objects.get(pk=id)
     except BhAccount.DoesNotExist:
-        return Response(get_api_response(status.HTTP_404_NOT_FOUND, "Account not found", None))
+        return Response(get_api_response(status.HTTP_404_NOT_FOUND, _("Account not found"), None))
 
     if request.method == 'GET':
         #password_crypt = hashlib.sha1(account.password.encode('utf-8')).hexdigest()
@@ -68,14 +104,29 @@ def account_details(request, id):
         serializer = AccountSerializer(account, data=request.data)
         if serializer.is_valid():
             serializer.save()
-            return Response(get_api_response(status.HTTP_200_OK, "Account updated with success",serializer.data))
+            return Response(get_api_response(status.HTTP_200_OK, _("Account updated with success"), serializer.data))
         return Response(get_api_response(status.HTTP_400_BAD_REQUEST, None, serializer.errors))
 
     elif request.method == 'DELETE':
         account.delete()
-        return Response(get_api_response(status.HTTP_204_NO_CONTENT, "Account deleted with success", None))
+        return Response(get_api_response(status.HTTP_204_NO_CONTENT, _("Account deleted with success"), None))
 
-def change_password(request, id):
+@api_view(['GET'],)
+def account_by_id_and_password(request, id, password):
+    try:
+        password_crypt = hashlib.sha1(password.encode('utf-8')).hexdigest()
+        account = BhAccount.objects.get(pk=id, password=password_crypt)
+    except BhAccount.DoesNotExist:
+        return Response(get_api_response(status.HTTP_404_NOT_FOUND, _("Account not found"), None))
+
+    serializer = AccountSerializer(account)
+    if serializer.data != None:
+        return Response(get_api_response(status.HTTP_200_OK, None, serializer.data))
+    else:
+        return Response(get_api_response(status.HTTP_204_NO_CONTENT, "No Content", serializer.errors))
+
+@api_view(['PUT'],)
+def account_change_password(request, id):
     try:
         account = BhAccount.objects.get(pk=id)
 
@@ -85,10 +136,10 @@ def change_password(request, id):
         serializer = AccountSerializer(account, data=request.data)
         if serializer.is_valid():
             serializer.save()
-            return Response(get_api_response(status.HTTP_200_OK, "Password changed", serializer.data))
+            return Response(get_api_response(status.HTTP_200_OK, _("Password changed"), serializer.data))
         return Response(get_api_response(status.HTTP_400_BAD_REQUEST, None, serializer.errors))
     except BhAccount.DoesNotExist:
-        return Response(get_api_response(status.HTTP_404_NOT_FOUND, "Account not found", None))
+        return Response(get_api_response(status.HTTP_404_NOT_FOUND, _("Account not found"), None))
 
 @api_view(['GET', 'POST'],)
 def account_login(request):
@@ -117,28 +168,37 @@ def account_login(request):
         serializer = AccountSerializer(data)
         return Response(get_api_response(status.HTTP_200_OK, None, serializer.data))
     except IndexError:
-        return Response(get_api_response(status.HTTP_404_NOT_FOUND, "Username or password incorrect", None))
+        return Response(get_api_response(status.HTTP_404_NOT_FOUND, _("Username or password incorrect"), None))
 
 @api_view(['GET'])
 def send_mail_for_init_password(request):
+    h = html2text.HTML2Text()
+    h.ignore_links = True
     user = BhUser.objects.get(email = request.GET.get('mail'))
     print(settings.EMAIL_HOST_USER)
     if user != None:
         account = BhAccount.objects.get(id = user.account_id)
 
-        init_link = "http://127.0.0.1:8000/fr/beakhub/accounts/init/password/"+ account.username
+        username_encrypt = base64.b64encode(account.username.encode('ascii')).decode('ascii')
+
+        init_link = "http://lechatonguniverse.herokuapp.com/en/beakhub/accounts/init/password?u="+ username_encrypt
         message = "<b>BeakHub</b>" \
-                  "<p>Click on this link for init your password : </p>" + init_link
+                  "<br/>" \
+                  "<p>"+ _("Hello") +"<b>" + account.username + "</b>,</p>"\
+                  "<p>"+ _("Click on this link for init your password :") +"</p>" + init_link + "" \
+                  "<p>"+ _("BeakHub Team")+"</p>"
+
         send_mail(
-            'Reconduction du mot de passe',
-            message,
+            _('Password renewal'),
+            h.handle(message),
             settings.EMAIL_HOST_USER,
             [user.email],
             fail_silently=True,
         )
-        return Response(get_api_response(status.HTTP_200_OK, "A mail youre sended", message))
+
+        return Response(get_api_response(status.HTTP_200_OK, _("Email has been sended with succes"), message))
     else:
-        return Response(get_api_response(status.HTTP_404_NOT_FOUND, "This email does not belong to a user", None))
+        return Response(get_api_response(status.HTTP_404_NOT_FOUND, _("This email does not belong to a user"), None))
 
 @api_view(['GET', 'POST'],)
 def user_list(request):
@@ -158,14 +218,14 @@ def user_details(request, id):
     try:
         user = BhUser.objects.get(pk=id)
     except BhUser.DoesNotExist:
-        return Response(get_api_response(status.HTTP_404_NOT_FOUND, "User not found", None))
+        return Response(get_api_response(status.HTTP_404_NOT_FOUND, _("User not found"), None))
 
     if request.method == 'GET':
         serializer = UserSerializer(user)
         if serializer.data != None:
             return Response(get_api_response(status.HTTP_200_OK, None, serializer.data))
         else:
-            return Response(get_api_response(status.HTTP_204_NO_CONTENT, "Error Encoured", serializer.errors))
+            return Response(get_api_response(status.HTTP_204_NO_CONTENT, _("Error Encoured"), serializer.errors))
 
     elif request.method == 'PUT':
         try:
@@ -176,12 +236,12 @@ def user_details(request, id):
         serializer = UserSerializer(user, data=request.data)
         if serializer.is_valid():
             serializer.save()
-            return Response(get_api_response(status.HTTP_200_OK, "User updated with success",serializer.data))
-        return Response(get_api_response(status.HTTP_400_BAD_REQUEST, "Error Encoured", serializer.errors))
+            return Response(get_api_response(status.HTTP_200_OK, _("User updated with success"),serializer.data))
+        return Response(get_api_response(status.HTTP_400_BAD_REQUEST, _("Error Encoured"), serializer.errors))
 
     elif request.method == 'DELETE':
         user.delete()
-        return Response(get_api_response(status.HTTP_204_NO_CONTENT, "User deleted with success", None))
+        return Response(get_api_response(status.HTTP_204_NO_CONTENT, _("User deleted with success"), None))
 
 @api_view(['GET', 'POST'],)
 def category_list(request):
@@ -231,15 +291,15 @@ def job_list(request):
         serializer = JobSerializer(data=request.data, context={'request': request})
         if serializer.is_valid():
             serializer.save()
-            return Response(get_api_response(status.HTTP_201_CREATED, "Job created with success", serializer.data))
-        return Response(get_api_response(status.HTTP_400_BAD_REQUEST, "Error Encored", serializer.errors))
+            return Response(get_api_response(status.HTTP_201_CREATED, _("Job created with success"), serializer.data))
+        return Response(get_api_response(status.HTTP_400_BAD_REQUEST, _("Error Encored"), serializer.errors))
 
 @api_view(['PUT','DELETE', 'GET'],)
 def job_details(request, id):
     try:
         job = BhJob.objects.get(pk=id)
     except BhJob.DoesNotExist:
-        return Response(get_api_response(status.HTTP_404_NOT_FOUND, "Job not found", None))
+        return Response(get_api_response(status.HTTP_404_NOT_FOUND, _("Job not found"), None))
 
     if request.method == 'GET':
         serializer = JobSerializer(job)
@@ -251,11 +311,11 @@ def job_details(request, id):
         serializer = JobSerializer(job, data=request.data)
         if serializer.is_valid():
             serializer.save()
-            return Response(get_api_response(status.HTTP_200_OK, "Job updated with success", serializer.data))
+            return Response(get_api_response(status.HTTP_200_OK, _("Job updated with success"), serializer.data))
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     elif request.method == 'DELETE':
         job.delete()
-        return Response(get_api_response(status.HTTP_204_NO_CONTENT, "Job deleted with success", None))
+        return Response(get_api_response(status.HTTP_204_NO_CONTENT, _("Job deleted with success"), None))
 
 @api_view(['GET'],)
 def jobs_by_user(request, user_id):
@@ -310,33 +370,33 @@ def address_list(request):
         serializer = AddressSerializer(data=request.data, context={'request': request})
         if serializer.is_valid():
             serializer.save()
-            return Response(get_api_response(status.HTTP_201_CREATED, "The address added with success", serializer.data))
-        return Response(get_api_response(status.HTTP_400_BAD_REQUEST, "Bad Request", serializer.errors))
+            return Response(get_api_response(status.HTTP_201_CREATED, _("The address added with success"), serializer.data))
+        return Response(get_api_response(status.HTTP_400_BAD_REQUEST, _("Bad Request"), serializer.errors))
 
 @api_view(['PUT','DELETE', 'GET'],)
 def address_details(request, id):
     try:
         address = BhAddress.objects.get(pk=id)
     except BhAddress.DoesNotExist:
-        return Response(get_api_response(status.HTTP_404_NOT_FOUND, "Address not found", None))
+        return Response(get_api_response(status.HTTP_404_NOT_FOUND, _("Address not found"), None))
 
     if request.method == 'GET':
         serializer = AddressSerializer(address)
         if serializer.data != None:
             return Response(get_api_response(status.HTTP_200_OK, None, serializer.data))
         else:
-            return Response(get_api_response(status.HTTP_204_NO_CONTENT, "Error Encoured", serializer.errors))
+            return Response(get_api_response(status.HTTP_204_NO_CONTENT, _("Error Encoured"), serializer.errors))
 
     elif request.method == 'PUT':
         serializer = AddressSerializer(address, data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
-        return Response(get_api_response(status.HTTP_400_BAD_REQUEST, "Error Encoured", serializer.errors))
+        return Response(get_api_response(status.HTTP_400_BAD_REQUEST, _("Error Encoured"), serializer.errors))
 
     elif request.method == 'DELETE':
         address.delete()
-        return Response(get_api_response(status.HTTP_204_NO_CONTENT, "Address deleted with success", None))
+        return Response(get_api_response(status.HTTP_204_NO_CONTENT, _("Address deleted with success"), None))
 
 @api_view(['GET'],)
 def address_by_job(request, job_id):
@@ -354,33 +414,33 @@ def comment_add(request):
             if job.user.account_id != user.account_id:
                 BhEvent(action='COMMENT', job_id=job.id, reciever_id=job.user.account_id, sender_id=user.account_id).save()
         serializer.save()
-        return Response(get_api_response(status.HTTP_201_CREATED, "The comment added with success", serializer.data))
-    return Response(get_api_response(status.HTTP_400_BAD_REQUEST, "Bad Request", serializer.errors))
+        return Response(get_api_response(status.HTTP_201_CREATED, _("The comment added with success"), serializer.data))
+    return Response(get_api_response(status.HTTP_400_BAD_REQUEST, _("Bad Request"), serializer.errors))
 
 @api_view(['PUT','DELETE', 'GET'],)
 def comment_id(request, id):
     try:
         comment = BhComment.objects.get(pk=id)
     except BhComment.DoesNotExist:
-        return Response(get_api_response(status.HTTP_404_NOT_FOUND, "Comment not found", None))
+        return Response(get_api_response(status.HTTP_404_NOT_FOUND, _("Comment not found"), None))
 
     if request.method == 'GET':
         serializer = CommentSerializer(comment)
         if serializer.data != None:
             return Response(get_api_response(status.HTTP_200_OK, None, serializer.data))
         else:
-            return Response(get_api_response(status.HTTP_204_NO_CONTENT, "Error Encoured", serializer.errors))
+            return Response(get_api_response(status.HTTP_204_NO_CONTENT, _("Error Encoured"), serializer.errors))
 
     elif request.method == 'PUT':
         serializer = CommentSerializer(comment, data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
-        return Response(get_api_response(status.HTTP_400_BAD_REQUEST, "Error Encoured", serializer.errors))
+        return Response(get_api_response(status.HTTP_400_BAD_REQUEST, _("Error Encoured"), serializer.errors))
 
     elif request.method == 'DELETE':
         comment.delete()
-        return Response(get_api_response(status.HTTP_204_NO_CONTENT, "Comment deleted with success", None))
+        return Response(get_api_response(status.HTTP_204_NO_CONTENT, _("Comment deleted with success"), None))
 
 @api_view(['GET'],)
 def comment_job_id(request, job_id):
@@ -404,33 +464,33 @@ def like_all(request):
                     BhEvent(action='LIKE', job_id=job.id, reciever_id=job.user.account_id,
                             sender_id=user.account_id).save()
             serializer.save()
-            return Response(get_api_response(status.HTTP_201_CREATED, "The like created with success", serializer.data))
-        return Response(get_api_response(status.HTTP_400_BAD_REQUEST, "Bad Request", serializer.errors))
+            return Response(get_api_response(status.HTTP_201_CREATED, _("The like created with success"), serializer.data))
+        return Response(get_api_response(status.HTTP_400_BAD_REQUEST, _("Bad Request"), serializer.errors))
 
 @api_view(['PUT','DELETE', 'GET'],)
 def like_detail(request, like_id):
     try:
         like_job = BhUserLikeJob.objects.get(pk=like_id)
     except BhUserLikeJob.DoesNotExist:
-        return Response(get_api_response(status.HTTP_404_NOT_FOUND, "like not found", None))
+        return Response(get_api_response(status.HTTP_404_NOT_FOUND, _("like not found"), None))
 
     if request.method == 'GET':
         serializer = BhUserLikeJobSerializer(like_job)
         if serializer.data != None:
             return Response(get_api_response(status.HTTP_200_OK, None, serializer.data))
         else:
-            return Response(get_api_response(status.HTTP_204_NO_CONTENT, "Error Encoured", serializer.errors))
+            return Response(get_api_response(status.HTTP_204_NO_CONTENT, _("Error Encoured"), serializer.errors))
 
     elif request.method == 'PUT':
         serializer = BhUserLikeJobSerializer(like_job, data=request.data)
         if serializer.is_valid():
             serializer.save()
-            return Response(get_api_response(status.HTTP_200_OK, "Like updated with success",serializer.data))
-        return Response(get_api_response(status.HTTP_400_BAD_REQUEST, "Error Encoured", serializer.errors))
+            return Response(get_api_response(status.HTTP_200_OK, _("Like updated with success"),serializer.data))
+        return Response(get_api_response(status.HTTP_400_BAD_REQUEST, _("Error Encoured"), serializer.errors))
 
     elif request.method == 'DELETE':
         like_job.delete()
-        return Response(get_api_response(status.HTTP_204_NO_CONTENT, "like deleted with success", None))
+        return Response(get_api_response(status.HTTP_204_NO_CONTENT, _("like deleted with success"), None))
 
 @api_view(['GET'],)
 def like_job_user(request, job_id, user_id):
@@ -440,9 +500,9 @@ def like_job_user(request, job_id, user_id):
         if serializer.data != None:
             return Response(get_api_response(status.HTTP_200_OK, None, serializer.data))
         else:
-            return Response(get_api_response(status.HTTP_204_NO_CONTENT, "Error Encoured", serializer.errors))
+            return Response(get_api_response(status.HTTP_204_NO_CONTENT, _("Error Encoured"), serializer.errors))
     except BhUserLikeJob.DoesNotExist:
-        return Response(get_api_response(status.HTTP_404_NOT_FOUND, "like not found", None))
+        return Response(get_api_response(status.HTTP_404_NOT_FOUND, _("like not found"), None))
 
 @api_view(['GET'],)
 def likes_job(request, job_id):
@@ -452,9 +512,9 @@ def likes_job(request, job_id):
         if serializer.data != None:
             return Response(get_api_response(status.HTTP_200_OK, None, serializer.data))
         else:
-            return Response(get_api_response(status.HTTP_204_NO_CONTENT, "Error Encoured", serializer.errors))
+            return Response(get_api_response(status.HTTP_204_NO_CONTENT, _("Error Encoured"), serializer.errors))
     except BhUserLikeJob.DoesNotExist:
-        return Response(get_api_response(status.HTTP_404_NOT_FOUND, "like not found", None))
+        return Response(get_api_response(status.HTTP_404_NOT_FOUND, _("like not found"), None))
 
 @api_view(['GET'],)
 def likes_user(request, user_id):
@@ -464,9 +524,9 @@ def likes_user(request, user_id):
         if serializer.data != None:
             return Response(get_api_response(status.HTTP_200_OK, None, serializer.data))
         else:
-            return Response(get_api_response(status.HTTP_204_NO_CONTENT, "Error Encoured", serializer.errors))
+            return Response(get_api_response(status.HTTP_204_NO_CONTENT, _("Error Encoured"), serializer.errors))
     except BhUserLikeJob.DoesNotExist:
-        return Response(get_api_response(status.HTTP_404_NOT_FOUND, "like not found", None))
+        return Response(get_api_response(status.HTTP_404_NOT_FOUND, _("like not found"), None))
 
 @api_view(['GET'],)
 def all_event(request):
@@ -485,7 +545,6 @@ def events_not_see_by_user(request, user_id):
     events = BhEvent.objects.filter(reciever_id = user_id, is_view=False).order_by('-created_at')
     serializer = BhEventSerializer(events, many=True)
     return Response(get_api_response(status.HTTP_200_OK, None, serializer.data))
-
 
 @api_view(['GET'],)
 def event_by_id(request, id):

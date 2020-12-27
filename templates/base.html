@@ -15,7 +15,7 @@
     <meta name="google-site-verification" content="NQbARh2Ayw_CwjEqXMKEYPPaiWkJP9QK8pibbuZHmWg" />
 
 
-    <link rel="icon" type="image/x-icon" href="{% static 'logo.png' %}">
+    {% block icon %}<link rel="icon" type="image/x-icon" href="{% static 'logo.png' %}">{% endblock %}
     {% block META_OG %}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:description" content="Site de distribution de contenu multimédia." />

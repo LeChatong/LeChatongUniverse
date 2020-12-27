@@ -2,11 +2,14 @@ from django.conf.urls import url
 from beakhub import views
 
 urlpatterns = (
-    url(r'^accounts/init/password$', views.init_password),
+    url(r'^accounts/init/password$', views.init_password, name='initialize_password'),
+    #url(r'^accounts/init/password/action$', views.initialize_password, name='initialize_password'),
     url(r'^api/v1/accounts$', views.account_list),
     url(r'^api/v1/accounts/(?P<id>[0-9]+)$', views.account_details),
+    url(r'^api/v1/accounts/(?P<id>[0-9]+)/(?P<password>[\w]+)$', views.account_by_id_and_password),
     url(r'^api/v1/accounts/login$', views.account_login),
     url(r'^api/v1/accounts/init$', views.send_mail_for_init_password),
+    url(r'^api/v1/accounts/password/change/(?P<id>[0-9]+)$', views.account_change_password),
     url(r'^api/v1/users$', views.user_list),
     url(r'^api/v1/users/(?P<id>[0-9]+)$', views.user_details),
     url(r'^api/v1/categories$', views.category_list),
