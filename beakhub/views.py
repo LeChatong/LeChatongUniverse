@@ -160,14 +160,15 @@ def account_login(request):
             password_crypt = None
         password = hashlib.sha1(password_crypt.encode('utf-8')).hexdigest()
 
-    data = BhAccount.objects.get(username=username, password=password)
-    print(data)
     try:
+        data = BhAccount.objects.get(username=username, password=password)
         data.last_login = datetime.now()
         data.save()
         serializer = AccountSerializer(data)
         return Response(get_api_response(status.HTTP_200_OK, None, serializer.data))
     except IndexError:
+        return Response(get_api_response(status.HTTP_404_NOT_FOUND, _("Username or password incorrect"), None))
+    except BhAccount.DoesNotExist:
         return Response(get_api_response(status.HTTP_404_NOT_FOUND, _("Username or password incorrect"), None))
 
 @api_view(['GET'])
