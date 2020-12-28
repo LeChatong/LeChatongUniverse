@@ -27,6 +27,7 @@ django-tinymce4-lite==1.7.4
 djangorestframework==3.11.0
 Flask==1.0.2
 gunicorn==19.9.0
+html2text==2020.1.16
 hyperlink==19.0.0
 idna==2.8
 immutables==0.14
