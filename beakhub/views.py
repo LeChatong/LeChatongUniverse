@@ -187,9 +187,9 @@ def send_mail_for_init_password(request):
         init_link = "http://lechatonguniverse.herokuapp.com/en/beakhub/accounts/init/password?u="+ username_encrypt
         message = "<b>BeakHub</b>" \
                   "<br/>" \
-                  "<p>"+ _("Hello") +"<b>" + account.username + "</b>,</p>"\
-                  "<p>"+ _("Click on this link for init your password :") +"</p>" + init_link + "" \
-                  "<p>"+ _("BeakHub Team")+"</p>"
+                  "<p>Hello<b>" + account.username + "</b>,</p>"\
+                  "<p>Click on this link for init your password :</p>" + init_link + "" \
+                  "<p>BeakHub Team</p>"
 
         send_mail(
             _('Password renewal'),
