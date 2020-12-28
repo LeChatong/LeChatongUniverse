@@ -174,8 +174,11 @@ def account_login(request):
 def send_mail_for_init_password(request):
     h = html2text.HTML2Text()
     h.ignore_links = True
-    user = BhUser.objects.get(email = request.GET.get('mail'))
-    print(settings.EMAIL_HOST_USER)
+    try:
+        user = BhUser.objects.get(email = request.GET.get('mail'))
+    except BhUser.DoesNotExist:
+        return Response(get_api_response(status.HTTP_404_NOT_FOUND, _("This email does not belong to a user"), None))
+    #print(settings.EMAIL_HOST_USER)
     if user != None:
         account = BhAccount.objects.get(id = user.account_id)
 
