@@ -35,7 +35,7 @@ incremental==17.5.0
 itsdangerous==1.1.0
 Jinja2==2.10
 loguru==0.4.0
-lxml==4.4.2
+lxml==4.6.2
 MarkupSafe==1.1.1
 oauthlib==3.0.1
 packaging==19.2
