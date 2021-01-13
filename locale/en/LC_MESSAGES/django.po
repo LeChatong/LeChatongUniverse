@@ -8,22 +8,239 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-21 13:00+0100\n"
+"POT-Creation-Date: 2021-01-02 21:40+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\OnlyMe\settings.py:155
+#: .\OnlyMe\settings.py:173
 msgid "French"
 msgstr "French"
 
-#: .\OnlyMe\settings.py:156
+#: .\OnlyMe\settings.py:174
 msgid "English"
 msgstr "English"
+
+#: .\beakhub\forms.py:8 .\beakhub\templates\init-password.html:44
+#: .\beakhub\templates\init-password.html:46
+#, fuzzy
+#| msgid "password"
+msgid "New Password"
+msgstr "Password"
+
+#: .\beakhub\forms.py:9
+msgid "Password Confirm"
+msgstr ""
+
+#: .\beakhub\forms.py:15
+msgid "Mot de passe non conforme"
+msgstr "Incorrect password"
+
+#: .\beakhub\templates\init-password.html:29
+msgid "Reset your password"
+msgstr "Reset your password"
+
+#: .\beakhub\templates\init-password.html:50
+#: .\beakhub\templates\init-password.html:52
+msgid "Confirm Password"
+msgstr ""
+
+#: .\beakhub\templates\init-password.html:56
+msgid "send"
+msgstr "send"
+
+#: .\beakhub\views.py:34
+msgid "The password updated with success"
+msgstr "The password updated with success"
+
+#: .\beakhub\views.py:38
+msgid "The password is not conform"
+msgstr "Incorrect password"
+
+#: .\beakhub\views.py:82
+msgid "Account created with success !"
+msgstr "Account created with success !"
+
+#: .\beakhub\views.py:83
+msgid "This account already exist !"
+msgstr "This account already exist !"
+
+#: .\beakhub\views.py:90 .\beakhub\views.py:120 .\beakhub\views.py:142
+msgid "Account not found"
+msgstr "Account not found"
+
+#: .\beakhub\views.py:107
+msgid "Account updated with success"
+msgstr "Account updated with success"
+
+#: .\beakhub\views.py:112
+msgid "Account deleted with success"
+msgstr "Account updated with success"
+
+#: .\beakhub\views.py:139
+msgid "Password changed"
+msgstr "Password changed"
+
+#: .\beakhub\views.py:170 .\beakhub\views.py:172
+msgid "Username or password incorrect"
+msgstr "Username or password incorrect"
+
+#: .\beakhub\views.py:181 .\beakhub\views.py:205
+msgid "This email does not belong to a user"
+msgstr "This email does not belong to a user"
+
+#: .\beakhub\views.py:196
+msgid "Password renewal"
+msgstr "Password renewal"
+
+#: .\beakhub\views.py:203
+msgid "Email has been sended with succes"
+msgstr "Email has been sended with succes"
+
+#: .\beakhub\views.py:217
+msgid "User created with success"
+msgstr "User created with success"
+
+#: .\beakhub\views.py:218 .\beakhub\views.py:232 .\beakhub\views.py:244
+#: .\beakhub\views.py:392 .\beakhub\views.py:399 .\beakhub\views.py:436
+#: .\beakhub\views.py:443 .\beakhub\views.py:486 .\beakhub\views.py:493
+#: .\beakhub\views.py:507 .\beakhub\views.py:519 .\beakhub\views.py:531
+msgid "Error Encoured"
+msgstr "Error Encored"
+
+#: .\beakhub\views.py:225
+msgid "User not found"
+msgstr "User not found"
+
+#: .\beakhub\views.py:243
+msgid "User updated with success"
+msgstr "User updated with success"
+
+#: .\beakhub\views.py:248
+msgid "User deleted with success"
+msgstr "User deleted with success"
+
+#: .\beakhub\views.py:298
+msgid "Job created with success"
+msgstr "Job created with success"
+
+#: .\beakhub\views.py:299
+msgid "Error Encored"
+msgstr "Error Encored"
+
+#: .\beakhub\views.py:306
+msgid "Job not found"
+msgstr "Job not found"
+
+#: .\beakhub\views.py:318
+msgid "Job updated with success"
+msgstr "Job updated with success"
+
+#: .\beakhub\views.py:322
+msgid "Job deleted with success"
+msgstr ""
+
+#: .\beakhub\views.py:377
+msgid "The address added with success"
+msgstr "The address added with success"
+
+#: .\beakhub\views.py:378 .\beakhub\views.py:422 .\beakhub\views.py:472
+msgid "Bad Request"
+msgstr "Bad Request"
+
+#: .\beakhub\views.py:385
+msgid "Address not found"
+msgstr "Address not found"
+
+#: .\beakhub\views.py:403
+msgid "Address deleted with success"
+msgstr "Address deleted with success"
+
+#: .\beakhub\views.py:421
+msgid "The comment added with success"
+msgstr "The comment added with success"
+
+#: .\beakhub\views.py:429
+msgid "Comment not found"
+msgstr "Comment not found"
+
+#: .\beakhub\views.py:447
+msgid "Comment deleted with success"
+msgstr "Comment deleted with success"
+
+#: .\beakhub\views.py:471
+msgid "The like created with success"
+msgstr "The like created with success"
+
+#: .\beakhub\views.py:479 .\beakhub\views.py:509 .\beakhub\views.py:521
+#: .\beakhub\views.py:533
+msgid "like not found"
+msgstr "like not found"
+
+#: .\beakhub\views.py:492
+msgid "Like updated with success"
+msgstr ""
+
+#: .\beakhub\views.py:497
+msgid "like deleted with success"
+msgstr "like deleted with success"
+
+#: .\lcu\form.py:8 .\lcu\form.py:12
+#, fuzzy
+#| msgid "username"
+msgid "Username"
+msgstr "Username"
+
+#: .\lcu\form.py:15 .\lcu\form.py:19
+#, fuzzy
+#| msgid "password"
+msgid "Password"
+msgstr "Password"
+
+#: .\lcu\form.py:36 .\lcu\form.py:68
+msgid "HIGH"
+msgstr ""
+
+#: .\lcu\form.py:37 .\lcu\form.py:69
+msgid "MEDIUM"
+msgstr ""
+
+#: .\lcu\form.py:38 .\lcu\form.py:70
+msgid "LOW"
+msgstr ""
+
+#: .\lcu\form.py:41 .\lcu\form.py:44 .\lcu\form.py:79 .\lcu\form.py:82
+#: .\lcu\templates\movies\detail_movie.html:118
+#: .\lcu\templates\movies\detail_movie.html:128
+#: .\lcu\templates\tv_shows\detail_season.html:48
+msgid "link_download"
+msgstr ""
+
+#: .\lcu\form.py:48 .\lcu\form.py:51 .\lcu\form.py:86 .\lcu\form.py:89
+#: .\lcu\templates\movies\detail_movie.html:119
+#: .\lcu\templates\movies\detail_movie.html:129
+#: .\lcu\templates\tv_shows\detail_season.html:49
+#, fuzzy
+#| msgid "langue"
+msgid "language"
+msgstr "Language"
+
+#: .\lcu\form.py:55 .\lcu\form.py:58 .\lcu\form.py:93 .\lcu\form.py:96
+#, fuzzy
+#| msgid "qualite_video"
+msgid "quality"
+msgstr "Video Quality"
+
+#: .\lcu\form.py:73 .\lcu\form.py:76
+#, fuzzy
+#| msgid "episode"
+msgid "number_episode"
+msgstr "Episode"
 
 #: .\lcu\models.py:10
 msgid "first_name"
@@ -41,8 +258,10 @@ msgstr "Password"
 msgid "email"
 msgstr "Mail"
 
-#: .\lcu\models.py:14 .\lcu\models.py:56 .\lcu\models.py:95
-#: .\lcu\models.py:115
+#: .\lcu\models.py:14 .\lcu\models.py:56 .\lcu\models.py:95 .\lcu\models.py:115
+#: .\lcu\templates\movies\detail_movie.html:120
+#: .\lcu\templates\movies\detail_movie.html:130
+#: .\lcu\templates\tv_shows\detail_season.html:50
 msgid "created_at"
 msgstr " Created At"
 
@@ -197,6 +416,153 @@ msgstr "Comment"
 #: .\lcu\models.py:119
 msgid "comments"
 msgstr "Comments"
+
+#: .\lcu\templates\movies\add_link_movie.html:11
+#: .\lcu\templates\movies\detail_movie.html:11
+#: .\lcu\templates\movies\edit_movie.html:11
+#: .\lcu\templates\movies\list_movie.html:11
+#: .\lcu\templates\search\search.html:11
+#: .\lcu\templates\tv_shows\add_link_tv_show.html:11
+#: .\lcu\templates\tv_shows\detail_season.html:11
+#: .\lcu\templates\tv_shows\detail_tv.html:11
+msgid "dashboard"
+msgstr ""
+
+#: .\lcu\templates\movies\add_link_movie.html:12
+#: .\lcu\templates\movies\edit_movie.html:12
+msgid "all_movies"
+msgstr ""
+
+#: .\lcu\templates\movies\add_link_movie.html:13
+#: .\lcu\templates\movies\edit_movie.html:13
+msgid "add_link_movie"
+msgstr ""
+
+#: .\lcu\templates\movies\add_link_movie.html:21
+#: .\lcu\templates\movies\edit_movie.html:21
+msgid "add_movie"
+msgstr ""
+
+#: .\lcu\templates\movies\add_link_movie.html:41
+#: .\lcu\templates\movies\detail_movie.html:100
+#: .\lcu\templates\movies\edit_movie.html:41
+#: .\lcu\templates\tv_shows\add_link_tv_show.html:72
+msgid "save"
+msgstr ""
+
+#: .\lcu\templates\movies\detail_movie.html:23
+#: .\lcu\templates\tv_shows\add_link_tv_show.html:25
+msgid "link_save_with_succes"
+msgstr ""
+
+#: .\lcu\templates\movies\detail_movie.html:30
+#: .\lcu\templates\tv_shows\add_link_tv_show.html:32
+msgid "error_occured"
+msgstr ""
+
+#: .\lcu\templates\movies\detail_movie.html:37
+#: .\lcu\templates\tv_shows\add_link_tv_show.html:39
+msgid "link_delete_with_success"
+msgstr ""
+
+#: .\lcu\templates\movies\detail_movie.html:53
+#: .\lcu\templates\tv_shows\detail_season.html:30
+#: .\lcu\templates\tv_shows\detail_tv.html:29
+msgid "release_at"
+msgstr ""
+
+#: .\lcu\templates\movies\detail_movie.html:58
+#: .\lcu\templates\tv_shows\detail_season.html:34
+msgid "add_link"
+msgstr ""
+
+#: .\lcu\templates\movies\detail_movie.html:71
+msgid "link_on_movie"
+msgstr ""
+
+#: .\lcu\templates\movies\detail_movie.html:78
+msgid "add_link_on_movie"
+msgstr ""
+
+#: .\lcu\templates\movies\detail_movie.html:121
+#: .\lcu\templates\movies\detail_movie.html:131
+#: .\lcu\templates\tv_shows\detail_season.html:51
+#, fuzzy
+#| msgid "created_at"
+msgid "created_by"
+msgstr " Created At"
+
+#: .\lcu\templates\movies\detail_movie.html:122
+#: .\lcu\templates\movies\detail_movie.html:132
+#: .\lcu\templates\tv_shows\detail_season.html:52
+msgid "action"
+msgstr ""
+
+#: .\lcu\templates\movies\detail_movie.html:144
+#: .\lcu\templates\tv_shows\detail_season.html:63
+msgid "edit"
+msgstr ""
+
+#: .\lcu\templates\movies\detail_movie.html:145
+#, fuzzy
+#| msgid "is_delete"
+msgid "delete"
+msgstr "Is Delete"
+
+#: .\lcu\templates\movies\detail_movie.html:150
+msgid "delete_link_on_movie"
+msgstr ""
+
+#: .\lcu\templates\movies\detail_movie.html:160
+msgid "are_you_sure"
+msgstr ""
+
+#: .\lcu\templates\movies\detail_movie.html:162
+msgid "validate"
+msgstr ""
+
+#: .\lcu\templates\movies\detail_movie.html:165
+msgid "cancel"
+msgstr ""
+
+#: .\lcu\templates\movies\list_movie.html:4
+msgid "movies"
+msgstr ""
+
+#: .\lcu\templates\movies\list_movie.html:12
+#: .\lcu\templates\movies\list_movie.html:27
+msgid "all_link_movies"
+msgstr ""
+
+#: .\lcu\templates\movies\list_movie.html:36
+#: .\lcu\templates\movies\list_movie.html:42
+msgid "title"
+msgstr ""
+
+#: .\lcu\templates\search\search.html:4 .\lcu\templates\search\search.html:12
+msgid "search"
+msgstr ""
+
+#: .\lcu\templates\tv_shows\add_link_tv_show.html:4
+#: .\lcu\templates\tv_shows\add_link_tv_show.html:14
+msgid "add_link_tv_show"
+msgstr ""
+
+#: .\lcu\templates\tv_shows\add_link_tv_show.html:45
+msgid "add_tv_link"
+msgstr ""
+
+#: .\lcu\views.py:35
+#, fuzzy
+#| msgid "message"
+msgid "message_success"
+msgstr "Message"
+
+#: .\lcu\views.py:41
+#, fuzzy
+#| msgid "message"
+msgid "message_error"
+msgstr "Message"
 
 #~ msgid "Rechercher"
 #~ msgstr "Search"

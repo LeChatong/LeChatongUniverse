@@ -46,11 +46,17 @@ if os.environ.get('ENV') == 'PRODUCTION':
 else:
     SITE_URL = 'http://127.0.0.1:8000'
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-    EMAIL_HOST = 'smtp.gmail.com'
-    EMAIL_USE_TLS = True
-    EMAIL_PORT = 587
-    EMAIL_HOST_USER = 'ulrich.tchatong@gmail.com'
-    EMAIL_HOST_PASSWORD = 'sfvehyzjyudwuukc'
+
+    #EMAIL_HOST = 'smtp.ionos.fr'
+    #EMAIL_USE_TLS = True
+    #EMAIL_PORT = 587
+    #EMAIL_HOST_USER = 'contact@lebeautyhub.com'
+    #EMAIL_HOST_PASSWORD = 'Lebeautyhub071220@'
+
+    EMAIL_HOST = 'smtp.mailtrap.io'
+    EMAIL_HOST_USER = '5b500b7d4abfac'
+    EMAIL_HOST_PASSWORD = '61800d172b7787'
+    EMAIL_PORT = '2525'
 # Application definition
 
 INSTALLED_APPS = [

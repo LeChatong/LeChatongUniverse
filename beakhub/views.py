@@ -2,9 +2,12 @@ import html2text
 import base64
 import hashlib
 
+from django.template import loader
+from django.utils.html import strip_tags
+
 from .forms import InitPasswordForm, InitPasswordErrorList
 
-from django.core.mail import send_mail
+from django.core.mail import send_mail, EmailMultiAlternatives
 from django.shortcuts import render
 from django.utils.datastructures import MultiValueDictKeyError
 from rest_framework import status
@@ -191,14 +194,21 @@ def send_mail_for_init_password(request):
                   "<p>Hello<b>" + account.username + "</b>,</p>"\
                   "<p>Click on this link for init your password :</p>" + init_link + "" \
                   "<p>BeakHub Team</p>"
-
-        send_mail(
-            _('Password renewal'),
-            h.handle(message),
-            settings.EMAIL_HOST_USER,
-            [user.email],
-            fail_silently=True,
-        )
+        html_message = loader.render_to_string("init-pass-mail.html",
+                                               {"username":account.username,
+                                                "init_link": init_link})
+        msg = EmailMultiAlternatives(_('Password renewal'),
+                                     html_message,settings.EMAIL_HOST_USER,
+            [user.email])
+        msg.attach_alternative(html_message, "text/html")
+        msg.send()
+        #send_mail(
+        #    _('Password renewal'),
+        #    strip_tags(html_message),
+        #    settings.EMAIL_HOST_USER,
+        #    [user.email],
+        #    fail_silently=True,
+        #)
 
         return Response(get_api_response(status.HTTP_200_OK, _("Email has been sended with succes"), message))
     else:
@@ -214,8 +224,8 @@ def user_list(request):
         serializer = UserSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
-            return Response(get_api_response(status.HTTP_201_CREATED, "User created with success", serializer.data))
-        return Response(get_api_response(status.HTTP_400_BAD_REQUEST, "Error Encoured", serializer.errors))
+            return Response(get_api_response(status.HTTP_201_CREATED, _("User created with success"), serializer.data))
+        return Response(get_api_response(status.HTTP_400_BAD_REQUEST, _("Error Encoured"), serializer.errors))
 
 @api_view(['PUT','DELETE', 'GET'],)
 def user_details(request, id):

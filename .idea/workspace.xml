@@ -32,12 +32,29 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87406ce3-e5f6-4d08-b4ae-7129b8e07aa8" name="Default" comment="- Add rutime.txt">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/bac7b837-e95f-4933-beb4-646baf8c02a9.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="87406ce3-e5f6-4d08-b4ae-7129b8e07aa8" name="Default" comment="- Edit send mail">
+      <change afterPath="$PROJECT_DIR$/OnlyMe/static/apple.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OnlyMe/static/beautyhub-white.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OnlyMe/static/instagram.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OnlyMe/static/playstore.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OnlyMe/static/snapchat.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OnlyMe/staticfiles/apple.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OnlyMe/staticfiles/beautyhub-white.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OnlyMe/staticfiles/instagram.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OnlyMe/staticfiles/playstore.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OnlyMe/staticfiles/snapchat.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/beakhub/templates/beautyhub/beautyhub-mail-order-product.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/beakhub/templates/init-pass-mail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MoviesAndMe/locale/en/LC_MESSAGES/django.po" beforeDir="false" afterPath="$PROJECT_DIR$/MoviesAndMe/locale/en/LC_MESSAGES/django.po" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MoviesAndMe/locale/fr/LC_MESSAGES/django.po" beforeDir="false" afterPath="$PROJECT_DIR$/MoviesAndMe/locale/fr/LC_MESSAGES/django.po" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlyMe/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/OnlyMe/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlyMe/static/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/beakhub/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/beakhub/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lcu/templates/movies/add_link_movie.html" beforeDir="false" afterPath="$PROJECT_DIR$/lcu/templates/movies/add_link_movie.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lcu/templates/movies/edit_movie.html" beforeDir="false" afterPath="$PROJECT_DIR$/lcu/templates/movies/edit_movie.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/locale/en/LC_MESSAGES/django.po" beforeDir="false" afterPath="$PROJECT_DIR$/locale/en/LC_MESSAGES/django.po" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/locale/fr/LC_MESSAGES/django.po" beforeDir="false" afterPath="$PROJECT_DIR$/locale/fr/LC_MESSAGES/django.po" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,8 +82,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -107,7 +124,7 @@
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="PostgreSQL" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/Change SQL Dialect" value="PostgreSQL" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/OnlyMe/staticfiles" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -119,21 +136,21 @@
       <recent name="https://github.com/Sanix-Darker/jeudiconfession.git" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\ProjetDjango\LeChatongUniverse\LeChatongUniverse\staticfiles" />
       <recent name="D:\ProjetDjango\LeChatongUniverse\LeChatongUniverse\OnlyMe\staticfiles" />
       <recent name="D:\ProjetDjango\LeChatongUniverse\LeChatongUniverse\OnlyMe\static" />
-      <recent name="D:\projet-d\OnlyMe\lcu\static" />
-      <recent name="D:\projet-d\OnlyMe\staticfiles" />
+      <recent name="D:\ProjetDjango\LeChatongUniverse\LeChatongUniverse\beakhub\static" />
+      <recent name="D:\ProjetDjango\LeChatongUniverse\LeChatongUniverse\staticfiles" />
+      <recent name="D:\ProjetDjango\LeChatongUniverse\LeChatongUniverse\beakhub\templates\beautyhub" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\ProjetDjango\LeChatongUniverse\LeChatongUniverse\beakhub\templates\beautyhub" />
+      <recent name="D:\ProjetDjango\LeChatongUniverse\LeChatongUniverse" />
       <recent name="D:\ProjetDjango\LeChatongUniverse\LeChatongUniverse\beakhub\static" />
       <recent name="D:\projet-d\OnlyMe\lcu" />
       <recent name="D:\projet-d\OnlyMe\OnlyMe\staticfiles\assets\js" />
-      <recent name="D:\projet-d\OnlyMe\staticfiles\assets\js" />
-      <recent name="D:\projet-d\OnlyMe\lcu\static\assets\js" />
     </key>
   </component>
-  <component name="RunManager" selected="Django server.OnlyMe">
+  <component name="RunManager" selected="Python.tests">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="OnlyMe" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -365,14 +382,13 @@
       <workItem from="1608768360237" duration="7789000" />
       <workItem from="1608845025107" duration="3867000" />
       <workItem from="1609008178321" duration="35522000" />
-      <workItem from="1609190572831" duration="2674000" />
-    </task>
-    <task id="LOCAL-00143" summary="Ajout des Trailers et Bandes annonces pour les series">
-      <created>1595076466101</created>
-      <option name="number" value="00143" />
-      <option name="presentableId" value="LOCAL-00143" />
-      <option name="project" value="LOCAL" />
-      <updated>1595076466102</updated>
+      <workItem from="1609190572831" duration="3532000" />
+      <workItem from="1609617269863" duration="2231000" />
+      <workItem from="1609619823693" duration="3729000" />
+      <workItem from="1609803390144" duration="89000" />
+      <workItem from="1609857455129" duration="12462000" />
+      <workItem from="1610214754716" duration="74000" />
+      <workItem from="1610491583576" duration="2193000" />
     </task>
     <task id="LOCAL-00144" summary="Ajout des Trailers et Bandes annonces pour les series">
       <created>1602964630494</created>
@@ -710,7 +726,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609155647019</updated>
     </task>
-    <option name="localTasksCounter" value="192" />
+    <task id="LOCAL-00192" summary="- Edit send mail">
+      <created>1609198851754</created>
+      <option name="number" value="00192" />
+      <option name="presentableId" value="LOCAL-00192" />
+      <option name="project" value="LOCAL" />
+      <updated>1609198851757</updated>
+    </task>
+    <option name="localTasksCounter" value="193" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -731,7 +754,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Traduction Anglais / Français OK" />
     <MESSAGE value="Début d'ajout de l'API" />
     <MESSAGE value="Début d'ajout de l'API + Partage Telegram, Whatsapp" />
     <MESSAGE value="MAJ sur l'API" />
@@ -756,45 +778,46 @@
     <MESSAGE value="- Add Method of initialization of password" />
     <MESSAGE value="- Edit requirements.txt" />
     <MESSAGE value="- Add init password" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Add init password" />
+    <MESSAGE value="- Edit send mail" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Edit send mail" />
   </component>
   <component name="WindowStateProjectService">
     <state x="96" y="0" width="1086" height="690" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602929525199">
       <screen x="0" y="0" width="1280" height="690" />
     </state>
     <state x="96" y="0" width="1086" height="690" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.690@0.0.1280.690" timestamp="1602929525199" />
-    <state x="277" y="0" key="CommitChangelistDialog2" timestamp="1609155645815">
+    <state x="277" y="0" key="CommitChangelistDialog2" timestamp="1610549821415">
       <screen x="0" y="0" width="1280" height="690" />
     </state>
-    <state x="277" y="0" key="CommitChangelistDialog2/0.0.1280.690@0.0.1280.690" timestamp="1609155645815" />
+    <state x="277" y="0" key="CommitChangelistDialog2/0.0.1280.690@0.0.1280.690" timestamp="1610549821415" />
     <state x="421" y="100" key="FileChooserDialogImpl" timestamp="1608337099502">
       <screen x="0" y="0" width="1280" height="690" />
     </state>
     <state x="421" y="100" key="FileChooserDialogImpl/0.0.1280.690@0.0.1280.690" timestamp="1608337099502" />
-    <state width="1238" height="170" key="GridCell.Tab.0.bottom" timestamp="1609198726967">
+    <state width="1238" height="170" key="GridCell.Tab.0.bottom" timestamp="1609923664821">
       <screen x="0" y="0" width="1280" height="690" />
     </state>
-    <state width="1238" height="170" key="GridCell.Tab.0.bottom/0.0.1280.690@0.0.1280.690" timestamp="1609198726967" />
-    <state width="1238" height="170" key="GridCell.Tab.0.center" timestamp="1609198726966">
+    <state width="1238" height="170" key="GridCell.Tab.0.bottom/0.0.1280.690@0.0.1280.690" timestamp="1609923664821" />
+    <state width="1238" height="170" key="GridCell.Tab.0.center" timestamp="1609923664821">
       <screen x="0" y="0" width="1280" height="690" />
     </state>
-    <state width="1238" height="170" key="GridCell.Tab.0.center/0.0.1280.690@0.0.1280.690" timestamp="1609198726966" />
-    <state width="1238" height="170" key="GridCell.Tab.0.left" timestamp="1609198726966">
+    <state width="1238" height="170" key="GridCell.Tab.0.center/0.0.1280.690@0.0.1280.690" timestamp="1609923664821" />
+    <state width="1238" height="170" key="GridCell.Tab.0.left" timestamp="1609923664820">
       <screen x="0" y="0" width="1280" height="690" />
     </state>
-    <state width="1238" height="170" key="GridCell.Tab.0.left/0.0.1280.690@0.0.1280.690" timestamp="1609198726966" />
-    <state width="1238" height="170" key="GridCell.Tab.0.right" timestamp="1609198726967">
+    <state width="1238" height="170" key="GridCell.Tab.0.left/0.0.1280.690@0.0.1280.690" timestamp="1609923664820" />
+    <state width="1238" height="170" key="GridCell.Tab.0.right" timestamp="1609923664821">
       <screen x="0" y="0" width="1280" height="690" />
     </state>
-    <state width="1238" height="170" key="GridCell.Tab.0.right/0.0.1280.690@0.0.1280.690" timestamp="1609198726967" />
+    <state width="1238" height="170" key="GridCell.Tab.0.right/0.0.1280.690@0.0.1280.690" timestamp="1609923664821" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1604959205902">
       <screen x="0" y="0" width="1280" height="690" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1280.690@0.0.1280.690" timestamp="1604959205902" />
-    <state x="233" y="78" key="Vcs.Push.Dialog.v2" timestamp="1609155650637">
+    <state x="233" y="78" key="Vcs.Push.Dialog.v2" timestamp="1609198859280">
       <screen x="0" y="0" width="1280" height="690" />
     </state>
-    <state x="233" y="78" key="Vcs.Push.Dialog.v2/0.0.1280.690@0.0.1280.690" timestamp="1609155650637" />
+    <state x="233" y="78" key="Vcs.Push.Dialog.v2/0.0.1280.690@0.0.1280.690" timestamp="1609198859280" />
     <state x="303" y="12" width="672" height="678" key="search.everywhere.popup" timestamp="1608742405963">
       <screen x="0" y="0" width="1280" height="690" />
     </state>
