@@ -24,7 +24,7 @@ django-heroku==0.3.1
 django-social-share==1.4.0
 django-telegrambot==1.0.1
 django-tinymce4-lite==1.7.4
-djangorestframework==3.11.0
+djangorestframework==3.11.2
 Flask==1.0.2
 gunicorn==19.9.0
 html2text==2020.1.16
