@@ -14,7 +14,7 @@ Jinja2==2.10
 jsmin==2.2.2
 MarkupSafe==1.0
 oauthlib==3.0.1
-Pillow==5.4.1
+Pillow==8.3.2
 psycopg2==2.7.5
 pytz==2018.5
 requests==2.21.0

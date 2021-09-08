@@ -41,7 +41,7 @@ oauthlib==3.0.1
 packaging==19.2
 parse-type==0.5.2
 parsel==1.5.2
-Pillow==5.4.1
+Pillow==8.3.2
 plumbum==1.6.8
 portalocker==1.5.2
 psycopg2==2.7.5
