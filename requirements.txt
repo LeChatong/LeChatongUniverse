@@ -58,7 +58,7 @@ requests==2.21.0
 requests-oauthlib==1.2.0
 rsa==4.0
 Scrapy==1.8.0
-scrapy-splash==0.7.2
+scrapy-splash==0.8.0
 service-identity==18.1.0
 six==1.13.0
 sqlparse==0.4.1
