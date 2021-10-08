@@ -10,7 +10,7 @@ googletrans==2.4.0
 gunicorn==19.9.0
 idna==2.8
 itsdangerous==1.1.0
-Jinja2==2.10
+Jinja2==2.11.3
 jsmin==2.2.2
 MarkupSafe==1.0
 oauthlib==3.0.1
